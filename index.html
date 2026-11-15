@@ -45,7 +45,7 @@ h1 span{color:var(--soft)}
 @keyframes glanz{to{transform:translateX(100%)}}
 .blk.dark{background:#1a1a1a}.blk.dark::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
 .cur{position:absolute;width:18px;height:18px;transition:left .9s cubic-bezier(.2,.8,.2,1),top .9s cubic-bezier(.2,.8,.2,1);z-index:3;pointer-events:none}
-.cur::after{content:"";position:absolute;left:-10px;top:-10px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(0,0,0,.25);transform:scale(0);opacity:0}
+.cur::after{content:"";position:absolute;left:-7px;top:-7px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(0,0,0,.25);transform:scale(0);opacity:0}
 .cur.klick::after{animation:klick .5s ease-out}
 @keyframes klick{from{transform:scale(.3);opacity:1}to{transform:scale(1);opacity:0}}
 .status{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft)}
@@ -56,6 +56,26 @@ h1 span{color:var(--soft)}
 .foot{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--soft);border-top:1px solid var(--line);padding-top:18px}
 .foot a{color:var(--soft);text-decoration:none}.foot a:hover{color:var(--ink)}
 .foot .r{margin-left:auto}
+/* Mauszeiger: Punkt + Zeiger, über Links ein Haken */
+.c-on,.c-on *{cursor:none!important}
+.c-dot,.c-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:9999}
+.c-dot{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#111;transition:opacity .2s}
+.c-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:1.2px solid rgba(17,17,17,.45);display:flex;align-items:center;justify-content:center;transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),margin .3s cubic-bezier(.2,.8,.2,1),background .3s,border-color .3s,opacity .2s}
+.c-hand{position:absolute;left:50%;top:50%;width:1.2px;height:12px;margin-left:-.6px;background:rgba(17,17,17,.45);transform-origin:50% 0;transform:rotate(180deg);animation:tick 12s steps(12) infinite;transition:opacity .2s}
+@keyframes tick{to{transform:rotate(540deg)}}
+.c-ring svg{width:0;height:0;transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1)}
+.c-hot .c-ring{width:50px;height:50px;margin:-25px 0 0 -25px;background:#111;border-color:#fff}
+.c-hot .c-ring svg{width:26px;height:26px}
+.c-hot .c-hand,.c-hot .c-dot{opacity:0}
+.c-down .c-ring{width:40px;height:40px;margin:-20px 0 0 -20px}
+.c-out .c-dot,.c-out .c-ring{opacity:0}
+/* Baustelle-Zeiger im gleichen Stil */
+.cur{width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:1.2px solid rgba(17,17,17,.5);display:flex;align-items:center;justify-content:center;transition:left .9s cubic-bezier(.2,.8,.2,1),top .9s cubic-bezier(.2,.8,.2,1),background .25s}
+.cur b{width:5px;height:5px;border-radius:50%;background:#111;transition:opacity .2s}
+.cur svg{position:absolute;width:0;height:0;transition:width .25s,height .25s}
+.cur.klick{background:#111;border-color:#111}
+.cur.klick b{opacity:0}
+.cur.klick svg{width:16px;height:16px}
 @media (max-width:860px){.main{grid-template-columns:1fr}.site{height:260px}.foot .r{margin-left:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -78,7 +98,7 @@ h1 span{color:var(--soft)}
     <section>
       <div class="bau" id="bau" aria-hidden="true">
         <div class="bar"><b></b><b></b><b></b><span class="url">makeitdone.de</span></div>
-        <div class="site"><div class="canvas" id="site"><svg class="cur" id="cur" viewBox="0 0 20 26"><path d="M1 1v19l5-5 4 9 3-1-4-9h7z" fill="#111" stroke="#fff" stroke-width="1.2"/></svg></div></div>
+        <div class="site"><div class="canvas" id="site"><span class="cur" id="cur"><b></b><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-8.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
         <div class="status"><span class="txt" id="txt">Struktur wird angelegt</span><span class="prog"><i id="prog"></i></span></div>
       </div>
       <p class="hint">Mit der Maus über die Baustelle fahren</p>
@@ -103,8 +123,8 @@ h1 span{color:var(--soft)}
   function schritt(){
     i=(i+1)%L.length;s=(s+1)%S.length;var l=L[i];setz(l);
     var z=l[2+Math.floor(Math.random()*(l.length-2))];
-    cur.style.left='calc('+(z[0]+z[2]/2)+'% + 10px)';cur.style.top='calc('+(z[1]+z[3]/2)+'% + 10px)';
-    setTimeout(function(){cur.classList.remove('klick');void cur.offsetWidth;cur.classList.add('klick')},850);
+    cur.style.left=(z[0]+z[2]/2)+'%';cur.style.top=(z[1]+z[3]/2)+'%';
+    setTimeout(function(){cur.classList.add('klick');setTimeout(function(){cur.classList.remove('klick')},700)},850);
     tipp(S[s]);prog.style.width=(20+s*18)+'%';
     timer=setTimeout(schritt,schnell?1100:2600);
   }
@@ -114,5 +134,6 @@ h1 span{color:var(--soft)}
     bau.addEventListener('mouseleave',function(){schnell=false});}
 })();
 </script>
+<script src="cursor.js" defer></script>
 </body>
 </html>
