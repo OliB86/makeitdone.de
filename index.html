@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>make it done GmbH – Finanz- und Strukturbegleitung</title>
+<link rel="canonical" href="https://makeitdone.de/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="make it done GmbH – Finanz- und Strukturbegleitung und C-Level-Support. Die neue Website ist ab Dezember online.">
+<style>
+@font-face{font-family:Inter;src:url(fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{--ink:#111;--soft:#5c5c5c;--line:#e3e3e3;--bg:#fafafa;--card:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{min-height:100vh;max-width:1200px;margin:0 auto;padding:40px clamp(16px,5vw,56px) 32px;display:grid;grid-template-rows:auto 1fr auto;gap:32px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.wm{font-weight:500;letter-spacing:.02em;font-size:18px}
+.badge{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:flex;align-items:center;gap:8px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ink);animation:puls 1.6s ease-in-out infinite}
+@keyframes puls{50%{opacity:.25;transform:scale(.7)}}
+.main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:center}
+.foto{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center 18%;filter:grayscale(1) contrast(1.05);display:block;margin-bottom:28px}
+h1{font-weight:500;font-size:clamp(34px,4.6vw,56px);line-height:1.04;letter-spacing:-.02em;margin:0 0 22px}
+h1 span{color:var(--soft)}
+.lead{font-size:17px;line-height:1.6;color:var(--soft);max-width:30em;margin:0 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-weight:500;font-size:15px;color:var(--ink);transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,box-shadow .25s}
+.btn.main{background:var(--ink);color:#fff}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.btn.main:hover{background:#333}
+.btn:not(.main):hover{background:var(--ink);color:#fff}
+.mail{display:block;margin-top:18px;font-size:14px;color:var(--soft)}
+.mail a{color:var(--ink)}
+/* Baustelle */
+.bau{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.06);overflow:hidden;cursor:default}
+.bar{display:flex;align-items:center;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.bar b{width:9px;height:9px;border-radius:50%;background:#ddd}
+.url{margin-left:12px;flex:1;height:22px;border-radius:6px;background:#f2f2f2;font-size:11px;color:#999;display:flex;align-items:center;padding:0 10px}
+.site{position:relative;padding:22px;height:340px}
+.canvas{position:absolute;inset:22px}
+.blk{position:absolute;background:#efefef;border-radius:8px;transition:all .9s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.blk::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:translateX(-100%);animation:glanz 2.2s infinite}
+@keyframes glanz{to{transform:translateX(100%)}}
+.blk.dark{background:#1a1a1a}.blk.dark::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
+.cur{position:absolute;width:18px;height:18px;transition:left .9s cubic-bezier(.2,.8,.2,1),top .9s cubic-bezier(.2,.8,.2,1);z-index:3;pointer-events:none}
+.cur::after{content:"";position:absolute;left:-10px;top:-10px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(0,0,0,.25);transform:scale(0);opacity:0}
+.cur.klick::after{animation:klick .5s ease-out}
+@keyframes klick{from{transform:scale(.3);opacity:1}to{transform:scale(1);opacity:0}}
+.status{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft)}
+.status .txt::after{content:"▍";animation:blink 1s steps(1) infinite;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+.prog{width:120px;height:4px;border-radius:4px;background:#eee;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--ink);transition:width .9s ease}
+.hint{font-size:12px;color:#9a9a9a;margin-top:12px;text-align:center}
+.foot{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--soft);border-top:1px solid var(--line);padding-top:18px}
+.foot a{color:var(--soft);text-decoration:none}.foot a:hover{color:var(--ink)}
+.foot .r{margin-left:auto}
+@media (max-width:860px){.main{grid-template-columns:1fr}.site{height:260px}.foot .r{margin-left:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><span class="wm">make it done GmbH</span><span class="badge"><i></i>Website im Umbau</span></header>
+  <main class="main">
+    <section>
+      <img class="foto" src="img/oli-portrait.jpg" alt="Olga Bertram, Geschäftsführerin">
+      <h1>Finanz- und Strukturbegleitung <span>&amp; C-Level-Support</span></h1>
+      <p class="lead">Wir überarbeiten gerade unseren Auftritt. Ab Dezember finden Sie hier alles über unsere Leistungen. Bis dahin sind wir natürlich direkt für Sie da.</p>
+      <div class="cta">
+        <a class="btn main" href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=makeitdone-de" target="_blank" rel="noopener">Erstgespräch vereinbaren →</a>
+        <a class="btn" href="https://wa.me/4915123136397?text=%28make%20it%20done%20%C2%B7%20Website%29%0AHallo%20Olga%2C%20" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <span class="mail">oder per E-Mail: <a href="mailto:hallo@makeitdone.de">hallo@makeitdone.de</a></span>
+    </section>
+    <section>
+      <div class="bau" id="bau" aria-hidden="true">
+        <div class="bar"><b></b><b></b><b></b><span class="url">makeitdone.de</span></div>
+        <div class="site"><div class="canvas" id="site"><svg class="cur" id="cur" viewBox="0 0 20 26"><path d="M1 1v19l5-5 4 9 3-1-4-9h7z" fill="#111" stroke="#fff" stroke-width="1.2"/></svg></div></div>
+        <div class="status"><span class="txt" id="txt">Struktur wird angelegt</span><span class="prog"><i id="prog"></i></span></div>
+      </div>
+      <p class="hint">Mit der Maus über die Baustelle fahren</p>
+    </section>
+  </main>
+  <footer class="foot"><span>© 2026 make it done GmbH</span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a class="r" href="https://olga-bertram.de" target="_blank" rel="noopener">Olga Bertram →</a></footer>
+</div>
+<script>
+(function(){
+  var site=document.getElementById('site'),cur=document.getElementById('cur'),txt=document.getElementById('txt'),prog=document.getElementById('prog'),bau=document.getElementById('bau');
+  // Layouts in Prozent: [left, top, width, height, dark]
+  var L=[
+    [[0,0,30,7,1],[60,1,40,5],[0,20,70,12],[0,36,50,6],[0,48,22,9,1],[0,66,31,30],[34.5,66,31,30],[69,66,31,30]],
+    [[0,0,30,7,1],[60,1,40,5],[0,18,45,46],[50,22,50,10],[50,36,40,6],[50,48,22,9,1],[0,72,48,24],[52,72,48,24]],
+    [[0,0,30,7,1],[60,1,40,5],[15,16,70,12],[25,32,50,6],[39,44,22,9,1],[0,62,23,34],[25.6,62,23,34],[51.3,62,23,34]]
+  ];
+  var S=['Struktur wird angelegt','Texte werden geschrieben','Leistungen werden sortiert','Feinschliff am Design','Fast fertig'];
+  var bl=L[0].map(function(){var d=document.createElement('div');d.className='blk';site.appendChild(d);return d});
+  var i=0,s=0,schnell=false,timer;
+  function setz(l){l.forEach(function(r,k){var b=bl[k];b.style.left=r[0]+'%';b.style.top=r[1]+'%';b.style.width=r[2]+'%';b.style.height=r[3]+'%';b.classList.toggle('dark',!!r[4])})}
+  function tipp(t){var n=0;txt.textContent='';clearInterval(tipp.t);tipp.t=setInterval(function(){txt.textContent=t.slice(0,++n);if(n>=t.length)clearInterval(tipp.t)},35)}
+  function schritt(){
+    i=(i+1)%L.length;s=(s+1)%S.length;var l=L[i];setz(l);
+    var z=l[2+Math.floor(Math.random()*(l.length-2))];
+    cur.style.left='calc('+(z[0]+z[2]/2)+'% + 10px)';cur.style.top='calc('+(z[1]+z[3]/2)+'% + 10px)';
+    setTimeout(function(){cur.classList.remove('klick');void cur.offsetWidth;cur.classList.add('klick')},850);
+    tipp(S[s]);prog.style.width=(20+s*18)+'%';
+    timer=setTimeout(schritt,schnell?1100:2600);
+  }
+  setz(L[0]);cur.style.left='60%';cur.style.top='40%';prog.style.width='20%';
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){timer=setTimeout(schritt,1800);
+    bau.addEventListener('mouseenter',function(){schnell=true;clearTimeout(timer);schritt()});
+    bau.addEventListener('mouseleave',function(){schnell=false});}
+})();
+</script>
+</body>
+</html>
