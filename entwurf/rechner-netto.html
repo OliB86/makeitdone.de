@@ -37,15 +37,15 @@ input[type=range]{width:100%;accent-color:#141414}
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 32px; display: flex; flex-direction: column; gap: 12px">
 <div style="overflow-x: auto">
-<div style="min-width: 760px; display: grid; grid-template-columns: minmax(0, 2.4fr) 120px minmax(0, 1.4fr) 110px 110px; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<div style="min-width: 860px; display: grid; grid-template-columns: minmax(0, 2.1fr) 190px minmax(0, 1.4fr) 110px 110px; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
 <span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">Leistung</span>
-<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">pro Monat</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">pro Jahr</span>
 <span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">Steuer und Abgaben</span>
 <span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4; text-align: center">Team</span>
 <span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #ffffff; background: #141414; text-align: center">Geschäfts­führung</span>
 <sc-for list="{{rows}}" as="r" hint-placeholder-count="11">
 <span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px">{{r.label}}</b><span style="font-size: 12px; color: #5c5c5c">{{r.law}}</span></span>
-<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px">{{r.amount}}</span>
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 14px">{{r.amount}}</b><span style="font-size: 12px; color: #5c5c5c">{{r.monthly}}</span></span>
 <span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-size: 12px; line-height: 1.45; color: #3d3d3d">{{r.tax}}</span>
 <span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.tToggle}}" aria-pressed="{{r.tOn}}" disabled="{{r.tDisabled}}" style="{{r.tStyle}}">{{r.tLabel}}</button></span>
 <span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.gToggle}}" aria-pressed="{{r.gOn}}" disabled="{{r.gDisabled}}" style="{{r.gStyle}}">{{r.gLabel}}</button></span>
@@ -67,7 +67,7 @@ input[type=range]{width:100%;accent-color:#141414}
 </div>
 <div style="flex: 1 1 320px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Geschäftsführung</span>
-<sc-for list="{{gSliders}}" as="sl" hint-placeholder-count="4">
+<sc-for list="{{gSliders}}" as="sl" hint-placeholder-count="6">
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
@@ -76,7 +76,7 @@ input[type=range]{width:100%;accent-color:#141414}
 </sc-for>
 </div>
 <div style="flex: 1 1 320px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Für beide</span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Team · Vorsorge und Jobrad</span>
 <sc-for list="{{aSliders}}" as="sl" hint-placeholder-count="4">
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
@@ -98,13 +98,13 @@ input[type=range]{width:100%;accent-color:#141414}
 <span style="padding: 14px 16px; background: #ffffff; color: #141414; font-weight: 700; font-family: 'Space Grotesk', sans-serif">Geschäftsführung</span>
 <sc-for list="{{res}}" as="x" hint-placeholder-count="4">
 <span style="{{x.ls}}">{{x.label}}</span>
-<span style="{{x.cs}}">{{x.m}}</span>
-<span style="{{x.cs}}">{{x.t}}</span>
-<span style="{{x.gs}}">{{x.g}}</span>
+<span style="{{x.cs}}">{{x.m}}<br><small style="opacity: .65; font-weight: 400; font-size: 12px">{{x.mm}}</small></span>
+<span style="{{x.cs}}">{{x.t}}<br><small style="opacity: .65; font-weight: 400; font-size: 12px">{{x.tm}}</small></span>
+<span style="{{x.gs}}">{{x.g}}<br><small style="opacity: .65; font-weight: 400; font-size: 12px">{{x.gm}}</small></span>
 </sc-for>
 </div>
 </div>
-<span style="font-size: 13px; color: #bdbdbd">Monatswerte; die letzte Zeile aufs Jahr gerechnet. Team: Durchschnitt pro Kopf, Kita nur für Eltern mit Kita-Kind.</span>
+<span style="font-size: 13px; color: #bdbdbd">Jahreswerte, darunter pro Monat. Team: Durchschnitt pro Kopf, Kita nur für Eltern mit Kita-Kind.</span>
 </div>
 </section>
 
@@ -146,10 +146,10 @@ class Component extends DCLogic {
     super(props);
     this.state = {
       staff: 10, kidsN: 3, kita: 300, tRate: 30,
-      gRate: 44, gSal: 10000, s37: 1200, pkv: 700,
-      bav: 338, rente: 25, rad: 90,
+      gRate: 44, gSal: 10000, s37: 10000, pkv: 1500,
+      bav: 338, gBav: 676, rente: 25, rad: 90, gRad: 250,
       team: { sach: true, kita: true, essen: true, net: true, ges: true, job: true, rad: false, erh: false, bav: false },
-      gf: { sach: true, kita: true, essen: true, net: true, ges: true, job: false, rad: false, erh: true, bav: true, s37: true },
+      gf: { sach: true, kita: true, essen: true, net: true, ges: true, job: true, rad: true, erh: true, bav: true, s37: true },
       lfz: true, pkvOn: true
     };
   }
@@ -166,9 +166,9 @@ class Component extends DCLogic {
       { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG', m: 50, p: 50 * 0.25 * SOLI, tax: '25 % Pauschalsteuer, abgabenfrei' },
       { k: 'ges', label: 'Gesundheitsförderung', law: '§ 3 Nr. 34 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 600 € im Jahr' },
       { k: 'job', label: 'Jobticket', law: '§ 3 Nr. 15 EStG', m: 63, tax: 'steuer- und abgabenfrei' },
-      { k: 'rad', label: 'Jobrad', law: '§ 3 Nr. 37 EStG · zusätzlich zum Lohn überlassen', m: st.rad, tax: 'steuer- und abgabenfrei' },
+      { k: 'rad', label: 'Jobrad', law: '§ 3 Nr. 37 EStG · zusätzlich zum Lohn überlassen', m: st.rad, gm: st.gRad, tax: 'steuer- und abgabenfrei' },
       { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · Annahme: verheiratet, 2 Kinder', m: 364 / 12, p: 364 / 12 * 0.25 * SOLI, tax: 'bis 364 € im Jahr, 25 % pauschal, abgabenfrei' },
-      { k: 'bav', label: 'Betriebliche Altersvorsorge', law: '§ 3 Nr. 63 EStG · Betriebsausgabe', m: st.bav, bav: true, tax: 'steuerfrei bis 676 €, im Team abgabenfrei bis 338 €; Rente später versteuert' },
+      { k: 'bav', label: 'Betriebliche Altersvorsorge', law: '§ 3 Nr. 63 EStG · Betriebsausgabe', m: st.bav, gm: st.gBav, bav: true, tax: 'steuerfrei bis 676 €, im Team abgabenfrei bis 338 €; Rente später versteuert' },
       { k: 's37', label: 'Sachzuwendungen, Incentives', law: '§ 37b EStG · nur Geschäftsführung', m: st.s37 / 12, p: st.s37 / 12 * 0.30 * SOLI, gfOnly: true, tax: '30 % Pauschalsteuer; bis 10.000 € im Jahr' }
     ];
     function calc(who) {
@@ -179,10 +179,11 @@ class Component extends DCLogic {
       B.forEach(function (b) {
         if (!sel[b.k]) return;
         if (who === 'team' && b.gfOnly) return;
-        var c = b.m + (b.p || 0), n = b.m;
+        var m = (who === 'gf' && b.gm != null) ? b.gm : b.m;
+        var c = m + (b.p || 0), n = m;
         if (b.bav) {
-          var over = who === 'team' ? Math.max(0, b.m - 338) : 0;
-          c = b.m + over * sv; n = b.m - over * sv - b.m * st.rente / 100;
+          var over = who === 'team' ? Math.max(0, m - 338) : 0;
+          c = m + over * sv; n = m - over * sv - m * st.rente / 100;
         }
         if (b.k === 'kita') { kitaCost += c; kitaNet += n; } else { cost += c; net += n; }
       });
@@ -198,14 +199,15 @@ class Component extends DCLogic {
     var T = calc('team'), G = calc('gf');
     var cs = 'padding: 14px 16px; border-top: 1px solid #3a3a3a; font-size: 15px;';
     function rr(label, m, t, g, bold) {
-      var fw = bold ? ' font-weight: 700; font-size: 17px;' : '';
-      return { label: label, m: m, t: t, g: g, ls: cs + ' font-weight: 600; color: #e6e6e6;', cs: cs + fw, gs: cs + ' background: #ffffff; color: #141414; border-top-color: #e4e4e4;' + fw };
+      var fw = bold ? ' font-weight: 700; font-size: 18px;' : ' font-weight: 600; font-size: 16px;';
+      return { label: label, m: eur(m * 12), t: eur(t * 12), g: eur(g * 12), mm: eur(m) + ' im Monat', tm: eur(t) + ' im Monat', gm: eur(g) + ' im Monat',
+        ls: cs + ' font-weight: 600; color: #e6e6e6;', cs: cs + fw, gs: cs + ' background: #ffffff; color: #141414; border-top-color: #e4e4e4;' + fw };
     }
     var res = [
-      rr('Unternehmen gibt aus', eur(T.cost), eur(T.tCost), eur(G.cost)),
-      rr('als Gehaltserhöhung netto', eur(T.sal), eur(T.tSal), eur(G.sal)),
-      rr('als Benefits netto', eur(T.net), eur(T.tNet), eur(G.net)),
-      rr('mehr netto im Jahr', eur((T.net - T.sal) * 12), eur((T.tNet - T.tSal) * 12), eur((G.net - G.sal) * 12), true)
+      rr('Unternehmen gibt aus', T.cost, T.tCost, G.cost),
+      rr('als Gehaltserhöhung netto', T.sal, T.tSal, G.sal),
+      rr('als Benefits netto', T.net, T.tNet, G.net),
+      rr('mehr netto', T.net - T.sal, T.tNet - T.tSal, G.net - G.sal, true)
     ];
     var totalYear = (T.tNet - T.tSal) * 12 + (G.net - G.sal) * 12;
     var on = 'border: 1px solid #141414; background: #141414; color: #ffffff;';
@@ -214,7 +216,10 @@ class Component extends DCLogic {
     var pill = 'min-width: 72px; min-height: 36px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; ';
     var rows = B.map(function (b) {
       var tOn = !!st.team[b.k] && !b.gfOnly, gOn = !!st.gf[b.k];
-      return { label: b.label, law: b.law, amount: eur(b.m) + (b.p ? ' + ' + eur(b.p) : ''), tax: b.tax,
+      var yr = function (m) { return eur(m * 12) + (b.p ? ' + ' + eur(b.p * 12) : ''); };
+      var amount = b.gm != null ? 'Team ' + eur(b.m * 12) + ' · GF ' + eur(b.gm * 12) : b.gfOnly ? eur(b.m * 12) + ' + ' + eur(b.p * 12) : yr(b.m);
+      var monthly = b.gm != null ? 'Team ' + eur(b.m) + ' · GF ' + eur(b.gm) + ' im Monat' : eur(b.m) + (b.p ? ' + ' + eur(b.p) : '') + ' im Monat';
+      return { label: b.label, law: b.law, amount: amount, monthly: monthly, tax: b.tax,
         tOn: tOn, gOn: gOn, tDisabled: !!b.gfOnly, gDisabled: false,
         tLabel: b.gfOnly ? 'nur GF' : (tOn ? '✓ Team' : 'Team'), gLabel: gOn ? '✓ GF' : 'GF',
         tStyle: pill + (b.gfOnly ? dis : tOn ? on : off), gStyle: pill + (gOn ? on : off),
@@ -235,12 +240,14 @@ class Component extends DCLogic {
       slider('g-rate', 'Grenzsteuersatz Geschäftsführung', 'gRate', 14, 48, 1, st.gRate + ' %', 'inklusive Soli'),
       slider('g-sal', 'Gehalt im Monat (brutto)', 'gSal', 3000, 30000, 500, eur(st.gSal), 'für die Gehaltsfortzahlung'),
       slider('g-37', 'Sachzuwendungen nach § 37b im Jahr', 's37', 0, 10000, 100, eur(st.s37), 'z. B. Incentives, Geschenke, Events'),
-      slider('g-pkv', 'PKV-Beitrag Basisabsicherung im Monat', 'pkv', 0, 1500, 10, eur(st.pkv), 'für die Vorauszahlung')
+      slider('g-pkv', 'PKV-Beitrag Basisabsicherung im Monat', 'pkv', 0, 1500, 10, eur(st.pkv), 'für die Vorauszahlung'),
+      slider('g-bav', 'Altersvorsorge Geschäftsführung im Monat', 'gBav', 0, 676, 1, eur(st.gBav), 'bis 676 € steuerfrei'),
+      slider('g-rad', 'Jobrad Geschäftsführung im Monat', 'gRad', 0, 250, 5, eur(st.gRad), 'Leasingrate')
     ];
     var aSliders = [
-      slider('a-bav', 'Altersvorsorge im Monat', 'bav', 0, 676, 1, eur(st.bav), 'bis 676 € steuerfrei'),
-      slider('a-rente', 'Steuersatz im Ruhestand', 'rente', 0, 45, 1, st.rente + ' %', 'Annahme für die spätere Besteuerung'),
-      slider('a-rad', 'Leasingrate Jobrad im Monat', 'rad', 0, 250, 5, eur(st.rad), 'vom Unternehmen getragen')
+      slider('a-bav', 'Altersvorsorge Team im Monat', 'bav', 0, 676, 1, eur(st.bav), 'abgabenfrei bis 338 €'),
+      slider('a-rad', 'Jobrad Team im Monat', 'rad', 0, 250, 5, eur(st.rad), 'Leasingrate, vom Unternehmen getragen'),
+      slider('a-rente', 'Steuersatz im Ruhestand', 'rente', 0, 45, 1, st.rente + ' %', 'Annahme für die spätere Besteuerung')
     ];
     var lfzSum = 6 * st.gSal, pkvPre = 2.5 * 12 * st.pkv, pkvTax = pkvPre * st.gRate / 100;
     var card = function (onx) { return 'display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 24px; ' + (onx ? 'background: #f4f4f4; border: 1px solid #141414;' : 'background: #ffffff; border: 1px dashed #c8c8c8; opacity: .6;'); };
