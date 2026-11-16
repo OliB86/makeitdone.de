@@ -28,59 +28,112 @@ input[type=range]{width:100%;accent-color:#141414}
 <div style="width: 100%; background: #ffffff; color: #141414; font-family: Inter, system-ui, sans-serif">
 <div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf · Wissen · Rechner · nicht verlinkt</div>
 
-<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<section style="max-width: 1180px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 18px">
 <a href="wissen.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Wissen · Rechner · Netto vom Brutto</span>
-<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Benefits statt Gehaltserhöhung: Was kommt wirklich an?</h1>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Gleiches Budget fürs Unternehmen – sehr unterschiedliches Netto. Wählen Sie Leistungen aus, die zusätzlich zum Gehalt gezahlt werden, und vergleichen Sie mit einer Gehaltserhöhung.</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 940px">Mehr Netto für Team und Geschäftsführung – bei gleichem Budget.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 800px">Wählen Sie, welche Leistung wer bekommt. Der Rechner vergleicht mit einer Gehaltserhöhung, die das Unternehmen genauso viel kostet – inklusive Pauschalsteuer und Sozialabgaben.</p>
 </section>
 
-<section style="max-width: 1120px; margin: 0 auto; padding: 16px 24px 48px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<sc-for list="{{benefits}}" as="bf" hint-placeholder-count="6">
-<button type="button" onClick="{{bf.toggle}}" aria-pressed="{{bf.on}}" style="{{bf.style}}">
-<span style="display: flex; flex-direction: column; gap: 2px; text-align: left"><b style="font-size: 15px">{{bf.label}}</b><span style="font-size: 12px; opacity: .75">{{bf.law}}</span></span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; white-space: nowrap">{{bf.amount}}</span>
-</button>
+<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 32px; display: flex; flex-direction: column; gap: 12px">
+<div style="overflow-x: auto">
+<div style="min-width: 760px; display: grid; grid-template-columns: minmax(0, 2.4fr) 120px minmax(0, 1.4fr) 110px 110px; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">Leistung</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">pro Monat</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">Steuer und Abgaben</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4; text-align: center">Team</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #ffffff; background: #141414; text-align: center">Geschäfts­führung</span>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="11">
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px">{{r.label}}</b><span style="font-size: 12px; color: #5c5c5c">{{r.law}}</span></span>
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px">{{r.amount}}</span>
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-size: 12px; line-height: 1.45; color: #3d3d3d">{{r.tax}}</span>
+<span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.tToggle}}" aria-pressed="{{r.tOn}}" disabled="{{r.tDisabled}}" style="{{r.tStyle}}">{{r.tLabel}}</button></span>
+<span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.gToggle}}" aria-pressed="{{r.gOn}}" disabled="{{r.gDisabled}}" style="{{r.gStyle}}">{{r.gLabel}}</button></span>
 </sc-for>
-<div style="background: #f4f4f4; border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 18px; margin-top: 8px">
-<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="2">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 40px; display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Team</span>
+<sc-for list="{{tSliders}}" as="sl" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
 <span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
 </div>
 </sc-for>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 15px; font-weight: 600">Sozialversicherung auf eine Gehaltserhöhung</span>
-<div role="group" aria-label="Sozialversicherung" style="display: flex; gap: 6px; flex-wrap: wrap">
-<sc-for list="{{svs}}" as="v" hint-placeholder-count="2">
-<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.style}}">{{v.label}}</button>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Geschäftsführung</span>
+<sc-for list="{{gSliders}}" as="sl" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
 </sc-for>
 </div>
-<span style="font-size: 12px; color: #5c5c5c">Gesellschafter-Geschäftsführer sind oft nicht sozialversicherungspflichtig – dann wählen Sie „nein“.</span>
+<div style="flex: 1 1 320px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Für beide</span>
+<sc-for list="{{aSliders}}" as="sl" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
 </div>
-</div>
-</div>
-<div style="flex: 1 1 380px; min-width: 0; background: #141414; color: #ffffff; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 24px">
-<span style="font-size: 14px; color: #cfcfcf">Das Unternehmen gibt im Monat aus:</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; line-height: 1">{{cost}}</span>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
-<div style="background: #2a2a2a; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #cfcfcf">Als Gehaltserhöhung netto</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700">{{netSal}}</span></div>
-<div style="background: #ffffff; color: #141414; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #5c5c5c">Als Benefits netto</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700">{{netBen}}</span></div>
-</div>
-<span style="font-size: 16px; line-height: 1.5">{{line}}</span>
-<span style="font-size: 14px; line-height: 1.5; color: #cfcfcf">{{team}}</span>
-<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-netto" style="align-self: flex-start; background: #ffffff; color: #141414; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px">Vergütung für Ihr Team aufsetzen →</a>
+</sc-for>
 </div>
 </section>
 
-<section style="max-width: 1120px; margin: 0 auto; padding: 0 24px 72px; display: flex; flex-direction: column; gap: 14px">
-<div style="background: #f4f4f4; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; max-width: 900px">
-<span><b>Zusätzlich, nicht umgewandelt:</b> Steuerfrei sind die Leistungen nur, wenn sie zusätzlich zum ohnehin geschuldeten Arbeitslohn gezahlt werden (§ 8 Abs. 4 EStG). Bestehendes Gehalt einfach umzuwidmen reicht nicht.</span>
-<span><b>Für alle gleich:</b> Eine klare Benefit-Regel für das ganze Team schützt vor Streit – und hält einem Fremdvergleich stand, wenn Familienangehörige mitarbeiten.</span>
+<section style="background: #141414; color: #ffffff">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">{{headline}}</h2>
+<div style="overflow-x: auto">
+<div style="min-width: 680px; display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); border: 1px solid #3a3a3a; border-radius: 20px; overflow: hidden">
+<span style="padding: 14px 16px; background: #222222"></span>
+<span style="padding: 14px 16px; background: #222222; font-weight: 700; font-family: 'Space Grotesk', sans-serif">pro Mitarbeiter (Ø)</span>
+<span style="padding: 14px 16px; background: #222222; font-weight: 700; font-family: 'Space Grotesk', sans-serif">{{teamHead}}</span>
+<span style="padding: 14px 16px; background: #ffffff; color: #141414; font-weight: 700; font-family: 'Space Grotesk', sans-serif">Geschäftsführung</span>
+<sc-for list="{{res}}" as="x" hint-placeholder-count="4">
+<span style="{{x.ls}}">{{x.label}}</span>
+<span style="{{x.cs}}">{{x.m}}</span>
+<span style="{{x.cs}}">{{x.t}}</span>
+<span style="{{x.gs}}">{{x.g}}</span>
+</sc-for>
 </div>
-<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung, Stand 2026. Sozialabgaben vereinfacht mit je rund 21 % für Arbeitnehmer und Arbeitgeber, unterhalb der Beitragsbemessungsgrenzen. Pauschalsteuer 25 % ohne Soli und Kirchensteuer. Sie ersetzt keine Beratung im Einzelfall – die Lohnabrechnung prüft Ihr Steuerberater.</p>
+</div>
+<span style="font-size: 13px; color: #bdbdbd">Monatswerte; die letzte Zeile aufs Jahr gerechnet. Team: Durchschnitt pro Kopf, Kita nur für Eltern mit Kita-Kind.</span>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Nur Geschäftsführung · Absicherung und Steuer-Hebel</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px">
+<sc-for list="{{extras}}" as="e" hint-placeholder-count="2">
+<div style="{{e.style}}">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">{{e.title}}</b>
+<button type="button" onClick="{{e.toggle}}" aria-pressed="{{e.on}}" style="{{e.btnStyle}}">{{e.btn}}</button>
+</div>
+<span style="font-size: 12px; color: #5c5c5c">{{e.law}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700">{{e.big}}</span>
+<span style="font-size: 14px; line-height: 1.55; color: #3d3d3d">{{e.text}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 72px; display: flex; flex-direction: column; gap: 14px">
+<div style="background: #f4f4f4; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; max-width: 980px">
+<b>Annahmen</b>
+<span>Geschäftsführung = Gesellschafter-Geschäftsführer ohne Sozialversicherungspflicht; Team mit rund 21 % Sozialabgaben je Seite. Alle Leistungen zusätzlich zum ohnehin geschuldeten Lohn (§ 8 Abs. 4 EStG), für die Geschäftsführung vorab und fremdüblich im Vertrag vereinbart – sonst droht eine verdeckte Gewinnausschüttung.</span>
+<span>Pauschalsteuer mit Solidaritätszuschlag, ohne Kirchensteuer. Essenszuschuss an 15 Arbeitstagen à 7,67 €, pauschal versteuert wird der Sachbezugswert von 4,57 €. Erholungsbeihilfe als Beispiel für verheiratet mit zwei Kindern (156 € + 104 € + 2 × 52 € im Jahr). § 37b EStG nur für die Geschäftsführung: bei eigenen Mitarbeitenden bleibt die Zuwendung sozialversicherungspflichtig.</span>
+<span>Betriebliche Altersvorsorge: heute steuerfrei bis 8 % der Beitragsbemessungsgrenze (676 € im Monat), im Team sozialversicherungsfrei bis 4 % (338 €). Die spätere Rente wird versteuert – meist mit einem deutlich niedrigeren Satz; den angenommenen Satz im Ruhestand zieht der Rechner vom Netto ab.</span>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 980px">Vereinfachte Beispielrechnung, Stand 2026. Sie ersetzt keine Beratung im Einzelfall – Lohnabrechnung und Verträge prüfen Steuerberater und Anwalt.</p>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-netto" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Vergütung für Team und Geschäftsführung aufsetzen →</a>
 </section>
 </div>
 </template>
@@ -91,48 +144,119 @@ input[type=range]{width:100%;accent-color:#141414}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { rate: 42, sv: true, kita: 300, staff: 10,
-      ben: { sach: true, kita: true, net: true, ges: true, job: false, erh: false } };
+    this.state = {
+      staff: 10, kidsN: 3, kita: 300, tRate: 30,
+      gRate: 44, gSal: 10000, s37: 1200, pkv: 700,
+      bav: 338, rente: 25, rad: 90,
+      team: { sach: true, kita: true, essen: true, net: true, ges: true, job: true, rad: false, erh: false, bav: false },
+      gf: { sach: true, kita: true, essen: true, net: true, ges: true, job: false, rad: false, erh: true, bav: true, s37: true },
+      lfz: true, pkvOn: true
+    };
   }
   renderVals() {
     var self = this;
     var st = this.state;
     function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
-    var BEN = [
-      { k: 'sach', label: 'Sachbezug, z. B. Gutscheinkarte', law: '§ 8 Abs. 2 S. 11 EStG · steuer- und abgabenfrei bis 50 €', m: 50, pausch: false },
-      { k: 'kita', label: 'Kita-Zuschuss', law: '§ 3 Nr. 33 EStG · nicht schulpflichtige Kinder, ohne Obergrenze', m: st.kita, pausch: false },
-      { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG · 25 % Pauschalsteuer', m: 50, pausch: true },
-      { k: 'ges', label: 'Gesundheitsförderung', law: '§ 3 Nr. 34 EStG · bis 600 € im Jahr', m: 50, pausch: false },
-      { k: 'job', label: 'Jobticket', law: '§ 3 Nr. 15 EStG · z. B. Deutschlandticket', m: 63, pausch: false },
-      { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · 156 € im Jahr, 25 % pauschal', m: 13, pausch: true }
+    var SOLI = 1.055, SV = 0.21;
+    var essenWert = 7.67 * 15, essenSBW = 4.57 * 15;
+    var B = [
+      { k: 'sach', label: 'Sachbezug, z. B. Gutscheinkarte', law: '§ 8 Abs. 2 S. 11 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 50 €' },
+      { k: 'kita', label: 'Kita-Zuschuss', law: '§ 3 Nr. 33 EStG · nicht schulpflichtige Kinder', m: st.kita, tax: 'steuer- und abgabenfrei, ohne Obergrenze' },
+      { k: 'essen', label: 'Essenszuschuss', law: '§ 8 Abs. 2 S. 6 EStG, § 40 Abs. 2 S. 1 Nr. 1 EStG', m: essenWert, p: essenSBW * 0.25 * SOLI, tax: '15 Tage à 7,67 €; 25 % pauschal auf 4,57 € je Tag' },
+      { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG', m: 50, p: 50 * 0.25 * SOLI, tax: '25 % Pauschalsteuer, abgabenfrei' },
+      { k: 'ges', label: 'Gesundheitsförderung', law: '§ 3 Nr. 34 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 600 € im Jahr' },
+      { k: 'job', label: 'Jobticket', law: '§ 3 Nr. 15 EStG', m: 63, tax: 'steuer- und abgabenfrei' },
+      { k: 'rad', label: 'Jobrad', law: '§ 3 Nr. 37 EStG · zusätzlich zum Lohn überlassen', m: st.rad, tax: 'steuer- und abgabenfrei' },
+      { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · Annahme: verheiratet, 2 Kinder', m: 364 / 12, p: 364 / 12 * 0.25 * SOLI, tax: 'bis 364 € im Jahr, 25 % pauschal, abgabenfrei' },
+      { k: 'bav', label: 'Betriebliche Altersvorsorge', law: '§ 3 Nr. 63 EStG · Betriebsausgabe', m: st.bav, bav: true, tax: 'steuerfrei bis 676 €, im Team abgabenfrei bis 338 €; Rente später versteuert' },
+      { k: 's37', label: 'Sachzuwendungen, Incentives', law: '§ 37b EStG · nur Geschäftsführung', m: st.s37 / 12, p: st.s37 / 12 * 0.30 * SOLI, gfOnly: true, tax: '30 % Pauschalsteuer; bis 10.000 € im Jahr' }
     ];
-    var net = 0, cost = 0;
-    var benefits = BEN.map(function (b) {
-      var on = !!st.ben[b.k];
-      if (on) { net += b.m; cost += b.m * (b.pausch ? 1.25 : 1); }
-      return { label: b.label, law: b.law, amount: eur(b.m) + ' / Monat', on: on,
-        toggle: function () { var n = Object.assign({}, st.ben); n[b.k] = !on; self.setState({ ben: n }); },
-        style: 'display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; padding: 14px 18px; border-radius: 16px; cursor: pointer; border: 1px solid #141414; transition: background .2s; ' + (on ? 'background: #141414; color: #ffffff;' : 'background: #ffffff; color: #141414;') };
+    function calc(who) {
+      var sel = who === 'team' ? st.team : st.gf;
+      var cost = 0, net = 0, kitaCost = 0, kitaNet = 0;
+      var sv = who === 'team' ? SV : 0;
+      var rate = (who === 'team' ? st.tRate : st.gRate) / 100;
+      B.forEach(function (b) {
+        if (!sel[b.k]) return;
+        if (who === 'team' && b.gfOnly) return;
+        var c = b.m + (b.p || 0), n = b.m;
+        if (b.bav) {
+          var over = who === 'team' ? Math.max(0, b.m - 338) : 0;
+          c = b.m + over * sv; n = b.m - over * sv - b.m * st.rente / 100;
+        }
+        if (b.k === 'kita') { kitaCost += c; kitaNet += n; } else { cost += c; net += n; }
+      });
+      function salNet(c) { return c / (1 + sv) * (1 - sv - rate); }
+      if (who === 'team') {
+        var n = Math.max(1, st.staff), kids = Math.min(st.kidsN, n);
+        var tCost = cost * n + kitaCost * kids, tNet = net * n + kitaNet * kids, tSal = salNet(tCost);
+        return { cost: tCost / n, net: tNet / n, sal: tSal / n, tCost: tCost, tNet: tNet, tSal: tSal };
+      }
+      cost += kitaCost; net += kitaNet;
+      return { cost: cost, net: net, sal: salNet(cost) };
+    }
+    var T = calc('team'), G = calc('gf');
+    var cs = 'padding: 14px 16px; border-top: 1px solid #3a3a3a; font-size: 15px;';
+    function rr(label, m, t, g, bold) {
+      var fw = bold ? ' font-weight: 700; font-size: 17px;' : '';
+      return { label: label, m: m, t: t, g: g, ls: cs + ' font-weight: 600; color: #e6e6e6;', cs: cs + fw, gs: cs + ' background: #ffffff; color: #141414; border-top-color: #e4e4e4;' + fw };
+    }
+    var res = [
+      rr('Unternehmen gibt aus', eur(T.cost), eur(T.tCost), eur(G.cost)),
+      rr('als Gehaltserhöhung netto', eur(T.sal), eur(T.tSal), eur(G.sal)),
+      rr('als Benefits netto', eur(T.net), eur(T.tNet), eur(G.net)),
+      rr('mehr netto im Jahr', eur((T.net - T.sal) * 12), eur((T.tNet - T.tSal) * 12), eur((G.net - G.sal) * 12), true)
+    ];
+    var totalYear = (T.tNet - T.tSal) * 12 + (G.net - G.sal) * 12;
+    var on = 'border: 1px solid #141414; background: #141414; color: #ffffff;';
+    var off = 'border: 1px solid #141414; background: #ffffff; color: #141414;';
+    var dis = 'border: 1px dashed #c8c8c8; background: transparent; color: #9a9a9a; cursor: default;';
+    var pill = 'min-width: 72px; min-height: 36px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; ';
+    var rows = B.map(function (b) {
+      var tOn = !!st.team[b.k] && !b.gfOnly, gOn = !!st.gf[b.k];
+      return { label: b.label, law: b.law, amount: eur(b.m) + (b.p ? ' + ' + eur(b.p) : ''), tax: b.tax,
+        tOn: tOn, gOn: gOn, tDisabled: !!b.gfOnly, gDisabled: false,
+        tLabel: b.gfOnly ? 'nur GF' : (tOn ? '✓ Team' : 'Team'), gLabel: gOn ? '✓ GF' : 'GF',
+        tStyle: pill + (b.gfOnly ? dis : tOn ? on : off), gStyle: pill + (gOn ? on : off),
+        tToggle: function () { if (b.gfOnly) return; var n = Object.assign({}, st.team); n[b.k] = !tOn; self.setState({ team: n }); },
+        gToggle: function () { var n = Object.assign({}, st.gf); n[b.k] = !gOn; self.setState({ gf: n }); } };
     });
-    var ag = st.sv ? 0.21 : 0, an = st.sv ? 0.21 : 0;
-    var netSal = cost / (1 + ag) * (1 - an - st.rate / 100);
     function slider(id, label, key, min, max, step, shown, hint) {
       return { id: id, label: label, min: min, max: max, step: step, value: st[key], shown: shown, hint: hint,
         change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
     }
-    var sliders = [
-      slider('n-kita', 'Kita-Kosten im Monat', 'kita', 0, 900, 10, eur(st.kita), 'tatsächliche Betreuungskosten, gegen Nachweis'),
-      slider('n-rate', 'Grenzsteuersatz', 'rate', 14, 45, 1, st.rate + ' %', 'inklusive Soli'),
-      slider('n-staff', 'Mitarbeitende mit Benefits', 'staff', 1, 50, 1, String(st.staff), 'für die Hochrechnung aufs Team')
+    var tSliders = [
+      slider('t-staff', 'Mitarbeitende', 'staff', 1, 100, 1, String(st.staff), 'ohne Geschäftsführung'),
+      slider('t-kids', 'davon mit Kita-Kind', 'kidsN', 0, 50, 1, String(Math.min(st.kidsN, st.staff)), 'nur sie bekommen den Kita-Zuschuss'),
+      slider('t-kita', 'Kita-Kosten im Monat', 'kita', 0, 900, 10, eur(st.kita), 'gegen Nachweis'),
+      slider('t-rate', 'Grenzsteuersatz Team', 'tRate', 14, 45, 1, st.tRate + ' %', 'inklusive Soli')
     ];
-    var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
-    var svs = [[true, 'ja, rund 21 % je Seite'], [false, 'nein']].map(function (v) {
-      var on = st.sv === v[0]; return { label: v[1], on: on, style: btn(on), pick: function () { self.setState({ sv: v[0] }); } };
-    });
-    var diff = net - netSal;
-    return { benefits: benefits, sliders: sliders, svs: svs, cost: eur(cost), netSal: eur(netSal), netBen: eur(net),
-      line: cost > 0 ? 'Über Benefits kommen ' + eur(diff) + ' mehr im Monat an – ' + eur(diff * 12) + ' im Jahr, bei gleichen Kosten fürs Unternehmen.' : 'Wählen Sie mindestens eine Leistung aus.',
-      team: cost > 0 ? 'Für ' + st.staff + ' Mitarbeitende: ' + eur(diff * 12 * st.staff) + ' mehr Netto im Jahr.' : '' };
+    var gSliders = [
+      slider('g-rate', 'Grenzsteuersatz Geschäftsführung', 'gRate', 14, 48, 1, st.gRate + ' %', 'inklusive Soli'),
+      slider('g-sal', 'Gehalt im Monat (brutto)', 'gSal', 3000, 30000, 500, eur(st.gSal), 'für die Gehaltsfortzahlung'),
+      slider('g-37', 'Sachzuwendungen nach § 37b im Jahr', 's37', 0, 10000, 100, eur(st.s37), 'z. B. Incentives, Geschenke, Events'),
+      slider('g-pkv', 'PKV-Beitrag Basisabsicherung im Monat', 'pkv', 0, 1500, 10, eur(st.pkv), 'für die Vorauszahlung')
+    ];
+    var aSliders = [
+      slider('a-bav', 'Altersvorsorge im Monat', 'bav', 0, 676, 1, eur(st.bav), 'bis 676 € steuerfrei'),
+      slider('a-rente', 'Steuersatz im Ruhestand', 'rente', 0, 45, 1, st.rente + ' %', 'Annahme für die spätere Besteuerung'),
+      slider('a-rad', 'Leasingrate Jobrad im Monat', 'rad', 0, 250, 5, eur(st.rad), 'vom Unternehmen getragen')
+    ];
+    var lfzSum = 6 * st.gSal, pkvPre = 2.5 * 12 * st.pkv, pkvTax = pkvPre * st.gRate / 100;
+    var card = function (onx) { return 'display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 24px; ' + (onx ? 'background: #f4f4f4; border: 1px solid #141414;' : 'background: #ffffff; border: 1px dashed #c8c8c8; opacity: .6;'); };
+    var extras = [
+      { title: 'Gehaltsfortzahlung 6 Monate', law: 'im Geschäftsführervertrag · Betriebsausgabe', on: st.lfz, btn: st.lfz ? '✓ vorgesehen' : 'aufnehmen',
+        big: eur(lfzSum) + ' abgesichert',
+        text: 'Gesellschafter-Geschäftsführer bekommen meist kein gesetzliches Krankengeld. Mit einer Fortzahlung über sechs Monate läuft das Gehalt weiter; ab Monat 7 übernimmt idealerweise ein privates Krankentagegeld. Kosten entstehen nur im Ernstfall.',
+        toggle: function () { self.setState({ lfz: !st.lfz }); } },
+      { title: 'PKV-Beiträge vorauszahlen', law: '§ 10 Abs. 1 Nr. 3 S. 4 EStG · privat', on: st.pkvOn, btn: st.pkvOn ? '✓ vorgesehen' : 'aufnehmen',
+        big: eur(pkvTax) + ' Steuer jetzt',
+        text: 'Bis zum 2,5-Fachen des Jahresbeitrags zur Basisabsicherung (' + eur(pkvPre) + ') lässt sich vorauszahlen und im Zahlungsjahr absetzen. Lohnt in Jahren mit hohem Einkommen; in den Folgejahren fällt der Abzug entsprechend weg. Kann auch das Einkommen unter die Elterngeld-Grenze bringen.',
+        toggle: function () { self.setState({ pkvOn: !st.pkvOn }); } }
+    ].map(function (e) { e.style = card(e.on); e.btnStyle = pill + (e.on ? on : off) + ' padding: 0 14px;'; return e; });
+    return { rows: rows, tSliders: tSliders, gSliders: gSliders, aSliders: aSliders, res: res, extras: extras,
+      teamHead: 'Team (' + st.staff + ')',
+      headline: 'Zusammen ' + eur(totalYear) + ' mehr netto im Jahr – bei gleichen Kosten fürs Unternehmen.' };
   }
 }
 
