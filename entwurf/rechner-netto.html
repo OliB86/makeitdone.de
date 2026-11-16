@@ -45,7 +45,7 @@ input[type=range]{width:100%;accent-color:#141414}
 <span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #ffffff; background: #141414; text-align: center">Geschäfts­führung</span>
 <sc-for list="{{rows}}" as="r" hint-placeholder-count="11">
 <span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px">{{r.label}}</b><span style="font-size: 12px; color: #5c5c5c">{{r.law}}</span></span>
-<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 14px">{{r.amount}}</b><span style="font-size: 12px; color: #5c5c5c">{{r.monthly}}</span></span>
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; white-space: pre-line">{{r.amount}}</span>
 <span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-size: 12px; line-height: 1.45; color: #3d3d3d">{{r.tax}}</span>
 <span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.tToggle}}" aria-pressed="{{r.tOn}}" disabled="{{r.tDisabled}}" style="{{r.tStyle}}">{{r.tLabel}}</button></span>
 <span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.gToggle}}" aria-pressed="{{r.gOn}}" disabled="{{r.gDisabled}}" style="{{r.gStyle}}">{{r.gLabel}}</button></span>
@@ -59,7 +59,7 @@ input[type=range]{width:100%;accent-color:#141414}
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Team</span>
 <sc-for list="{{tSliders}}" as="sl" hint-placeholder-count="4">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif; white-space: nowrap">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
 <span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
 </div>
@@ -69,7 +69,7 @@ input[type=range]{width:100%;accent-color:#141414}
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Geschäftsführung</span>
 <sc-for list="{{gSliders}}" as="sl" hint-placeholder-count="6">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif; white-space: nowrap">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
 <span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
 </div>
@@ -79,7 +79,7 @@ input[type=range]{width:100%;accent-color:#141414}
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Team · Vorsorge und Jobrad</span>
 <sc-for list="{{aSliders}}" as="sl" hint-placeholder-count="4">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif; white-space: nowrap">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
 <span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
 </div>
@@ -130,7 +130,7 @@ input[type=range]{width:100%;accent-color:#141414}
 <b>Annahmen</b>
 <span>Geschäftsführung = Gesellschafter-Geschäftsführer ohne Sozialversicherungspflicht; Team mit rund 21 % Sozialabgaben je Seite. Alle Leistungen zusätzlich zum ohnehin geschuldeten Lohn (§ 8 Abs. 4 EStG), für die Geschäftsführung vorab und fremdüblich im Vertrag vereinbart – sonst droht eine verdeckte Gewinnausschüttung.</span>
 <span>Pauschalsteuer mit Solidaritätszuschlag, ohne Kirchensteuer. Essenszuschuss an 15 Arbeitstagen à 7,67 €, pauschal versteuert wird der Sachbezugswert von 4,57 €. Erholungsbeihilfe als Beispiel für verheiratet mit zwei Kindern (156 € + 104 € + 2 × 52 € im Jahr). § 37b EStG nur für die Geschäftsführung: bei eigenen Mitarbeitenden bleibt die Zuwendung sozialversicherungspflichtig.</span>
-<span>Betriebliche Altersvorsorge: heute steuerfrei bis 8 % der Beitragsbemessungsgrenze (676 € im Monat), im Team sozialversicherungsfrei bis 4 % (338 €). Die spätere Rente wird versteuert – meist mit einem deutlich niedrigeren Satz; den angenommenen Satz im Ruhestand zieht der Rechner vom Netto ab.</span>
+<span>Betriebliche Altersvorsorge: heute steuerfrei bis 8 % der Beitragsbemessungsgrenze (8.112 € im Jahr), im Team sozialversicherungsfrei bis 4 % (4.056 €). Die spätere Rente wird versteuert – meist mit einem deutlich niedrigeren Satz; den angenommenen Satz im Ruhestand zieht der Rechner vom Netto ab.</span>
 </div>
 <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 980px">Vereinfachte Beispielrechnung, Stand 2026. Sie ersetzt keine Beratung im Einzelfall – Lohnabrechnung und Verträge prüfen Steuerberater und Anwalt.</p>
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-netto" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Vergütung für Team und Geschäftsführung aufsetzen →</a>
@@ -160,15 +160,15 @@ class Component extends DCLogic {
     var SOLI = 1.055, SV = 0.21;
     var essenWert = 7.67 * 15, essenSBW = 4.57 * 15;
     var B = [
-      { k: 'sach', label: 'Sachbezug, z. B. Gutscheinkarte', law: '§ 8 Abs. 2 S. 11 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 50 €' },
+      { k: 'sach', label: 'Sachbezug, z. B. Gutscheinkarte', law: '§ 8 Abs. 2 S. 11 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 600 € im Jahr (50 € je Monat)' },
       { k: 'kita', label: 'Kita-Zuschuss', law: '§ 3 Nr. 33 EStG · nicht schulpflichtige Kinder', m: st.kita, tax: 'steuer- und abgabenfrei, ohne Obergrenze' },
-      { k: 'essen', label: 'Essenszuschuss', law: '§ 8 Abs. 2 S. 6 EStG, § 40 Abs. 2 S. 1 Nr. 1 EStG', m: essenWert, p: essenSBW * 0.25 * SOLI, tax: '15 Tage à 7,67 €; 25 % pauschal auf 4,57 € je Tag' },
-      { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG', m: 50, p: 50 * 0.25 * SOLI, tax: '25 % Pauschalsteuer, abgabenfrei' },
+      { k: 'essen', label: 'Essenszuschuss', law: '§ 8 Abs. 2 S. 6 EStG, § 40 Abs. 2 S. 1 Nr. 1 EStG', m: essenWert, p: essenSBW * 0.25 * SOLI, tax: '15 Tage à 7,67 € im Monat; 25 % pauschal nur auf den Sachbezugswert' },
+      { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG', m: 50, p: 50 * 0.25 * SOLI, tax: 'bis 600 € im Jahr; 25 % Pauschalsteuer, abgabenfrei' },
       { k: 'ges', label: 'Gesundheitsförderung', law: '§ 3 Nr. 34 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 600 € im Jahr' },
       { k: 'job', label: 'Jobticket', law: '§ 3 Nr. 15 EStG', m: 63, tax: 'steuer- und abgabenfrei' },
       { k: 'rad', label: 'Jobrad', law: '§ 3 Nr. 37 EStG · zusätzlich zum Lohn überlassen', m: st.rad, gm: st.gRad, tax: 'steuer- und abgabenfrei' },
-      { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · Annahme: verheiratet, 2 Kinder', m: 364 / 12, p: 364 / 12 * 0.25 * SOLI, tax: 'bis 364 € im Jahr, 25 % pauschal, abgabenfrei' },
-      { k: 'bav', label: 'Betriebliche Altersvorsorge', law: '§ 3 Nr. 63 EStG · Betriebsausgabe', m: st.bav, gm: st.gBav, bav: true, tax: 'steuerfrei bis 676 €, im Team abgabenfrei bis 338 €; Rente später versteuert' },
+      { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · Beispiel: verheiratet, 2 Kinder', m: 364 / 12, p: 364 / 12 * 0.25 * SOLI, tax: 'bis 364 € im Jahr, 25 % pauschal, abgabenfrei' },
+      { k: 'bav', label: 'Betriebliche Altersvorsorge', law: '§ 3 Nr. 63 EStG · Betriebsausgabe', m: st.bav, gm: st.gBav, bav: true, tax: 'steuerfrei bis 8.112 € im Jahr, im Team abgabenfrei bis 4.056 €; Rente später versteuert' },
       { k: 's37', label: 'Sachzuwendungen, Incentives', law: '§ 37b EStG · nur Geschäftsführung', m: st.s37 / 12, p: st.s37 / 12 * 0.30 * SOLI, gfOnly: true, tax: '30 % Pauschalsteuer; bis 10.000 € im Jahr' }
     ];
     function calc(who) {
@@ -216,9 +216,9 @@ class Component extends DCLogic {
     var pill = 'min-width: 72px; min-height: 36px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; ';
     var rows = B.map(function (b) {
       var tOn = !!st.team[b.k] && !b.gfOnly, gOn = !!st.gf[b.k];
-      var yr = function (m) { return eur(m * 12) + (b.p ? ' + ' + eur(b.p * 12) : ''); };
-      var amount = b.gm != null ? 'Team ' + eur(b.m * 12) + ' · GF ' + eur(b.gm * 12) : b.gfOnly ? eur(b.m * 12) + ' + ' + eur(b.p * 12) : yr(b.m);
-      var monthly = b.gm != null ? 'Team ' + eur(b.m) + ' · GF ' + eur(b.gm) + ' im Monat' : eur(b.m) + (b.p ? ' + ' + eur(b.p) : '') + ' im Monat';
+      var yr = function (m) { return eur(m * 12) + (b.p ? ' + ' + eur(b.p * 12) + ' Pauschalsteuer' : ''); };
+      var amount = b.gm != null ? 'Team ' + eur(b.m * 12) + '\nGF ' + eur(b.gm * 12) : yr(b.m);
+      var monthly = '';
       return { label: b.label, law: b.law, amount: amount, monthly: monthly, tax: b.tax,
         tOn: tOn, gOn: gOn, tDisabled: !!b.gfOnly, gDisabled: false,
         tLabel: b.gfOnly ? 'nur GF' : (tOn ? '✓ Team' : 'Team'), gLabel: gOn ? '✓ GF' : 'GF',
@@ -233,20 +233,20 @@ class Component extends DCLogic {
     var tSliders = [
       slider('t-staff', 'Mitarbeitende', 'staff', 1, 100, 1, String(st.staff), 'ohne Geschäftsführung'),
       slider('t-kids', 'davon mit Kita-Kind', 'kidsN', 0, 50, 1, String(Math.min(st.kidsN, st.staff)), 'nur sie bekommen den Kita-Zuschuss'),
-      slider('t-kita', 'Kita-Kosten im Monat', 'kita', 0, 900, 10, eur(st.kita), 'gegen Nachweis'),
+      slider('t-kita', 'Kita-Kosten im Jahr', 'kita', 0, 900, 10, eur(st.kita * 12), 'gegen Nachweis'),
       slider('t-rate', 'Grenzsteuersatz Team', 'tRate', 14, 45, 1, st.tRate + ' %', 'inklusive Soli')
     ];
     var gSliders = [
       slider('g-rate', 'Grenzsteuersatz Geschäftsführung', 'gRate', 14, 48, 1, st.gRate + ' %', 'inklusive Soli'),
-      slider('g-sal', 'Gehalt im Monat (brutto)', 'gSal', 3000, 30000, 500, eur(st.gSal), 'für die Gehaltsfortzahlung'),
+      slider('g-sal', 'Gehalt im Jahr (brutto)', 'gSal', 3000, 30000, 500, eur(st.gSal * 12), 'für die Gehaltsfortzahlung'),
       slider('g-37', 'Sachzuwendungen nach § 37b im Jahr', 's37', 0, 10000, 100, eur(st.s37), 'z. B. Incentives, Geschenke, Events'),
-      slider('g-pkv', 'PKV-Beitrag Basisabsicherung im Monat', 'pkv', 0, 1500, 10, eur(st.pkv), 'für die Vorauszahlung'),
-      slider('g-bav', 'Altersvorsorge Geschäftsführung im Monat', 'gBav', 0, 676, 1, eur(st.gBav), 'bis 676 € steuerfrei'),
-      slider('g-rad', 'Jobrad Geschäftsführung im Monat', 'gRad', 0, 250, 5, eur(st.gRad), 'Leasingrate')
+      slider('g-pkv', 'PKV-Beitrag Basisabsicherung im Jahr', 'pkv', 0, 1500, 10, eur(st.pkv * 12), 'für die Vorauszahlung'),
+      slider('g-bav', 'Altersvorsorge Geschäftsführung im Jahr', 'gBav', 0, 676, 1, eur(st.gBav * 12), 'bis 8.112 € steuerfrei'),
+      slider('g-rad', 'Jobrad Geschäftsführung im Jahr', 'gRad', 0, 250, 5, eur(st.gRad * 12), 'Leasingraten')
     ];
     var aSliders = [
-      slider('a-bav', 'Altersvorsorge Team im Monat', 'bav', 0, 676, 1, eur(st.bav), 'abgabenfrei bis 338 €'),
-      slider('a-rad', 'Jobrad Team im Monat', 'rad', 0, 250, 5, eur(st.rad), 'Leasingrate, vom Unternehmen getragen'),
+      slider('a-bav', 'Altersvorsorge Team im Jahr', 'bav', 0, 676, 1, eur(st.bav * 12), 'abgabenfrei bis 4.056 €'),
+      slider('a-rad', 'Jobrad Team im Jahr', 'rad', 0, 250, 5, eur(st.rad * 12), 'Leasingraten, vom Unternehmen getragen'),
       slider('a-rente', 'Steuersatz im Ruhestand', 'rente', 0, 45, 1, st.rente + ' %', 'Annahme für die spätere Besteuerung')
     ];
     var lfzSum = 6 * st.gSal, pkvPre = 2.5 * 12 * st.pkv, pkvTax = pkvPre * st.gRate / 100;
