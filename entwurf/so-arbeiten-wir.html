@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>So arbeiten wir – make it done (Entwurf)</title>
+<meta name="description" content="Entwurf: So arbeiten wir – make it done GmbH">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button{font-family:inherit}
+@keyframes mid-spin{to{transform:rotate(360deg)}}
+@keyframes mid-spin-rev{to{transform:rotate(-360deg)}}
+@keyframes mid-jam{0%,100%{transform:rotate(0deg)}35%{transform:rotate(6deg)}55%{transform:rotate(-2deg)}70%{transform:rotate(3deg)}}
+@keyframes mid-pulse{0%,100%{box-shadow:0 0 0 0 rgba(20,20,20,.28)}50%{box-shadow:0 0 0 10px rgba(20,20,20,0)}}
+.mid-pulse{animation:mid-pulse 2.4s ease-in-out infinite}
+@keyframes mid-pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.35);opacity:1}100%{transform:scale(1);opacity:1}}
+.mid-pop{animation:mid-pop .5s ease-out both}
+@keyframes mid-pop-d{0%{transform:rotate(45deg) scale(0);opacity:0}60%{transform:rotate(45deg) scale(1.35);opacity:1}100%{transform:rotate(45deg) scale(1);opacity:1}}
+.mid-station{transition:transform .25s ease;cursor:default}
+.mid-station .mid-card{transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease}
+.mid-station .mid-dot{transition:background .25s ease,color .25s ease,transform .25s ease}
+.mid-station:hover,.mid-station:focus-visible{transform:translateY(-6px)}
+.mid-station:hover .mid-name,.mid-station:focus-visible .mid-name{transform:scale(1.08)}
+.mid-station:hover .mid-card,.mid-station:focus-visible .mid-card{background:#ffffff !important;color:#141414 !important;transform:scale(1.05);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.mid-station:hover .mid-dot,.mid-station:focus-visible .mid-dot{background:#ffffff !important;color:#141414 !important;transform:scale(1.15)}
+@media (prefers-reduced-motion: reduce){.gear,.mid-pulse,.mid-pop{animation:none !important}.mid-station,.mid-station *{transition:none !important}}
+html{scroll-behavior:smooth}
+
+</style>
+</head>
+<body>
+<template id="tpl">
+
+<div style="width: 100%; background: #ffffff; color: #141414; font-family: Inter, system-ui, sans-serif">
+
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center; letter-spacing: 0.02em">Entwurf · nicht verlinkt · Texte und Begriffe in Abstimmung</div>
+
+<header style="max-width: 1120px; margin: 0 auto; padding: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px">make it done</span>
+<nav aria-label="Hauptmenü" style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 15px">
+<a href="#leistungen" style="text-decoration: none">Leistungen</a>
+<a href="#zahnraeder" style="text-decoration: none">Warum make it done</a>
+<a href="#ablauf" style="text-decoration: none; font-weight: 600">So arbeiten wir</a>
+<a href="#geschichten" style="text-decoration: none">Ergebnisse</a>
+<a href="rechner-holding.html" style="text-decoration: none">Wissen</a>
+<a href="#faq" style="text-decoration: none">Fragen</a>
+</nav>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">So arbeiten wir</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.02em; max-width: 960px">Entscheidungen vor der Handlung.<br>Nicht erst im Jahres&shy;abschluss.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 720px">Wir begleiten Unternehmer dauerhaft – mit aktuellen Zahlen, einer Struktur, die mitwächst, und einem Netzwerk aus Steuerberatern, Wirtschaftsprüfern und Rechtsanwälten. Wir sprechen mit allen. Und stehen dabei auf Ihrer Seite.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center">
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=so-arbeiten-wir" style="background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Erstgespräch vereinbaren →</a>
+<a href="#situation" style="text-decoration: none; padding: 16px 8px; font-weight: 500; font-size: 16px; color: #3d3d3d">Kennen Sie das? ↓</a>
+</div>
+</section>
+
+<section id="situation" style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Kennen Sie das?</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Sie wollen weiterkommen. Aber irgendetwas greift nicht.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 760px">Die meisten Unternehmer, mit denen wir sprechen, stecken in einer dieser Situationen. Welche kennen Sie?</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<sc-for list="{{sits}}" as="s" hint-placeholder-count="4">
+<button type="button" onClick="{{s.pick}}" aria-pressed="{{s.on}}" style="{{s.style}}">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: {{s.numColor}}">SITUATION {{s.num}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; line-height: 1.3">{{s.short}}</span>
+</button>
+</sc-for>
+</div>
+<div style="background: #ffffff; border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 22px; border: 1px solid #dddddd">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 600; line-height: 1.25; max-width: 860px">{{sitQuote}}</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d; max-width: 780px">{{sitStory}}</p>
+<div style="display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid #e4e4e4; padding-top: 22px">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was Sie wahrscheinlich schon versucht haben</span>
+<span style="font-size: 17px; line-height: 1.55">{{sitTried}}</span>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was dabei fehlt</span>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{sitMissing}}" as="m" hint-placeholder-count="2">
+<span style="font-size: 14px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 6px 14px">{{m}}</span>
+</sc-for>
+</div>
+</div>
+</div>
+<a href="#zahnraeder" onClick="{{showSitGears}}" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Zeigen, wo es hakt ↓</a>
+</div>
+<p style="margin: 8px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; line-height: 1.3; max-width: 860px">Das Problem ist selten Ihr Steuerberater, Ihr CFO oder Ihr Konzept. Es ist die Lücke dazwischen.</p>
+</div>
+</section>
+
+<section id="zahnraeder" style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Warum es hakt</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 880px">Vier Zahnräder. Erst wenn alle greifen, bewegt sich etwas.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">So sieht es aus, wenn Zahlen, Struktur, Abstimmung und Umsetzung ineinandergreifen. Schauen Sie, was passiert, wenn nur ein CFO-Dienst oder nur eine Strukturberatung im Spiel ist – oder nehmen Sie selbst ein Zahnrad heraus.</p>
+<div role="group" aria-label="Variante wählen" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{presets}}" as="v" hint-placeholder-count="3">
+<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.btnStyle}}">{{v.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: center">
+<div style="flex: 1.6 1 560px; min-width: 0; overflow-x: auto; background: #f4f4f4; border-radius: 24px; padding: 20px 8px">
+<div style="position: relative; width: 640px; height: 390px; margin: 0 auto">
+<sc-for list="{{gears}}" as="g" hint-placeholder-count="4">
+<button type="button" onClick="{{g.toggle}}" aria-pressed="{{g.present}}" aria-label="{{g.aria}}" style="{{g.boxStyle}}">
+<sc-if value="{{g.present}}" hint-placeholder-val="{{ true }}">
+<svg class="gear" viewBox="{{g.vb}}" width="{{g.size}}" height="{{g.size}}" aria-hidden="true" style="{{g.svgStyle}}"><path d="{{g.teeth}}" fill="{{g.fill}}"></path><circle cx="{{g.c}}" cy="{{g.c}}" r="{{g.ringR}}" fill="#f4f4f4"></circle><path d="{{g.spokes}}" fill="none" stroke="{{g.fill}}" stroke-width="{{g.spokeW}}" stroke-linecap="round"></path><circle cx="{{g.c}}" cy="{{g.c}}" r="{{g.hubR}}" fill="{{g.fill}}"></circle><circle cx="{{g.c}}" cy="{{g.c}}" r="{{g.holeR}}" fill="#f4f4f4"></circle></svg>
+</sc-if>
+<sc-if value="{{g.missing}}" hint-placeholder-val="{{ false }}">
+<span style="{{g.ghostStyle}}"><span style="font-size: 13px; font-weight: 600; color: #8a8a8a">fehlt</span></span>
+</sc-if>
+</button>
+<span style="{{g.labelStyle}}"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">{{g.label}}</span><span style="font-size: 12px; color: #5c5c5c">{{g.sub}}</span></span>
+</sc-for>
+</div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">{{gearHead}}</span>
+<sc-for list="{{gearMsgs}}" as="msg" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-bottom: 1px solid #e4e4e4">
+<span style="font-weight: 600; font-size: 16px">{{msg.t}}</span>
+<span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">{{msg.x}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="zeitpunkt" style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Der Zeitpunkt</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Wer erst im Jahresabschluss hinschaut, kann nur noch Schaden begrenzen.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 760px">Entscheidungen fallen im Alltag: ein Vertrag, eine Gründung, eine Investition. Entscheidend ist, wann jemand mit Fachwissen draufschaut.</p>
+<div style="background: #ffffff; border-radius: 24px; padding: 32px; border: 1px solid #dddddd; overflow-x: auto">
+<div style="min-width: 820px; display: grid; grid-template-columns: 170px repeat(4, minmax(0, 1fr)); gap: 12px 14px; align-items: stretch">
+<span></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px"><span style="color: #8a8a8a; font-size: 13px; display: block">01</span>Idee &amp; Entscheidung</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px"><span style="color: #8a8a8a; font-size: 13px; display: block">02</span>Handlung</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px"><span style="color: #8a8a8a; font-size: 13px; display: block">03</span>Buchhaltung</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px"><span style="color: #8a8a8a; font-size: 13px; display: block">04</span>Jahresabschluss</span>
+
+<span style="font-size: 14px; font-weight: 600; color: #5c5c5c; align-self: center">So läuft es oft</span>
+<span style="background: #f4f4f4; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45; color: #5c5c5c">Sie entscheiden – oft allein und unter Zeitdruck.</span>
+<span style="background: #f4f4f4; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45; color: #5c5c5c">Vertrag, Gründung, Investition: Fakten sind geschaffen.</span>
+<span style="background: #f4f4f4; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45; color: #5c5c5c">Die BWA kommt Wochen später.</span>
+<span class="mid-pulse" style="background: #ffffff; border: 2px dashed #141414; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45; font-weight: 600">Erst hier schaut jemand drauf – oft Monate danach. Es bleibt Schadensbegrenzung.</span>
+
+<span style="font-size: 14px; font-weight: 700; align-self: center">Mit make it done</span>
+<span class="mid-pulse" style="background: #141414; color: #ffffff; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45; font-weight: 600">Hier begleiten wir: Varianten, Zahlen und Folgen liegen vorher auf dem Tisch.</span>
+<span style="background: #f4f4f4; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45">Abgestimmt mit Steuerberater und Anwalt, sauber umgesetzt.</span>
+<span style="background: #f4f4f4; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45">Zahlen just in time statt Warten auf die BWA.</span>
+<span style="background: #f4f4f4; border-radius: 14px; padding: 16px; font-size: 14px; line-height: 1.45">Keine Überraschungen: Der Abschluss bestätigt den Plan.</span>
+
+<span style="font-size: 13px; font-weight: 600; color: #5c5c5c; align-self: center">Gestaltungsspielraum</span>
+<div style="grid-column: span 4; display: flex; flex-direction: column; gap: 6px; padding-top: 8px">
+<div style="height: 12px; border-radius: 999px; background: linear-gradient(90deg, #141414, #e4e4e4)"></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #5c5c5c; font-weight: 500"><span>groß</span><span>keiner mehr</span></div>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; line-height: 1.3; max-width: 860px">Gestaltet wird vor der Handlung. Danach wird nur noch bestätigt – oder repariert.</p>
+</div>
+</section>
+
+
+<section style="background: #141414; color: #f2f2f2">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; gap: 48px; flex-wrap: wrap; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #b8b8b8">Am Tisch</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 46px); line-height: 1.1">Wir sprechen mit allen.<br>Und sitzen auf Ihrer Seite.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #d4d4d4">Ihr Steuerberater kann nur so gut bewerten, wie Ihr Sachverhalt aufbereitet ist. Wir machen die Vorarbeit, sprechen seine Sprache – und argumentieren mit Fachwissen in Ihrem Interesse.</p>
+<div style="border-top: 1px solid #3a3a3a; padding-top: 24px; display: flex; flex-direction: column; gap: 10px; min-height: 150px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">{{seatTitle}}</span>
+<span style="font-size: 17px; line-height: 1.6; color: #d4d4d4">{{seatText}}</span>
+</div>
+</div>
+<div style="flex: 1 1 400px; min-width: 0; display: flex; justify-content: center">
+<div style="position: relative; width: 400px; max-width: 100%; height: 380px">
+<div aria-hidden="true" style="position: absolute; left: 50px; top: 100px; width: 300px; height: 180px; border-radius: 50%; border: 2px solid #5a5a5a; background: #1f1f1f"></div>
+<div aria-hidden="true" style="position: absolute; left: 30px; top: 6px; width: 300px; height: 70px; border: 2px dashed #8a8a8a; border-radius: 18px"></div>
+<span aria-hidden="true" style="position: absolute; left: 230px; top: 84px; font-size: 13px; color: #b8b8b8; font-weight: 500">Ihre Seite</span>
+<sc-for list="{{seats}}" as="p" hint-placeholder-count="4">
+<button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.style}}">{{p.label}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section id="ablauf" style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Der Weg</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 60px); line-height: 1.04; letter-spacing: -0.01em; max-width: 900px">Erst Kurs setzen.<br>Dann Kurs halten.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Wie in der Navigation: Standort bestimmen, Ziel festlegen, Route planen, Instrumente einbauen – und dann auf Kurs bleiben. Genau so arbeiten wir mit Ihnen.</p>
+
+<div style="background: #141414; color: #ffffff; border-radius: 28px; padding: 44px 40px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #b8b8b8">Paket 1 · Kurs setzen</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.05">Startklar in 90 Tagen</span>
+<span style="font-size: 18px; color: #d4d4d4">Zahlen live, Ziel klar, Route fest. <span style="font-size: 12px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 3px 10px; margin-left: 6px; color: #b8b8b8">Name in Abstimmung</span></span>
+</div>
+<span style="font-size: 14px; color: #b8b8b8">Start: Erstgespräch</span>
+</div>
+<div style="overflow-x: auto">
+<div style="position: relative; min-width: 900px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+<div aria-hidden="true" style="position: absolute; left: 22px; right: 0; top: 21px; height: 2px; background: repeating-linear-gradient(90deg, #8a8a8a 0 10px, transparent 10px 18px)"></div>
+<sc-for list="{{route}}" as="r" hint-placeholder-count="5">
+<div class="mid-station" tabindex="0" style="position: relative; display: flex; flex-direction: column; gap: 10px; border-radius: 16px; padding: 4px; outline: none">
+<span class="mid-dot" style="{{r.dotStyle}}">{{r.num}}</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8a8a">{{r.nav}} · {{r.time}}</span>
+<span class="mid-name" style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.15; transform-origin: left center; transition: transform .25s ease">{{r.name}}</span>
+<span class="mid-card" style="{{r.textStyle}}">{{r.text}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px">
+<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 20V3h11l-2 4 2 4H5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"></path></svg>
+<span>Tag 90: Kurs gesetzt</span>
+</div>
+</div>
+
+<div style="border: 3px solid #141414; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 22px; background: #ffffff">
+<div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap">
+<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l14 5v10c0 9-6 15-14 19C12 33 6 27 6 18V8z" fill="#141414"></path><path d="M13 20l5 5 9-10" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 44px); font-weight: 700; line-height: 1">Unsere Garantie.</span>
+<span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 5px 12px; color: #3d3d3d">in Abstimmung</span>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; line-height: 1.3; max-width: 900px">An Tag 90 steht alles, was wir zugesagt haben. Sonst [arbeiten wir ohne Aufpreis weiter, bis es steht].</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px">
+<sc-for list="{{promises}}" as="pr" hint-placeholder-count="6">
+<div style="display: flex; gap: 10px; align-items: flex-start; background: #f4f4f4; border-radius: 12px; padding: 14px 16px">
+<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#141414" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="font-size: 15px; line-height: 1.45; font-weight: 500">{{pr}}</span>
+</div>
+</sc-for>
+</div>
+<span style="font-size: 17px; line-height: 1.6; color: #3d3d3d; max-width: 900px">Und selbst wenn Sie danach allein weitergehen: Sie haben eine komplette Unternehmensanalyse, ein fertig ausgebautes Dashboard mit Ihren Zahlen auf einen Blick und eine Roadmap, mit der Ihr Steuerberater direkt umsetzen kann.</span>
+<button type="button" onClick="{{toggleCond}}" aria-expanded="{{condOpen}}" style="align-self: flex-start; background: transparent; border: 0; padding: 8px 0; font-size: 14px; font-weight: 600; color: #3d3d3d; cursor: pointer; text-decoration: underline; min-height: 44px">{{condLabel}}</button>
+<sc-if value="{{condOpen}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5c5c5c; max-width: 860px">Die Garantie gilt, wenn Sie jeden vereinbarten Termin wahrnehmen und Ihre To-dos innerhalb von [X] Werktagen erledigen – denn wir sind auf Ihre Unterlagen und Entscheidungen angewiesen. Maßnahmen, die an gesetzliche Fristen oder Stichtage gebunden sind (etwa eine Umwandlung), planen wir in den 90 Tagen verbindlich und setzen sie in Paket 2 um.</p>
+</sc-if>
+</div>
+
+<div style="background: #f4f4f4; border-radius: 28px; padding: 44px 40px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Paket 2 · Kurs halten</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.05">make it done.</span>
+<span style="font-size: 18px; color: #3d3d3d">Umsetzen und auf Kurs bleiben – während Ihr Unternehmen wächst.</span>
+</div>
+<div style="display: flex; gap: 32px; flex-wrap: wrap">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was jetzt umgesetzt wird</span>
+<sc-for list="{{p2items}}" as="it" hint-placeholder-count="5">
+<span style="font-size: 17px; line-height: 1.4; padding: 10px 0; border-bottom: 1px solid #dcdcdc">{{it}}</span>
+</sc-for>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Wie wir Kurs halten</span>
+<div style="background: #ffffff; border-radius: 16px; padding: 18px 20px; display: flex; gap: 14px; align-items: center"><span style="width: 14px; height: 14px; border-radius: 50%; background: #141414; flex-shrink: 0"></span><span style="font-size: 16px; line-height: 1.45"><b>Steuerungsgespräch</b> – monatlich: Zahlen, Abweichungen, nächste Schritte.</span></div>
+<div style="background: #ffffff; border-radius: 16px; padding: 18px 20px; display: flex; gap: 14px; align-items: center"><span style="width: 13px; height: 13px; border: 2px solid #141414; transform: rotate(45deg); flex-shrink: 0; margin: 0 1px"></span><span style="font-size: 16px; line-height: 1.45"><b>Meilensteingespräch</b> – quartalsweise, einmal im Jahr mit Ihrem Steuerberater am Tisch.</span></div>
+<div style="background: #141414; color: #ffffff; border-radius: 16px; padding: 18px 20px; display: flex; gap: 14px; align-items: center"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="flex-shrink: 0"><path d="M9 1L3 9h5l-1 6 6-8H8z" fill="#ffffff"></path></svg><span style="font-size: 16px; line-height: 1.45"><b>Vorab-Check</b> – jederzeit, bevor Sie investieren, einstellen oder unterschreiben.</span></div>
+</div>
+</div>
+<span style="font-size: 15px; color: #3d3d3d">Schon im Workshop „make plans done.“ buchbar – mit [Vorteil für Frühbucher].</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 18px; margin-top: 12px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 3vw, 34px); line-height: 1.15">Gespräche: am Anfang eng, dann im Takt.</h3>
+<div style="overflow-x: auto">
+<div style="min-width: 900px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px">
+<span style="grid-column: span 3; border-top: 3px solid #141414; padding-top: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Paket 1 · alle zwei Wochen</span>
+<span style="grid-column: span 9; border-top: 3px dashed #8a8a8a; padding-top: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Paket 2 · monatlich</span>
+<sc-for list="{{rhythm}}" as="rm" hint-placeholder-count="12">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 14px 2px; border-radius: 12px; background: #f4f4f4; min-height: 132px">
+<span style="font-size: 12px; font-weight: 600; color: #5c5c5c">{{rm.label}}</span>
+<span style="display: flex; gap: 5px; min-height: 14px">
+<span class="mid-pop" style="{{rm.dot1}}"></span>
+<sc-if value="{{rm.two}}" hint-placeholder-val="{{ false }}"><span class="mid-pop" style="{{rm.dot2}}"></span></sc-if>
+</span>
+<sc-if value="{{rm.hasMs}}" hint-placeholder-val="{{ false }}">
+<span style="{{rm.msStyle}}"></span>
+<span style="font-size: 11px; line-height: 1.25; text-align: center; color: #3d3d3d; font-weight: 500">{{rm.ms}}</span>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #3d3d3d; align-items: center">
+<span style="display: flex; gap: 8px; align-items: center"><span style="width: 12px; height: 12px; border-radius: 50%; background: #141414; display: inline-block"></span>Steuerungsgespräch</span>
+<span style="display: flex; gap: 8px; align-items: center"><span style="width: 11px; height: 11px; background: #ffffff; border: 2px solid #141414; transform: rotate(45deg); display: inline-block"></span>Meilensteingespräch</span>
+<span>Vorab-Check: jederzeit</span>
+<span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px">Vorschlag · in Abstimmung</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d; max-width: 820px">make structure done. und make finance done. gibt es auch einzeln. Die volle Wirkung entsteht, wenn beide ineinandergreifen.</p>
+</section>
+
+<section style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Warum wir</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 820px">Was uns von CFO-Diensten und Strukturberatern unterscheidet.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Zahlen und Struktur in einer Hand</span><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wir sehen beides zusammen – deshalb passen Entscheidungen zu Ihren Zahlen.</span></div>
+<div style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Dauerhaft dabei, nicht im Rückblick</span><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wir begleiten laufend – nicht einmal im Jahr, wenn der Abschluss gemacht wird.</span></div>
+<div style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Auf Augenhöhe mit Ihren Beratern</span><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wir bereiten Ihren Sachverhalt auf und sprechen die Sprache von Steuerberater und Anwalt.</span></div>
+<div style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Nur Ihnen verpflichtet</span><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Ihre Berater beauftragen Sie direkt. Wir erhalten keine Provision – und stehen auf Ihrer Seite.</span></div>
+<div style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">done statt Konzeptpapier</span><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wir setzen um: Prozesse, Systeme, Fristen – bis es läuft.</span></div>
+<div style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Selbst gelebt</span><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Eigene GmbH, eigene Holdingstruktur seit 2023 – wir wissen, wie es sich anfühlt.</span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; gap: 48px; flex-wrap: wrap">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Der Beweis</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.12">Ein Werdegang, der beide Seiten des Tisches kennt.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d">Olga Bertram, Gründerin von make it done.</p>
+<a href="https://olga-bertram.de/ueber-mich.html" style="font-weight: 600; font-size: 16px">Mehr über Olga →</a>
+</div>
+<div style="flex: 1.3 1 420px; min-width: 0; display: flex; flex-direction: column">
+<div style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; width: 170px; flex-shrink: 0">Prüfung &amp; Beratung</span><span style="font-size: 16px; line-height: 1.5; color: #3d3d3d">Wirtschaftsprüfung und Steuerberatung – die Perspektive der Berater von innen.</span></div>
+<div style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; width: 170px; flex-shrink: 0">Unternehmen</span><span style="font-size: 16px; line-height: 1.5; color: #3d3d3d">CFO/COO der Felix Thönnessen GmbH – die Perspektive der Geschäftsführung.</span></div>
+<div style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; width: 170px; flex-shrink: 0">Lehre</span><span style="font-size: 16px; line-height: 1.5; color: #3d3d3d">Fast 20 Jahre Dozentin für Steuern und Rechnungswesen.</span></div>
+<div style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; width: 170px; flex-shrink: 0">Netzwerk</span><span style="font-size: 16px; line-height: 1.5; color: #3d3d3d">Feste Partner: Steuerberater, Wirtschaftsprüfer, Rechtsanwälte und Anlageberater [Versicherungsmakler in Vorbereitung].</span></div>
+</div>
+</section>
+
+<section id="geschichten" style="max-width: 1120px; margin: 0 auto; padding: 0 24px 88px; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Ergebnisse &amp; Kundenstimmen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.12; max-width: 860px">Unternehmer, die vor derselben Frage standen.</h2>
+<div role="group" aria-label="Geschichte wählen" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{stories}}" as="sy" hint-placeholder-count="3">
+<button type="button" onClick="{{sy.pick}}" aria-pressed="{{sy.on}}" style="{{sy.btnStyle}}">{{sy.label}}</button>
+</sc-for>
+</div>
+<div style="background: #f4f4f4; border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">{{storyName}}</span>
+<span style="font-size: 15px; color: #5c5c5c">{{storySub}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div style="background: #ffffff; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Ausgangslage</span><span style="font-size: 16px; line-height: 1.55">{{storyLage}}</span></div>
+<div style="background: #ffffff; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was wir gemacht haben</span><span style="font-size: 16px; line-height: 1.55">{{storyDid}}</span></div>
+<div style="background: #141414; color: #ffffff; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b8b8b8">Ergebnis</span><span style="font-size: 16px; line-height: 1.55">{{storyResult}}</span></div>
+</div>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 500; line-height: 1.4; color: #3d3d3d">{{storyQuote}}</p>
+<sc-if value="{{storyCalc}}" hint-placeholder-val="{{ true }}">
+<a href="rechner-holding.html" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px">Möchten Sie den Effekt für sich berechnen? Zum Rechner →</a>
+</sc-if>
+</div>
+<span style="align-self: flex-start; font-size: 13px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 6px 14px; color: #3d3d3d">Inhalte und Freigaben folgen von Olga</span>
+</section>
+
+<section id="faq" style="background: #f4f4f4">
+<div style="max-width: 880px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Häufige Fragen</span>
+<h2 style="margin: 0 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">Was Unternehmer uns vorher fragen.</h2>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="10">
+<div style="background: #ffffff; border-radius: 14px">
+<button type="button" onClick="{{f.toggle}}" aria-expanded="{{f.open}}" style="width: 100%; background: transparent; border: 0; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; cursor: pointer; font-size: 17px; font-weight: 600; color: #141414; min-height: 44px">
+<span>{{f.q}}</span>
+<span aria-hidden="true" style="font-size: 22px; font-weight: 400">{{f.sign}}</span>
+</button>
+<sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 24px 24px; font-size: 16px; line-height: 1.65; color: #3d3d3d">{{f.a}}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; max-width: 820px">Bevor Sie entscheiden: sprechen Sie mit uns.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 640px">15 Minuten, unverbindlich. Sie schildern, was ansteht – wir sagen Ihnen, ob und wie wir helfen können.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center">
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=so-arbeiten-wir" style="background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Erstgespräch vereinbaren →</a>
+<a href="https://wa.me/4915123136397?text=(make%20it%20done%20%C2%B7%20So%20arbeiten%20wir)%20" style="font-weight: 500; font-size: 16px">oder per WhatsApp</a>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #e4e4e4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 28px 24px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #5c5c5c">
+<span>© 2026 make it done GmbH</span><a href="#" style="color: #5c5c5c">Impressum</a><a href="#" style="color: #5c5c5c">Datenschutz</a>
+</div>
+</footer>
+
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { story: 0, seat: 'mid', faq: 0, sit: 0, preset: 'mid', gears: ['zahlen', 'struktur', 'abstimmung', 'umsetzung'], cond: false };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var GEARS = [
+      { k: 'zahlen', label: 'Zahlen', sub: 'aktuell, just in time', cx: 130, cy: 230, r: 96, below: true,
+        t: 'Ohne Zahlen', x: 'fehlt die Grundlage. Strukturentscheidungen werden vertagt – oder aus dem Bauch getroffen.' },
+      { k: 'struktur', label: 'Struktur', sub: 'Rechtsform, Holding', cx: 275.5, cy: 146, r: 72, below: false,
+        t: 'Ohne Struktur', x: 'bleiben Zahlen Verwaltung. Niemand stellt die Weichen für Gewinn, Vermögen und Wachstum.' },
+      { k: 'abstimmung', label: 'Abstimmung', sub: 'Steuerberater & Anwalt', cx: 376.6, cy: 231, r: 60, below: true,
+        t: 'Ohne Abstimmung auf Augenhöhe', x: 'wartet alles auf den Steuerberater – oder er bewertet einen Sachverhalt, der nie sauber aufbereitet wurde.' },
+      { k: 'umsetzung', label: 'Umsetzung', sub: 'im Alltag', cx: 512, cy: 182, r: 84, below: false,
+        t: 'Ohne Umsetzung', x: 'bleibt das Konzept in der Schublade. Im Unternehmen ändert sich nichts.' }
+    ];
+    function gearPath(r, n, c, phase) {
+      var ro = r + 5, ri = r - 5, step = Math.PI * 2 / n, d = '';
+      for (var i = 0; i < n; i++) {
+        var a = i * step + phase;
+        var pts = [[ri, a - step * 0.32], [ro, a - step * 0.17], [ro, a + step * 0.17], [ri, a + step * 0.32], [ri, a + step * 0.68]];
+        for (var j = 0; j < pts.length; j++) {
+          d += (i === 0 && j === 0 ? 'M' : 'L') + (c + pts[j][0] * Math.cos(pts[j][1])).toFixed(1) + ' ' + (c + pts[j][0] * Math.sin(pts[j][1])).toFixed(1) + ' ';
+        }
+      }
+      return d + 'Z';
+    }
+    function spokes(c, from, to) {
+      var d = '';
+      for (var k = 0; k < 5; k++) {
+        var a = k * Math.PI * 2 / 5 - Math.PI / 2;
+        d += 'M' + (c + from * Math.cos(a)).toFixed(1) + ' ' + (c + from * Math.sin(a)).toFixed(1) + ' L' + (c + to * Math.cos(a)).toFixed(1) + ' ' + (c + to * Math.sin(a)).toFixed(1) + ' ';
+      }
+      return d;
+    }
+    var present = st.gears;
+    var allIn = GEARS.every(function (g) { return present.indexOf(g.k) >= 0; });
+    var gears = GEARS.map(function (g, i) {
+      var isIn = present.indexOf(g.k) >= 0;
+      var n = Math.round(g.r / 4), half = g.r + 7, size = half * 2;
+      var anim = allIn ? ((i % 2 ? 'mid-spin-rev ' : 'mid-spin ') + (n * 0.5).toFixed(1) + 's linear infinite') : 'mid-jam 1.6s ease-in-out infinite';
+      var ringR = g.r - 17;
+      return {
+        label: g.label, sub: g.sub, present: isIn, missing: !isIn,
+        aria: g.label + (isIn ? ' herausnehmen' : ' einsetzen'),
+        fill: allIn ? '#141414' : '#7a7a7a',
+        vb: '0 0 ' + size + ' ' + size, size: size, c: half,
+        teeth: gearPath(g.r, n, half, i % 2 ? Math.PI / n : 0),
+        ringR: ringR, spokes: spokes(half, g.r * 0.2, ringR + 2), spokeW: Math.max(6, Math.round(g.r * 0.11)),
+        hubR: Math.round(g.r * 0.27), holeR: Math.round(g.r * 0.1),
+        toggle: function () {
+          var next = isIn ? present.filter(function (k) { return k !== g.k; }) : present.concat([g.k]);
+          self.setState({ gears: next, preset: '' });
+        },
+        boxStyle: 'position: absolute; left: ' + (g.cx - half).toFixed(1) + 'px; top: ' + (g.cy - half).toFixed(1) + 'px; width: ' + size + 'px; height: ' + size + 'px; padding: 0; border: 0; background: transparent; border-radius: 50%; cursor: pointer',
+        svgStyle: 'position: absolute; left: 0; top: 0; transform-origin: 50% 50%; animation: ' + anim,
+        ghostStyle: 'position: absolute; left: 6px; top: 6px; right: 6px; bottom: 6px; border: 3px dashed #a8a8a8; border-radius: 50%; display: flex; align-items: center; justify-content: center',
+        labelStyle: 'position: absolute; left: ' + (g.cx - 80).toFixed(1) + 'px; width: 160px; top: ' + (g.below ? g.cy + g.r + 12 : g.cy - g.r - 54).toFixed(1) + 'px; display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: none; color: ' + (isIn ? '#141414' : '#8a8a8a')
+      };
+    });
+    var gearMsgs = allIn
+      ? [{ t: 'Zahlen tragen die Struktur.', x: 'Die Struktur wird mit Ihren Beratern abgestimmt – und im Alltag umgesetzt. Genau dieses Zusammenspiel übernehmen wir.' }]
+      : GEARS.filter(function (g) { return present.indexOf(g.k) < 0; }).map(function (g) { return { t: g.t, x: g.x }; });
+    var PRE = {
+      mid: { label: 'Alles greift · make it done', gears: ['zahlen', 'struktur', 'abstimmung', 'umsetzung'] },
+      cfo: { label: 'Nur CFO-Dienst', gears: ['zahlen'] },
+      struktur: { label: 'Nur Strukturberatung', gears: ['struktur'] }
+    };
+    var presets = ['mid', 'cfo', 'struktur'].map(function (k) {
+      var isOn = st.preset === k;
+      return { label: PRE[k].label, on: isOn, pick: function () { self.setState({ preset: k, gears: PRE[k].gears.slice() }); },
+        btnStyle: 'border: 1px solid #141414; border-radius: 999px; padding: 12px 20px; font-size: 15px; cursor: pointer; min-height: 44px; transition: background .2s; ' + (isOn ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;') };
+    });
+
+    var SITS = [
+      { short: '„Ich will meine Struktur anpassen – aber meine Zahlen hinken hinterher.“',
+        story: 'Das Unternehmen wächst. GmbH, vielleicht eine Holding – die Idee ist da. Aber die aktuellen Zahlen? Die BWA ist Wochen alt, die Planung steht im Kopf. Also wird die Entscheidung vertagt. Oder aus dem Bauch getroffen.',
+        tried: 'Eine Strukturberatung. Das Konzept klingt gut – aber worauf baut es auf, und wer setzt es um?',
+        missing: ['Zahlen', 'Umsetzung'], gears: ['struktur', 'abstimmung'] },
+      { short: '„Ich habe meine Zahlen im Griff – aber was mache ich jetzt daraus?“',
+        story: 'Dashboard, Liquiditätsplan, vielleicht sogar ein CFO-Dienst. Sie sehen genau, was passiert. Nur: Passt Ihre Rechtsform noch? Wie kommt der Gewinn sinnvoll bei Ihnen an? Wer stellt die Weichen?',
+        tried: 'Ein externer CFO. Er liefert Zahlen – Struktur und die Abstimmung mit Steuerberater und Anwalt gehören nicht dazu.',
+        missing: ['Struktur', 'Abstimmung'], gears: ['zahlen', 'umsetzung'] },
+      { short: '„Das Konzept liegt in der Schublade.“',
+        story: 'Die Beratung war gut, die Präsentation auch. Dann kam der Alltag: Verträge, Konten, Prozesse – niemand hat es angepackt. Ein halbes Jahr später ist alles wie vorher.',
+        tried: 'Ein Beratungsprojekt mit Abschlussbericht.',
+        missing: ['Umsetzung'], gears: ['zahlen', 'struktur', 'abstimmung'] },
+      { short: '„Mein Steuerberater fragt nach dem Sachverhalt – und ich weiß nicht, wo ich anfangen soll.“',
+        story: 'Sie spüren, dass etwas geregelt werden muss. Ihr Steuerberater braucht dafür einen klaren Sachverhalt, Unterlagen, Zahlen. Zwischen Tagesgeschäft und Kunden bleibt das liegen – und die Antwort kommt, wenn längst gehandelt wurde.',
+        tried: 'Den Steuerberater fragen – meist im Rückblick, beim Jahresabschluss.',
+        missing: ['Abstimmung auf Augenhöhe', 'Struktur'], gears: ['zahlen', 'umsetzung'] },
+      { short: '„Ich weiß erst Mitte Februar, was der Dezember gebracht hat.“',
+        story: 'Sie wollen investieren, jemanden einstellen oder Geld entnehmen. Aber die letzte Auswertung ist sechs Wochen alt. Also entscheiden Sie nach Kontostand – oder schieben es auf. Und vor der nächsten Steuerzahlung bleibt dieses mulmige Gefühl.',
+        tried: 'Auf die BWA vom Steuerberater warten. Sie kommt, wenn der Monat längst Geschichte ist – gebucht nach Standard-Kontenrahmen, nicht nach dem, was Sie steuern wollen.',
+        missing: ['Zahlen just in time', 'Buchhaltung, die Entscheidungen liefert'], gears: ['struktur', 'abstimmung', 'umsetzung'] }
+    ];
+    var sits = SITS.map(function (d, i) {
+      var isOn = st.sit === i;
+      return { num: '0' + (i + 1), short: d.short, on: isOn, numColor: isOn ? '#b8b8b8' : '#5c5c5c',
+        pick: function () { self.setState({ sit: i }); },
+        style: 'display: flex; flex-direction: column; gap: 10px; text-align: left; padding: 22px; border-radius: 16px; cursor: pointer; min-height: 150px; transition: background .25s, color .25s; ' + (isOn ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;') };
+    });
+    var cSit = SITS[st.sit];
+
+    var S = {
+      sie: { t: 'Sie', x: 'Sie entscheiden. Sie müssen nicht jedes Detail kennen – aber jede Entscheidung verstehen. Dafür sorgen wir.' },
+      mid: { t: 'make it done', x: 'Wir bereiten Ihre Situation auf, rechnen Varianten durch und sprechen mit Steuerberater und Anwalt auf Augenhöhe – in Ihrem Interesse. Wir sind nur Ihnen verpflichtet.' },
+      stb: { t: 'Steuerberater', x: 'Prüft und bewertet steuerlich – auf Basis des Sachverhalts, den er bekommt. Je klarer der aufbereitet ist, desto sicherer seine Grundlage. Sie beauftragen ihn direkt.' },
+      ra: { t: 'Rechtsanwalt', x: 'Gestaltet Verträge und sichert rechtlich ab. Ebenfalls direkt von Ihnen beauftragt – ohne Provision an uns.' }
+    };
+    var pos = { sie: [40, 20], mid: [190, 20], stb: [20, 300], ra: [220, 300] };
+    var seats = ['sie', 'mid', 'stb', 'ra'].map(function (k) {
+      var isOn = st.seat === k;
+      return { label: S[k].t, on: isOn, pick: function () { self.setState({ seat: k }); },
+        style: 'position: absolute; left: ' + pos[k][0] + 'px; top: ' + pos[k][1] + 'px; width: 140px; min-height: 48px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .2s, color .2s; ' +
+          (isOn ? 'background: #ffffff; color: #141414; border: 2px solid #ffffff;' : 'background: #141414; color: #f2f2f2; border: 2px solid #8a8a8a;') };
+    });
+
+
+    var ROUTE = [
+      { nav: 'Standort', time: 'Woche 1–2', name: 'make it visible.', text: 'Unternehmensanalyse: Zahlen, Buchhaltung, Verträge, Rechtsform, Prozesse – plus Onboarding-Kurs zu Ihren Gestaltungsmöglichkeiten.' },
+      { nav: 'Ziel', time: 'Woche 2', name: 'make plans done.', text: 'Zielbild-Workshop: persönlich und unternehmerisch, für 1, 3 und 10 Jahre – Familie, Vermögen, Investitionen, Exit.' },
+      { nav: 'Route', time: 'bis Tag 14', name: 'make structure done.', text: 'Struktur-Roadmap passend zum Zielbild – die Fragen an Steuerberater und Anwalt sind fertig vorbereitet.' },
+      { nav: 'Instrumente', time: 'Tag 30–90', name: 'make finance done.', text: 'Ihr Zahlenfundament – fertig umgesetzt: individueller Kontenplan, Kennzahlen, Cashflow – automatisiert, Dashboard live.', hl: true },
+      { nav: 'Flugplan', time: 'Tag 90', name: 'Umsetzungsplan', text: 'Quick Wins erledigt, alles Weitere mit Terminen – auch fristgebundene Schritte wie eine Umwandlung.' }
+    ];
+    var route = ROUTE.map(function (d, i) {
+      return { num: String(i + 1), nav: d.nav, time: d.time, name: d.name, text: d.text,
+        dotStyle: 'position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Space Grotesk, sans-serif; font-weight: 700; font-size: 16px; background: #141414; color: #ffffff; border: 2px solid #ffffff;',
+        textStyle: 'font-size: 15px; line-height: 1.5; color: #d4d4d4; background: #1f1f1f; border-radius: 12px; padding: 12px 14px; font-weight: 500;' };
+    });
+    var promises = ['Unternehmensanalyse und Onboarding-Kurs', 'Zielbild für 1, 3 und 10 Jahre', 'Struktur-Roadmap mit Steuerberater-Agenda', 'Zahlenfundament fertig umgesetzt: Kontenplan, Automatisierung, Dashboard', 'Quick Wins ohne Fristbindung erledigt', 'Umsetzungsplan mit Terminen für alles Weitere'];
+    var p2items = ['Strategische Entscheidungen begleiten', 'Einstellungen und Verträge', 'Lohnsteuer- und Benefit-Themen', 'Maßnahmen mit Fristen – etwa eine Umwandlung', 'Zahlen laufend just in time'];
+    var MS = { 1: 'Roadmap · Tag 14', 3: 'Umsetzungsplan · Tag 75', 6: 'Halbjahr', 9: 'Quartal', 12: 'Jahresgespräch mit Steuerberater' };
+    var rhythm = [];
+    for (var m = 1; m <= 12; m++) {
+      var del = (m * 0.12).toFixed(2) + 's';
+      rhythm.push({ label: 'Monat ' + m, two: m <= 3, hasMs: !!MS[m], ms: MS[m] || '',
+        dot1: 'width: 12px; height: 12px; border-radius: 50%; background: #141414; display: inline-block; animation-delay: ' + del,
+        dot2: 'width: 12px; height: 12px; border-radius: 50%; background: #141414; display: inline-block; animation-delay: ' + (m * 0.12 + 0.06).toFixed(2) + 's',
+        msStyle: 'width: 12px; height: 12px; background: #ffffff; border: 2px solid #141414; display: inline-block; animation: mid-pop-d .5s ease-out both; animation-delay: ' + (m * 0.12 + 0.3).toFixed(2) + 's' });
+    }
+
+    var STO = [
+      { label: 'Felix Thönnessen GmbH', name: 'Felix Thönnessen GmbH', sub: '[Branche · Größe]', lage: 'Eine erfolgreiche GmbH, aber keine Holding. Beteiligungen lagen teils im Unternehmen, teils privat – mit Folgen für die Haftung und dafür, was von Gewinnen und Exits zum Reinvestieren übrig blieb.', did: 'Eine doppelstöckige Holdingstruktur aufgebaut, eine Immobiliengesellschaft und eine Investment-Tochter darunter angebunden. Verträge und Vergütung neu aufgestellt: mehr Netto vom Brutto über Sachbezüge und Benefits, Absicherung bei Krankheit. Umgesetzt gemeinsam mit Steuerberater und Anwalt.', calc: true, result: 'Gewinne und Exit-Erlöse kommen fast vollständig in der Holding an und arbeiten dort weiter. Risiken sind getrennt, Verluste lassen sich verrechnen, das Team bekommt mehr Netto vom Brutto.', quote: '„[Zitat Felix – nach Freigabe]“' },
+      { label: 'Kunde B (anonym)', name: 'Dienstleister, [Rechtsform]', sub: '[Branche · Größe]', lage: '[Ausgangslage]', did: '[Was make it done gemacht hat]', result: '[Ergebnis – möglichst mit Zahl]', quote: '„[Zitat, anonymisiert]“' },
+      { label: 'Kunde C (anonym)', name: 'Unternehmer, [Rechtsform]', sub: '[Branche · Größe]', lage: '[Ausgangslage]', did: '[Was make it done gemacht hat]', result: '[Ergebnis – möglichst mit Zahl]', quote: '„[Zitat, anonymisiert]“' }
+    ];
+    var stories = STO.map(function (d, i) {
+      var isOn = st.story === i;
+      return { label: d.label, on: isOn, pick: function () { self.setState({ story: i }); },
+        btnStyle: 'border: 1px solid #141414; border-radius: 999px; padding: 12px 20px; font-size: 15px; cursor: pointer; min-height: 44px; transition: background .2s; ' + (isOn ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;') };
+    });
+    var cst = STO[st.story];
+    var FAQ = [
+      { q: 'Muss ich mich gleich langfristig binden?', a: 'Nein. Sie starten mit den ersten 90 Tagen. Ob Sie danach mit Paket 2 weitermachen, entscheiden Sie selbst – Analyse, Dashboard und Roadmap gehören in jedem Fall Ihnen.' },
+      { q: 'Was, wenn in 90 Tagen nicht alles umgesetzt ist?', a: 'Fest zugesagt ist, was wir selbst in der Hand haben: aufräumen, Zielbild, Strategie, Zahlenfundament, Quick Wins und der Umsetzungsplan. Manche Schritte – etwa eine Umwandlung – hängen an Fristen und Stichtagen. Die planen wir in den 90 Tagen verbindlich und setzen sie in Paket 2 um.' },
+      { q: 'Ersetzen Sie meinen Steuerberater?', a: 'Nein. Ihr Steuerberater bleibt – und wird besser eingebunden. Er prüft und bewertet steuerlich, wir bereiten vor, rechnen, koordinieren und setzen um.' },
+      { q: 'Reicht mein Steuerberater dafür nicht aus?', a: 'Ihr Steuerberater sieht Ihr Unternehmen meist im Rückblick: Buchhaltung, Erklärungen, Jahresabschluss. Entscheidungen fallen aber vorher. Wir sind dazwischen dauerhaft dabei – und sorgen dafür, dass er auf einer sauberen Grundlage bewerten kann.' },
+      { q: 'Warum nicht einfach ein externer CFO?', a: 'Ein CFO-Dienst liefert Zahlen. Rechtsform, Holding, Nachfolge und die Abstimmung mit Steuerberater und Anwalt gehören meist nicht dazu – genauso wenig wie die Umsetzung im Unternehmen.' },
+      { q: 'Und warum nicht eine Strukturberatung?', a: 'Strukturkonzepte brauchen eine aktuelle Zahlenbasis. Fehlt sie, dauern Entscheidungen, und die Umsetzung bleibt beim Steuerberater hängen. Wir bringen beides zusammen.' },
+      { q: 'Beraten Sie steuerlich?', a: 'Die steuerliche und rechtliche Würdigung im Einzelfall übernehmen Steuerberater und Rechtsanwälte, die Sie direkt beauftragen. Wir bereiten den Sachverhalt auf, rechnen Varianten, koordinieren und setzen um.' },
+      { q: 'Wer bezahlt Steuerberater und Anwalt?', a: 'Sie beauftragen und bezahlen sie direkt. Wir erhalten keine Provision – deshalb können wir frei in Ihrem Interesse argumentieren.' },
+      { q: 'Bin ich dafür nicht zu klein?', a: 'Gerade auf dem Weg vom Einzelunternehmen zur GmbH werden die Weichen gestellt. Später umzubauen ist aufwendiger und teurer.' },
+      { q: 'Ich habe keine Zeit für noch ein Projekt.', a: 'Genau dafür heißt es „done“: Wir übernehmen die Vorarbeit, die Abstimmung und die Umsetzung. Sie entscheiden.' }
+    ];
+    var faqs = FAQ.map(function (d, i) {
+      var isOpen = st.faq === i;
+      return { q: d.q, a: d.a, open: isOpen, sign: isOpen ? '−' : '+', toggle: function () { self.setState({ faq: isOpen ? -1 : i }); } };
+    });
+    return {
+      sits: sits, sitQuote: cSit.short, sitStory: cSit.story, sitTried: cSit.tried, sitMissing: cSit.missing,
+      showSitGears: function () { self.setState({ gears: cSit.gears.slice(), preset: '' }); },
+      gears: gears, gearMsgs: gearMsgs, presets: presets,
+      gearHead: allIn ? 'Alles greift.' : 'Es hakt.',
+      seats: seats, seatTitle: S[st.seat].t, seatText: S[st.seat].x,
+      route: route, promises: promises, p2items: p2items, rhythm: rhythm,
+      condOpen: st.cond, condLabel: st.cond ? 'Bedingungen ausblenden' : 'Bedingungen anzeigen',
+      toggleCond: function () { self.setState({ cond: !st.cond }); },
+      stories: stories, storyName: cst.name, storySub: cst.sub, storyLage: cst.lage, storyDid: cst.did, storyResult: cst.result, storyQuote: cst.quote, storyCalc: !!cst.calc,
+      faqs: faqs
+    };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Rechner Privat, GmbH oder Holding – make it done (Entwurf)</title>
+<meta name="description" content="Entwurf: Rechner Privat, GmbH oder Holding">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button,input,select{font-family:inherit}
+input[type=range]{width:100%;accent-color:#141414}
+
+</style>
+</head>
+<body>
+<template id="tpl">
+
+<div style="width: 100%; background: #ffffff; color: #141414; font-family: Inter, system-ui, sans-serif">
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf · Wissen · Rechner · nicht verlinkt</div>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<a href="so-arbeiten-wir.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← So arbeiten wir</a>
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Wissen · Rechner</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Privat, GmbH oder Holding? Rechnen Sie selbst.</h1>
+<p style="margin: 0; font-size: 15px; color: #3d3d3d">Aus der Praxis: So hat es die <a href="so-arbeiten-wir.html">Felix Thönnessen GmbH</a> umgesetzt.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Wie viel von einer Ausschüttung oder einem Exit zum Reinvestieren übrig bleibt, hängt davon ab, wo die Anteile liegen. Verschieben Sie die Werte – die drei Varianten rechnen sich live.</p>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 16px 24px 64px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Beteiligungsquote der Holding / GmbH</span>
+<div role="group" aria-label="Beteiligungsquote" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{quoten}}" as="q" hint-placeholder-count="3">
+<button type="button" onClick="{{q.pick}}" aria-pressed="{{q.on}}" style="{{q.style}}">{{q.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Körperschaftsteuer (Jahr)</span>
+<div role="group" aria-label="Jahr" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{jahre}}" as="j" hint-placeholder-count="4">
+<button type="button" onClick="{{j.pick}}" aria-pressed="{{j.on}}" style="{{j.style}}">{{j.label}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="flex: 1.5 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="overflow-x: auto">
+<div style="min-width: 560px; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<span style="padding: 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4"></span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">Privat</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">GmbH selbst</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #141414; color: #ffffff">Holding</span>
+<sc-for list="{{rows}}" as="rw" hint-placeholder-count="4">
+<span style="padding: 14px 16px; font-size: 14px; font-weight: 600; border-top: 1px solid #e4e4e4">{{rw.label}}</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>{{rw.p}}</b><span style="font-size: 12px; color: #5c5c5c">{{rw.pn}}</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>{{rw.g}}</b><span style="font-size: 12px; color: #5c5c5c">{{rw.gn}}</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; flex-direction: column; gap: 2px"><b>{{rw.h}}</b><span style="font-size: 12px; color: #5c5c5c">{{rw.hn}}</span></span>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Verfügbar zum Reinvestieren</span>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">{{b.label}}</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="{{b.style}}"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: {{b.textColor}}">{{b.value}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background: #f4f4f4; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d">
+<span><b>GmbH selbst:</b> gleiche Steuer wie die Holding, aber Gewinne und Exit-Erlöse liegen im Risiko des operativen Geschäfts – und die GmbH kann sich nicht selbst verkaufen.</span>
+<span><b>Holding:</b> zusätzlich lassen sich mit einer Organschaft Verluste einer Tochter mit Gewinnen einer anderen verrechnen.</span>
+<span><b>Ins Private:</b> Sobald Geld an Sie persönlich ausgeschüttet wird, fällt Abgeltungsteuer an. Der Vorteil liegt im Reinvestieren innerhalb der Struktur.</span>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c">Vereinfachte Beispielrechnung für Deutschland: Körperschaftsteuer und Solidaritätszuschlag, Gewerbesteuer nach Hebesatz, § 8b KStG, § 9 Nr. 2a GewStG, Abgeltungsteuer, § 17 EStG mit Teileinkünfteverfahren; ohne Kirchensteuer, Freibeträge und Sperrfristen. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt Ihr Steuerberater.</p>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-holding" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Ihre Struktur besprechen →</a>
+</div>
+</section>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { div: 300000, exit: 2000000, sale: 2000000, hebe: 400, rate: 45, quote: 'q15', year: 2026 };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
+    function pct(n) { return (n * 100).toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' %'; }
+    var KST = { 2026: 0.15, 2028: 0.14, 2030: 0.12, 2032: 0.10 };
+    var corp = KST[st.year] * 1.055, gew = 0.035 * st.hebe / 100;
+    var exitRate = 0.05 * (corp + gew);
+    var divRate = st.quote === 'q15' ? 0.05 * (corp + gew) : st.quote === 'q10' ? 0.05 * corp + gew : corp + gew;
+    var privDiv = 0.25 * 1.055, privExit = 0.6 * (st.rate / 100) * 1.055;
+    var t = {
+      p: [st.div * privDiv, st.exit * privExit, st.sale * privExit],
+      g: [st.div * divRate, st.exit * exitRate, st.sale * privExit],
+      h: [st.div * divRate, st.exit * exitRate, st.sale * exitRate]
+    };
+    var gross = [st.div, st.exit, st.sale];
+    var labels = ['Ausschüttung aus einer Beteiligung', 'Exit einer Beteiligung', 'Verkauf der operativen GmbH'];
+    var rows = labels.map(function (l, i) {
+      function cell(v) { return eur(v); }
+      function note(v) { return gross[i] ? pct(v / gross[i]) + ' · ' + eur(gross[i] - v) + ' bleiben' : '–'; }
+      return { label: l, p: cell(t.p[i]), pn: note(t.p[i]), g: cell(t.g[i]), gn: i === 2 ? 'Verkauf durch Sie privat' : note(t.g[i]), h: cell(t.h[i]), hn: note(t.h[i]) };
+    });
+    function sum(a) { return a[0] + a[1] + a[2]; }
+    var total = sum(gross);
+    rows.push({ label: 'Steuern gesamt', p: eur(sum(t.p)), pn: '', g: eur(sum(t.g)), gn: '', h: eur(sum(t.h)), hn: '' });
+    var avail = { p: total - sum(t.p), g: total - sum(t.g), h: total - sum(t.h) };
+    var max = Math.max(avail.p, avail.g, avail.h, 1);
+    var bars = [['Privat', avail.p], ['GmbH selbst', avail.g], ['Holding', avail.h]].map(function (b, i) {
+      var w = Math.max(4, b[1] / max * 100);
+      return { label: b[0], value: eur(b[1]), textColor: i === 2 ? '#ffffff' : '#141414',
+        style: 'position: absolute; left: 0; top: 0; bottom: 0; width: ' + w.toFixed(1) + '%; border-radius: 999px; transition: width .4s ease; background: ' + (i === 2 ? '#141414' : i === 1 ? '#8a8a8a' : '#c8c8c8') };
+    });
+    function slider(id, label, key, min, max, step, shown, hint) {
+      return { id: id, label: label, min: min, max: max, step: step, value: st[key], shown: shown, hint: hint,
+        change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
+    }
+    var sliders = [
+      slider('r-div', 'Ausschüttung aus einer Beteiligung', 'div', 0, 2000000, 10000, eur(st.div), 'Gewinn einer Tochter, der nach oben fließt'),
+      slider('r-exit', 'Exit-Gewinn einer Beteiligung', 'exit', 0, 10000000, 50000, eur(st.exit), 'Verkaufspreis minus Anschaffungskosten'),
+      slider('r-sale', 'Verkauf der operativen GmbH (Gewinn)', 'sale', 0, 10000000, 50000, eur(st.sale), 'Verkaufspreis minus Anschaffungskosten'),
+      slider('r-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 200, 900, 5, st.hebe + ' %', 'je nach Gemeinde'),
+      slider('r-rate', 'Ihr persönlicher Steuersatz', 'rate', 14, 45, 1, st.rate + ' %', 'Grenzsteuersatz, Soli eingerechnet')
+    ];
+    var QU = [['q15', 'ab 15 %'], ['q10', '10 bis unter 15 %'], ['q0', 'unter 10 %']];
+    var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
+    var quoten = QU.map(function (q) { var on = st.quote === q[0]; return { label: q[1], on: on, style: btn(on), pick: function () { self.setState({ quote: q[0] }); } }; });
+    var jahre = [2026, 2028, 2030, 2032].map(function (y) { var on = st.year === y; return { label: y + ' · ' + Math.round(KST[y] * 100) + ' %', on: on, style: btn(on), pick: function () { self.setState({ year: y }); } }; });
+    return { sliders: sliders, quoten: quoten, jahre: jahre, rows: rows, bars: bars };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+</body>
+</html>
