@@ -360,7 +360,7 @@ html{scroll-behavior:smooth}
 </div>
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 500; line-height: 1.4; color: #3d3d3d">{{storyQuote}}</p>
 <sc-if value="{{storyCalc}}" hint-placeholder-val="{{ true }}">
-<a href="rechner-holding.html" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px">Möchten Sie den Effekt für sich berechnen? Zum Rechner →</a>
+<a href="{{storyCalcHref}}" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px">Möchten Sie den Effekt für sich berechnen? Zum Rechner →</a>
 </sc-if>
 </div>
 <span style="align-self: flex-start; font-size: 13px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 6px 14px; color: #3d3d3d">Inhalte und Freigaben folgen von Olga</span>
@@ -553,8 +553,8 @@ class Component extends DCLogic {
     }
 
     var STO = [
-      { label: 'Felix Thönnessen GmbH', name: 'Felix Thönnessen GmbH', sub: '[Branche · Größe]', lage: 'Eine erfolgreiche GmbH, aber keine Holding. Beteiligungen lagen teils im Unternehmen, teils privat – mit Folgen für die Haftung und dafür, was von Gewinnen und Exits zum Reinvestieren übrig blieb.', did: 'Eine doppelstöckige Holdingstruktur aufgebaut, eine Immobiliengesellschaft und eine Investment-Tochter darunter angebunden. Verträge und Vergütung neu aufgestellt: mehr Netto vom Brutto über Sachbezüge und Benefits, Absicherung bei Krankheit. Umgesetzt gemeinsam mit Steuerberater und Anwalt.', calc: true, result: 'Gewinne und Exit-Erlöse kommen fast vollständig in der Holding an und arbeiten dort weiter. Risiken sind getrennt, Verluste lassen sich verrechnen, das Team bekommt mehr Netto vom Brutto.', quote: '„[Zitat Felix – nach Freigabe]“' },
-      { label: 'Kunde B (anonym)', name: 'Dienstleister, [Rechtsform]', sub: '[Branche · Größe]', lage: '[Ausgangslage]', did: '[Was make it done gemacht hat]', result: '[Ergebnis – möglichst mit Zahl]', quote: '„[Zitat, anonymisiert]“' },
+      { label: 'Felix Thönnessen GmbH', name: 'Felix Thönnessen GmbH', sub: '[Branche · Größe]', lage: 'Eine erfolgreiche GmbH, aber keine Holding. Beteiligungen lagen teils im Unternehmen, teils privat – mit Folgen für die Haftung und dafür, was von Gewinnen und Exits zum Reinvestieren übrig blieb.', did: 'Eine doppelstöckige Holdingstruktur aufgebaut, eine Immobiliengesellschaft und eine Investment-Tochter darunter angebunden. Verträge und Vergütung neu aufgestellt: mehr Netto vom Brutto über Sachbezüge und Benefits, Absicherung bei Krankheit. Umgesetzt gemeinsam mit Steuerberater und Anwalt.', calc: 'rechner-holding.html', result: 'Gewinne und Exit-Erlöse kommen fast vollständig in der Holding an und arbeiten dort weiter. Risiken sind getrennt, Verluste lassen sich verrechnen, das Team bekommt mehr Netto vom Brutto.', quote: '„[Zitat Felix – nach Freigabe]“' },
+      { label: 'Beratung für Food-Start-ups', name: 'Beratungsunternehmen für Food-Start-ups (anonymisiert)', sub: 'Dienstleistung · rund 1 Mio. € Umsatz · wachsendes Team', lage: 'In kurzer Zeit auf rund 1 Mio. € Umsatz gewachsen – noch als Einzelunternehmen, jeder Euro Gewinn zum persönlichen Steuersatz. Eine UG und eine Holding gab es, genutzt wurden sie nicht. Die Buchhaltung hinkte hinterher, Abschlüsse waren offen, die Vorauszahlungen passten nicht zum Gewinn – Nachzahlungen liefen auf. Verträge und Vergütung waren nicht aufgestellt, die Familie arbeitete mit, und der Plan, in Immobilien zu investieren, war nirgends abgebildet.', did: 'Das Einzelunternehmen zu Buchwerten in die bestehende Gesellschaft eingebracht, zur GmbH gemacht und unter die Holding gestellt. Nachzahlungen sauber finanziert. Geschäftsführervertrag, Arbeitsverträge und eine Benefit-Regel für das ganze Team aufgesetzt – gemeinsam mit dem Anwalt, fremdüblich auch für mitarbeitende Angehörige und mit Blick auf die Elternzeit. Buchhaltung übernommen, Dashboard gebaut, die Route für Immobilien privat und über eine eigene GmbH festgelegt.', calc: 'rechner-rechtsform.html', result: 'Rückstände geregelt, Zahlen jederzeit im Blick, mehr Netto für Familie und Team – und eine Struktur, die mitwächst.', quote: '„[Zitat, anonymisiert – nach Freigabe]“' },
       { label: 'Kunde C (anonym)', name: 'Unternehmer, [Rechtsform]', sub: '[Branche · Größe]', lage: '[Ausgangslage]', did: '[Was make it done gemacht hat]', result: '[Ergebnis – möglichst mit Zahl]', quote: '„[Zitat, anonymisiert]“' }
     ];
     var stories = STO.map(function (d, i) {
@@ -588,7 +588,7 @@ class Component extends DCLogic {
       route: route, promises: promises, p2items: p2items, rhythm: rhythm,
       condOpen: st.cond, condLabel: st.cond ? 'Bedingungen ausblenden' : 'Bedingungen anzeigen',
       toggleCond: function () { self.setState({ cond: !st.cond }); },
-      stories: stories, storyName: cst.name, storySub: cst.sub, storyLage: cst.lage, storyDid: cst.did, storyResult: cst.result, storyQuote: cst.quote, storyCalc: !!cst.calc,
+      stories: stories, storyName: cst.name, storySub: cst.sub, storyLage: cst.lage, storyDid: cst.did, storyResult: cst.result, storyQuote: cst.quote, storyCalc: !!cst.calc, storyCalcHref: cst.calc || '',
       faqs: faqs
     };
   }

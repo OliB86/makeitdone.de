@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Rechner Einzelunternehmen oder GmbH – make it done (Entwurf)</title>
+<meta name="description" content="Entwurf: Rechner Einzelunternehmen oder GmbH und Benefits">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button,input,select{font-family:inherit}
+input[type=range]{width:100%;accent-color:#141414}
+
+</style>
+</head>
+<body>
+<template id="tpl">
+
+<div style="width: 100%; background: #ffffff; color: #141414; font-family: Inter, system-ui, sans-serif">
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf · Wissen · Rechner · nicht verlinkt</div>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<a href="so-arbeiten-wir.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← So arbeiten wir</a>
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Wissen · Rechner</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Einzelunternehmen oder GmbH? Rechnen Sie selbst.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Wer schnell wächst, bleibt oft zu lange Einzelunternehmer – und zahlt auf jeden Euro Gewinn den persönlichen Spitzensteuersatz. Verschieben Sie die Werte und sehen Sie, was in beiden Rechtsformen bleibt.</p>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 16px 24px 48px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; background: #f4f4f4; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Veranlagung</span>
+<div role="group" aria-label="Veranlagung" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{veranl}}" as="v" hint-placeholder-count="2">
+<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.style}}">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="flex: 1.5 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="overflow-x: auto">
+<div style="min-width: 560px; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<span style="padding: 16px; background: #f4f4f4"></span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">Einzel­unternehmen</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #141414; color: #ffffff">GmbH · Gewinn bleibt</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">GmbH · alles ausgeschüttet</span>
+<sc-for list="{{rows}}" as="rw" hint-placeholder-count="6">
+<span style="{{rw.ls}}">{{rw.label}}</span>
+<span style="{{rw.cs}}">{{rw.e}}</span>
+<span style="{{rw.ks}}">{{rw.k}}</span>
+<span style="{{rw.cs}}">{{rw.o}}</span>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Nach Steuern verfügbar</span>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">{{b.label}}</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="{{b.style}}"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: {{b.textColor}}">{{b.value}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background: #f4f4f4; border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d">
+<span><b>Einzelunternehmen:</b> Der ganze Gewinn wird persönlich versteuert – egal, ob Sie ihn entnehmen oder im Unternehmen lassen. Die Gewerbesteuer wird bei 400 % Hebesatz weitgehend angerechnet.</span>
+<span><b>GmbH:</b> Ihr Geschäftsführergehalt mindert den Gewinn. Was in der GmbH bleibt, kostet rund 30 % – und steht für Wachstum, Rücklagen oder Investitionen zur Verfügung.</span>
+<span><b>Ausschüttung:</b> Erst wenn Gewinne an Sie persönlich fließen, kommt Abgeltungsteuer dazu. Der Vorteil entsteht durch das, was im Unternehmen arbeitet.</span>
+</div>
+</div>
+</section>
+
+<section style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Mehr Netto vom Brutto</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4vw, 42px); line-height: 1.1; max-width: 860px">Benefits statt Gehaltserhöhung: Was kommt beim Team an?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Gleiches Budget für das Unternehmen – sehr unterschiedliches Netto. Wählen Sie Leistungen aus, die zusätzlich zum Gehalt gezahlt werden.</p>
+<div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{benefits}}" as="bf" hint-placeholder-count="6">
+<button type="button" onClick="{{bf.toggle}}" aria-pressed="{{bf.on}}" style="{{bf.style}}">
+<span style="display: flex; flex-direction: column; gap: 2px; text-align: left"><b style="font-size: 15px">{{bf.label}}</b><span style="font-size: 12px; opacity: .75">{{bf.law}}</span></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; white-space: nowrap">{{bf.amount}}</span>
+</button>
+</sc-for>
+<sc-for list="{{bsliders}}" as="sl" hint-placeholder-count="1">
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; background: #ffffff; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; color: #3d3d3d">Das Unternehmen gibt im Monat aus:</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; line-height: 1">{{bCost}}</span>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+<div style="background: #f4f4f4; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #5c5c5c">Als Gehaltserhöhung netto</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">{{bNetSal}}</span></div>
+<div style="background: #141414; color: #ffffff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #cfcfcf">Als Benefits netto</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">{{bNetBen}}</span></div>
+</div>
+<span style="font-size: 15px; line-height: 1.5">{{bLine}}</span>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c">Steuerfrei nur, wenn die Leistung zusätzlich zum ohnehin geschuldeten Arbeitslohn gezahlt wird (§ 8 Abs. 4 EStG) – eine Umwandlung bestehenden Gehalts reicht nicht. Sozialabgaben vereinfacht mit je rund 21 % für Arbeitnehmer und Arbeitgeber, Pauschalsteuer 25 % ohne Soli und Kirchensteuer.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 48px 24px 72px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung für Deutschland, Stand 2026: Einkommensteuertarif nach § 32a EStG, Solidaritätszuschlag mit Freigrenze, Gewerbesteuer mit Freibetrag 24.500 € (§ 11 GewStG) und Anrechnung nach § 35 EStG, Körperschaftsteuer 15 % (§ 23 KStG), Abgeltungsteuer 25 % (§ 32d EStG). Ohne Kirchensteuer, Sozialversicherung, Vorsorgeaufwendungen und Sonderausgaben; Geschäftsführergehalt mit Arbeitnehmer-Pauschbetrag. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt Ihr Steuerberater.</p>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-rechtsform" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Ihre Struktur besprechen →</a>
+</section>
+</div>
+</template>
+<div id="app"></div>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { gewinn: 400000, gehalt: 120000, hebe: 400, split: true, rate: 42, sv: true, kita: 300,
+      ben: { sach: true, kita: true, net: true, ges: true, job: false, erh: false } };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
+    function pct(n) { return (n * 100).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %'; }
+    function est(x) {
+      x = Math.floor(x);
+      if (x <= 12348) return 0;
+      if (x <= 17799) { var y = (x - 12348) / 1e4; return Math.floor((914.51 * y + 1400) * y); }
+      if (x <= 69878) { var z = (x - 17799) / 1e4; return Math.floor((173.10 * z + 2397) * z + 1034.87); }
+      if (x <= 277825) return Math.floor(0.42 * x - 11135.63);
+      return Math.floor(0.45 * x - 19470.38);
+    }
+    function estV(x) { return st.split ? 2 * est(x / 2) : est(x); }
+    function soli(e) { var fg = st.split ? 40700 : 20350; return e <= fg ? 0 : Math.min(0.055 * e, 0.119 * (e - fg)); }
+    var G = st.gewinn, S = Math.min(st.gehalt, G), H = st.hebe;
+    var mb = Math.max(0, Math.floor((G - 24500) / 100) * 100) * 0.035;
+    var gewEU = mb * H / 100;
+    var eEU = estV(G), anr = Math.min(4 * mb, gewEU, eEU), eEUn = eEU - anr, sEU = soli(eEUn);
+    var euTax = gewEU + eEUn + sEU;
+    var P = G - S, kst = P * 0.15 * 1.055, gew = P * 0.035 * H / 100;
+    var eS = estV(Math.max(0, S - 1230)), sS = soli(eS);
+    var keep = P - kst - gew, abg = keep * 0.25 * 1.055;
+    var cellBase = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
+    function row(label, e, k, o, bold) {
+      var fw = bold ? ' font-weight: 700;' : '';
+      return { label: label, e: e, k: k, o: o,
+        ls: cellBase + ' font-weight: 600;', cs: cellBase + fw, ks: cellBase + ' background: #f7f7f7;' + fw };
+    }
+    var tE = euTax, tK = kst + gew + eS + sS, tO = tK + abg;
+    var rows = [
+      row('Gewerbesteuer', eur(gewEU) + (anr > 0 ? ' · ' + eur(anr) + ' auf die ESt angerechnet' : ''), eur(gew), eur(gew)),
+      row('Körperschaftsteuer + Soli', '–', eur(kst), eur(kst)),
+      row('Einkommensteuer + Soli', eur(eEUn + sEU), eur(eS + sS) + ' aufs Gehalt', eur(eS + sS) + ' aufs Gehalt'),
+      row('Abgeltungsteuer', '–', '–', eur(abg)),
+      row('Steuern gesamt', eur(tE), eur(tK), eur(tO), true),
+      row('Steuerquote', pct(tE / G), pct(tK / G), pct(tO / G), true)
+    ];
+    var avail = [['Einzelunternehmen', G - tE, 'alles privat versteuert'], ['GmbH · Gewinn bleibt', G - tK, eur(S - eS - sS) + ' privat · ' + eur(keep) + ' in der GmbH'], ['GmbH · ausgeschüttet', G - tO, 'alles privat']];
+    var max = Math.max(avail[0][1], avail[1][1], avail[2][1], 1);
+    var bars = avail.map(function (b, i) {
+      var w = Math.max(4, b[1] / max * 100);
+      return { label: b[0], value: eur(b[1]) + ' · ' + b[2], textColor: i === 1 ? '#ffffff' : '#141414',
+        style: 'position: absolute; left: 0; top: 0; bottom: 0; width: ' + w.toFixed(1) + '%; border-radius: 999px; transition: width .4s ease; background: ' + (i === 1 ? '#141414' : i === 2 ? '#8a8a8a' : '#c8c8c8') };
+    });
+    function slider(id, label, key, min, max, step, shown, hint) {
+      return { id: id, label: label, min: min, max: max, step: step, value: st[key], shown: shown, hint: hint,
+        change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
+    }
+    var sliders = [
+      slider('f-gewinn', 'Gewinn vor Geschäftsführergehalt', 'gewinn', 50000, 1500000, 10000, eur(G), 'Jahresgewinn des Unternehmens'),
+      slider('f-gehalt', 'Geschäftsführergehalt (GmbH)', 'gehalt', 0, 300000, 5000, eur(S), 'muss angemessen sein und einem Fremdvergleich standhalten'),
+      slider('f-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 200, 900, 5, H + ' %', 'je nach Gemeinde')
+    ];
+    var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
+    var veranl = [[true, 'Zusammenveranlagung'], [false, 'Einzelveranlagung']].map(function (v) {
+      var on = st.split === v[0]; return { label: v[1], on: on, style: btn(on), pick: function () { self.setState({ split: v[0] }); } };
+    });
+    var BEN = [
+      { k: 'sach', label: 'Sachbezug, z. B. Gutscheinkarte', law: '§ 8 Abs. 2 S. 11 EStG · steuer- und abgabenfrei bis 50 €', m: 50, pausch: false },
+      { k: 'kita', label: 'Kita-Zuschuss', law: '§ 3 Nr. 33 EStG · nicht schulpflichtige Kinder, ohne Obergrenze', m: st.kita, pausch: false },
+      { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG · 25 % Pauschalsteuer', m: 50, pausch: true },
+      { k: 'ges', label: 'Gesundheitsförderung', law: '§ 3 Nr. 34 EStG · bis 600 € im Jahr', m: 50, pausch: false },
+      { k: 'job', label: 'Jobticket', law: '§ 3 Nr. 15 EStG · z. B. Deutschlandticket', m: 63, pausch: false },
+      { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · 156 € im Jahr, 25 % pauschal', m: 13, pausch: true }
+    ];
+    var bNet = 0, bCost = 0;
+    var benefits = BEN.map(function (b) {
+      var on = !!st.ben[b.k];
+      if (on) { bNet += b.m; bCost += b.m * (b.pausch ? 1.25 : 1); }
+      return { label: b.label, law: b.law, amount: eur(b.m) + ' / Monat', on: on,
+        toggle: function () { var n = Object.assign({}, st.ben); n[b.k] = !on; self.setState({ ben: n }); },
+        style: 'display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; padding: 14px 18px; border-radius: 16px; cursor: pointer; border: 1px solid #141414; transition: background .2s; ' + (on ? 'background: #141414; color: #ffffff;' : 'background: #ffffff; color: #141414;') };
+    });
+    var ag = st.sv ? 0.21 : 0, an = st.sv ? 0.21 : 0;
+    var brutto = bCost / (1 + ag);
+    var netSal = brutto * (1 - an - st.rate / 100);
+    var bsliders = [
+      slider('b-kita', 'Kita-Kosten im Monat', 'kita', 0, 900, 10, eur(st.kita), 'tatsächliche Betreuungskosten, gegen Nachweis'),
+      slider('b-rate', 'Grenzsteuersatz der Mitarbeiterin', 'rate', 14, 45, 1, st.rate + ' %', 'inklusive Soli; Sozialabgaben vereinfacht mit rund 21 %')
+    ];
+    var diff = bNet - netSal;
+    return { sliders: sliders, veranl: veranl, rows: rows, bars: bars, benefits: benefits, bsliders: bsliders,
+      bCost: eur(bCost), bNetSal: eur(netSal), bNetBen: eur(bNet),
+      bLine: bCost > 0 ? 'Über Benefits kommen ' + eur(diff) + ' mehr im Monat an – ' + eur(diff * 12) + ' im Jahr, bei gleichen Kosten fürs Unternehmen.' : 'Wählen Sie mindestens eine Leistung aus.' };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+</body>
+</html>
