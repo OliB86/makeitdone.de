@@ -50,6 +50,11 @@ input[type=range]{width:100%;accent-color:#141414}
 <span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.tToggle}}" aria-pressed="{{r.tOn}}" disabled="{{r.tDisabled}}" style="{{r.tStyle}}">{{r.tLabel}}</button></span>
 <span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.gToggle}}" aria-pressed="{{r.gOn}}" disabled="{{r.gDisabled}}" style="{{r.gStyle}}">{{r.gLabel}}</button></span>
 </sc-for>
+<span style="padding: 16px; border-top: 2px solid #141414; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 17px">Potenzial pro Person und Jahr</b><span style="font-size: 12px; color: #5c5c5c">Summe der ausgewählten Leistungen, steuer- und abgabenfrei bzw. pauschal versteuert</span></span>
+<span style="padding: 16px; border-top: 2px solid #141414"></span>
+<span style="padding: 16px; border-top: 2px solid #141414; font-size: 12px; line-height: 1.5; color: #3d3d3d">{{sumNote}}</span>
+<span style="padding: 16px 8px; border-top: 2px solid #141414; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap">{{sumTeam}}</span>
+<span style="padding: 16px 8px; border-top: 2px solid #141414; background: #141414; color: #ffffff; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap">{{sumGf}}</span>
 </div>
 </div>
 </section>
@@ -214,6 +219,11 @@ class Component extends DCLogic {
     var off = 'border: 1px solid #141414; background: #ffffff; color: #141414;';
     var dis = 'border: 1px dashed #c8c8c8; background: transparent; color: #9a9a9a; cursor: default;';
     var pill = 'min-width: 72px; min-height: 36px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; ';
+    var sT = 0, sG = 0, pT = 0, pG = 0;
+    B.forEach(function (b) {
+      if (st.team[b.k] && !b.gfOnly) { sT += b.m * 12; pT += (b.p || 0) * 12; }
+      if (st.gf[b.k]) { sG += (b.gm != null ? b.gm : b.m) * 12; pG += (b.p || 0) * 12; }
+    });
     var rows = B.map(function (b) {
       var tOn = !!st.team[b.k] && !b.gfOnly, gOn = !!st.gf[b.k];
       var yr = function (m) { return eur(m * 12) + (b.p ? ' + ' + eur(b.p * 12) + ' Pauschalsteuer' : ''); };
@@ -261,7 +271,7 @@ class Component extends DCLogic {
         text: 'Bis zum 2,5-Fachen des Jahresbeitrags zur Basisabsicherung (' + eur(pkvPre) + ') lässt sich vorauszahlen und im Zahlungsjahr absetzen. Lohnt in Jahren mit hohem Einkommen; in den Folgejahren fällt der Abzug entsprechend weg. Kann auch das Einkommen unter die Elterngeld-Grenze bringen.',
         toggle: function () { self.setState({ pkvOn: !st.pkvOn }); } }
     ].map(function (e) { e.style = card(e.on); e.btnStyle = pill + (e.on ? on : off) + ' padding: 0 14px;'; return e; });
-    return { rows: rows, tSliders: tSliders, gSliders: gSliders, aSliders: aSliders, res: res, extras: extras,
+    return { rows: rows, sumTeam: eur(sT), sumGf: eur(sG), sumNote: 'Dazu trägt das Unternehmen Pauschalsteuer: Team ' + eur(pT) + ', GF ' + eur(pG) + ' im Jahr. Team mit Kita-Zuschuss gerechnet.', tSliders: tSliders, gSliders: gSliders, aSliders: aSliders, res: res, extras: extras,
       teamHead: 'Team (' + st.staff + ')',
       headline: 'Zusammen ' + eur(totalYear) + ' mehr netto im Jahr – bei gleichen Kosten fürs Unternehmen.' };
   }
