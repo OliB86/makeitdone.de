@@ -71,6 +71,18 @@ input[type=range]{width:100%;accent-color:#141414}
 @keyframes ring{0%,100%{opacity:.15}50%{opacity:.5}}.pulse-ring{animation:ring 3s ease-in-out infinite}
 @media (max-width: 760px){.show-m{display:flex !important}}
 @media (prefers-reduced-motion: reduce){.flows{display:none}.pulse-ring{animation:none}}
+.sy.bk{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px}
+.bk .sy-side{top:96px;background:#ffffff;border-radius:32px;padding:32px;box-shadow:0 24px 70px rgba(0,0,0,.08);gap:18px}
+.bk .sy-step{min-height:72vh}
+.fx .bk .sy-step{transform:translateX(60px);opacity:0}.fx .bk .sy-step.act{transform:none;opacity:1}
+.bk-kr{display:flex;gap:8px;flex-wrap:wrap}.kr{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1.5px solid #d4d4d4;color:#8a8a8a;transition:background .4s, color .4s, border-color .4s}
+.fx .bk .kr.on{background:#141414;color:#F1D734;border-color:#141414}
+.bn{transform-box:fill-box;transform-origin:center}
+.fx .bk .bn{transition:opacity .6s ease, transform .7s cubic-bezier(.16,.84,.24,1)}
+.fx .bk .bn:not(.on){opacity:0;transform:translateX(40px)}
+html:not(.fx) .bk .bn[data-u],html:not(.fx) .bk .bn[data-in]{display:none}
+.ln2{transform:none !important}
+@media (max-width: 860px){.sy.bk{grid-template-columns:minmax(0,1fr);gap:0}.bk .sy-side{position:sticky;top:calc(var(--hh, 72px) + 6px);z-index:5;padding:14px;border-radius:20px}.bk .sy-side svg{max-height:30vh}.bk .sy-side .sy-bar{display:none}.bk .sy-step{min-height:68vh !important;padding:24px 4px}.fx .bk .sy-step{opacity:.15;transform:none}.fx .bk .sy-step.act{opacity:1}.bk-kr{gap:5px}.kr{font-size:11px;padding:4px 9px}}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 @media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav a:last-child{order:-1}}
@@ -219,7 +231,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794917882"></script>
+<script src="../dc-lite.js?v=1794918521"></script>
 <script>
 
 class Component extends DCLogic {
@@ -239,6 +251,6 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794917882"></script>
+<script src="../effects.js?v=1794918521"></script>
 </body>
 </html>

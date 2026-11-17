@@ -29,7 +29,8 @@
     });
   }
   function onScroll() {
-    var vh = innerHeight;
+    var vh = innerHeight, hd = document.querySelector('header');
+    if (hd) { var hh = hd.getBoundingClientRect().bottom > 0 ? hd.offsetHeight + 'px' : '72px'; if (document.documentElement.style.getPropertyValue('--hh') !== hh) document.documentElement.style.setProperty('--hh', hh); }
     document.querySelectorAll('.words').forEach(function (p) {
       var r = p.getBoundingClientRect(), prog = (vh * 0.85 - r.top) / (r.height + vh * 0.35);
       var ws = p.querySelectorAll('.w'), k = Math.round(Math.max(0, Math.min(1, prog)) * ws.length);
@@ -59,6 +60,10 @@
       sy.querySelectorAll('.sy-nav a').forEach(function (a, i) {
         if (a.classList.contains('act') !== (i === cur)) a.classList.toggle('act', i === cur);
         if (a.classList.contains('done') !== (i < cur)) a.classList.toggle('done', i < cur);
+      });
+      if (sy.classList.contains('bk')) sy.querySelectorAll('[data-s],[data-u],[data-in]').forEach(function (el) {
+        var d = el.dataset, on = (d.s == null || cur >= +d.s) && (d.u == null || cur <= +d.u) && (d.in == null || d.in.split(',').indexOf(String(cur)) > -1);
+        if (el.classList.contains('on') !== on) el.classList.toggle('on', on);
       });
       var w = (n > 1 ? cur / (n - 1) : 1) * 100 + '%';
       sy.querySelectorAll('.sy-bar i').forEach(function (b) { if (b.style.width !== w) b.style.width = w; });
