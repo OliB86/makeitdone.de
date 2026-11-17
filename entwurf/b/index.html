@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Entwurf B – Start, interaktiv – make it done</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+body{margin:0;background:#fafafa;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}
+.cta{transition:transform .2s ease, box-shadow .2s ease}.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.18)}.cta:hover .cta-dot{transform:translateX(4px)}.cta-dot{transition:transform .2s ease}
+@keyframes rot{0%,28%{transform:translateY(0)}33%,61%{transform:translateY(-1.1em)}66%,94%{transform:translateY(-2.2em)}100%{transform:translateY(-3.3em)}}
+.rot{display:inline-flex;flex-direction:column;height:1.1em;overflow:hidden;vertical-align:bottom}.rot>span{display:block;height:1.1em;line-height:1.1em;animation:rot 7.5s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes mq{to{transform:translateX(-50%)}}.mq{display:flex;width:max-content;animation:mq 40s linear infinite}.mq-wrap:hover .mq{animation-play-state:paused}
+@keyframes vq{to{transform:translateX(-50%)}}.vq{display:flex;gap:20px;width:max-content;animation:vq 60s linear infinite}.vq:hover{animation-play-state:paused}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float{animation:float 6s ease-in-out infinite}.float2{animation:float 7s ease-in-out -2s infinite}.float3{animation:float 8s ease-in-out -4s infinite}
+.tilt{transition:transform .25s ease, box-shadow .25s ease;transform-style:preserve-3d}.tilt:hover{box-shadow:0 26px 60px rgba(0,0,0,.14)}
+.fx .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}.fx .rv.in{opacity:1;transform:none}
+.fx .words .w{color:#c8c8c8;transition:color .3s}.fx .words .w.on{color:#141414}
+.phase.act .phase-num{color:#141414 !important}
+.fx .bar-grow{width:0 !important}.fx .in .bar-grow,.fx .bar-grow.in{width:var(--w) !important}
+input[type=range]{width:100%;accent-color:#141414}
+@media (prefers-reduced-motion: reduce){.rot>span,.mq,.vq,.float,.float2,.float3{animation:none !important}.fx .rv{opacity:1 !important;transform:none !important}.fx .words .w{color:#141414 !important}}
+@media (max-width: 760px){.hide-m{display:none !important}}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav a:last-child{order:-1}}
+</style>
+</head>
+<body>
+<template id="tpl">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf B · interaktiver Stil · Farbe Gelb nur zum Testen · nicht verlinkt</div>
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(250,250,250,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid #ececec">
+<div style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<a href="../index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<nav aria-label="Hauptmenü" style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 15px; align-items: center">
+<a href="../leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../warum.html" style="text-decoration: none">Warum make it done</a>
+<a href="../fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../rechner.html" style="text-decoration: none">Rechner</a>
+<a href="../ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../karriere.html" style="text-decoration: none">Karriere</a>
+<a href="../kontakt.html" style="text-decoration: none">Kontakt</a>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-entwurf-b" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600">Erstgespräch</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 72px 24px 64px; display: flex; gap: 48px; flex-wrap: wrap; align-items: center">
+<div style="flex: 1.2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Finanz- und Strukturbegleitung · C-Level-Support</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(42px, 5.6vw, 78px); line-height: 1.04; letter-spacing: -0.03em">Wachstum braucht <span class="rot"><span>Struktur.</span><span>Zahlen.</span><span>Klarheit.</span><span>Struktur.</span></span><br>We <span style="white-space: nowrap"><em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">make it done</em>.</span></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 560px">Wir bringen Struktur, Zahlen und Entscheidungen zusammen – damit vom Gewinn mehr bei dir ankommt.</p>
+<div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=entwurf-b" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
+<span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>[5,0]</b> bei Google · [X] Bewertungen</span>
+<span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
+</div></div>
+</div>
+<div class="hide-m" style="flex: 1 1 380px; min-width: 0; position: relative; height: 460px">
+<div class="float" style="position: absolute; left: 8%; top: 30px; width: 300px; padding: 24px; border-radius: 24px; background: #ffffff; box-shadow: 0 24px 60px rgba(0,0,0,.12); display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c">Deine Struktur</span>
+<span style="align-self: center; padding: 10px 18px; border-radius: 12px; background: #141414; color: #ffffff; font-weight: 600; font-size: 14px">Holding</span>
+<span style="align-self: center; width: 2px; height: 16px; background: #c8c8c8"></span>
+<span style="display: flex; gap: 8px; justify-content: center"><span style="padding: 8px 12px; border-radius: 10px; background: #F1D734; font-weight: 600; font-size: 13px">GmbH</span><span style="padding: 8px 12px; border-radius: 10px; background: #f4f4f4; font-weight: 600; font-size: 13px">Immobilien</span><span style="padding: 8px 12px; border-radius: 10px; background: #f4f4f4; font-weight: 600; font-size: 13px">Beteiligung</span></span>
+</div>
+<div class="float2" style="position: absolute; right: 0; top: 190px; width: 250px; padding: 22px; border-radius: 22px; background: #141414; color: #ffffff; box-shadow: 0 24px 60px rgba(0,0,0,.2); display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #b8b8b8">Zahlen-Cockpit</span>
+<span style="display: flex; align-items: flex-end; gap: 6px; height: 70px"><span style="flex: 1; height: 40%; background: #3a3a3a; border-radius: 4px"></span><span style="flex: 1; height: 55%; background: #3a3a3a; border-radius: 4px"></span><span style="flex: 1; height: 50%; background: #3a3a3a; border-radius: 4px"></span><span style="flex: 1; height: 72%; background: #3a3a3a; border-radius: 4px"></span><span style="flex: 1; height: 90%; background: #F1D734; border-radius: 4px"></span></span>
+<span style="font-size: 13px; color: #d4d4d4">Just in time – nicht erst im Februar</span>
+</div>
+<div class="float3" style="position: absolute; left: 0; bottom: 20px; padding: 14px 18px; border-radius: 999px; background: #ffffff; box-shadow: 0 16px 40px rgba(0,0,0,.12); display: flex; gap: 10px; align-items: center; font-weight: 600; font-size: 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg>Entscheidung vor der Handlung</div>
+</div>
+</section>
+
+<div class="mq-wrap" style="overflow: hidden; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; padding: 22px 0; background: #ffffff" aria-hidden="true"><div class="mq"><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">GmbH<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Holding<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Exit<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Benefits<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Immobilien<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Liquidität<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Zahlen just in time<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Nachfolge<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Vermögen<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Familie im Unternehmen<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Geschäftsführervertrag<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Kennzahlen<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">GmbH<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Holding<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Exit<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Benefits<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Immobilien<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Liquidität<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Zahlen just in time<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Nachfolge<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Vermögen<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Familie im Unternehmen<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Geschäftsführervertrag<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span><span style="display: inline-flex; align-items: center; gap: 28px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #3d3d3d; white-space: nowrap; padding-right: 28px">Kennzahlen<span style="width: 10px; height: 10px; border-radius: 50%; background: #F1D734"></span></span></div></div>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; gap: 56px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Das Problem</span>
+<p class="words" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4.4vw, 56px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; max-width: 1050px"><span class="w">Die</span> <span class="w">meisten</span> <span class="w">Unternehmer</span> <span class="w">zahlen</span> <span class="w">nicht</span> <span class="w">zu</span> <span class="w">viel,</span> <span class="w">weil</span> <span class="w">sie</span> <span class="w">etwas</span> <span class="w">falsch</span> <span class="w">machen.</span> <span class="w">Sondern</span> <span class="w">weil</span> <span class="w">niemand</span> <span class="w">vorher</span> <span class="w">mit</span> <span class="w">ihnen</span> <span class="w">entschieden</span> <span class="w">hat.</span></p>
+<div style="display: flex; flex-direction: column">
+<div class="rv" style="display: flex; gap: 24px; align-items: baseline; padding: 26px 0; border-top: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #b8b8b8">01</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.6vw, 44px); font-weight: 700">Zu viel <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Steuern</em>.</span></div>
+<div class="rv" style="display: flex; gap: 24px; align-items: baseline; padding: 26px 0; border-top: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #b8b8b8">02</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.6vw, 44px); font-weight: 700">Entscheidungen aus dem <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Bauch</em>.</span></div>
+<div class="rv" style="display: flex; gap: 24px; align-items: baseline; padding: 26px 0; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #b8b8b8">03</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.6vw, 44px); font-weight: 700">Im Februar wissen, was der <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Dezember</em> gebracht hat.</span></div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 80px 24px 120px; display: flex; flex-direction: column; gap: 40px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Die Lösung</span>
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em; max-width: 1000px">Struktur. Zahlen. Entscheidungen. <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Aus einer Hand.</em></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; perspective: 1000px">
+<a href="../leistungen.html" class="tilt rv" style="display: flex; flex-direction: column; gap: 16px; padding: 34px; border-radius: 28px; background: #ffffff; box-shadow: 0 18px 50px rgba(0,0,0,.08); text-decoration: none; color: #141414">
+<span style="width: 60px; height: 60px; border-radius: 18px; background: #F1D734; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700">make plans done.</span>
+<span style="font-size: 17px; line-height: 1.55; color: #3d3d3d">Dein Zielbild für 1, 3 und 10 Jahre – Unternehmen, Familie und Vermögen zusammen gedacht.</span>
+<span style="margin-top: auto; font-weight: 600; font-size: 15px">Mehr erfahren →</span>
+</a>
+<a href="../leistungen.html" class="tilt rv" style="display: flex; flex-direction: column; gap: 16px; padding: 34px; border-radius: 28px; background: #ffffff; box-shadow: 0 18px 50px rgba(0,0,0,.08); text-decoration: none; color: #141414">
+<span style="width: 60px; height: 60px; border-radius: 18px; background: #F1D734; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700">make structure done.</span>
+<span style="font-size: 17px; line-height: 1.55; color: #3d3d3d">Rechtsform, Holding, Exit: die Struktur, die zu deinen Zielen passt – umgesetzt im Netzwerk.</span>
+<span style="margin-top: auto; font-weight: 600; font-size: 15px">Mehr erfahren →</span>
+</a>
+<a href="../leistungen.html" class="tilt rv" style="display: flex; flex-direction: column; gap: 16px; padding: 34px; border-radius: 28px; background: #ffffff; box-shadow: 0 18px 50px rgba(0,0,0,.08); text-decoration: none; color: #141414">
+<span style="width: 60px; height: 60px; border-radius: 18px; background: #F1D734; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M3 21h18"></path><path d="M6 17v-4M11 17V9M16 17v-7"></path><path d="M4 9l5-4 4 3 7-5"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700">make finance done.</span>
+<span style="font-size: 17px; line-height: 1.55; color: #3d3d3d">Dein Zahlen-Cockpit: Buchhaltung, die Entscheidungen liefert. Just in time statt BWA nach Wochen.</span>
+<span style="margin-top: auto; font-weight: 600; font-size: 15px">Mehr erfahren →</span>
+</a>
+</div>
+</section>
+
+<section style="background: #ffffff">
+<div style="max-width: 1180px; margin: 0 auto; padding: 120px 24px; display: flex; gap: 56px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 380px; min-width: 0; position: sticky; top: 120px; display: flex; flex-direction: column; gap: 26px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Der Weg</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em">In 90 Tagen steht dein <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Fundament</em>. Danach steuern wir gemeinsam.</h2>
+<span style="display: inline-flex; gap: 12px; align-items: center; align-self: flex-start; padding: 14px 20px; border-radius: 18px; background: #141414; color: #ffffff; font-weight: 600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F1D734" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>Ergebnisgarantie</span>
+<a href="../so-arbeiten-wir.html#ablauf" style="font-weight: 600; font-size: 16px">Den Ablauf im Detail ansehen →</a>
+</div>
+<div style="flex: 1.2 1 440px; min-width: 0; display: flex; flex-direction: column">
+<div class="phase rv" data-phase="0" style="display: flex; gap: 26px; align-items: flex-start; padding: 40px 0; border-bottom: 1px solid #e4e4e4">
+<span class="phase-num" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(64px, 9vw, 120px); font-weight: 700; line-height: .85; color: #e4e4e4; transition: color .4s; flex-shrink: 0; width: 1.1em">1</span>
+<span style="display: flex; flex-direction: column; gap: 8px; padding-top: 6px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Woche 1–2</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.05">Zielbild</span><span style="font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 520px">Wir verstehen dein Unternehmen – und wohin du willst. Analyse, Kurs, Zielbild-Workshop.</span></span>
+</div>
+<div class="phase rv" data-phase="1" style="display: flex; gap: 26px; align-items: flex-start; padding: 40px 0; border-bottom: 1px solid #e4e4e4">
+<span class="phase-num" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(64px, 9vw, 120px); font-weight: 700; line-height: .85; color: #e4e4e4; transition: color .4s; flex-shrink: 0; width: 1.1em">2</span>
+<span style="display: flex; flex-direction: column; gap: 8px; padding-top: 6px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">bis Tag 90</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.05">Fundament</span><span style="font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 520px">Struktur-Fahrplan steht, Zahlen-Cockpit ist live, Quick Wins sind erledigt.</span></span>
+</div>
+<div class="phase rv" data-phase="2" style="display: flex; gap: 26px; align-items: flex-start; padding: 40px 0; border-bottom: 1px solid #e4e4e4">
+<span class="phase-num" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(64px, 9vw, 120px); font-weight: 700; line-height: .85; color: #e4e4e4; transition: color .4s; flex-shrink: 0; width: 1.1em">3</span>
+<span style="display: flex; flex-direction: column; gap: 8px; padding-top: 6px"><span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">danach</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.05">Steuerung</span><span style="font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 520px">Jede Einstellung, jede Investition, jede große Entscheidung – mit uns und mit klaren Zahlen.</span></span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #141414; color: #ffffff">
+<div style="max-width: 1180px; margin: 0 auto; padding: 120px 24px; display: flex; flex-direction: column; gap: 48px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #222222; color: #e8e8e8; border: 1px solid #3a3a3a"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Das Ergebnis</span>
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em; max-width: 980px">Am Ende zählt, was <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; color: #F1D734">bei dir ankommt</em>.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 48px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding: 28px 0; border-top: 1px solid #3a3a3a">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(46px, 5.2vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: #F1D734; white-space: nowrap">+ <span data-count="540000">540.000</span> €</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">mehr zum Reinvestieren</span>
+<span style="font-size: 15px; color: #b8b8b8">2 Mio. € Exit – über die Holding statt privat</span>
+</div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding: 28px 0; border-top: 1px solid #3a3a3a">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(46px, 5.2vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: #F1D734; white-space: nowrap">+ <span data-count="37000">37.000</span> €</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">mehr netto im Jahr</span>
+<span style="font-size: 15px; color: #b8b8b8">10 Personen – Benefits statt Gehaltserhöhung</span>
+</div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding: 28px 0; border-top: 1px solid #3a3a3a">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(46px, 5.2vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: #F1D734; white-space: nowrap">+ <span data-count="39000">39.000</span> €</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600">mehr Liquidität in der GmbH</span>
+<span style="font-size: 15px; color: #b8b8b8">400.000 € Gewinn – GmbH statt Einzelunternehmen</span>
+</div>
+</div>
+<div class="rv" style="display: flex; gap: 48px; flex-wrap: wrap; align-items: center; padding: 40px; border-radius: 32px; background: #1f1f1f">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700">Rechne kurz selbst.</span>
+<label for="b-exit" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600; color: #d4d4d4"><span>Gewinn aus einem Exit</span><span style="font-family: 'Space Grotesk', sans-serif; color: #ffffff">{{exitShown}}</span></label>
+<input id="b-exit" type="range" min="250000" max="5000000" step="50000" value="{{exit}}" onInput="{{setExit}}" style="accent-color: #F1D734">
+<a href="../rechner-holding.html" style="color: #ffffff; font-weight: 600; font-size: 15px">Willst du die Berechnung für dich machen? Zum Rechner →</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #b8b8b8">Bleibt mehr zum Reinvestieren</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 6vw, 80px); font-weight: 700; line-height: 1; color: #F1D734">+ {{exitGain}}</span>
+</div>
+</div>
+<span style="font-size: 13px; line-height: 1.6; color: #8a8a8a; max-width: 900px">Beispielrechnungen auf Basis angenommener Werte aus unseren Fällen, Stand 2026, ohne Kirchensteuer. Keine Zusage für den Einzelfall – die steuerliche Würdigung übernimmt dein Steuerberater.</span>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 120px 24px 64px; display: flex; flex-direction: column; gap: 48px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Der Beweis</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px"><div class="rv" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1; white-space: nowrap"><span data-count="16" data-plain="1">16</span></span><span style="font-size: 15px; line-height: 1.45; color: #5c5c5c">Jahre Lehre in Steuern und Rechnungswesen</span></div><div class="rv" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1; white-space: nowrap"><span style="font-size: .4em">seit </span>2017</span><span style="font-size: 15px; line-height: 1.45; color: #5c5c5c">selbstständig – seit 2023 mit eigener Holding</span></div><div class="rv" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1; white-space: nowrap"><span data-count="4" data-plain="1">4</span></span><span style="font-size: 15px; line-height: 1.45; color: #5c5c5c">Berufsgruppen im Netzwerk</span></div><div class="rv" style="display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1; white-space: nowrap">[X]</span><span style="font-size: 15px; line-height: 1.45; color: #5c5c5c">begleitete Unternehmen</span></div></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; perspective: 1000px">
+<a href="../so-arbeiten-wir.html#geschichten" class="tilt rv" style="display: flex; flex-direction: column; gap: 12px; padding: 36px; border-radius: 28px; background: #ffffff; box-shadow: 0 18px 50px rgba(0,0,0,.08); text-decoration: none; color: #141414"><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c">Kunde A · Holding &amp; Exit</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2">Von verstreuten Beteiligungen zur doppelstöckigen Holding.</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700">rund 1,5 % <span style="font-size: 18px; color: #5c5c5c">statt 28 % auf Exit-Erlöse</span></span><span style="font-weight: 600; font-size: 15px">Ganze Geschichte →</span></a>
+<a href="../so-arbeiten-wir.html#geschichten" class="tilt rv" style="display: flex; flex-direction: column; gap: 12px; padding: 36px; border-radius: 28px; background: #ffffff; box-shadow: 0 18px 50px rgba(0,0,0,.08); text-decoration: none; color: #141414"><span style="font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c">Kunde B · Beratungsunternehmen</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2">Vom Einzelunternehmen mit Rückständen zur GmbH mit Plan.</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700">450 € <span style="font-size: 18px; color: #5c5c5c">statt 141 € netto pro Person</span></span><span style="font-weight: 600; font-size: 15px">Ganze Geschichte →</span></a>
+</div>
+</section>
+<div style="overflow: hidden; padding: 16px 0 120px" aria-label="Kundenstimmen"><div class="vq"><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Kundenstimme 1 – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">Kunde A · Holding & Exit</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Kundenstimme 2 – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">Kunde B · Beratungsunternehmen</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Kundenstimme 3 – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">[Branche]</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Google-Bewertung – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">[Name] · Google</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Google-Bewertung – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">[Name] · Google</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Kundenstimme 1 – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">Kunde A · Holding & Exit</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Kundenstimme 2 – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">Kunde B · Beratungsunternehmen</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Kundenstimme 3 – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">[Branche]</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Google-Bewertung – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">[Name] · Google</figcaption></figure><figure style="margin: 0; flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; padding: 30px; border-radius: 24px; background: #ffffff; box-shadow: 0 12px 40px rgba(0,0,0,.07)"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><blockquote style="margin: 0; font-size: 18px; line-height: 1.55">„[Google-Bewertung – nach Freigabe]“</blockquote><figcaption style="font-size: 14px; color: #5c5c5c">[Name] · Google</figcaption></figure></div></div>
+
+<section style="background: #ffffff">
+<div style="max-width: 1180px; margin: 0 auto; padding: 120px 24px; display: flex; gap: 56px; flex-wrap: wrap; align-items: center">
+<div style="flex: 1.2 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
+<span class="pill" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Wer dahinter steht</span>
+<p class="words" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.6vw, 46px); font-weight: 600; line-height: 1.18; letter-spacing: -0.02em"><span class="w">Unternehmer</span> <span class="w">haben</span> <span class="w">gute</span> <span class="w">Berater</span> <span class="w">–</span> <span class="w">und</span> <span class="w">entscheiden</span> <span class="w">trotzdem</span> <span class="w">allein.</span> <span class="w">Wir</span> <span class="w">sitzen</span> <span class="w">mit</span> <span class="w">am</span> <span class="w">Tisch,</span> <span class="w">bevor</span> <span class="w">entschieden</span> <span class="w">wird.</span></p>
+<div style="display: flex; gap: 22px; flex-wrap: wrap; font-size: 15px; color: #3d3d3d"><span style="display: inline-flex; gap: 8px; align-items: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="5" r="2.5"></circle><circle cx="5" cy="18" r="2.5"></circle><circle cx="19" cy="18" r="2.5"></circle><path d="M10.8 7.2l-4.6 8.5M13.2 7.2l4.6 8.5M7.5 18h9"></path></svg>Steuerberater · Wirtschaftsprüfer · Rechtsanwälte · Anlageberater</span></div>
+<a href="../ueber-uns.html" style="font-weight: 600; font-size: 16px">Mehr über uns →</a>
+</div>
+<div class="rv" style="flex: 0 1 380px; min-width: 0; padding: 18px; border-radius: 32px; background: #fafafa; box-shadow: 0 24px 60px rgba(0,0,0,.1); display: flex; flex-direction: column; gap: 16px">
+<div role="img" aria-label="Platzhalter für ein Porträt der Gründerin" style="aspect-ratio: 4 / 5; border-radius: 22px; background: #e4e4e4; display: flex; align-items: center; justify-content: center; color: #5c5c5c; font-size: 14px; font-weight: 600">[Foto Olga, schwarz-weiß]</div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 0 6px 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Olga Bertram</b><span style="font-size: 14px; color: #5c5c5c">Gründerin der make it done GmbH</span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 140px 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em; max-width: 900px">Lass uns sprechen, <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">bevor</em> du entscheidest.</h2>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">15 Minuten Erstgespräch, unverbindlich. Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; align-items: center"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=entwurf-b" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
+<span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>[5,0]</b> bei Google · [X] Bewertungen</span>
+<span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
+</div></div>
+</section>
+
+<footer style="border-top: 1px solid #e4e4e4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 28px 24px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #5c5c5c">
+<span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz · HRB 22388, Amtsgericht Mönchengladbach</span><a href="/impressum.html" style="color: #5c5c5c">Impressum</a><a href="/datenschutz.html" style="color: #5c5c5c">Datenschutz</a>
+</div>
+</footer>
+</div>
+
+</template>
+<div id="app"></div>
+<script src="../dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { exit: 2000000 };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
+    var gain = st.exit * (0.6 * 0.45 * 1.055 - 0.05 * (0.15 * 1.055 + 0.14));
+    return { exit: st.exit, exitShown: eur(st.exit), exitGain: eur(gain), setExit: function (e) { self.setState({ exit: Number(e.target.value) }); } };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+<script src="../effects.js"></script>
+</body>
+</html>
