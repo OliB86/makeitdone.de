@@ -49,9 +49,9 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 .mk{background:linear-gradient(transparent 62%,#F1D734 62%,#F1D734 92%,transparent 92%) !important;border-radius:0 !important;padding:0 .08em !important;margin:0 !important;transform:none !important;box-shadow:none !important;font-family:'Instrument Serif',Georgia,serif !important;font-weight:400 !important;font-style:italic !important;letter-spacing:0 !important}
 
 .fl{position:relative;border-top-color:#d4d4d4 !important}
-.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
+.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
 .fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
-.fl .fl-ic{transition:background .5s ease var(--fd,0s),border-color .5s ease var(--fd,0s)}
+.fl .fl-ic{transition:background .4s ease var(--fd,0s),border-color .4s ease var(--fd,0s)}
 .fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
 .hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}
 @keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
@@ -68,13 +68,15 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .door:hover .story-btn{background:#F1D734}
 #kontenplan .bk .sy-step{min-height:16vh !important}
 .phase.fl::after{top:auto;bottom:-1px}
-.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:1.6s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
-.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.7s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:1.4s !important}
-.ck-row.fl .fl-ic{transition:background .5s ease,border-color .5s ease}
+.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:.4s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
+.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.2s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:.4s !important}
+.ck-row.fl .fl-ic{transition:background .4s ease,border-color .4s ease}
+.mbar{display:none}
+@media (max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e4e4e4;backdrop-filter:blur(8px)}.mbar a{flex:1;text-align:center;background:#F1D734;color:#141414;font-weight:700;font-size:16px;padding:14px 18px;border-radius:999px;text-decoration:none}body.has-mbar{padding-bottom:78px}}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
-<body>
+<body class="has-mbar">
 <template id="tpl">
 
 
@@ -136,7 +138,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794953546"></script>
+<div class="mbar"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=mobilbar-c">Erstgespräch vereinbaren</a></div>
+
+<script src="../dc-lite.js?v=1794953993"></script>
 <script>
 
 class Component extends DCLogic {
@@ -159,8 +163,8 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794953546"></script>
-<script src="../c-flow.js?v=1794953546"></script>
-<script src="../c-faq.js?v=1794953546"></script>
+<script src="../effects.js?v=1794953993"></script>
+<script src="../c-flow.js?v=1794953993"></script>
+<script src="../c-faq.js?v=1794953993"></script>
 </body>
 </html>
