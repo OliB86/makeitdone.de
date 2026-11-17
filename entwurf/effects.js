@@ -38,10 +38,10 @@
     });
     document.querySelectorAll('.sy').forEach(function (sy) {
       var steps = sy.querySelectorAll('.sy-step'), cur = 0, n = steps.length;
-      var hz = sy.classList.contains('hz') && innerWidth > 860;
+      var hz = sy.classList.contains('hz') && (innerWidth > 860 || sy.classList.contains('hz-m'));
       if (hz) {
         var wrap = sy.querySelector('.hz-wrap'), pin = sy.querySelector('.hz-pin'), stage = sy.querySelector('.hz-stage');
-        var ph = pin.offsetHeight, tp = Math.max(80, Math.round((vh - ph) / 2 + 36)) + 'px', wh = Math.round(ph + n * vh * 0.6) + 'px';
+        var hhv = parseFloat(document.documentElement.style.getPropertyValue('--hh')) || 72, ph = pin.offsetHeight, tp = Math.max(hhv + 8, Math.round((vh - ph) / 2 + hhv / 2)) + 'px', wh = Math.round(ph + n * vh * 0.6) + 'px';
         if (pin.style.top !== tp) pin.style.top = tp;
         if (wrap.style.height !== wh) wrap.style.height = wh;
         var range = Math.max(1, wrap.offsetHeight - pin.offsetHeight);
@@ -93,7 +93,7 @@
   }
   document.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('.hz .sy-nav a') : null;
-    if (!a || innerWidth <= 860) return;
+    if (!a || (innerWidth <= 860 && !a.closest('.hz-m'))) return;
     var sy = a.closest('.hz'), wrap = sy.querySelector('.hz-wrap'), pin = sy.querySelector('.hz-pin');
     var links = Array.prototype.slice.call(sy.querySelectorAll('.sy-nav a')), i = links.indexOf(a), n = links.length;
     var range = wrap.offsetHeight - pin.offsetHeight, top = wrap.getBoundingClientRect().top + scrollY - (parseFloat(pin.style.top) || 72);

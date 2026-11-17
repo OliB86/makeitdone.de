@@ -22,7 +22,7 @@ input[type=range]{width:100%;accent-color:#141414}
 .wcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav a:last-child{order:-1}}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
 </style>
 </head>
 <body>
@@ -83,7 +83,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 
 </template>
 <div id="app"></div>
-<script src="dc-lite.js?v=1794923911"></script>
+<script src="dc-lite.js?v=1794937014"></script>
 <script>
 
 class Component extends DCLogic {
