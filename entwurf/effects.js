@@ -37,12 +37,25 @@
     });
     document.querySelectorAll('.sy').forEach(function (sy) {
       var steps = sy.querySelectorAll('.sy-step'), cur = 0, n = steps.length;
+      var hz = sy.classList.contains('hz') && innerWidth > 860;
+      if (hz) {
+        var wrap = sy.querySelector('.hz-wrap'), pin = sy.querySelector('.hz-pin'), stage = sy.querySelector('.hz-stage');
+        var range = Math.max(1, wrap.offsetHeight - pin.offsetHeight);
+        var prog = Math.max(0, Math.min(0.9999, (72 - wrap.getBoundingClientRect().top) / range));
+        cur = Math.floor(prog * n);
+        var mh = 0; steps.forEach(function (el) { mh = Math.max(mh, el.offsetHeight); });
+        var hs = (mh + 60) + 'px'; if (stage.style.height !== hs) stage.style.height = hs;
+      } else {
+        steps.forEach(function (el, i) {
+          var t = el.getBoundingClientRect().top;
+          if (t < vh * 0.55) cur = i;
+          if (t < vh * 0.9 && !el.classList.contains('seen')) el.classList.add('seen');
+        });
+      }
       steps.forEach(function (el, i) {
-        var t = el.getBoundingClientRect().top;
-        if (t < vh * 0.55) cur = i;
-        if (t < vh * 0.9 && !el.classList.contains('seen')) el.classList.add('seen');
+        var a = i === cur; if (el.classList.contains('act') !== a) el.classList.toggle('act', a);
+        if (hz && el.classList.contains('past') !== (i < cur)) el.classList.toggle('past', i < cur);
       });
-      steps.forEach(function (el, i) { var a = i === cur; if (el.classList.contains('act') !== a) el.classList.toggle('act', a); });
       sy.querySelectorAll('.sy-nav a').forEach(function (a, i) {
         if (a.classList.contains('act') !== (i === cur)) a.classList.toggle('act', i === cur);
         if (a.classList.contains('done') !== (i < cur)) a.classList.toggle('done', i < cur);
@@ -70,6 +83,15 @@
       t.style.transform = 'rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg) translateY(-4px)';
     });
   }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('.hz .sy-nav a') : null;
+    if (!a || innerWidth <= 860) return;
+    var sy = a.closest('.hz'), wrap = sy.querySelector('.hz-wrap'), pin = sy.querySelector('.hz-pin');
+    var links = Array.prototype.slice.call(sy.querySelectorAll('.sy-nav a')), i = links.indexOf(a), n = links.length;
+    var range = wrap.offsetHeight - pin.offsetHeight, top = wrap.getBoundingClientRect().top + scrollY - 72;
+    e.preventDefault();
+    scrollTo({ top: top + range * (i + 0.5) / n, behavior: 'smooth' });
+  });
   window.dcAfter = function () { scan(); onScroll(); };
   scan(); onScroll();
 })();
