@@ -208,13 +208,13 @@ class Component extends DCLogic {
     var LAGEN = [
       { id: 'lage-1', title: 'Ich wachse als Selbstständige/r', story: 'Das Geschäft läuft, der Gewinn steigt – und jeder Euro wird zum persönlichen Steuersatz versteuert. Die GmbH-Idee steht im Raum, die Buchhaltung hinkt hinterher, die Vorauszahlungen passen nicht.',
         tun: 'Zahlen auf den aktuellen Stand bringen, Einzelunternehmen, GmbH und Holding durchrechnen, den Wechsel vorbereiten und mit deinem Steuerberater umsetzen. Dazu Verträge und Vergütung, auch für mitarbeitende Familie.',
-        rechner: 'Rechtsform.dc.html', rechnerLabel: 'Rechner: Einzelunternehmen, GmbH oder Holding →', fall: 'Kunde B', r: 'Du stehst am Übergang zur GmbH. Jetzt werden die Weichen gestellt – später umzubauen ist teurer.' },
+        rechner: 'rechner-rechtsform.html', rechnerLabel: 'Rechner: Einzelunternehmen, GmbH oder Holding →', fall: 'Kunde B', r: 'Du stehst am Übergang zur GmbH. Jetzt werden die Weichen gestellt – später umzubauen ist teurer.' },
       { id: 'lage-2', title: 'Ich habe eine GmbH', story: 'Die GmbH ist da, du bist Geschäftsführer. Aber die Zahlen kommen spät, Entnahmen und Gehalt sind Bauchgefühl, und ob die Struktur noch zu deinen Plänen passt, weiß niemand so genau.',
         tun: 'Buchhaltung nach deinen Kennzahlen aufbauen, Dashboard einrichten, Geschäftsführergehalt, Benefits und Verträge aufstellen – und die Struktur an dein Zielbild anpassen.',
-        rechner: 'Netto.dc.html', rechnerLabel: 'Rechner: Netto vom Brutto →', fall: 'Kunde A (Vergütung)', r: 'Deine GmbH braucht Zahlen, mit denen du steuern kannst – und eine Struktur, die zu deinen Zielen passt.' },
+        rechner: 'rechner-netto.html', rechnerLabel: 'Rechner: Netto vom Brutto →', fall: 'Kunde A (Vergütung)', r: 'Deine GmbH braucht Zahlen, mit denen du steuern kannst – und eine Struktur, die zu deinen Zielen passt.' },
       { id: 'lage-3', title: 'Holding oder Nachfolge?', story: 'Beteiligungen, Immobilien, ein möglicher Exit: Die nächste Stufe steht an. Was heute entschieden wird, bestimmt, was später bei dir ankommt.',
         tun: 'Zielbild für 1, 3 und 10 Jahre, Holding und Töchter planen, Exit und Nachfolge vorbereiten, Immobilien sinnvoll zuordnen – umgesetzt im Netzwerk aus Steuerberatern, Wirtschaftsprüfern und Rechtsanwälten.',
-        rechner: 'Rechner.dc.html', rechnerLabel: 'Rechner: Exit und Beteiligungen →', fall: 'Kunde A', r: 'Du planst die nächste Stufe. Jetzt zählt eine Struktur, die Gewinne, Exits und Vermögen sauber trennt.' }
+        rechner: 'rechner-holding.html', rechnerLabel: 'Rechner: Exit und Beteiligungen →', fall: 'Kunde A', r: 'Du planst die nächste Stufe. Jetzt zählt eine Struktur, die Gewinne, Exits und Vermögen sauber trennt.' }
     ];
     var lagen = LAGEN.map(function (d, i) { return { id: d.id, num: '0' + (i + 1), title: d.title, story: d.story, tun: d.tun, rechner: d.rechner, rechnerLabel: d.rechnerLabel, fall: d.fall }; });
     var score = [0, 0, 0];
@@ -226,7 +226,7 @@ class Component extends DCLogic {
       var best = 0;
       for (var k = 1; k < 3; k++) { if (score[k] > score[best]) { best = k; } }
       var L = LAGEN[best];
-      res = { t: 'Lage 0' + (best + 1) + ': ' + L.title, x: L.r + (st.on.length >= 3 ? ' Bei so vielen Punkten lohnt sich ein Gespräch.' : ''), h: st.on.length >= 3 ? 'Kontakt.dc.html' : '#' + L.id, c: st.on.length >= 3 ? 'Jetzt Erstberatung sichern →' : 'Mehr zu dieser Lage ↓' };
+      res = { t: 'Lage 0' + (best + 1) + ': ' + L.title, x: L.r + (st.on.length >= 3 ? ' Bei so vielen Punkten lohnt sich ein Gespräch.' : ''), h: st.on.length >= 3 ? 'kontakt.html' : '#' + L.id, c: st.on.length >= 3 ? 'Jetzt Erstberatung sichern →' : 'Mehr zu dieser Lage ↓' };
     }
     var FAQ = [
       { q: 'Bin ich dafür nicht zu klein?', a: 'Gerade auf dem Weg vom Einzelunternehmen zur GmbH werden die Weichen gestellt. Später umzubauen ist aufwendiger und teurer.' },
