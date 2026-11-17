@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Karriere – make it done</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button,input,textarea{font-family:inherit}
+@keyframes mid-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.mid-in{animation:mid-in .35s ease-out both}
+.mid-bar{transition:width .4s ease}
+@media (prefers-reduced-motion: reduce){.mid-in,.mid-bar{animation:none;transition:none}}
+.mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
+.flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
+.mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
+.flap-track{display:flex;flex-direction:column}.flap-track>span{height:1.2em;line-height:1.2em}
+.fx .flap-track,.flap-track{animation:flap 10s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes flap{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.2em)}50%,70%{transform:translateY(-2.4em)}75%,95%{transform:translateY(-3.6em)}100%{transform:translateY(-4.8em)}}
+.flap-sub{height:1.5em;overflow:hidden;font-size:20px;color:#3d3d3d}.flap-sub .flap-track>span{height:1.5em;line-height:1.5em}
+.flap-sub .flap-track{animation-name:flapsub}
+@keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
+@media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
+:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
+
+:root{color-scheme:light}
+html,body{overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+table,[data-count]{font-variant-numeric:tabular-nums}
+section p{max-width:min(100%,70ch)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #F1D734;outline-offset:3px;border-radius:6px}
+.fx .rv{opacity:1 !important}
+.fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
+html.show-b #story-a,html:not(.show-b) #story-b{display:none}
+</style>
+</head>
+<body>
+<template id="tpl">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+
+
+<header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../b/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
+<a href="../b/leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../b/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../b/fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../b/rechner.html" style="text-decoration: none">Rechner</a>
+<a href="../b/ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../b/karriere.html" style="text-decoration: none; font-weight: 600">Karriere</a>
+</nav>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-karriere-b" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+</div>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Karriere</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 80px); line-height: 1.0; letter-spacing: -0.02em; max-width: 1000px">Karriere braucht keinen Lebenslauf. <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">You make it done.</em></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 780px">Kein Anschreiben, keine Zeugnisse. Wir sind kein klassisches Unternehmen – also stellen wir auch nicht klassisch ein. Uns interessiert, was du kannst und wie du tickst, nicht wie dein Lebenslauf aussieht. Bewirb dich in zehn Minuten: ein paar Klicks und ein kurzes Video.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap">
+<a href="#check" style="background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Jetzt bewerben ↓</a>
+<a href="#stellen" style="padding: 16px 8px; font-weight: 500; font-size: 16px; color: #3d3d3d">Offene Stellen ansehen</a>
+</div>
+</section>
+
+<section style="background: #141414; color: #f2f2f2">
+<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #222222; color: #e8e8e8; border: 1px solid #3a3a3a"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum wir anders einstellen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 880px">Wir fördern Stärken. Darum fragen wir nach ihnen.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Stärken statt Lücken</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Niemand kann alles. Wir bauen Aufgaben um das, was du richtig gut kannst.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Mut statt Papier</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Zeugnisse sagen wenig. Ein Video, in dem du zeigst, wer du bist, sagt viel.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Machen statt reden</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Wir heißen make it done. Wer gern Dinge fertig macht, ist bei uns richtig.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Schnell statt Warteschleife</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Kurzer Prozess, klare Rückmeldung – versprochen.</span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Was wir von dir erwarten</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Wir geben viel Freiheit. Dafür erwarten wir einiges.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Klar und direkt</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du sagst, was du denkst – freundlich, ehrlich und ohne Umwege. Und du hörst genauso gut zu.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Fehler offen ansprechen</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Fehler passieren. Wir reden darüber, lernen daraus und machen weiter. Verstecken ist das Einzige, was nicht geht.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Selbstständig arbeiten</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du übernimmst Verantwortung für deine Themen und wartest nicht auf die nächste Anweisung.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Dinge bewegen wollen</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du bringst Ideen ein, packst an und bleibst dran, bis es läuft. Lösungen statt Ausreden.</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #141414; padding: 22px 0 0">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">Ehrlich gesagt: Wir passen nicht zu dir, wenn …</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px 24px">
+<span style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5"><span aria-hidden="true" style="font-weight: 700">✕</span>du acht Stunden am Tag einfach absitzen willst</span>
+<span style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5"><span aria-hidden="true" style="font-weight: 700">✕</span>du lieber allein arbeitest als im Team</span>
+<span style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5"><span aria-hidden="true" style="font-weight: 700">✕</span>du Probleme lieber meldest als löst</span>
+<span style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5"><span aria-hidden="true" style="font-weight: 700">✕</span>du mit New Work, Remote und flexiblen Strukturen nichts anfangen kannst</span>
+<span style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5"><span aria-hidden="true" style="font-weight: 700">✕</span>dich KI und neue Tools eher abschrecken als neugierig machen</span>
+</div>
+<span style="font-size: 15px; color: #3d3d3d">Wenn du dich in keinem Punkt wiederfindest: Dann freuen wir uns auf dich.</span>
+</div>
+</section>
+
+<section id="stellen" style="max-width: 1180px; margin: 0 auto; padding: 0 24px 88px; display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Offene Stellen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1">Wen wir suchen.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Alle Stellen: remote oder in unserem Headquarter in Erkelenz – wie es für dich am besten passt.</p>
+<div role="group" aria-label="Bereich filtern" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{filters}}" as="fi" hint-placeholder-count="4">
+<button type="button" onClick="{{fi.pick}}" aria-pressed="{{fi.on}}" style="{{fi.style}}">{{fi.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{jobs}}" as="j" hint-placeholder-count="4">
+<div style="{{j.boxStyle}}">
+<button type="button" onClick="{{j.toggle}}" aria-expanded="{{j.open}}" style="width: 100%; background: transparent; border: 0; padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; text-align: left; cursor: pointer; color: inherit; min-height: 44px; flex-wrap: wrap">
+<span style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">{{j.title}}</span>
+<span style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{j.chips}}" as="c" hint-placeholder-count="3">
+<span style="{{j.chipStyle}}">{{c}}</span>
+</sc-for>
+</span>
+</span>
+<span aria-hidden="true" style="font-size: 26px; font-weight: 400">{{j.sign}}</span>
+</button>
+<sc-if value="{{j.open}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 32px 32px; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 860px; color: #e4e4e4">{{j.intro}}</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b8b8b8">Was du bei uns machst</span>
+<sc-for list="{{j.tasks}}" as="t" hint-placeholder-count="4"><span style="font-size: 15px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid #3a3a3a">{{t}}</span></sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b8b8b8">Was dich stark macht</span>
+<sc-for list="{{j.profile}}" as="p" hint-placeholder-count="4"><span style="font-size: 15px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid #3a3a3a">{{p}}</span></sc-for>
+</div>
+</div>
+<a href="#check" onClick="{{j.apply}}" style="align-self: flex-start; background: #ffffff; color: #141414; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Für diese Stelle bewerben ↓</a>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section>
+<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum du bei uns arbeiten solltest</span>
+<span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px; color: #3d3d3d">Vorschlag – gemeinsam schärfen</span>
+</div>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Fünf Dinge, die du von uns bekommst.</h2>
+<div role="group" aria-label="Benefit wählen" style="display: grid; grid-template-columns: repeat(5, minmax(120px, 1fr)); gap: 8px; overflow-x: auto">
+<button type="button" onClick="{{ben0Pick}}" aria-pressed="{{ben0On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben0Line}}; color: #141414">
+<span style="{{ben0Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben0Title}}</span>
+</button>
+<button type="button" onClick="{{ben1Pick}}" aria-pressed="{{ben1On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben1Line}}; color: #141414">
+<span style="{{ben1Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 21V11"></path><path d="M12 11c0-4 3-7 8-7 0 5-3 7-8 7z"></path><path d="M12 14c0-3-2-5-7-5 0 4 2 5 7 5z"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben1Title}}</span>
+</button>
+<button type="button" onClick="{{ben2Pick}}" aria-pressed="{{ben2On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben2Line}}; color: #141414">
+<span style="{{ben2Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben2Title}}</span>
+</button>
+<button type="button" onClick="{{ben3Pick}}" aria-pressed="{{ben3On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben3Line}}; color: #141414">
+<span style="{{ben3Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14.2A5 5 0 0 1 21 19"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben3Title}}</span>
+</button>
+<button type="button" onClick="{{ben4Pick}}" aria-pressed="{{ben4On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben4Line}}; color: #141414">
+<span style="{{ben4Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><ellipse cx="9" cy="7" rx="6" ry="3"></ellipse><path d="M3 7v4c0 1.7 2.7 3 6 3s6-1.3 6-3V7"></path><path d="M9 14v3c0 1.7 2.7 3 6 3s6-1.3 6-3v-4c0-1.6-2.4-2.9-5.5-3"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben4Title}}</span>
+</button>
+</div>
+<div class="mid-in" style="display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start; padding-top: 12px">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.08">{{benTitle}}</span>
+<span style="font-size: 18px; color: #3d3d3d">{{benSub}}</span>
+</div>
+<div style="flex: 1.4 1 420px; min-width: 0; display: flex; flex-direction: column">
+<sc-for list="{{benefitItems}}" as="bi" hint-placeholder-count="3">
+<div style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #d4d4d4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg><span style="font-size: 17px; line-height: 1.5">{{bi}}</span></div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>So läuft es</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Vier Schritte. Keine Warteschleife.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div style="background: #141414; color: #ffffff; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">1</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Klick-Bewerbung + Video</span><span style="font-size: 15px; line-height: 1.55; color: #d4d4d4">Ein paar Fragen anklicken, Video-Link schicken. Rund zehn Minuten – Rückmeldung innerhalb von 48 Stunden.</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="width: 40px; height: 40px; border-radius: 50%; background: #141414; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">2</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Videocall</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Wir lernen uns kennen – locker, ehrlich, rund 20 Minuten.</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="width: 40px; height: 40px; border-radius: 50%; background: #141414; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">3</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Probetag</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Remote oder im Headquarter: Du arbeitest einen Tag mit – beide Seiten schauen, ob es passt.</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="width: 40px; height: 40px; border-radius: 50%; background: #141414; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">4</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Entscheidung</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Spätestens 48 Stunden nach dem Probetag weißt du, woran du bist.</span></div>
+</div>
+</section>
+
+<section id="check" style="background: #f4f4f4">
+<div style="max-width: 880px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Deine Bewerbung</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">In zehn Minuten bei uns auf dem Tisch.</h2>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: #5c5c5c"><span>Schritt {{stepNum}} von {{stepTotal}}</span><span>{{stepName}}</span></div>
+<div style="height: 8px; border-radius: 999px; background: #dcdcdc; overflow: hidden"><div class="mid-bar" style="{{barStyle}}"></div></div>
+</div>
+
+<div class="mid-in" style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid #141414; padding: 22px 0 0">
+
+<sc-if value="{{s0}}" hint-placeholder-val="{{ true }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Für welche Stelle brennst du?</span>
+<div role="group" aria-label="Stelle wählen" style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{roleOpts}}" as="o" hint-placeholder-count="5">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{s1}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Wie willst du arbeiten?</span>
+<div role="group" aria-label="Arbeitsort wählen" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{placeOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-top: 8px">Und wie viel?</span>
+<div role="group" aria-label="Umfang wählen" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{timeOpts}}" as="o" hint-placeholder-count="4">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Was hast du schon gemacht?</span>
+<span style="font-size: 15px; color: #5c5c5c">Keine Zeugnisse – nur ein kurzer Überblick.</span>
+<div role="group" aria-label="Berufserfahrung wählen" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{expOpts}}" as="o" hint-placeholder-count="4">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-top: 8px">Deine drei wichtigsten Stationen</span>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Station 1
+<input type="text" value="{{st1}}" onInput="{{setSt1}}" placeholder="z. B. Vertrieb bei Firma XY, 2021–2024" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Station 2
+<input type="text" value="{{st2}}" onInput="{{setSt2}}" placeholder="Rolle, Unternehmen, Zeitraum" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Station 3
+<input type="text" value="{{st3}}" onInput="{{setSt3}}" placeholder="Rolle, Unternehmen, Zeitraum" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Worauf bist du dabei am meisten stolz? (optional)
+<input type="text" value="{{proud}}" onInput="{{setProud}}" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+</sc-if>
+
+<sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Was sind deine Superkräfte?</span>
+<span style="font-size: 15px; color: #5c5c5c">Wähl bis zu drei.</span>
+<div role="group" aria-label="Stärken wählen" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{powerOpts}}" as="o" hint-placeholder-count="8">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{s4}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">{{scenQ}}</span>
+<div role="group" aria-label="Antwort wählen" style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{scenOpts}}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{s5}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Jetzt du: dein Video.</span>
+<span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Höchstens drei Minuten, Handy reicht, kein Schnitt nötig. Lade es bei Loom, YouTube (nicht gelistet) oder Google Drive hoch und füg den Link ein. Bitte beantworte darin:</span>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{videoQs}}" as="vq" hint-placeholder-count="5">
+<span style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.45; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700">{{vq.n}}</span><span>{{vq.q}}</span></span>
+</sc-for>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Link zu deinem Video
+<input type="url" value="{{video}}" onInput="{{setVideo}}" placeholder="https://" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+</sc-if>
+
+<sc-if value="{{s6}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Wie erreichen wir dich?</span>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name
+<input type="text" value="{{name}}" onInput="{{setName}}" autocomplete="name" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">E-Mail
+<input type="email" value="{{mail}}" onInput="{{setMail}}" autocomplete="email" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Telefon (optional)
+<input type="tel" value="{{phone}}" onInput="{{setPhone}}" autocomplete="tel" style="border: 1px solid #c8c8c8; border-radius: 12px; padding: 14px 16px; font-size: 16px; font-weight: 400">
+</label>
+<span style="font-size: 13px; color: #5c5c5c">Mit dem Absenden stimmst du zu, dass wir deine Angaben für das Bewerbungsverfahren nutzen. [Datenschutzhinweis Bewerbung – Anwältin]</span>
+</sc-if>
+
+<sc-if value="{{s7}}" hint-placeholder-val="{{ false }}">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Fast geschafft. Passt alles?</span>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{summary}}" as="sm" hint-placeholder-count="6">
+<div style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid #e4e4e4; flex-wrap: wrap"><span style="font-weight: 600; width: 160px; flex-shrink: 0">{{sm.k}}</span><span style="font-size: 15px; color: #3d3d3d; min-width: 0; overflow-wrap: anywhere">{{sm.v}}</span></div>
+</sc-for>
+</div>
+<a href="{{mailHref}}" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Bewerbung absenden →</a>
+<span style="font-size: 13px; color: #5c5c5c">Im Entwurf öffnet der Knopf eine fertig ausgefüllte Mail an karriere@makeitdone.de. [Später ggf. direkt über ein Formular-Tool]</span>
+</sc-if>
+
+<div style="display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid #e4e4e4; padding-top: 20px">
+<button type="button" onClick="{{back}}" style="{{backStyle}}">← Zurück</button>
+<sc-if value="{{notLast}}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{fwd}}" style="{{fwdStyle}}">Weiter →</button>
+</sc-if>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="background: #141414; color: #d4d4d4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../b/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../b/karriere.html" style="color: #ffffff">Karriere</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+</div>
+</footer>
+
+</div>
+
+</template>
+<div id="app"></div>
+<script src="../dc-lite.js?v=1794945126"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'alle', open: 0, ben: 0, step: 0, role: -1, place: '', time: '', powers: [], scen: -1, video: '', name: '', mail: '', phone: '', exp: '', st1: '', st2: '', st3: '', proud: '' };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var J = [
+      { area: 'kunden', title: 'Client Partner Finanz & Struktur (m/w/d)', chips: ['Kundenbetreuung', 'auch als Einstieg', 'selbstständig, auch nebenberuflich', 'remote oder Headquarter'],
+        intro: 'Du bist für unsere Kunden die feste Ansprechperson. Du führst Onboarding- und Strategiegespräche, behältst ihre Ziele im Blick und steuerst, was im Hintergrund passiert. Du startest an der Seite der Gründerin, wirst von ihr ausgebildet und übernimmst Schritt für Schritt eigene Kunden.',
+        tasks: ['Onboarding-, Steuerungs- und Strategiegespräche mit Unternehmern führen', 'Offene To-dos an Buchhaltung und Tech weitergeben und nachhalten', 'Koordination mit unserem Netzwerk: Steuerberater, Wirtschaftsprüfer, Rechtsanwälte, Vermögensberater', 'Abläufe und Systeme gemeinsam mit dem Team laufend weiterentwickeln'],
+        profile: ['Erfahrung mit Zahlen und Unternehmen – z. B. aus Unternehmensberatung, Coaching, Steuerberatung oder dem Aufbau eines Start-ups', 'Du hörst zu, fragst nach und bringst Dinge auf den Punkt', 'KI-affin und neugierig auf neue Tools', 'Lust, eng mit Unternehmern zu arbeiten und mit uns zu wachsen'],
+        scenQ: 'Ein Kunde will diese Woche eine große Investition tätigen – die Zahlen dazu fehlen noch. Was machst du?',
+        scen: ['Ich kläre mit ihm, was er bis wann braucht, und stoße die Zahlen intern an', 'Ich rate ihm, zu warten, bis alles vorliegt', 'Ich hole sofort den Steuerberater dazu'] },
+      { area: 'tech', title: 'Digital & AI Generalist (m/w/d)', chips: ['Tech & KI', 'selbstständig, auch nebenberuflich', 'remote oder Headquarter'],
+        intro: 'Du liebst KI und Automatisierung – und willst sie nicht nur ausprobieren, sondern im echten Unternehmen zum Laufen bringen. Bei uns baust du die Systeme, mit denen wir und unsere Kunden schneller, klüger und entspannter arbeiten.',
+        tasks: ['Automatisierungen bauen und pflegen (z. B. Make, Zapier)', 'KI-Assistenten, Agenten und Workflows für interne Abläufe und Kunden entwickeln', 'Unsere Tool-Landschaft betreuen: Google Workspace, Close, Qonto, Calendly & Co.', 'Website, Dashboards und kleine Tools mitentwickeln', 'Team und Kunden fit machen im Umgang mit KI'],
+        profile: ['Du bist tief drin in KI-Tools und probierst Neues als Erste/r aus', 'Du denkst in Prozessen und baust lieber einmal richtig als zehnmal von Hand', 'No-Code ist dein Werkzeugkasten, ein bisschen Code schreckt dich nicht ab', 'Du erklärst Technik so, dass jeder sie versteht'],
+        scenQ: 'Ein Prozess im Team kostet jede Woche zwei Stunden Handarbeit. Was machst du?',
+        scen: ['Ich schaue mir den Ablauf an und baue eine Automatisierung', 'Ich frage erst, ob der Prozess überhaupt nötig ist', 'Ich teste, ob ein KI-Assistent das übernehmen kann'] },
+      { area: 'sales', title: 'Closer (m/w/d)', chips: ['Sales', 'selbstständig, auch nebenberuflich', 'remote oder Headquarter'],
+        intro: 'Du führst Beratungsgespräche mit Unternehmern, die sich schon für uns interessieren – und hilfst ihnen, eine gute Entscheidung zu treffen. Seriös, ehrlich, ohne Druck.',
+        tasks: ['Video-Gespräche mit qualifizierten Interessenten führen', 'Situation und Bedarf klären, passendes Paket vorstellen', 'Einwände ehrlich beantworten und abschließen', 'Gespräche und nächste Schritte in Close dokumentieren'],
+        profile: ['Erfahrung im beratenden B2B- oder High-Ticket-Vertrieb', 'Verständnis für Unternehmer und Finanzthemen', 'Seriöser Stil – keine Drückermethoden', 'Selbstständig, zuverlässig, ergebnisorientiert'],
+        scenQ: 'Ein Interessent sagt: „Klingt gut, aber ich muss noch drüber nachdenken.“ Was machst du?',
+        scen: ['Ich frage nach, was genau ihn noch zögern lässt', 'Ich vereinbare einen festen Folgetermin', 'Ich gebe ihm Zeit und melde mich in einer Woche'] },
+      { area: 'sales', title: 'Setter (m/w/d)', chips: ['Sales', 'selbstständig, auch nebenberuflich', 'remote oder Headquarter'],
+        intro: 'Du bist der erste Kontakt für Unternehmer, die sich über Website, Anzeigen oder Empfehlung melden. Du klärst, ob es passt, und vereinbarst das Erstgespräch.',
+        tasks: ['Neue Anfragen zügig kontaktieren – telefonisch, per Mail oder WhatsApp', 'Erste Qualifizierung nach festem Leitfaden', 'Erstgespräche im Kalender vereinbaren', 'Leads in Close pflegen und nachfassen'],
+        profile: ['Du telefonierst gern und hast Freude an Menschen', 'Strukturiert und zuverlässig', 'Erste Erfahrung in Vertrieb oder Kundenservice ist ein Plus', 'Sicher mit CRM und Kalender-Tools'],
+        scenQ: 'Ein neuer Lead geht dreimal nicht ans Telefon. Was machst du?',
+        scen: ['Ich schreibe eine kurze, persönliche Nachricht', 'Ich probiere es zu einer anderen Uhrzeit', 'Ich markiere ihn in Close und gehe zum nächsten'] },
+      { area: 'finance', title: 'Buchhalter/in oder Bilanzbuchhalter/in (m/w/d)', chips: ['Finance', 'selbstständig, auch nebenberuflich', 'remote oder Headquarter'],
+        intro: 'Du baust für unsere Kunden Buchhaltungen, die Entscheidungen liefern – gemeinsam mit unserem Digital & AI Generalist: Du bringst das Fachwissen, er oder sie die Automatisierung. Kein Belege-Abtippen, sondern Zahlen, die Unternehmer wirklich nutzen.',
+        tasks: ['Laufende Buchhaltung für Kundenunternehmen', 'Individuelle Kontenpläne im Rahmen des Kontenrahmens anlegen', 'Automatisierte Abläufe pflegen (u. a. Qonto, DATEV)', 'Monatsabschlüsse und Dashboards vorbereiten, Abstimmung mit Steuerberatern'],
+        profile: ['Kaufmännische Ausbildung mit mindestens drei Jahren Buchhaltungspraxis – oder Bilanzbuchhalter/in, Steuerfachangestellte/r', 'Sicher in DATEV', 'Lust auf Automatisierung und neue Tools', 'Genau, selbstständig, kommunikativ'],
+        scenQ: 'Ein Beleg passt zu keiner Buchung, der Monatsabschluss ist morgen. Was machst du?',
+        scen: ['Ich kläre es direkt mit dem Kunden und dokumentiere es', 'Ich buche vorläufig und markiere es zur Klärung', 'Ich prüfe, ob die Automatisierung einen Fehler hat'] }
+    ];
+    var F = [{ k: 'alle', l: 'Alle' }, { k: 'kunden', l: 'Kundenbetreuung' }, { k: 'tech', l: 'Tech & KI' }, { k: 'sales', l: 'Sales' }, { k: 'finance', l: 'Finance' }];
+    var pill = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 20px; font-size: 15px; cursor: pointer; min-height: 44px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
+    var row = function (on) { return 'text-align: left; border-radius: 14px; padding: 16px 20px; font-size: 16px; cursor: pointer; min-height: 52px; font-weight: 600; transition: background .2s, color .2s; ' + (on ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;'); };
+    var filters = F.map(function (f) { return { label: f.l, on: st.filter === f.k, pick: function () { self.setState({ filter: f.k }); }, style: pill(st.filter === f.k) }; });
+    var jobs = [];
+    J.forEach(function (d, i) {
+      if (st.filter !== 'alle' && st.filter !== d.area) { return; }
+      var isOpen = st.open === i;
+      jobs.push({ title: d.title, chips: d.chips, intro: d.intro, tasks: d.tasks, profile: d.profile, open: isOpen, sign: isOpen ? '−' : '+',
+        toggle: function () { self.setState({ open: isOpen ? -1 : i }); },
+        apply: function () { self.setState({ role: i, step: 1 }); },
+        chipStyle: 'font-size: 13px; font-weight: 600; border-radius: 999px; padding: 5px 12px; ' + (isOpen ? 'background: #ffffff; color: #141414;' : 'background: #f4f4f4; color: #141414;'),
+        boxStyle: 'border-radius: 20px; transition: background .25s, color .25s; ' + (isOpen ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;') });
+    });
+    var B = [
+      { t: 'Flexibel arbeiten', s: 'Remote oder im Headquarter', i: ['Remote oder in unserem Headquarter in Erkelenz – du entscheidest', 'Freie Zeiteinteilung statt Stechuhr', 'Arbeit, die sich um dein Leben herum organisieren lässt'] },
+      { t: 'Stärken & Wachstum', s: 'Persönliche und fachliche Entwicklung', i: ['Aufgaben, die zu deinen Stärken passen', 'Laufende Fortbildung – wir bleiben technisch immer auf dem neuesten Stand', 'Unser Expertennetzwerk aus Steuerberatern, Wirtschaftsprüfern, Rechtsanwälten und Beratern steht auch dir offen', 'Lernen von einer Dozentin für Steuern und Rechnungswesen – seit 2010'] },
+      { t: 'Moderne Arbeit', s: 'KI und Automatisierung statt Papierkram', i: ['Die neuesten KI-Tools im Alltag', 'Routine erledigen die Systeme – du machst das Spannende', 'Wenig Bürokratie, schnelle Entscheidungen'] },
+      { t: 'Team & Kultur', s: 'Klein, direkt, ehrlich', i: ['Kurze Wege und direkte Zusammenarbeit mit der Gründerin', 'Ein Team, das sich gegenseitig stark macht', 'Regelmäßige Teamevents'] }
+      ,{ t: 'Leistung zahlt sich aus', s: 'Je mehr du bewegst, desto mehr verdienst du', i: ['Leistungsorientierte Vergütung mit Beteiligung am Umsatz', 'Selbstständig und flexibel – auch nebenberuflich starten', 'Bei Anstellung: lohnsteueroptimierte Gehaltsstruktur mit Benefits – wir leben, was wir Kunden empfehlen'] }
+    ];
+    var benVals = {};
+    B.forEach(function (d, i) {
+      var on = st.ben === i;
+      benVals['ben' + i + 'Title'] = d.t; benVals['ben' + i + 'On'] = on;
+      benVals['ben' + i + 'Pick'] = function () { self.setState({ ben: i }); };
+      benVals['ben' + i + 'Line'] = on ? '3px solid #141414' : '3px solid transparent';
+      benVals['ben' + i + 'Circle'] = 'width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s, transform .2s; ' + (on ? 'background: #141414; color: #ffffff; transform: scale(1.06);' : 'background: #ffffff; color: #141414; border: 1.5px solid #c8c8c8;');
+    });
+    var NAMES = ['Stelle', 'Arbeitsweise', 'Erfahrung', 'Superkräfte', 'Praxisfrage', 'Video', 'Kontakt', 'Absenden'];
+    var total = NAMES.length;
+    var roleList = J.map(function (d) { return d.title; }).concat(['Initiativ – ich habe eine eigene Idee']);
+    var roleOpts = roleList.map(function (l, i) { return { label: l, on: st.role === i, pick: function () { self.setState({ role: i, scen: -1 }); }, style: row(st.role === i) }; });
+    var placeOpts = ['Remote', 'Headquarter Erkelenz', 'Beides'].map(function (l) { return { label: l, on: st.place === l, pick: function () { self.setState({ place: l }); }, style: pill(st.place === l) }; });
+    var timeOpts = ['Vollzeit', 'Teilzeit', 'Projektweise / freiberuflich', 'Noch offen'].map(function (l) { return { label: l, on: st.time === l, pick: function () { self.setState({ time: l }); }, style: pill(st.time === l) }; });
+    var expOpts = ['Einstieg / Quereinstieg', '1–3 Jahre', '3–5 Jahre', 'mehr als 5 Jahre'].map(function (l) { return { label: l, on: st.exp === l, pick: function () { self.setState({ exp: l }); }, style: pill(st.exp === l) }; });
+    var POW = ['Ich mache Dinge fertig', 'Ich bin ein Zahlenmensch', 'Ich überzeuge Menschen', 'Ich automatisiere alles', 'Ich erkläre Komplexes einfach', 'Ich behalte den Überblick', 'Ich lerne extrem schnell', 'Ich bleibe ruhig, wenn es brennt'];
+    var powerOpts = POW.map(function (l) {
+      var on = st.powers.indexOf(l) >= 0;
+      return { label: l, on: on, style: pill(on), pick: function () {
+        var next = on ? st.powers.filter(function (x) { return x !== l; }) : (st.powers.length < 3 ? st.powers.concat([l]) : st.powers);
+        self.setState({ powers: next });
+      } };
+    });
+    var rj = st.role >= 0 && st.role < J.length ? J[st.role] : null;
+    var scenQ = rj ? rj.scenQ : 'Du siehst bei uns etwas, das besser laufen könnte. Was machst du?';
+    var scenList = rj ? rj.scen : ['Ich spreche es direkt an – mit einem Vorschlag', 'Ich probiere es einfach aus und zeige das Ergebnis', 'Ich sammle erst Infos und Zahlen'];
+    var scenOpts = scenList.map(function (l, i) { return { label: l, on: st.scen === i, pick: function () { self.setState({ scen: i }); }, style: row(st.scen === i) }; });
+    var VQ = ['Wer bist du – in drei Sätzen?', 'Was kannst du richtig gut? Erzähl ein konkretes Beispiel.', 'Wann hast du zuletzt etwas fertig gemacht, das andere liegen gelassen hätten?', 'Warum make it done – und warum genau diese Stelle?', 'Wie willst du arbeiten und ab wann kannst du starten?'];
+    var videoQs = VQ.map(function (q, i) { return { n: String(i + 1), q: q }; });
+    var roleLabel = st.role >= 0 ? roleList[st.role] : '–';
+    var summary = [
+      { k: 'Stelle', v: roleLabel }, { k: 'Arbeitsweise', v: (st.place || '–') + ' · ' + (st.time || '–') },
+      { k: 'Erfahrung', v: (st.exp || '–') + [st.st1, st.st2, st.st3].filter(function (x) { return x; }).map(function (x) { return ' | ' + x; }).join('') + (st.proud ? ' | Stolz auf: ' + st.proud : '') },
+      { k: 'Superkräfte', v: st.powers.length ? st.powers.join(', ') : '–' }, { k: 'Praxisfrage', v: st.scen >= 0 ? scenList[st.scen] : '–' },
+      { k: 'Video', v: st.video || '–' }, { k: 'Kontakt', v: (st.name || '–') + ' · ' + (st.mail || '–') + (st.phone ? ' · ' + st.phone : '') }
+    ];
+    var body = summary.map(function (s) { return s.k + ': ' + s.v; }).join('\n');
+    var mailHref = 'mailto:karriere@makeitdone.de?subject=' + encodeURIComponent('Bewerbung: ' + roleLabel) + '&body=' + encodeURIComponent(body);
+    var stepBtn = 'border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; ';
+    return Object.assign(benVals, {
+      filters: filters, jobs: jobs, benefitItems: B[st.ben].i, benTitle: B[st.ben].t, benSub: B[st.ben].s,
+      stepNum: st.step + 1, stepTotal: total, stepName: NAMES[st.step],
+      barStyle: 'height: 100%; border-radius: 999px; background: #141414; width: ' + Math.round(((st.step + 1) / total) * 100) + '%',
+      s0: st.step === 0, s1: st.step === 1, s2: st.step === 2, s3: st.step === 3, s4: st.step === 4, s5: st.step === 5, s6: st.step === 6, s7: st.step === 7,
+      expOpts: expOpts, st1: st.st1, st2: st.st2, st3: st.st3, proud: st.proud,
+      setSt1: function (e) { self.setState({ st1: e.target.value }); },
+      setSt2: function (e) { self.setState({ st2: e.target.value }); },
+      setSt3: function (e) { self.setState({ st3: e.target.value }); },
+      setProud: function (e) { self.setState({ proud: e.target.value }); },
+      roleOpts: roleOpts, placeOpts: placeOpts, timeOpts: timeOpts, powerOpts: powerOpts, scenQ: scenQ, scenOpts: scenOpts, videoQs: videoQs,
+      video: st.video, name: st.name, mail: st.mail, phone: st.phone,
+      setVideo: function (e) { self.setState({ video: e.target.value }); },
+      setName: function (e) { self.setState({ name: e.target.value }); },
+      setMail: function (e) { self.setState({ mail: e.target.value }); },
+      setPhone: function (e) { self.setState({ phone: e.target.value }); },
+      summary: summary, mailHref: mailHref,
+      notLast: st.step < total - 1,
+      back: function () { self.setState({ step: Math.max(0, st.step - 1) }); },
+      fwd: function () { self.setState({ step: Math.min(total - 1, st.step + 1) }); },
+      backStyle: stepBtn + 'background: #ffffff; color: #141414; border: 1px solid #141414; visibility: ' + (st.step === 0 ? 'hidden' : 'visible'),
+      fwdStyle: stepBtn + 'background: #141414; color: #ffffff; border: 1px solid #141414;'
+    });
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+<script src="../effects.js?v=1794945126"></script>
+</body>
+</html>

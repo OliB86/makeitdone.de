@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Offen · Rechner Immobilien – make it done</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button,input,select{font-family:inherit}
+input[type=range]{width:100%;accent-color:#141414}
+.mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
+.flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
+.mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
+.flap-track{display:flex;flex-direction:column}.flap-track>span{height:1.2em;line-height:1.2em}
+.fx .flap-track,.flap-track{animation:flap 10s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes flap{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.2em)}50%,70%{transform:translateY(-2.4em)}75%,95%{transform:translateY(-3.6em)}100%{transform:translateY(-4.8em)}}
+.flap-sub{height:1.5em;overflow:hidden;font-size:20px;color:#3d3d3d}.flap-sub .flap-track>span{height:1.5em;line-height:1.5em}
+.flap-sub .flap-track{animation-name:flapsub}
+@keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
+@media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
+:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+html.gate:not(.unlocked) .gated{filter:blur(7px);opacity:.5;pointer-events:none;user-select:none;max-height:360px;overflow:hidden}
+.lead-thanks,.lead-gate-txt{display:none}html.gate .lead-gate-txt{display:block}html.gate .lead-open-txt{display:none}
+html.unlocked .lead-thanks{display:block}html.unlocked .lead-form,html.unlocked .lead-gate-txt,html.unlocked .lead-open-txt{display:none !important}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
+
+:root{color-scheme:light}
+html,body{overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+table,[data-count]{font-variant-numeric:tabular-nums}
+section p{max-width:min(100%,70ch)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #F1D734;outline-offset:3px;border-radius:6px}
+.fx .rv{opacity:1 !important}
+.fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
+html.show-b #story-a,html:not(.show-b) #story-b{display:none}
+</style>
+</head>
+<body>
+<template id="tpl">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+<header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../b/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
+<a href="../b/leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../b/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../b/fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../b/rechner.html" style="text-decoration: none; font-weight: 600">Rechner</a>
+<a href="../b/ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../b/karriere.html" style="text-decoration: none">Karriere</a>
+</nav>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-immobilien-b" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+</div>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
+<a href="../b/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Immobilien</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Immobilien privat oder in der GmbH? Rechne selbst.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Privat ist der Verkauf nach zehn Jahren steuerfrei – dafür kosten die Mieten deinen persönlichen Steuersatz. In der GmbH ist es umgekehrt. Welche Seite gewinnt, hängt von Haltedauer, Mieten und Plänen ab.</p>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 48px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0">
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">{{g.label}}</span>
+<div role="group" aria-label="{{g.label}}" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{g.opts}}" as="o" hint-placeholder-count="2">
+<button type="button" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="flex: 1.5 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">{{barTitle}}</span>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">{{b.label}}</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="{{b.style}}"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: {{b.textColor}}">{{b.value}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
+<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b><span style="font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Anbindung an Close – mit Berkant klären</span></span>
+<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
+<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
+<form class="lead-form" data-calc="immobilien" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
+<label for="lead-name-immobilien" class="sr">Vorname</label><input id="lead-name-immobilien" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-mail-immobilien" class="sr">E-Mail-Adresse</label><input id="lead-mail-immobilien" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
+<label for="lead-ok-immobilien" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-immobilien" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
+</form>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Der Versand per E-Mail startet, sobald Close angebunden ist.</span>
+</div>
+<div class="gated" style="display: flex; flex-direction: column; gap: 20px">
+<div style="overflow-x: auto">
+<div style="min-width: 560px; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<span style="padding: 16px; background: #f4f4f4"></span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">Privat</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">Immobilien-GmbH</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #141414; color: #ffffff">GmbH unter Holding</span>
+<sc-for list="{{rows}}" as="rw" hint-placeholder-count="6">
+<span style="{{rw.ls}}">{{rw.label}}</span>
+<span style="{{rw.cs}}">{{rw.p}}</span>
+<span style="{{rw.cs}}">{{rw.g}}</span>
+<span style="{{rw.ks}}">{{rw.h}}</span>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
+<sc-for list="{{notes}}" as="n" hint-placeholder-count="3">
+<span><b>{{n.t}}</b> {{n.x}}</span>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 72px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung für Deutschland, Stand 2026: privat persönlicher Steuersatz und Spekulationsfrist von zehn Jahren (§ 23 Abs. 1 S. 1 Nr. 1 EStG); GmbH mit Körperschaftsteuer 15 % plus Soli und erweiterter Kürzung bei reiner Vermietung (§ 9 Nr. 1 S. 2 GewStG); Projekte mit Gewerbesteuer, privat als gewerblicher Grundstückshandel mit Anrechnung nach § 35 EStG; Holding nach § 8b KStG. Ohne Grunderwerbsteuer, Finanzierung, Kirchensteuer und Freibeträge, Mieten ohne Steigerung. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-immobilien" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Deine Immobilienstrategie besprechen →</a>
+</section>
+<footer style="background: #141414; color: #d4d4d4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../b/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../b/karriere.html" style="color: #ffffff">Karriere</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+</div>
+</footer>
+</div>
+
+</template>
+<div id="app"></div>
+<script src="../dc-lite.js?v=1794945126"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { art: 'miete', mode: 'keep', miete: 40000, jahre: 12, verkauf: 400000, rate: 44, hebe: 400 };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
+    var K = 0.15 * 1.055, gw = 0.035 * st.hebe / 100;
+    var r = st.rate / 100, n = st.jahre, L = st.miete * n, V = st.verkauf;
+    var proj = st.art === 'projekt', out = st.mode === 'out';
+    var pL, pV, gRate;
+    if (proj) {
+      var extra = 0.035 * Math.max(0, st.hebe - 400) / 100;
+      pL = L * (r + extra); pV = V * (r + extra); gRate = K + gw;
+    } else {
+      pL = L * r; pV = n >= 10 ? 0 : V * r; gRate = K;
+    }
+    var gL = L * gRate, gV = V * gRate, gAfter = L + V - gL - gV;
+    var hr = 0.05 * (K + gw);
+    var toHold = gAfter * hr, inHold = gAfter - toHold;
+    var abgG = out ? gAfter * 0.25 * 1.055 : 0, abgH = out ? inHold * 0.25 * 1.055 : 0;
+    var tP = pL + pV, tG = gL + gV + abgG, tH = gL + gV + toHold + abgH;
+    var base = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
+    function row(label, p, g, h, bold) {
+      var fw = bold ? ' font-weight: 700;' : '';
+      return { label: label, p: p, g: g, h: h, ls: base + ' font-weight: 600;', cs: base + fw, ks: base + ' background: #f7f7f7;' + fw };
+    }
+    var total = L + V;
+    var rows = [
+      row('Steuer auf die Überschüsse (' + n + ' Jahre)', eur(pL), eur(gL), eur(gL)),
+      row('Steuer auf den Verkauf', (!proj && n >= 10) ? '0 € · nach 10 Jahren steuerfrei' : eur(pV), eur(gV), eur(gV)),
+      row('Steuer auf dem Weg in die Holding', '–', '–', eur(toHold)),
+      row('Abgeltungsteuer bei Ausschüttung', '–', out ? eur(abgG) : '–', out ? eur(abgH) : '–'),
+      row('Steuern gesamt', eur(tP), eur(tG), eur(tH), true),
+      row('Steuerquote', (tP / total * 100).toFixed(1).replace('.', ',') + ' %', (tG / total * 100).toFixed(1).replace('.', ',') + ' %', (tH / total * 100).toFixed(1).replace('.', ',') + ' %', true)
+    ];
+    var av = [['Privat', total - tP, 'privat'], ['Immobilien-GmbH', total - tG, out ? 'privat' : 'in der GmbH'], ['GmbH unter Holding', total - tH, out ? 'privat' : 'in der Holding']];
+    var max = Math.max(av[0][1], av[1][1], av[2][1], 1);
+    var bars = av.map(function (b, i) {
+      var w = Math.max(4, b[1] / max * 100);
+      return { label: b[0], value: eur(b[1]) + ' · ' + b[2], textColor: i === 2 ? '#ffffff' : '#141414',
+        style: 'position: absolute; left: 0; top: 0; bottom: 0; width: ' + w.toFixed(1) + '%; border-radius: 999px; transition: width .4s ease; background: ' + (i === 2 ? '#141414' : i === 1 ? '#8a8a8a' : '#c8c8c8') };
+    });
+    var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
+    function group(label, key, opts) {
+      return { label: label, opts: opts.map(function (o) { var on = st[key] === o[0]; return { label: o[1], on: on, style: btn(on), pick: function () { var x = {}; x[key] = o[0]; self.setState(x); } }; }) };
+    }
+    var groups = [
+      group('Was hast du vor?', 'art', [['miete', 'Vermieten und halten'], ['projekt', 'Projekte: bauen, sanieren, verkaufen']]),
+      group('Gewinne der GmbH', 'mode', [['keep', 'werden reinvestiert'], ['out', 'werden privat ausgeschüttet']])
+    ];
+    function slider(id, label, key, min, max, step, shown, hint) {
+      return { id: id, label: label, min: min, max: max, step: step, value: st[key], shown: shown, hint: hint,
+        change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
+    }
+    var sliders = [
+      slider('i-miete', 'Überschuss pro Jahr', 'miete', 0, 300000, 5000, eur(st.miete), 'Mieten minus Zinsen, Kosten und Abschreibung'),
+      slider('i-jahre', 'Haltedauer', 'jahre', 1, 30, 1, n + ' Jahre', proj ? 'bei Projekten meist kurz' : 'privat ab 10 Jahren steuerfreier Verkauf'),
+      slider('i-verkauf', 'Gewinn beim Verkauf', 'verkauf', 0, 3000000, 25000, eur(V), 'Verkaufspreis minus Buchwert'),
+      slider('i-rate', 'Dein persönlicher Steuersatz', 'rate', 14, 48, 1, st.rate + ' %', 'Grenzsteuersatz, Soli eingerechnet'),
+      slider('i-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 200, 900, 5, st.hebe + ' %', 'je nach Gemeinde')
+    ];
+    var notes = proj ? [
+      { t: 'Projekte privat:', x: 'Wer innerhalb von fünf Jahren mehr als drei Objekte verkauft, wird schnell zum gewerblichen Grundstückshändler – mit Gewerbesteuer und ohne steuerfreien Verkauf.' },
+      { t: 'Projekte in der GmbH:', x: 'Keine erweiterte Kürzung, dafür klare Trennung vom Bestand und von deinem Privatvermögen.' },
+      { t: 'Unter der Holding:', x: 'Gewinne fließen für rund 1,5 % in die Holding und stehen dort für das nächste Projekt bereit.' }
+    ] : [
+      { t: 'Privat:', x: 'Mieten kosten deinen persönlichen Steuersatz. Nach zehn Jahren ist der Verkauf steuerfrei.' },
+      { t: 'Immobilien-GmbH:', x: 'Bei reiner Vermietung fällt dank erweiterter Kürzung keine Gewerbesteuer an – rund 15,8 % auf Mieten und Verkauf. Mehr Geld für Tilgung und nächste Objekte.' },
+      { t: 'Unter der Holding:', x: 'Gewinne lassen sich für rund 1,5 % in die Holding holen und dort in neue Projekte oder Beteiligungen stecken.' }
+    ];
+    return { groups: groups, sliders: sliders, rows: rows, bars: bars, notes: notes,
+      barTitle: out ? 'Nach Steuern bei dir privat' : 'Nach Steuern verfügbar für das nächste Objekt' };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+<script src="../effects.js?v=1794945126"></script>
+<script src="../lead.js?v=1794945126"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Offen · Rechner Netto vom Brutto – make it done</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button,input,select{font-family:inherit}
+input[type=range]{width:100%;accent-color:#141414}
+.mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
+.flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
+.mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
+.flap-track{display:flex;flex-direction:column}.flap-track>span{height:1.2em;line-height:1.2em}
+.fx .flap-track,.flap-track{animation:flap 10s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes flap{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.2em)}50%,70%{transform:translateY(-2.4em)}75%,95%{transform:translateY(-3.6em)}100%{transform:translateY(-4.8em)}}
+.flap-sub{height:1.5em;overflow:hidden;font-size:20px;color:#3d3d3d}.flap-sub .flap-track>span{height:1.5em;line-height:1.5em}
+.flap-sub .flap-track{animation-name:flapsub}
+@keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
+@media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
+:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+html.gate:not(.unlocked) .gated{filter:blur(7px);opacity:.5;pointer-events:none;user-select:none;max-height:360px;overflow:hidden}
+.lead-thanks,.lead-gate-txt{display:none}html.gate .lead-gate-txt{display:block}html.gate .lead-open-txt{display:none}
+html.unlocked .lead-thanks{display:block}html.unlocked .lead-form,html.unlocked .lead-gate-txt,html.unlocked .lead-open-txt{display:none !important}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
+
+:root{color-scheme:light}
+html,body{overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+table,[data-count]{font-variant-numeric:tabular-nums}
+section p{max-width:min(100%,70ch)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #F1D734;outline-offset:3px;border-radius:6px}
+.fx .rv{opacity:1 !important}
+.fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
+html.show-b #story-a,html:not(.show-b) #story-b{display:none}
+</style>
+</head>
+<body>
+<template id="tpl">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+<header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../b/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
+<a href="../b/leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../b/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../b/fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../b/rechner.html" style="text-decoration: none; font-weight: 600">Rechner</a>
+<a href="../b/ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../b/karriere.html" style="text-decoration: none">Karriere</a>
+</nav>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-netto-b" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+</div>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
+<a href="../b/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Netto vom Brutto</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 940px">Mehr Netto für Team und Geschäftsführung – bei gleichem Budget.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 800px">Wähl, welche Leistung wer bekommt. Der Rechner vergleicht mit einer Gehaltserhöhung, die das Unternehmen genauso viel kostet – inklusive Pauschalsteuer und Sozialabgaben.</p>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 32px; display: flex; flex-direction: column; gap: 12px">
+<div style="overflow-x: auto">
+<div style="min-width: 860px; display: grid; grid-template-columns: minmax(0, 2.1fr) 190px minmax(0, 1.4fr) 110px 110px; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">Leistung</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">pro Jahr</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4">Steuer und Abgaben</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4; text-align: center">Team</span>
+<span style="padding: 14px 16px; font-size: 13px; font-weight: 600; color: #ffffff; background: #141414; text-align: center">Geschäfts­führung</span>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="11">
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 14px">{{r.label}}</b><span style="font-size: 12px; color: #5c5c5c">{{r.law}}</span></span>
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; white-space: pre-line">{{r.amount}}</span>
+<span style="padding: 12px 16px; border-top: 1px solid #e4e4e4; font-size: 12px; line-height: 1.45; color: #3d3d3d">{{r.tax}}</span>
+<span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.tToggle}}" aria-pressed="{{r.tOn}}" disabled="{{r.tDisabled}}" style="{{r.tStyle}}">{{r.tLabel}}</button></span>
+<span style="padding: 10px 12px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; justify-content: center; align-items: center"><button type="button" onClick="{{r.gToggle}}" aria-pressed="{{r.gOn}}" disabled="{{r.gDisabled}}" style="{{r.gStyle}}">{{r.gLabel}}</button></span>
+</sc-for>
+<span style="padding: 16px; border-top: 2px solid #141414; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 17px">Potenzial pro Person und Jahr</b><span style="font-size: 12px; color: #5c5c5c">Summe der ausgewählten Leistungen, steuer- und abgabenfrei bzw. pauschal versteuert</span></span>
+<span style="padding: 16px; border-top: 2px solid #141414"></span>
+<span style="padding: 16px; border-top: 2px solid #141414; font-size: 12px; line-height: 1.5; color: #3d3d3d">{{sumNote}}</span>
+<span style="padding: 16px 8px; border-top: 2px solid #141414; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap">{{sumTeam}}</span>
+<span style="padding: 16px 8px; border-top: 2px solid #141414; background: #141414; color: #ffffff; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap">{{sumGf}}</span>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 40px; display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px; border-top: 1px solid #141414; padding: 22px 0 0">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Team</span>
+<sc-for list="{{tSliders}}" as="sl" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif; white-space: nowrap">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px; border-top: 1px solid #141414; padding: 22px 0 0">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Geschäftsführung</span>
+<sc-for list="{{gSliders}}" as="sl" hint-placeholder-count="6">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif; white-space: nowrap">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px; border-top: 1px solid #141414; padding: 22px 0 0">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Team · Vorsorge und Jobrad</span>
+<sc-for list="{{aSliders}}" as="sl" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif; white-space: nowrap">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #141414; color: #ffffff">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">{{headline}}</h2>
+<div class="gated" style="overflow-x: auto">
+<div style="min-width: 680px; display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); border: 1px solid #3a3a3a; border-radius: 20px; overflow: hidden">
+<span style="padding: 14px 16px; background: #222222"></span>
+<span style="padding: 14px 16px; background: #222222; font-weight: 700; font-family: 'Space Grotesk', sans-serif">pro Mitarbeiter (Ø)</span>
+<span style="padding: 14px 16px; background: #222222; font-weight: 700; font-family: 'Space Grotesk', sans-serif">{{teamHead}}</span>
+<span style="padding: 14px 16px; background: #ffffff; color: #141414; font-weight: 700; font-family: 'Space Grotesk', sans-serif">Geschäftsführung</span>
+<sc-for list="{{res}}" as="x" hint-placeholder-count="4">
+<span style="{{x.ls}}">{{x.label}}</span>
+<span style="{{x.cs}}">{{x.m}}<br><small style="opacity: .65; font-weight: 400; font-size: 12px">{{x.mm}}</small></span>
+<span style="{{x.cs}}">{{x.t}}<br><small style="opacity: .65; font-weight: 400; font-size: 12px">{{x.tm}}</small></span>
+<span style="{{x.gs}}">{{x.g}}<br><small style="opacity: .65; font-weight: 400; font-size: 12px">{{x.gm}}</small></span>
+</sc-for>
+</div>
+</div>
+<span style="font-size: 13px; color: #bdbdbd">Jahreswerte, darunter pro Monat. Team: Durchschnitt pro Kopf, Kita nur für Eltern mit Kita-Kind.</span>
+</div>
+</section>
+<section style="max-width: 1180px; margin: 0 auto; padding: 40px 24px 0"><div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
+<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b><span style="font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Anbindung an Close – mit Berkant klären</span></span>
+<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
+<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
+<form class="lead-form" data-calc="netto" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
+<label for="lead-name-netto" class="sr">Vorname</label><input id="lead-name-netto" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-mail-netto" class="sr">E-Mail-Adresse</label><input id="lead-mail-netto" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
+<label for="lead-ok-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-netto" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
+</form>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Der Versand per E-Mail startet, sobald Close angebunden ist.</span>
+</div></section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Nur Geschäftsführung · Absicherung und Steuer-Hebel</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px">
+<sc-for list="{{extras}}" as="e" hint-placeholder-count="2">
+<div style="{{e.style}}">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">{{e.title}}</b>
+<button type="button" onClick="{{e.toggle}}" aria-pressed="{{e.on}}" style="{{e.btnStyle}}">{{e.btn}}</button>
+</div>
+<span style="font-size: 12px; color: #5c5c5c">{{e.law}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700">{{e.big}}</span>
+<span style="font-size: 14px; line-height: 1.55; color: #3d3d3d">{{e.text}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 72px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; max-width: 980px; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
+<b>Annahmen</b>
+<span>Geschäftsführung = Gesellschafter-Geschäftsführer ohne Sozialversicherungspflicht; Team mit rund 21 % Sozialabgaben je Seite. Alle Leistungen zusätzlich zum ohnehin geschuldeten Lohn (§ 8 Abs. 4 EStG), für die Geschäftsführung vorab und fremdüblich im Vertrag vereinbart – sonst droht eine verdeckte Gewinnausschüttung.</span>
+<span>Pauschalsteuer mit Solidaritätszuschlag, ohne Kirchensteuer. Essenszuschuss an 15 Arbeitstagen à 7,67 €, pauschal versteuert wird der Sachbezugswert von 4,57 €. Erholungsbeihilfe als Beispiel für verheiratet mit zwei Kindern (156 € + 104 € + 2 × 52 € im Jahr). § 37b EStG nur für die Geschäftsführung: bei eigenen Mitarbeitenden bleibt die Zuwendung sozialversicherungspflichtig.</span>
+<span>Betriebliche Altersvorsorge: heute steuerfrei bis 8 % der Beitragsbemessungsgrenze (8.112 € im Jahr), im Team sozialversicherungsfrei bis 4 % (4.056 €). Die spätere Rente wird versteuert – meist mit einem deutlich niedrigeren Satz; den angenommenen Satz im Ruhestand zieht der Rechner vom Netto ab.</span>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 980px">Vereinfachte Beispielrechnung, Stand 2026. Sie ersetzt keine Beratung im Einzelfall – Lohnabrechnung und Verträge prüfen Steuerberater und Anwalt.</p>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-netto" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Vergütung für Team und Geschäftsführung aufsetzen →</a>
+</section>
+<footer style="background: #141414; color: #d4d4d4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../b/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../b/karriere.html" style="color: #ffffff">Karriere</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+</div>
+</footer>
+</div>
+
+</template>
+<div id="app"></div>
+<script src="../dc-lite.js?v=1794945126"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      staff: 10, kidsN: 3, kita: 300, tRate: 30,
+      gRate: 44, gSal: 10000, s37: 10000, pkv: 1500,
+      bav: 338, gBav: 676, rente: 25, rad: 90, gRad: 250,
+      team: { sach: true, kita: true, essen: true, net: true, ges: true, job: true, rad: false, erh: false, bav: false },
+      gf: { sach: true, kita: true, essen: true, net: true, ges: true, job: true, rad: true, erh: true, bav: true, s37: true },
+      lfz: true, pkvOn: true
+    };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
+    var SOLI = 1.055, SV = 0.21;
+    var essenWert = 7.67 * 15, essenSBW = 4.57 * 15;
+    var B = [
+      { k: 'sach', label: 'Sachbezug, z. B. Gutscheinkarte', law: '§ 8 Abs. 2 S. 11 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 600 € im Jahr (50 € je Monat)' },
+      { k: 'kita', label: 'Kita-Zuschuss', law: '§ 3 Nr. 33 EStG · nicht schulpflichtige Kinder', m: st.kita, tax: 'steuer- und abgabenfrei, ohne Obergrenze' },
+      { k: 'essen', label: 'Essenszuschuss', law: '§ 8 Abs. 2 S. 6 EStG, § 40 Abs. 2 S. 1 Nr. 1 EStG', m: essenWert, p: essenSBW * 0.25 * SOLI, tax: '15 Tage à 7,67 € im Monat; 25 % pauschal nur auf den Sachbezugswert' },
+      { k: 'net', label: 'Internetzuschuss', law: '§ 40 Abs. 2 S. 1 Nr. 5 EStG', m: 50, p: 50 * 0.25 * SOLI, tax: 'bis 600 € im Jahr; 25 % Pauschalsteuer, abgabenfrei' },
+      { k: 'ges', label: 'Gesundheitsförderung', law: '§ 3 Nr. 34 EStG', m: 50, tax: 'steuer- und abgabenfrei bis 600 € im Jahr' },
+      { k: 'job', label: 'Jobticket', law: '§ 3 Nr. 15 EStG', m: 63, tax: 'steuer- und abgabenfrei' },
+      { k: 'rad', label: 'Jobrad', law: '§ 3 Nr. 37 EStG · zusätzlich zum Lohn überlassen', m: st.rad, gm: st.gRad, tax: 'steuer- und abgabenfrei' },
+      { k: 'erh', label: 'Erholungsbeihilfe', law: '§ 40 Abs. 2 S. 1 Nr. 3 EStG · Beispiel: verheiratet, 2 Kinder', m: 364 / 12, p: 364 / 12 * 0.25 * SOLI, tax: 'bis 364 € im Jahr, 25 % pauschal, abgabenfrei' },
+      { k: 'bav', label: 'Betriebliche Altersvorsorge', law: '§ 3 Nr. 63 EStG · Betriebsausgabe', m: st.bav, gm: st.gBav, bav: true, tax: 'steuerfrei bis 8.112 € im Jahr, im Team abgabenfrei bis 4.056 €; Rente später versteuert' },
+      { k: 's37', label: 'Sachzuwendungen, Incentives', law: '§ 37b EStG · nur Geschäftsführung', m: st.s37 / 12, p: st.s37 / 12 * 0.30 * SOLI, gfOnly: true, tax: '30 % Pauschalsteuer; bis 10.000 € im Jahr' }
+    ];
+    function calc(who) {
+      var sel = who === 'team' ? st.team : st.gf;
+      var cost = 0, net = 0, kitaCost = 0, kitaNet = 0;
+      var sv = who === 'team' ? SV : 0;
+      var rate = (who === 'team' ? st.tRate : st.gRate) / 100;
+      B.forEach(function (b) {
+        if (!sel[b.k]) return;
+        if (who === 'team' && b.gfOnly) return;
+        var m = (who === 'gf' && b.gm != null) ? b.gm : b.m;
+        var c = m + (b.p || 0), n = m;
+        if (b.bav) {
+          var over = who === 'team' ? Math.max(0, m - 338) : 0;
+          c = m + over * sv; n = m - over * sv - m * st.rente / 100;
+        }
+        if (b.k === 'kita') { kitaCost += c; kitaNet += n; } else { cost += c; net += n; }
+      });
+      function salNet(c) { return c / (1 + sv) * (1 - sv - rate); }
+      if (who === 'team') {
+        var n = Math.max(1, st.staff), kids = Math.min(st.kidsN, n);
+        var tCost = cost * n + kitaCost * kids, tNet = net * n + kitaNet * kids, tSal = salNet(tCost);
+        return { cost: tCost / n, net: tNet / n, sal: tSal / n, tCost: tCost, tNet: tNet, tSal: tSal };
+      }
+      cost += kitaCost; net += kitaNet;
+      return { cost: cost, net: net, sal: salNet(cost) };
+    }
+    var T = calc('team'), G = calc('gf');
+    var cs = 'padding: 14px 16px; border-top: 1px solid #3a3a3a; font-size: 15px;';
+    function rr(label, m, t, g, bold) {
+      var fw = bold ? ' font-weight: 700; font-size: 18px;' : ' font-weight: 600; font-size: 16px;';
+      return { label: label, m: eur(m * 12), t: eur(t * 12), g: eur(g * 12), mm: eur(m) + ' im Monat', tm: eur(t) + ' im Monat', gm: eur(g) + ' im Monat',
+        ls: cs + ' font-weight: 600; color: #e6e6e6;', cs: cs + fw, gs: cs + ' background: #ffffff; color: #141414; border-top-color: #e4e4e4;' + fw };
+    }
+    var res = [
+      rr('Unternehmen gibt aus', T.cost, T.tCost, G.cost),
+      rr('als Gehaltserhöhung netto', T.sal, T.tSal, G.sal),
+      rr('als Benefits netto', T.net, T.tNet, G.net),
+      rr('mehr netto', T.net - T.sal, T.tNet - T.tSal, G.net - G.sal, true)
+    ];
+    var totalYear = (T.tNet - T.tSal) * 12 + (G.net - G.sal) * 12;
+    var on = 'border: 1px solid #141414; background: #141414; color: #ffffff;';
+    var off = 'border: 1px solid #141414; background: #ffffff; color: #141414;';
+    var dis = 'border: 1px dashed #c8c8c8; background: transparent; color: #9a9a9a; cursor: default;';
+    var pill = 'min-width: 72px; min-height: 36px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; ';
+    var sT = 0, sG = 0, pT = 0, pG = 0;
+    B.forEach(function (b) {
+      if (st.team[b.k] && !b.gfOnly) { sT += b.m * 12; pT += (b.p || 0) * 12; }
+      if (st.gf[b.k]) { sG += (b.gm != null ? b.gm : b.m) * 12; pG += (b.p || 0) * 12; }
+    });
+    var rows = B.map(function (b) {
+      var tOn = !!st.team[b.k] && !b.gfOnly, gOn = !!st.gf[b.k];
+      var yr = function (m) { return eur(m * 12) + (b.p ? ' + ' + eur(b.p * 12) + ' Pauschalsteuer' : ''); };
+      var amount = b.gm != null ? 'Team ' + eur(b.m * 12) + '\nGF ' + eur(b.gm * 12) : yr(b.m);
+      var monthly = '';
+      return { label: b.label, law: b.law, amount: amount, monthly: monthly, tax: b.tax,
+        tOn: tOn, gOn: gOn, tDisabled: !!b.gfOnly, gDisabled: false,
+        tLabel: b.gfOnly ? 'nur GF' : (tOn ? '✓ Team' : 'Team'), gLabel: gOn ? '✓ GF' : 'GF',
+        tStyle: pill + (b.gfOnly ? dis : tOn ? on : off), gStyle: pill + (gOn ? on : off),
+        tToggle: function () { if (b.gfOnly) return; var n = Object.assign({}, st.team); n[b.k] = !tOn; self.setState({ team: n }); },
+        gToggle: function () { var n = Object.assign({}, st.gf); n[b.k] = !gOn; self.setState({ gf: n }); } };
+    });
+    function slider(id, label, key, min, max, step, shown, hint) {
+      return { id: id, label: label, min: min, max: max, step: step, value: st[key], shown: shown, hint: hint,
+        change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
+    }
+    var tSliders = [
+      slider('t-staff', 'Mitarbeitende', 'staff', 1, 100, 1, String(st.staff), 'ohne Geschäftsführung'),
+      slider('t-kids', 'davon mit Kita-Kind', 'kidsN', 0, 50, 1, String(Math.min(st.kidsN, st.staff)), 'nur sie bekommen den Kita-Zuschuss'),
+      slider('t-kita', 'Kita-Kosten im Jahr', 'kita', 0, 900, 10, eur(st.kita * 12), 'gegen Nachweis'),
+      slider('t-rate', 'Grenzsteuersatz Team', 'tRate', 14, 45, 1, st.tRate + ' %', 'inklusive Soli')
+    ];
+    var gSliders = [
+      slider('g-rate', 'Grenzsteuersatz Geschäftsführung', 'gRate', 14, 48, 1, st.gRate + ' %', 'inklusive Soli'),
+      slider('g-sal', 'Gehalt im Jahr (brutto)', 'gSal', 3000, 30000, 500, eur(st.gSal * 12), 'für die Gehaltsfortzahlung'),
+      slider('g-37', 'Sachzuwendungen nach § 37b im Jahr', 's37', 0, 10000, 100, eur(st.s37), 'z. B. Incentives, Geschenke, Events'),
+      slider('g-pkv', 'PKV-Beitrag Basisabsicherung im Jahr', 'pkv', 0, 1500, 10, eur(st.pkv * 12), 'für die Vorauszahlung'),
+      slider('g-bav', 'Altersvorsorge Geschäftsführung im Jahr', 'gBav', 0, 676, 1, eur(st.gBav * 12), 'bis 8.112 € steuerfrei'),
+      slider('g-rad', 'Jobrad Geschäftsführung im Jahr', 'gRad', 0, 250, 5, eur(st.gRad * 12), 'Leasingraten')
+    ];
+    var aSliders = [
+      slider('a-bav', 'Altersvorsorge Team im Jahr', 'bav', 0, 676, 1, eur(st.bav * 12), 'abgabenfrei bis 4.056 €'),
+      slider('a-rad', 'Jobrad Team im Jahr', 'rad', 0, 250, 5, eur(st.rad * 12), 'Leasingraten, vom Unternehmen getragen'),
+      slider('a-rente', 'Steuersatz im Ruhestand', 'rente', 0, 45, 1, st.rente + ' %', 'Annahme für die spätere Besteuerung')
+    ];
+    var lfzSum = 6 * st.gSal, pkvPre = 2.5 * 12 * st.pkv, pkvTax = pkvPre * st.gRate / 100;
+    var card = function (onx) { return 'display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 24px; ' + (onx ? 'background: #f4f4f4; border: 1px solid #141414;' : 'background: #ffffff; border: 1px dashed #c8c8c8; opacity: .6;'); };
+    var extras = [
+      { title: 'Gehaltsfortzahlung 6 Monate', law: 'im Geschäftsführervertrag · Betriebsausgabe', on: st.lfz, btn: st.lfz ? '✓ vorgesehen' : 'aufnehmen',
+        big: eur(lfzSum) + ' abgesichert',
+        text: 'Gesellschafter-Geschäftsführer bekommen meist kein gesetzliches Krankengeld. Mit einer Fortzahlung über sechs Monate läuft das Gehalt weiter; ab Monat 7 übernimmt idealerweise ein privates Krankentagegeld. Kosten entstehen nur im Ernstfall.',
+        toggle: function () { self.setState({ lfz: !st.lfz }); } },
+      { title: 'PKV-Beiträge vorauszahlen', law: '§ 10 Abs. 1 Nr. 3 S. 4 EStG · privat', on: st.pkvOn, btn: st.pkvOn ? '✓ vorgesehen' : 'aufnehmen',
+        big: eur(pkvTax) + ' Steuer jetzt',
+        text: 'Bis zum 2,5-Fachen des Jahresbeitrags zur Basisabsicherung (' + eur(pkvPre) + ') lässt sich vorauszahlen und im Zahlungsjahr absetzen. Lohnt in Jahren mit hohem Einkommen; in den Folgejahren fällt der Abzug entsprechend weg. Kann auch das Einkommen unter die Elterngeld-Grenze bringen.',
+        toggle: function () { self.setState({ pkvOn: !st.pkvOn }); } }
+    ].map(function (e) { e.style = card(e.on); e.btnStyle = pill + (e.on ? on : off) + ' padding: 0 14px;'; return e; });
+    return { rows: rows, sumTeam: eur(sT), sumGf: eur(sG), sumNote: 'Dazu trägt das Unternehmen Pauschalsteuer: Team ' + eur(pT) + ', GF ' + eur(pG) + ' im Jahr. Team mit Kita-Zuschuss gerechnet.', tSliders: tSliders, gSliders: gSliders, aSliders: aSliders, res: res, extras: extras,
+      teamHead: 'Team (' + st.staff + ')',
+      headline: 'Zusammen ' + eur(totalYear) + ' mehr netto im Jahr – bei gleichen Kosten fürs Unternehmen.' };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+<script src="../effects.js?v=1794945126"></script>
+<script src="../lead.js?v=1794945126"></script>
+</body>
+</html>
