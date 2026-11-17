@@ -15,10 +15,63 @@
 @font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url(/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
 
-body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
-a{color:#141414}a:hover{color:#555555}
-button{font-family:inherit}
+body{margin:0;background:#fafafa;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}
+.cta{transition:transform .2s ease, box-shadow .2s ease}.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.18)}.cta:hover .cta-dot{transform:translateX(4px)}.cta-dot{transition:transform .2s ease}
+@keyframes mq{to{transform:translateX(-50%)}}.mq{display:flex;width:max-content;animation:mq 40s linear infinite}
+@keyframes vq{to{transform:translateX(-50%)}}.vq{display:flex;gap:20px;width:max-content;animation:vq 60s linear infinite}.vq:hover{animation-play-state:paused}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float{animation:float 6s ease-in-out infinite}.float2{animation:float 7s ease-in-out -2s infinite}.float3{animation:float 8s ease-in-out -4s infinite}
+.tilt{transition:transform .25s ease, box-shadow .25s ease}.tilt:hover{box-shadow:0 26px 60px rgba(0,0,0,.14)}
+.fx .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}.fx .rv.in{opacity:1;transform:none}
+.fx .words .w{color:#c8c8c8;transition:color .3s}.fx .words .w.on{color:#141414}
+.phase.act .phase-num{color:#141414 !important}
 @keyframes mid-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.mid-in{animation:mid-in .35s ease-out both}
+@keyframes mid-spin{to{transform:rotate(360deg)}}@keyframes mid-spin-rev{to{transform:rotate(-360deg)}}@keyframes mid-jam{0%,100%{transform:rotate(0deg)}35%{transform:rotate(6deg)}55%{transform:rotate(-2deg)}70%{transform:rotate(3deg)}}
+@keyframes mid-pulse{0%,100%{box-shadow:0 0 0 0 rgba(20,20,20,.3)}50%{box-shadow:0 0 0 10px rgba(20,20,20,0)}}.mid-pulse{animation:mid-pulse 2.4s ease-in-out infinite}
+@keyframes mid-pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.35);opacity:1}100%{transform:scale(1);opacity:1}}.mid-pop{animation:mid-pop .5s ease-out both}
+@keyframes mid-pop-d{0%{transform:rotate(45deg) scale(0);opacity:0}60%{transform:rotate(45deg) scale(1.35);opacity:1}100%{transform:rotate(45deg) scale(1);opacity:1}}
+input[type=range]{width:100%;accent-color:#141414}
+@media (prefers-reduced-motion: reduce){.mq,.vq,.float,.float2,.float3,.gear,.mid-pulse{animation:none !important}.fx .rv{opacity:1 !important;transform:none !important}.fx .words .w{color:#141414 !important}}
+@media (max-width: 760px){.hide-m{display:none !important}}
+@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+.sy:not(.hz){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:72px;align-items:start}
+.sy-side{position:sticky;top:110px;display:flex;flex-direction:column;gap:24px}
+.sy-steps{display:flex;flex-direction:column}
+.sy-step{min-height:64vh;display:flex;flex-direction:column;justify-content:center;gap:18px;scroll-margin-top:120px}
+.sy-step.sm{min-height:0;justify-content:flex-start}
+.fx .sy-step{opacity:.16;transform:translateY(18px) scale(.985);transition:opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1)}
+.fx .sy-step.act{opacity:1;transform:none}
+.sy-nav{display:flex;flex-direction:column;gap:2px;border-left:2px solid #e4e4e4;padding-left:4px}
+.sy-nav a{display:flex;gap:14px;align-items:center;text-decoration:none;padding:8px 10px;border-radius:14px;color:#8a8a8a;font-weight:600;font-size:16px;transition:color .3s, background .3s}
+.sy-nav a:hover{background:rgba(0,0,0,.04)}
+.sy-n{width:36px;height:36px;border-radius:50%;border:2px solid #d4d4d4;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:15px;transition:background .3s, color .3s, border-color .3s, transform .3s}
+.sy-nav a.done{color:#3d3d3d}.sy-nav a.done .sy-n{background:#F1D734;border-color:#F1D734;color:#141414}
+.sy-nav a.act{color:#141414}.sy-nav a.act .sy-n{background:#141414;border-color:#141414;color:#F1D734;transform:scale(1.1)}
+.sy-bar{height:4px;border-radius:4px;background:#e4e4e4;overflow:hidden}.sy-bar i{display:block;height:100%;width:calc(var(--p,0) * 100%);background:#F1D734;transition:width .35s ease}
+.sy-hint{display:inline-flex;gap:10px;align-items:center;font-size:14px;font-weight:600;color:#5c5c5c}
+@keyframes sy-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}.sy-hint b{display:inline-block;animation:sy-bob 1.6s ease-in-out infinite}
+.tl-dot{transition:background .3s, color .3s, transform .3s}.sy-step.act .tl-dot{background:#141414 !important;color:#F1D734 !important;border-color:#141414 !important;transform:scale(1.12)}
+@media (max-width: 860px){.sy:not(.hz){grid-template-columns:minmax(0,1fr);gap:28px}.sy-side{position:static}.sy-nav{display:none}.sy-step,.sy-step.sm{min-height:0;padding:22px 0}.fx .sy-step{opacity:0;transform:translateY(24px)}.fx .sy-step.seen{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.fx .sy-step{opacity:1 !important;transform:none !important}.sy-hint b{animation:none}}
+.hz-stage{display:flex;flex-direction:column}
+@media (min-width: 861px){
+.fx .hz-wrap{height:calc(100vh - 72px + var(--n) * 60vh)}
+.fx .hz-pin{position:sticky;top:72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:72px;align-items:center}
+.fx .hz .sy-side{position:static}
+.fx .hz-stage{position:relative;display:block;overflow:hidden;margin:-30px;padding:30px}
+.fx .hz .sy-step{position:absolute;top:30px;left:30px;right:30px;min-height:0;opacity:0;transform:translateX(110%) rotate(2deg);transition:transform .75s cubic-bezier(.16,.84,.24,1), opacity .45s ease;pointer-events:none}
+.fx .hz .sy-step.past{transform:translateX(-70%) rotate(-1deg);opacity:0}
+.fx .hz .sy-step.act{transform:none;opacity:1;pointer-events:auto}
+.hz-count{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#5c5c5c}
+}
+@media (max-width: 860px){.hz-pin{display:flex;flex-direction:column;gap:28px}.fx .hz .sy-step{opacity:0;transform:translateX(70px)}.fx .hz .sy-step.seen{opacity:1;transform:none}.hz .sy-step{min-height:0;padding:22px 0;transition:opacity .6s ease, transform .7s cubic-bezier(.16,.84,.24,1)}}
+@media (min-width: 861px){.hz-pin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:72px;align-items:start}}
+.fx .net .ln{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1s ease var(--d)}.fx .net.in .ln{stroke-dashoffset:0}
+.fx .net .nd{opacity:0;transform:translateY(10px);transition:opacity .6s ease var(--d), transform .6s ease var(--d)}.fx .net.in .nd{opacity:1;transform:none}
+.fx .net .flows{opacity:0;transition:opacity .6s ease 2.4s}.fx .net.in .flows{opacity:1}
+@keyframes ring{0%,100%{opacity:.15}50%{opacity:.5}}.pulse-ring{animation:ring 3s ease-in-out infinite}
+@media (max-width: 760px){.show-m{display:flex !important}}
+@media (prefers-reduced-motion: reduce){.flows{display:none}.pulse-ring{animation:none}}
 .mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
 .flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
 .mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
@@ -30,8 +83,61 @@ button{font-family:inherit}
 @keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
 @media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
 @media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
+@keyframes gs2{to{transform:rotate(360deg)}}@keyframes gsr2{to{transform:rotate(-360deg)}}
+.gspin2,.gspin2-r{transform-box:fill-box;transform-origin:center}
+.gspin2{animation:gs2 var(--gd,14s) linear infinite}.gspin2-r{animation:gsr2 var(--gd,14s) linear infinite}
+.fx .kpi.in .kl{stroke-dashoffset:0}.fx .kpi .kl{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1s ease var(--d)}
+.fx .kpi .kp{opacity:0;transform:translateY(8px);transition:opacity .5s ease var(--d), transform .5s ease var(--d)}.fx .kpi.in .kp{opacity:1;transform:none}
+@media (max-width: 860px){
+.fx .hz-m .hz-pin{position:sticky;display:flex;flex-direction:column;gap:10px;background:#fafafa;z-index:4}
+.hz-m .sy-side>span:first-child,.hz-m .sy-hint,.hz-m .hz-count{display:none !important}
+.hz-m .sy-side h2{font-size:24px !important}
+.fx .hz-m .sy-nav{display:flex !important;flex-direction:row !important;flex-wrap:wrap;border-left:0 !important;padding-left:0 !important;gap:6px !important}
+.fx .hz-m .sy-nav a{padding:2px !important}.fx .hz-m .sy-nav a>span:last-child{display:none}.fx .hz-m .sy-nav a.act>span:last-child{display:flex;font-size:14px}
+.fx .hz-m .hz-stage{position:relative;display:block;overflow:hidden}
+.fx .hz.hz-m .sy-step{position:absolute;top:0;left:0;right:0;padding:0;min-height:0;opacity:0;transform:translateY(50px);transition:opacity .45s ease, transform .6s cubic-bezier(.16,.84,.24,1)}
+.fx .hz.hz-m .sy-step.past{opacity:0;transform:translateY(-40px)}
+.fx .hz.hz-m .sy-step.act{opacity:1;transform:none}
+.hz-m .sy-step svg{max-width:300px !important}
+.hz .sy-step{padding:12px 0 !important}
+}
 :root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
-@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+.portrait{-webkit-mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);mask-composite:intersect}
+@media (max-width: 760px){.portrait{height:380px !important}}
+@media (min-width: 761px){.ck-row::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:1.5px;background:#141414;opacity:.25}}
+@keyframes orb{to{transform:rotate(360deg)}}@keyframes orbr{to{transform:rotate(-360deg)}}
+.orb-i,.orb-o,.orb-up,.orb-up-i{transform-box:view-box}
+.orb-i{transform-origin:300px 300px;animation:orb 22s linear infinite}.orb-up-i{animation:orbr 22s linear infinite}
+.orb-o{transform-origin:300px 300px;animation:orbr 60s linear infinite}.orb-up{animation:orb 60s linear infinite}
+@media (prefers-reduced-motion: reduce){.orb-i,.orb-o,.orb-up,.orb-up-i{animation:none}}
+.tlink{color:#141414;text-decoration:none;background:linear-gradient(#F1D734,#F1D734) 0 100%/100% 3px no-repeat;padding-bottom:3px;transition:background-size .25s}.tlink:hover{background-size:100% 100%}
+@keyframes gs{to{transform:rotate(360deg)}}@keyframes gsr{to{transform:rotate(-360deg)}}@keyframes gj{0%,100%{transform:rotate(0)}30%{transform:rotate(5deg)}50%{transform:rotate(-2deg)}70%{transform:rotate(3deg)}}
+.gspin,.gspin-r,.gjam{transform-box:fill-box;transform-origin:center}
+.gspin{animation:gs 9s linear infinite}.gspin-r{animation:gsr 7.5s linear infinite}.gjam{animation:gj 2.6s ease-in-out infinite}
+@media (min-width: 861px){
+.fx .vt .sy-step{transform:translateY(90%) scale(.96);opacity:0}
+.fx .vt .sy-step.past{transform:translateY(-40%) scale(.94);opacity:0}
+.fx .vt .sy-step.act{transform:none;opacity:1}}
+@media (max-width: 860px){.fx .vt .sy-step{transform:translateY(40px)}}
+@media (prefers-reduced-motion: reduce){.gspin,.gspin-r,.gjam{animation:none}}
+.sy-dots{flex-direction:row !important;border-left:0 !important;padding-left:0 !important;gap:8px !important;flex-wrap:wrap}.sy-dots a{padding:2px !important}.sy-dots a>span:last-child{display:none}
+.cmp-mid{position:relative;background:#141414;color:#ffffff}
+@keyframes glow{0%,100%{box-shadow:0 0 0 2px #F1D734, 0 0 28px rgba(241,215,52,.35)}50%{box-shadow:0 0 0 3px #F1D734, 0 0 56px rgba(241,215,52,.7)}}
+.cmp-glow{animation:glow 3s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.cmp-glow{animation:none;box-shadow:0 0 0 3px #F1D734}}
+.sy.bk{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:72px}
+.bk .sy-side{top:84px;gap:14px}.bk .sy-side svg{max-height:52vh}.bk-card{filter:drop-shadow(0 6px 14px rgba(0,0,0,.07))}.hl{background:linear-gradient(transparent 60%, #F1D734 60%, #F1D734 92%, transparent 92%)}
+.bk .sy-step{min-height:26vh;gap:10px;justify-content:center}
+.fx .bk .sy-step{opacity:.22;transform:none;transition:opacity .5s ease}.fx .bk .sy-step.act{opacity:1}
+.bk-kr{display:flex;gap:18px;flex-wrap:wrap}.kr{font-size:13px;font-weight:600;color:#a8a8a8;display:inline-flex;gap:7px;align-items:center;transition:color .4s}
+.kr::before{content:"";width:9px;height:9px;border-radius:50%;background:#dcdcdc;transition:background .4s}
+.fx .bk .kr.on{color:#141414}.fx .bk .kr.on::before{background:#F1D734;box-shadow:0 0 0 1px #141414}
+.bn{transform-box:fill-box;transform-origin:center}
+.fx .bk .bn{transition:opacity .6s ease, transform .7s cubic-bezier(.16,.84,.24,1)}
+.fx .bk .bn:not(.on){opacity:0;transform:translateY(12px)}.fx .bk .bn[data-gh]:not(.on){opacity:.13;transform:none;filter:grayscale(1)}
+html:not(.fx) .bk .bn[data-u],html:not(.fx) .bk .bn[data-in]{display:none}
+.ln2{transform:none !important}
+@media (max-width: 860px){.sy.bk{grid-template-columns:minmax(0,1fr);gap:10px}.bk .sy-side{display:contents}.bk .bk-stage{position:sticky;top:calc(var(--hh, 110px) + 2px);z-index:5;background:#fafafa;padding:6px 0 10px;border-bottom:1px solid #ececec;align-self:start}.bk .bk-stage svg{max-height:30vh;margin:0 auto}.bk .bk-kr{display:none}.bk .sy-step{min-height:46vh !important;padding:16px 2px}.bk-title{font-size:22px !important}.bk-tog a{padding:7px 12px !important;font-size:12px !important}.bk-stat{font-size:14px !important}}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 @media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
@@ -46,6 +152,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[
 .fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
 html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 .mk{background:linear-gradient(transparent 62%,#F1D734 62%,#F1D734 92%,transparent 92%) !important;border-radius:0 !important;padding:0 .08em !important;margin:0 !important;transform:none !important;box-shadow:none !important;font-family:'Instrument Serif',Georgia,serif !important;font-weight:400 !important;font-style:italic !important;letter-spacing:0 !important}
+
+.fl{position:relative;border-top-color:#d4d4d4 !important}
+.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
+.fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
+.fl .fl-ic{transition:background .5s ease var(--fd,0s),border-color .5s ease var(--fd,0s)}
+.fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
+.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}
+@keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
+.cta{background:#F1D734 !important;color:#141414 !important}.cta .cta-dot{background:#141414 !important;color:#F1D734 !important}
+.cta.pulse{animation:ctaglow 2.4s ease-in-out infinite}
+a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;color:#141414 !important}
+.bk-tog{align-items:center}.bk-tog::before{content:"Zwei Geschichten · wechseln:";width:100%;font-size:13px;font-weight:600;letter-spacing:.04em;color:#5c5c5c}
+.bk-tog a{padding:12px 20px !important;font-size:15px !important;position:relative}
+.bk-tog a[style*="transparent"]{border-color:#141414 !important}
+.bk-tog a[style*="transparent"]::after{content:"";position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.6s ease-out infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(241,215,52,.7)}100%{box-shadow:0 0 0 10px rgba(241,215,52,0)}}
+.story-btn{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1.5px solid #141414;border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;background:#ffffff;transition:background .2s}
+.story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
+.door:hover .story-btn{background:#F1D734}
+#kontenplan .bk .sy-step{min-height:16vh !important}
+@media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
 <body>
@@ -53,8 +180,7 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 
 
 <div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
-
-
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
 <div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
@@ -62,180 +188,134 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
 <a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
 <a href="../c/fuer-wen.html" style="text-decoration: none">Für wen</a>
-<a href="../c/rechner.html" style="text-decoration: none">Rechner</a>
+<a href="../c/rechner.html" style="text-decoration: none">Wissen</a>
 <a href="../c/ueber-uns.html" style="text-decoration: none; font-weight: 600">Über uns</a>
 <a href="../c/karriere.html" style="text-decoration: none">Karriere</a>
 </nav>
-<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-ueberuns-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-ueber-uns-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
 </div>
-</header>
-
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+</header><style>.uu-ck .uu-box{animation:uutick .5s ease forwards;animation-delay:calc(.6s + var(--i) * .55s)}
+.uu-ck .uu-box svg{opacity:0;animation:uushow .3s ease forwards;animation-delay:calc(.75s + var(--i) * .55s)}
+@keyframes uutick{to{background:#F1D734;border-color:#F1D734}}@keyframes uushow{to{opacity:1}}
+@media (prefers-reduced-motion: reduce){.uu-ck .uu-box{animation:none;background:#F1D734;border-color:#F1D734}.uu-ck .uu-box svg{animation:none;opacity:1}}
+#glaube .sy-step{opacity:.3 !important;transition:opacity .45s ease}#glaube .sy-step.act{opacity:1 !important}
+#glaube .sy-step{min-height:38vh;justify-content:center}</style>
+<section style="max-width: 1180px; margin: 0 auto; padding: 90px 24px var(--sp); display: flex; gap: 56px; flex-wrap: wrap; align-items: center">
+<div style="flex: 1.2 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Über uns</span>
-<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 80px); line-height: 1.0; letter-spacing: -0.02em; max-width: 1000px">Wir machen Dinge <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">fertig.</em></h1>
-<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 780px">make it done ist aus einer einfachen Beobachtung entstanden: Unternehmer haben gute Berater – und trotzdem bleibt das Wichtigste liegen. Weil niemand Zahlen, Struktur und Umsetzung zusammenbringt. Genau das machen wir.</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.03em">Wir machen Dinge <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">fertig.</em></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.6; color: #3d3d3d; max-width: 580px">make it done ist aus einer einfachen Beobachtung entstanden: Unternehmer haben gute Berater, und trotzdem bleibt das Wichtigste liegen. Weil niemand Planung, Struktur, Zahlen und Umsetzung zusammenbringt. Genau das machen wir.</p>
+<div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=ueber-uns-c" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
+<span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>[5,0]</b> bei Google · [X] Bewertungen</span>
+<span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
+</div></div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column" aria-label="Ziel geklärt, Struktur geplant, Zahlen aufgesetzt, umgesetzt"><div class="uu-ck" style="--i: 0; display: flex; gap: 16px; align-items: center; padding: 18px 0; border-top: 1px solid #141414">
+<span class="uu-box" style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">Ziel geklärt</span></div><div class="uu-ck" style="--i: 1; display: flex; gap: 16px; align-items: center; padding: 18px 0; border-top: 1px solid #141414">
+<span class="uu-box" style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">Struktur geplant</span></div><div class="uu-ck" style="--i: 2; display: flex; gap: 16px; align-items: center; padding: 18px 0; border-top: 1px solid #141414">
+<span class="uu-box" style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">Zahlen aufgesetzt</span></div><div class="uu-ck" style="--i: 3; display: flex; gap: 16px; align-items: center; padding: 18px 0; border-top: 1px solid #141414">
+<span class="uu-box" style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">Umgesetzt. Fertig.</span></div></div>
 </section>
 
-<section style="background: #141414; color: #f2f2f2">
-<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 22px">
-<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap">
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #222222; color: #e8e8e8; border: 1px solid #3a3a3a"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum es uns gibt</span>
-<span style="font-size: 12px; font-weight: 600; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 4px 10px; color: #d4d4d4">Firmenphilosophie – Entwurf, mit Olga schärfen</span>
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum es uns gibt</span>
+<p class="words" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4.2vw, 52px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; max-width: 1050px"><span class="w">Unternehmer</span> <span class="w">haben</span> <span class="w">gute</span> <span class="w">Berater</span> <span class="w">und</span> <span class="w">entscheiden</span> <span class="w">trotzdem</span> <span class="w">allein.</span> <span class="w">Wir</span> <span class="w">sitzen</span> <span class="w">mit</span> <span class="w">am</span> <span class="w">Tisch,</span> <span class="w">bevor</span> <span class="w">entschieden</span> <span class="w">wird.</span></p>
+<span><span style="display: inline-block; font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Firmenphilosophie mit Olga schärfen</span></span>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px">
+<div class="sy" data-sy="glaube">
+<div class="sy-side"><span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Woran wir glauben</span><h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">Drei Sätze, nach denen wir <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">arbeiten</em>.</h2><nav class="sy-nav" aria-label="Schritte"><a href="#glaube-0"><span class="sy-n">1</span><span>Entscheidungen</span></a><a href="#glaube-1"><span class="sy-n">2</span><span>Vorher planen</span></a><a href="#glaube-2"><span class="sy-n">3</span><span>Umsetzen</span></a></nav></div>
+<div class="sy-steps">
+<div class="sy-step" id="glaube-0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #8a8a8a">01</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 36px); font-weight: 700; line-height: 1.15">Steuern sind kein Schicksal. Sie sind die Folge von Entscheidungen.</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Wie viel von deinem Gewinn bei dir ankommt, entscheidet sich nicht im Jahresabschluss, sondern bei Rechtsform, Verträgen und Investitionen.</span>
+<span style="font-size: 16px; line-height: 1.55; padding-left: 16px; border-left: 3px solid #F1D734"><b>Was das für dich heißt:</b> Wir schauen auf deine Entscheidungen, nicht nur auf deine Belege.</span></div>
+<div class="sy-step" id="glaube-1"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #8a8a8a">02</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 36px); font-weight: 700; line-height: 1.15">Wer vorher plant, muss hinterher nicht reparieren.</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Gestaltet wird, bevor etwas unterschrieben, gegründet oder investiert ist. Danach lässt sich nur noch bestätigen oder reparieren.</span>
+<span style="font-size: 16px; line-height: 1.55; padding-left: 16px; border-left: 3px solid #F1D734"><b>Was das für dich heißt:</b> Wir sind dabei, wenn du entscheidest, mindestens einmal im Monat und mit aktuellen Zahlen.</span></div>
+<div class="sy-step" id="glaube-2"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #8a8a8a">03</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 36px); font-weight: 700; line-height: 1.15">Ein Konzept ist erst etwas wert, wenn es umgesetzt ist.</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Gute Ideen gibt es genug. Was fehlt, ist jemand, der sie mit Steuerberater und Anwalt durchzieht, bis Verträge, Konten und Prozesse laufen.</span>
+<span style="font-size: 16px; line-height: 1.55; padding-left: 16px; border-left: 3px solid #F1D734"><b>Was das für dich heißt:</b> Darum heißen wir make it done.</span></div>
 </div>
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4.4vw, 56px); font-weight: 700; line-height: 1.12; max-width: 1000px">Unternehmer haben gute Berater – und entscheiden trotzdem allein. Wir sitzen mit am Tisch, bevor entschieden wird.</p>
 </div>
 </section>
 
 <section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Woran wir glauben</span>
-<div style="display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start">
-<div role="group" aria-label="Überzeugung wählen" style="flex: 1.2 1 460px; min-width: 0; display: flex; flex-direction: column">
-<sc-for list="{{beliefs}}" as="v" hint-placeholder-count="3">
-<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.style}}">
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: {{v.numColor}}; width: 32px; flex-shrink: 0">{{v.num}}</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 2.6vw, 32px); font-weight: 700; line-height: 1.2">{{v.title}}</span>
-</button>
-</sc-for>
-</div>
-<div class="mid-in" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px; border-left: 3px solid #141414; padding-left: 28px; position: sticky; top: 110px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was das für dich heißt</span>
-<span style="font-size: 20px; line-height: 1.6">{{beliefText}}</span>
-<span style="font-size: 16px; line-height: 1.6; color: #5c5c5c">{{beliefDaily}}</span>
-</div>
-</div>
-</section>
-
-<section>
-<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 36px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Was wir dir versprechen</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 900px">Wir sind die Vertrauten deines Unternehmens.</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 8px 56px">
-<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Dauerhaft an deiner Seite</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wir sind keine Projektberatung, die nach dem Abschlussbericht geht. Wir bleiben im Unternehmen – wie jemand aus dem eigenen Team.</span></span></div>
-<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M3 11l4-4 4 2 3-2 4 1 3 3"></path><path d="M7 7v6l5 5 2-2M14 9l4 4-4 4"></path></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Auf Augenhöhe mit allen</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wir sprechen die Sprache von Steuerberatern, Wirtschaftsprüfern und Anwälten – und sorgen dafür, dass alle am selben Ziel arbeiten: deinem.</span></span></div>
-<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Ehrlich, auch wenn es unbequem ist</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wenn sich etwas nicht lohnt, sagen wir es. Zahlen statt Bauchgefühl, Klartext statt Verkaufsversprechen.</span></span></div>
-<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Nur dir verpflichtet</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Keine Provisionen von deinen Beratern, keine eigenen Produkte im Hintergrund. Wir argumentieren in deinem Interesse.</span></span></div>
-</div>
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Wir sind die <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Vertrauten</em> deines Unternehmens.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 40px"><div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M3 11l4-4 4 2 3-2 4 1 3 3"></path><path d="M7 7v6l5 5 2-2M14 9l4 4-4 4"></path></svg><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Dauerhaft an deiner Seite</b></span><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wir sind keine Projektberatung, die nach dem Abschlussbericht geht. Wir bleiben im Unternehmen wie jemand aus dem eigenen Team.</span></div><div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14.2A5 5 0 0 1 21 19"></path></svg><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Auf Augenhöhe mit allen</b></span><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wir sprechen die Sprache von Steuerberatern, Wirtschaftsprüfern und Anwälten und sorgen dafür, dass alle am selben Ziel arbeiten: deinem.</span></div><div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Ehrlich, auch wenn es unbequem ist</b></span><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wenn sich etwas nicht lohnt, sagen wir es. Zahlen statt Bauchgefühl, Klartext statt Verkaufsversprechen.</span></div><div class="rv" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Nur dir verpflichtet</b></span><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Keine Provisionen von deinen Beratern, keine eigenen Produkte im Hintergrund. Wir argumentieren in deinem Interesse.</span></div></div>
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 12px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Genauso wichtig: wofür wir nicht stehen.</span>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; max-width: 860px"><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 17px; line-height: 1.5"><b>Keine Stunden schreiben.</b> Wir verkaufen Ergebnisse zum Festpreis.</span></li><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 17px; line-height: 1.5"><b>Keine Konzepte für die Schublade.</b> Wir setzen um, bis es läuft.</span></li><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 17px; line-height: 1.5"><b>Keine Steuerversprechen.</b> Was niemand seriös versprechen kann, versprechen wir auch nicht.</span></li><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 17px; line-height: 1.5"><b>Kein Fachchinesisch.</b> Du sollst jede Entscheidung verstehen.</span></li></ul>
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start">
-<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Was wir nicht tun</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1">Genauso wichtig: wofür wir nicht stehen.</h2>
-</div>
-<div style="flex: 1.4 1 460px; min-width: 0; display: flex; flex-direction: column">
-<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Keine Stunden schreiben.</b> Wir verkaufen Ergebnisse zum Festpreis.</span></div>
-<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Keine Konzepte für die Schublade.</b> Wir setzen um, bis es läuft.</span></div>
-<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Keine Steuerversprechen.</b> Was niemand seriös versprechen kann, versprechen wir auch nicht.</span></div>
-<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Kein Fachchinesisch.</b> Du sollst jede Entscheidung verstehen.</span></div>
-</div>
-</section>
-
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start">
-<div style="flex: 0 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<img src="../img/olga-sw.webp" alt="Olga Bertram, Gründerin der make it done GmbH" style="width: 100%; height: auto; display: block">
-</div>
-<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; align-items: center; gap: 28px">
+<span style="width: 1.5px; height: 64px; background: #141414"></span>
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Die Gründerin</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1">Olga Bertram</h2>
-<span style="font-size: 17px; font-weight: 600">Gründerin und Geschäftsführerin der make it done GmbH</span>
-<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d">Olga kennt beide Seiten des Tisches: die der Berater aus Wirtschaftsprüfung und Steuerberatung – und die der Geschäftsführung als CFO/COO. Seit 2010 unterrichtet sie Steuern und Rechnungswesen. Heute bringt sie für ihre Kunden zusammen, was sonst nebeneinander herläuft.</p>
-<div style="display: flex; flex-direction: column">
-<sc-for list="{{stations}}" as="s" hint-placeholder-count="6">
-<div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #e4e4e4">
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; width: 150px; flex-shrink: 0">{{s.k}}</span>
-<span style="font-size: 16px; line-height: 1.5; color: #3d3d3d">{{s.v}}</span>
+<div style="width: 100%; max-width: 380px; position: relative">
+<img src="../img/olga-sw.webp" alt="Olga Bertram, Gründerin der make it done GmbH" style="width: 100%; height: auto; display: block">
+<span style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #F1D734"></span>
 </div>
-</sc-for>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">Olga Bertram</span>
+<span style="font-size: 16px; color: #3d3d3d">Geschäftsführende Gesellschafterin · Dozentin für Steuern und Rechnungswesen</span>
 </div>
-<div style="display: flex; gap: 8px; flex-wrap: wrap">
-<span style="background: #f4f4f4; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Steuern &amp; Wirtschaftsprüfung (Studium)</span>
-<span style="background: #f4f4f4; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Ausbilderin nach AdA</span>
-<span style="background: #f4f4f4; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">DATEV</span>
-<span style="background: #f4f4f4; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500">Finanzierung &amp; Prozesse</span>
-</div>
-</div>
+<p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d; text-align: center; max-width: 720px">Olga kennt beide Seiten des Tisches: die der Berater aus Wirtschaftsprüfung und Steuerberatung und die der Geschäftsführung als CFO/COO. Seit 2010 unterrichtet sie Steuern und Rechnungswesen. Heute bringt sie für ihre Kunden zusammen, was sonst nebeneinander herläuft.</p>
+<div style="width: 100%; max-width: 860px"><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Prüfung und Beratung</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wirtschaftsprüfung und Steuerberatung, für Gründer, größere Unternehmen und Konzerne.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Hochschule</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Hochschule Niederrhein: wissenschaftliche Mitarbeit, Präsidium, Studiengangsentwicklung.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Lehre</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Seit 2010 Dozentin für Steuern, Rechnungswesen, Jahresabschluss, Finanzmathematik und DATEV.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Unternehmen</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">CFO/COO der Felix Thönnessen GmbH: Holdingstruktur aufgebaut, Investments betreut, Start-ups beraten.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Selbstständig</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Seit 2017, seit 2023 mit eigener GmbH und Holdingstruktur.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">make it done</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Gründerin und Geschäftsführerin, gewachsen über Empfehlungen.</span></div></div>
+<span style="width: 1.5px; height: 64px; background: #141414"></span>
 </section>
 
-<section style="background: #141414; color: #f2f2f2">
-<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #222222; color: #e8e8e8; border: 1px solid #3a3a3a"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Unser Netzwerk</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 46px); line-height: 1.1; max-width: 860px">Für jede Frage der richtige Profi am Tisch.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #d4d4d4; max-width: 780px">Wir arbeiten mit einem festen Netzwerk zusammen – auf Wunsch auch mit deinen bestehenden Beratern. Du beauftragst direkt, wir erhalten keine Provision.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
-<div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Steuerberater</span><span style="font-size: 15px; color: #d4d4d4">Steuerliche Würdigung, Erklärungen, Abschluss</span></div>
-<div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Wirtschaftsprüfer</span><span style="font-size: 15px; color: #d4d4d4">Prüfung und Bewertung</span></div>
-<div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Rechtsanwälte</span><span style="font-size: 15px; color: #d4d4d4">Verträge und Gesellschaftsrecht</span></div>
-<div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Anlageberater</span><span style="font-size: 15px; color: #d4d4d4">Investment und Vermögen</span></div>
-<div style="border: 1px dashed #8a8a8a; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Versicherungsmakler</span><span style="font-size: 15px; color: #b8b8b8">im Aufbau</span></div>
-</div>
-</div>
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Unser Netzwerk</span>
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Für jede Frage der richtige <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Profi</em> am Tisch.</h2>
+<p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d">Wir arbeiten mit einem festen Netzwerk zusammen, auf Wunsch auch mit deinen bestehenden Beratern. Du beauftragst direkt, wir erhalten keine Provision.</p>
+<div class="flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 40px"><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3v18M5 21h14M4 7h16"></path><path d="M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"></path></svg></span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Steuerberater</b></span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Steuerliche Würdigung, Erklärungen, Abschluss</span></div><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M4 20h4L19 9l-4-4L4 16z"></path><path d="M13.5 6.5l4 4M14 20h6"></path></svg></span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Rechtsanwälte</b></span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Verträge und Gesellschaftsrecht</span></div><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"></path><path d="M4 19V5M9 7h6"></path></svg></span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Notare</b></span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Gründung, Umwandlung, Beurkundung</span></div><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg></span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Wirtschaftsprüfer</b></span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Prüfung und Bewertung</span></div><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 21V11"></path><path d="M12 11c0-4 3-7 8-7 0 5-3 7-8 7z"></path><path d="M12 14c0-3-2-5-7-5 0 4 2 5 7 5z"></path></svg></span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Anlageberater</b></span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Investment und Vermögen</span></div><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414"><span style="display: flex; gap: 12px; align-items: center"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid #141414; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Versicherungsmakler</b></span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Absicherung für dich und dein Unternehmen</span></div></div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; gap: 40px; flex-wrap: wrap; align-items: center">
-<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Team</span>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.12">Wir wachsen – und suchen Verstärkung.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d">Hinter make it done steht ein kleines Team mit kurzen Wegen. Als IHK-Ausbildungsbetrieb bilden wir auch selbst aus.</p>
-</div>
-<a href="../c/karriere.html" style="background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Offene Stellen ansehen →</a>
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">Wir wachsen und suchen <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Verstärkung</em>.</h2>
+<p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d">Hinter make it done steht ein Team mit kurzen Wegen. Als IHK-Ausbildungsbetrieb bilden wir auch selbst aus.</p>
+<a href="../c/karriere.html" class="story-btn" style="text-decoration: none; color: #141414">Offene Stellen ansehen →</a>
 </section>
-
-<section>
-<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.05; max-width: 820px">Lern uns kennen.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 640px">Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
-<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=ueber-uns" style="background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Jetzt Erstberatung sichern →</a>
-</div>
+<section style="max-width: 1180px; margin: 0 auto; padding: 140px 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Lern uns <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">kennen</em>.</h2>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; align-items: center"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=ueber-uns-c-ende" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
+<span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>[5,0]</b> bei Google · [X] Bewertungen</span>
+<span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
+</div></div>
 </section>
-
 <footer style="background: #141414; color: #d4d4d4">
 <div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
-
 </div>
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794949320"></script>
+<script src="../dc-lite.js?v=1794952207"></script>
 <script>
 
 class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.state = { v: 0 };
-  }
-  renderVals() {
-    var self = this;
-    var st = this.state;
-    var BEL = [
-      { t: 'Steuern sind kein Schicksal. Sie sind die Folge von Entscheidungen.', x: 'Wie viel von deinem Gewinn bei dir ankommt, entscheidet sich nicht im Jahresabschluss, sondern bei Rechtsform, Verträgen und Investitionen.', d: 'Darum schauen wir auf deine Entscheidungen – nicht nur auf deine Belege.' },
-      { t: 'Wer vorher entscheidet, zahlt nicht hinterher.', x: 'Gestaltet wird, bevor etwas unterschrieben, gegründet oder investiert ist. Danach lässt sich nur noch bestätigen oder reparieren.', d: 'Darum sind wir dabei, wenn du entscheidest – mit Zahlen just in time.' },
-      { t: 'Ein Konzept ist erst etwas wert, wenn es umgesetzt ist.', x: 'Gute Ideen gibt es genug. Was fehlt, ist jemand, der sie mit Steuerberater und Anwalt durchzieht – bis Verträge, Konten und Prozesse laufen.', d: 'Darum heißen wir make it done.' }
-    ];
-    var beliefs = BEL.map(function (d, i) {
-      var isOn = st.v === i;
-      return { num: '0' + (i + 1), title: d.t, on: isOn, numColor: isOn ? '#141414' : '#b8b8b8', pick: function () { self.setState({ v: i }); },
-        style: 'display: flex; gap: 16px; align-items: baseline; text-align: left; background: transparent; border: 0; border-bottom: 1px solid #e4e4e4; padding: 26px 0; cursor: pointer; transition: color .2s, padding .2s; ' + (isOn ? 'color: #141414; padding-left: 12px;' : 'color: #9a9a9a;') };
-    });
-    var cv = BEL[st.v];
-    var stations = [
-      { k: 'Prüfung & Beratung', v: 'Wirtschaftsprüfung und Steuerberatung – für Gründer, größere Unternehmen und Konzerne.' },
-      { k: 'Hochschule', v: 'Hochschule Niederrhein: wissenschaftliche Mitarbeit, Präsidium, Studiengangsentwicklung.' },
-      { k: 'Lehre', v: 'Seit 2010 Dozentin für Steuern, Rechnungswesen, Jahresabschluss, Finanzmathematik und DATEV.' },
-      { k: 'Unternehmen', v: 'CFO/COO der Felix Thönnessen GmbH: Holdingstruktur aufgebaut, Investments betreut, Start-ups beraten.' },
-      { k: 'Selbstständig', v: 'Seit 2017 – seit 2023 mit eigener GmbH und Holdingstruktur.' },
-      { k: 'make it done', v: 'Gründerin und Geschäftsführerin – gewachsen über Empfehlungen.' }
-    ];
-    return { beliefs: beliefs, beliefText: cv.x, beliefDaily: cv.d, stations: stations };
-  }
+  constructor(props) { super(props); this.state = {}; }
+  renderVals() { return {}; }
 }
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794949320"></script>
+<script src="../effects.js?v=1794952207"></script>
+<script src="../c-flow.js?v=1794952207"></script>
+<script src="../c-faq.js?v=1794952207"></script>
 </body>
 </html>

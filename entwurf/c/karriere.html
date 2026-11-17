@@ -49,6 +49,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[
 .fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
 html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 .mk{background:linear-gradient(transparent 62%,#F1D734 62%,#F1D734 92%,transparent 92%) !important;border-radius:0 !important;padding:0 .08em !important;margin:0 !important;transform:none !important;box-shadow:none !important;font-family:'Instrument Serif',Georgia,serif !important;font-weight:400 !important;font-style:italic !important;letter-spacing:0 !important}
+
+.fl{position:relative;border-top-color:#d4d4d4 !important}
+.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
+.fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
+.fl .fl-ic{transition:background .5s ease var(--fd,0s),border-color .5s ease var(--fd,0s)}
+.fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
+.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}
+@keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
+.cta{background:#F1D734 !important;color:#141414 !important}.cta .cta-dot{background:#141414 !important;color:#F1D734 !important}
+.cta.pulse{animation:ctaglow 2.4s ease-in-out infinite}
+a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;color:#141414 !important}
+.bk-tog{align-items:center}.bk-tog::before{content:"Zwei Geschichten · wechseln:";width:100%;font-size:13px;font-weight:600;letter-spacing:.04em;color:#5c5c5c}
+.bk-tog a{padding:12px 20px !important;font-size:15px !important;position:relative}
+.bk-tog a[style*="transparent"]{border-color:#141414 !important}
+.bk-tog a[style*="transparent"]::after{content:"";position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.6s ease-out infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(241,215,52,.7)}100%{box-shadow:0 0 0 10px rgba(241,215,52,0)}}
+.story-btn{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1.5px solid #141414;border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;background:#ffffff;transition:background .2s}
+.story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
+.door:hover .story-btn{background:#F1D734}
+#kontenplan .bk .sy-step{min-height:16vh !important}
+@media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
 <body>
@@ -65,7 +86,7 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
 <a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
 <a href="../c/fuer-wen.html" style="text-decoration: none">Für wen</a>
-<a href="../c/rechner.html" style="text-decoration: none">Rechner</a>
+<a href="../c/rechner.html" style="text-decoration: none">Wissen</a>
 <a href="../c/ueber-uns.html" style="text-decoration: none">Über uns</a>
 <a href="../c/karriere.html" style="text-decoration: none; font-weight: 600">Karriere</a>
 </nav>
@@ -83,15 +104,15 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 </div>
 </section>
 
-<section style="background: #141414; color: #f2f2f2">
+<section>
 <div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #222222; color: #e8e8e8; border: 1px solid #3a3a3a"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum wir anders einstellen</span>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum wir anders einstellen</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 880px">Wir fördern Stärken. Darum fragen wir nach ihnen.</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Stärken statt Lücken</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Niemand kann alles. Wir bauen Aufgaben um das, was du richtig gut kannst.</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Mut statt Papier</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Zeugnisse sagen wenig. Ein Video, in dem du zeigst, wer du bist, sagt viel.</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Machen statt reden</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Wir heißen make it done. Wer gern Dinge fertig macht, ist bei uns richtig.</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #3a3a3a; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Schnell statt Warteschleife</span><span style="font-size: 15px; line-height: 1.5; color: #d4d4d4">Kurzer Prozess, klare Rückmeldung – versprochen.</span></div>
+<div class="flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Stärken statt Lücken</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Niemand kann alles. Wir bauen Aufgaben um das, was du richtig gut kannst.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Mut statt Papier</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Zeugnisse sagen wenig. Ein Video, in dem du zeigst, wer du bist, sagt viel.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Machen statt reden</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Wir heißen make it done. Wer gern Dinge fertig macht, ist bei uns richtig.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Schnell statt Warteschleife</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Kurzer Prozess, klare Rückmeldung – versprochen.</span></div>
 </div>
 </div>
 </section>
@@ -130,7 +151,7 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <div style="display: flex; flex-direction: column; gap: 12px">
 <sc-for list="{{jobs}}" as="j" hint-placeholder-count="4">
 <div style="{{j.boxStyle}}">
-<button type="button" onClick="{{j.toggle}}" aria-expanded="{{j.open}}" style="width: 100%; background: transparent; border: 0; padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; text-align: left; cursor: pointer; color: inherit; min-height: 44px; flex-wrap: wrap">
+<button type="button" onClick="{{j.toggle}}" aria-expanded="{{j.open}}" style="width: 100%; background: transparent; border: 0; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; text-align: left; cursor: pointer; color: inherit; min-height: 44px; flex-wrap: wrap">
 <span style="display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">{{j.title}}</span>
 <span style="display: flex; gap: 8px; flex-wrap: wrap">
@@ -142,19 +163,19 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <span aria-hidden="true" style="font-size: 26px; font-weight: 400">{{j.sign}}</span>
 </button>
 <sc-if value="{{j.open}}" hint-placeholder-val="{{ false }}">
-<div style="padding: 0 32px 32px; display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 860px; color: #e4e4e4">{{j.intro}}</p>
+<div style="padding: 0 0 32px; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 860px; color: #3d3d3d">{{j.intro}}</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b8b8b8">Was du bei uns machst</span>
-<sc-for list="{{j.tasks}}" as="t" hint-placeholder-count="4"><span style="font-size: 15px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid #3a3a3a">{{t}}</span></sc-for>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was du bei uns machst</span>
+<sc-for list="{{j.tasks}}" as="t" hint-placeholder-count="4"><span style="font-size: 15px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid #e4e4e4">{{t}}</span></sc-for>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b8b8b8">Was dich stark macht</span>
-<sc-for list="{{j.profile}}" as="p" hint-placeholder-count="4"><span style="font-size: 15px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid #3a3a3a">{{p}}</span></sc-for>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was dich stark macht</span>
+<sc-for list="{{j.profile}}" as="p" hint-placeholder-count="4"><span style="font-size: 15px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid #e4e4e4">{{p}}</span></sc-for>
 </div>
 </div>
-<a href="#check" onClick="{{j.apply}}" style="align-self: flex-start; background: #ffffff; color: #141414; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Für diese Stelle bewerben ↓</a>
+<a href="#check" onClick="{{j.apply}}" style="align-self: flex-start; background: #F1D734; color: #141414; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Für diese Stelle bewerben ↓</a>
 </div>
 </sc-if>
 </div>
@@ -208,11 +229,11 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>So läuft es</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Vier Schritte. Keine Warteschleife.</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
-<div style="background: #141414; color: #ffffff; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">1</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Klick-Bewerbung + Video</span><span style="font-size: 15px; line-height: 1.55; color: #d4d4d4">Ein paar Fragen anklicken, Video-Link schicken. Rund zehn Minuten – Rückmeldung innerhalb von 48 Stunden.</span></div>
-<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="width: 40px; height: 40px; border-radius: 50%; background: #141414; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">2</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Videocall</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Wir lernen uns kennen – locker, ehrlich, rund 20 Minuten.</span></div>
-<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="width: 40px; height: 40px; border-radius: 50%; background: #141414; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">3</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Probetag</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Remote oder im Headquarter: Du arbeitest einen Tag mit – beide Seiten schauen, ob es passt.</span></div>
-<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="width: 40px; height: 40px; border-radius: 50%; background: #141414; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">4</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Entscheidung</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Spätestens 48 Stunden nach dem Probetag weißt du, woran du bist.</span></div>
+<div class="flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">1</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Klick-Bewerbung + Video</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Ein paar Fragen anklicken, Video-Link schicken. Rund zehn Minuten – Rückmeldung innerhalb von 48 Stunden.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">2</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Videocall</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Wir lernen uns kennen – locker, ehrlich, rund 20 Minuten.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">3</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Probetag</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Remote oder im Headquarter: Du arbeitest einen Tag mit – beide Seiten schauen, ob es passt.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">4</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Entscheidung</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Spätestens 48 Stunden nach dem Probetag weißt du, woran du bist.</span></div>
 </div>
 </section>
 
@@ -344,7 +365,7 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <footer style="background: #141414; color: #d4d4d4">
 <div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 
@@ -352,13 +373,13 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794949320"></script>
+<script src="../dc-lite.js?v=1794952207"></script>
 <script>
 
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { filter: 'alle', open: 0, ben: 0, step: 0, role: -1, place: '', time: '', powers: [], scen: -1, video: '', name: '', mail: '', phone: '', exp: '', st1: '', st2: '', st3: '', proud: '' };
+    this.state = { filter: 'alle', open: -1, ben: 0, step: 0, role: -1, place: '', time: '', powers: [], scen: -1, video: '', name: '', mail: '', phone: '', exp: '', st1: '', st2: '', st3: '', proud: '' };
   }
   renderVals() {
     var self = this;
@@ -396,8 +417,8 @@ class Component extends DCLogic {
         scen: ['Ich kläre es direkt mit dem Kunden und dokumentiere es', 'Ich buche vorläufig und markiere es zur Klärung', 'Ich prüfe, ob die Automatisierung einen Fehler hat'] }
     ];
     var F = [{ k: 'alle', l: 'Alle' }, { k: 'kunden', l: 'Kundenbetreuung' }, { k: 'tech', l: 'Tech & KI' }, { k: 'sales', l: 'Sales' }, { k: 'finance', l: 'Finance' }];
-    var pill = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 20px; font-size: 15px; cursor: pointer; min-height: 44px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
-    var row = function (on) { return 'text-align: left; border-radius: 14px; padding: 16px 20px; font-size: 16px; cursor: pointer; min-height: 52px; font-weight: 600; transition: background .2s, color .2s; ' + (on ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;'); };
+    var pill = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 20px; font-size: 15px; cursor: pointer; min-height: 44px; ' + (on ? 'background: #F1D734; color: #141414; font-weight: 600; border-color: #F1D734;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
+    var row = function (on) { return 'text-align: left; border-radius: 14px; padding: 16px 20px; font-size: 16px; cursor: pointer; min-height: 52px; font-weight: 600; transition: background .2s, color .2s; ' + (on ? 'background: #F1D734; color: #141414; border: 1px solid #F1D734;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;'); };
     var filters = F.map(function (f) { return { label: f.l, on: st.filter === f.k, pick: function () { self.setState({ filter: f.k }); }, style: pill(st.filter === f.k) }; });
     var jobs = [];
     J.forEach(function (d, i) {
@@ -406,8 +427,8 @@ class Component extends DCLogic {
       jobs.push({ title: d.title, chips: d.chips, intro: d.intro, tasks: d.tasks, profile: d.profile, open: isOpen, sign: isOpen ? '−' : '+',
         toggle: function () { self.setState({ open: isOpen ? -1 : i }); },
         apply: function () { self.setState({ role: i, step: 1 }); },
-        chipStyle: 'font-size: 13px; font-weight: 600; border-radius: 999px; padding: 5px 12px; ' + (isOpen ? 'background: #ffffff; color: #141414;' : 'background: #f4f4f4; color: #141414;'),
-        boxStyle: 'border-radius: 20px; transition: background .25s, color .25s; ' + (isOpen ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;') });
+        chipStyle: 'font-size: 13px; font-weight: 600; border-radius: 999px; padding: 5px 12px; ' + (isOpen ? 'background: #F1D734; color: #141414;' : 'background: transparent; color: #141414; border: 1px solid #d4d4d4;'),
+        boxStyle: 'transition: border-color .25s; ' + (isOpen ? 'border-top: 2px solid #F1D734;' : 'border-top: 1px solid #141414;') });
     });
     var B = [
       { t: 'Flexibel arbeiten', s: 'Remote oder im Headquarter', i: ['Remote oder in unserem Headquarter in Erkelenz – du entscheidest', 'Freie Zeiteinteilung statt Stechuhr', 'Arbeit, die sich um dein Leben herum organisieren lässt'] },
@@ -421,8 +442,8 @@ class Component extends DCLogic {
       var on = st.ben === i;
       benVals['ben' + i + 'Title'] = d.t; benVals['ben' + i + 'On'] = on;
       benVals['ben' + i + 'Pick'] = function () { self.setState({ ben: i }); };
-      benVals['ben' + i + 'Line'] = on ? '3px solid #141414' : '3px solid transparent';
-      benVals['ben' + i + 'Circle'] = 'width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s, transform .2s; ' + (on ? 'background: #141414; color: #ffffff; transform: scale(1.06);' : 'background: #ffffff; color: #141414; border: 1.5px solid #c8c8c8;');
+      benVals['ben' + i + 'Line'] = on ? '3px solid #F1D734' : '3px solid transparent';
+      benVals['ben' + i + 'Circle'] = 'width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s, transform .2s; ' + (on ? 'background: #F1D734; color: #141414; transform: scale(1.06);' : 'background: #ffffff; color: #141414; border: 1.5px solid #c8c8c8;');
     });
     var NAMES = ['Stelle', 'Arbeitsweise', 'Erfahrung', 'Superkräfte', 'Praxisfrage', 'Video', 'Kontakt', 'Absenden'];
     var total = NAMES.length;
@@ -458,7 +479,7 @@ class Component extends DCLogic {
     return Object.assign(benVals, {
       filters: filters, jobs: jobs, benefitItems: B[st.ben].i, benTitle: B[st.ben].t, benSub: B[st.ben].s,
       stepNum: st.step + 1, stepTotal: total, stepName: NAMES[st.step],
-      barStyle: 'height: 100%; border-radius: 999px; background: #141414; width: ' + Math.round(((st.step + 1) / total) * 100) + '%',
+      barStyle: 'height: 100%; border-radius: 999px; background: #F1D734; width: ' + Math.round(((st.step + 1) / total) * 100) + '%',
       s0: st.step === 0, s1: st.step === 1, s2: st.step === 2, s3: st.step === 3, s4: st.step === 4, s5: st.step === 5, s6: st.step === 6, s7: st.step === 7,
       expOpts: expOpts, st1: st.st1, st2: st.st2, st3: st.st3, proud: st.proud,
       setSt1: function (e) { self.setState({ st1: e.target.value }); },
@@ -476,13 +497,15 @@ class Component extends DCLogic {
       back: function () { self.setState({ step: Math.max(0, st.step - 1) }); },
       fwd: function () { self.setState({ step: Math.min(total - 1, st.step + 1) }); },
       backStyle: stepBtn + 'background: #ffffff; color: #141414; border: 1px solid #141414; visibility: ' + (st.step === 0 ? 'hidden' : 'visible'),
-      fwdStyle: stepBtn + 'background: #141414; color: #ffffff; border: 1px solid #141414;'
+      fwdStyle: stepBtn + 'background: #F1D734; color: #141414; border: 1px solid #F1D734;'
     });
   }
 }
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794949320"></script>
+<script src="../effects.js?v=1794952207"></script>
+<script src="../c-flow.js?v=1794952207"></script>
+<script src="../c-faq.js?v=1794952207"></script>
 </body>
 </html>

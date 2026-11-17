@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Aktuelles – make it done</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+body{margin:0;background:#fafafa;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}
+.cta{transition:transform .2s ease, box-shadow .2s ease}.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.18)}.cta:hover .cta-dot{transform:translateX(4px)}.cta-dot{transition:transform .2s ease}
+@keyframes mq{to{transform:translateX(-50%)}}.mq{display:flex;width:max-content;animation:mq 40s linear infinite}
+@keyframes vq{to{transform:translateX(-50%)}}.vq{display:flex;gap:20px;width:max-content;animation:vq 60s linear infinite}.vq:hover{animation-play-state:paused}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float{animation:float 6s ease-in-out infinite}.float2{animation:float 7s ease-in-out -2s infinite}.float3{animation:float 8s ease-in-out -4s infinite}
+.tilt{transition:transform .25s ease, box-shadow .25s ease}.tilt:hover{box-shadow:0 26px 60px rgba(0,0,0,.14)}
+.fx .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}.fx .rv.in{opacity:1;transform:none}
+.fx .words .w{color:#c8c8c8;transition:color .3s}.fx .words .w.on{color:#141414}
+.phase.act .phase-num{color:#141414 !important}
+@keyframes mid-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.mid-in{animation:mid-in .35s ease-out both}
+@keyframes mid-spin{to{transform:rotate(360deg)}}@keyframes mid-spin-rev{to{transform:rotate(-360deg)}}@keyframes mid-jam{0%,100%{transform:rotate(0deg)}35%{transform:rotate(6deg)}55%{transform:rotate(-2deg)}70%{transform:rotate(3deg)}}
+@keyframes mid-pulse{0%,100%{box-shadow:0 0 0 0 rgba(20,20,20,.3)}50%{box-shadow:0 0 0 10px rgba(20,20,20,0)}}.mid-pulse{animation:mid-pulse 2.4s ease-in-out infinite}
+@keyframes mid-pop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.35);opacity:1}100%{transform:scale(1);opacity:1}}.mid-pop{animation:mid-pop .5s ease-out both}
+@keyframes mid-pop-d{0%{transform:rotate(45deg) scale(0);opacity:0}60%{transform:rotate(45deg) scale(1.35);opacity:1}100%{transform:rotate(45deg) scale(1);opacity:1}}
+input[type=range]{width:100%;accent-color:#141414}
+@media (prefers-reduced-motion: reduce){.mq,.vq,.float,.float2,.float3,.gear,.mid-pulse{animation:none !important}.fx .rv{opacity:1 !important;transform:none !important}.fx .words .w{color:#141414 !important}}
+@media (max-width: 760px){.hide-m{display:none !important}}
+@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+.sy:not(.hz){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:72px;align-items:start}
+.sy-side{position:sticky;top:110px;display:flex;flex-direction:column;gap:24px}
+.sy-steps{display:flex;flex-direction:column}
+.sy-step{min-height:64vh;display:flex;flex-direction:column;justify-content:center;gap:18px;scroll-margin-top:120px}
+.sy-step.sm{min-height:0;justify-content:flex-start}
+.fx .sy-step{opacity:.16;transform:translateY(18px) scale(.985);transition:opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1)}
+.fx .sy-step.act{opacity:1;transform:none}
+.sy-nav{display:flex;flex-direction:column;gap:2px;border-left:2px solid #e4e4e4;padding-left:4px}
+.sy-nav a{display:flex;gap:14px;align-items:center;text-decoration:none;padding:8px 10px;border-radius:14px;color:#8a8a8a;font-weight:600;font-size:16px;transition:color .3s, background .3s}
+.sy-nav a:hover{background:rgba(0,0,0,.04)}
+.sy-n{width:36px;height:36px;border-radius:50%;border:2px solid #d4d4d4;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:15px;transition:background .3s, color .3s, border-color .3s, transform .3s}
+.sy-nav a.done{color:#3d3d3d}.sy-nav a.done .sy-n{background:#F1D734;border-color:#F1D734;color:#141414}
+.sy-nav a.act{color:#141414}.sy-nav a.act .sy-n{background:#141414;border-color:#141414;color:#F1D734;transform:scale(1.1)}
+.sy-bar{height:4px;border-radius:4px;background:#e4e4e4;overflow:hidden}.sy-bar i{display:block;height:100%;width:calc(var(--p,0) * 100%);background:#F1D734;transition:width .35s ease}
+.sy-hint{display:inline-flex;gap:10px;align-items:center;font-size:14px;font-weight:600;color:#5c5c5c}
+@keyframes sy-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}.sy-hint b{display:inline-block;animation:sy-bob 1.6s ease-in-out infinite}
+.tl-dot{transition:background .3s, color .3s, transform .3s}.sy-step.act .tl-dot{background:#141414 !important;color:#F1D734 !important;border-color:#141414 !important;transform:scale(1.12)}
+@media (max-width: 860px){.sy:not(.hz){grid-template-columns:minmax(0,1fr);gap:28px}.sy-side{position:static}.sy-nav{display:none}.sy-step,.sy-step.sm{min-height:0;padding:22px 0}.fx .sy-step{opacity:0;transform:translateY(24px)}.fx .sy-step.seen{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.fx .sy-step{opacity:1 !important;transform:none !important}.sy-hint b{animation:none}}
+.hz-stage{display:flex;flex-direction:column}
+@media (min-width: 861px){
+.fx .hz-wrap{height:calc(100vh - 72px + var(--n) * 60vh)}
+.fx .hz-pin{position:sticky;top:72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:72px;align-items:center}
+.fx .hz .sy-side{position:static}
+.fx .hz-stage{position:relative;display:block;overflow:hidden;margin:-30px;padding:30px}
+.fx .hz .sy-step{position:absolute;top:30px;left:30px;right:30px;min-height:0;opacity:0;transform:translateX(110%) rotate(2deg);transition:transform .75s cubic-bezier(.16,.84,.24,1), opacity .45s ease;pointer-events:none}
+.fx .hz .sy-step.past{transform:translateX(-70%) rotate(-1deg);opacity:0}
+.fx .hz .sy-step.act{transform:none;opacity:1;pointer-events:auto}
+.hz-count{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#5c5c5c}
+}
+@media (max-width: 860px){.hz-pin{display:flex;flex-direction:column;gap:28px}.fx .hz .sy-step{opacity:0;transform:translateX(70px)}.fx .hz .sy-step.seen{opacity:1;transform:none}.hz .sy-step{min-height:0;padding:22px 0;transition:opacity .6s ease, transform .7s cubic-bezier(.16,.84,.24,1)}}
+@media (min-width: 861px){.hz-pin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:72px;align-items:start}}
+.fx .net .ln{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1s ease var(--d)}.fx .net.in .ln{stroke-dashoffset:0}
+.fx .net .nd{opacity:0;transform:translateY(10px);transition:opacity .6s ease var(--d), transform .6s ease var(--d)}.fx .net.in .nd{opacity:1;transform:none}
+.fx .net .flows{opacity:0;transition:opacity .6s ease 2.4s}.fx .net.in .flows{opacity:1}
+@keyframes ring{0%,100%{opacity:.15}50%{opacity:.5}}.pulse-ring{animation:ring 3s ease-in-out infinite}
+@media (max-width: 760px){.show-m{display:flex !important}}
+@media (prefers-reduced-motion: reduce){.flows{display:none}.pulse-ring{animation:none}}
+.mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
+.flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
+.mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
+.flap-track{display:flex;flex-direction:column}.flap-track>span{height:1.2em;line-height:1.2em}
+.fx .flap-track,.flap-track{animation:flap 10s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes flap{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.2em)}50%,70%{transform:translateY(-2.4em)}75%,95%{transform:translateY(-3.6em)}100%{transform:translateY(-4.8em)}}
+.flap-sub{height:1.5em;overflow:hidden;font-size:20px;color:#3d3d3d}.flap-sub .flap-track>span{height:1.5em;line-height:1.5em}
+.flap-sub .flap-track{animation-name:flapsub}
+@keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
+@media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
+@keyframes gs2{to{transform:rotate(360deg)}}@keyframes gsr2{to{transform:rotate(-360deg)}}
+.gspin2,.gspin2-r{transform-box:fill-box;transform-origin:center}
+.gspin2{animation:gs2 var(--gd,14s) linear infinite}.gspin2-r{animation:gsr2 var(--gd,14s) linear infinite}
+.fx .kpi.in .kl{stroke-dashoffset:0}.fx .kpi .kl{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1s ease var(--d)}
+.fx .kpi .kp{opacity:0;transform:translateY(8px);transition:opacity .5s ease var(--d), transform .5s ease var(--d)}.fx .kpi.in .kp{opacity:1;transform:none}
+@media (max-width: 860px){
+.fx .hz-m .hz-pin{position:sticky;display:flex;flex-direction:column;gap:10px;background:#fafafa;z-index:4}
+.hz-m .sy-side>span:first-child,.hz-m .sy-hint,.hz-m .hz-count{display:none !important}
+.hz-m .sy-side h2{font-size:24px !important}
+.fx .hz-m .sy-nav{display:flex !important;flex-direction:row !important;flex-wrap:wrap;border-left:0 !important;padding-left:0 !important;gap:6px !important}
+.fx .hz-m .sy-nav a{padding:2px !important}.fx .hz-m .sy-nav a>span:last-child{display:none}.fx .hz-m .sy-nav a.act>span:last-child{display:flex;font-size:14px}
+.fx .hz-m .hz-stage{position:relative;display:block;overflow:hidden}
+.fx .hz.hz-m .sy-step{position:absolute;top:0;left:0;right:0;padding:0;min-height:0;opacity:0;transform:translateY(50px);transition:opacity .45s ease, transform .6s cubic-bezier(.16,.84,.24,1)}
+.fx .hz.hz-m .sy-step.past{opacity:0;transform:translateY(-40px)}
+.fx .hz.hz-m .sy-step.act{opacity:1;transform:none}
+.hz-m .sy-step svg{max-width:300px !important}
+.hz .sy-step{padding:12px 0 !important}
+}
+:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+.portrait{-webkit-mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);mask-composite:intersect}
+@media (max-width: 760px){.portrait{height:380px !important}}
+@media (min-width: 761px){.ck-row::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:1.5px;background:#141414;opacity:.25}}
+@keyframes orb{to{transform:rotate(360deg)}}@keyframes orbr{to{transform:rotate(-360deg)}}
+.orb-i,.orb-o,.orb-up,.orb-up-i{transform-box:view-box}
+.orb-i{transform-origin:300px 300px;animation:orb 22s linear infinite}.orb-up-i{animation:orbr 22s linear infinite}
+.orb-o{transform-origin:300px 300px;animation:orbr 60s linear infinite}.orb-up{animation:orb 60s linear infinite}
+@media (prefers-reduced-motion: reduce){.orb-i,.orb-o,.orb-up,.orb-up-i{animation:none}}
+.tlink{color:#141414;text-decoration:none;background:linear-gradient(#F1D734,#F1D734) 0 100%/100% 3px no-repeat;padding-bottom:3px;transition:background-size .25s}.tlink:hover{background-size:100% 100%}
+@keyframes gs{to{transform:rotate(360deg)}}@keyframes gsr{to{transform:rotate(-360deg)}}@keyframes gj{0%,100%{transform:rotate(0)}30%{transform:rotate(5deg)}50%{transform:rotate(-2deg)}70%{transform:rotate(3deg)}}
+.gspin,.gspin-r,.gjam{transform-box:fill-box;transform-origin:center}
+.gspin{animation:gs 9s linear infinite}.gspin-r{animation:gsr 7.5s linear infinite}.gjam{animation:gj 2.6s ease-in-out infinite}
+@media (min-width: 861px){
+.fx .vt .sy-step{transform:translateY(90%) scale(.96);opacity:0}
+.fx .vt .sy-step.past{transform:translateY(-40%) scale(.94);opacity:0}
+.fx .vt .sy-step.act{transform:none;opacity:1}}
+@media (max-width: 860px){.fx .vt .sy-step{transform:translateY(40px)}}
+@media (prefers-reduced-motion: reduce){.gspin,.gspin-r,.gjam{animation:none}}
+.sy-dots{flex-direction:row !important;border-left:0 !important;padding-left:0 !important;gap:8px !important;flex-wrap:wrap}.sy-dots a{padding:2px !important}.sy-dots a>span:last-child{display:none}
+.cmp-mid{position:relative;background:#141414;color:#ffffff}
+@keyframes glow{0%,100%{box-shadow:0 0 0 2px #F1D734, 0 0 28px rgba(241,215,52,.35)}50%{box-shadow:0 0 0 3px #F1D734, 0 0 56px rgba(241,215,52,.7)}}
+.cmp-glow{animation:glow 3s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.cmp-glow{animation:none;box-shadow:0 0 0 3px #F1D734}}
+.sy.bk{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:72px}
+.bk .sy-side{top:84px;gap:14px}.bk .sy-side svg{max-height:52vh}.bk-card{filter:drop-shadow(0 6px 14px rgba(0,0,0,.07))}.hl{background:linear-gradient(transparent 60%, #F1D734 60%, #F1D734 92%, transparent 92%)}
+.bk .sy-step{min-height:26vh;gap:10px;justify-content:center}
+.fx .bk .sy-step{opacity:.22;transform:none;transition:opacity .5s ease}.fx .bk .sy-step.act{opacity:1}
+.bk-kr{display:flex;gap:18px;flex-wrap:wrap}.kr{font-size:13px;font-weight:600;color:#a8a8a8;display:inline-flex;gap:7px;align-items:center;transition:color .4s}
+.kr::before{content:"";width:9px;height:9px;border-radius:50%;background:#dcdcdc;transition:background .4s}
+.fx .bk .kr.on{color:#141414}.fx .bk .kr.on::before{background:#F1D734;box-shadow:0 0 0 1px #141414}
+.bn{transform-box:fill-box;transform-origin:center}
+.fx .bk .bn{transition:opacity .6s ease, transform .7s cubic-bezier(.16,.84,.24,1)}
+.fx .bk .bn:not(.on){opacity:0;transform:translateY(12px)}.fx .bk .bn[data-gh]:not(.on){opacity:.13;transform:none;filter:grayscale(1)}
+html:not(.fx) .bk .bn[data-u],html:not(.fx) .bk .bn[data-in]{display:none}
+.ln2{transform:none !important}
+@media (max-width: 860px){.sy.bk{grid-template-columns:minmax(0,1fr);gap:10px}.bk .sy-side{display:contents}.bk .bk-stage{position:sticky;top:calc(var(--hh, 110px) + 2px);z-index:5;background:#fafafa;padding:6px 0 10px;border-bottom:1px solid #ececec;align-self:start}.bk .bk-stage svg{max-height:30vh;margin:0 auto}.bk .bk-kr{display:none}.bk .sy-step{min-height:46vh !important;padding:16px 2px}.bk-title{font-size:22px !important}.bk-tog a{padding:7px 12px !important;font-size:12px !important}.bk-stat{font-size:14px !important}}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
+
+:root{color-scheme:light}
+html,body{overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+table,[data-count]{font-variant-numeric:tabular-nums}
+section p{max-width:min(100%,70ch)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #F1D734;outline-offset:3px;border-radius:6px}
+.fx .rv{opacity:1 !important}
+.fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
+html.show-b #story-a,html:not(.show-b) #story-b{display:none}
+.mk{background:linear-gradient(transparent 62%,#F1D734 62%,#F1D734 92%,transparent 92%) !important;border-radius:0 !important;padding:0 .08em !important;margin:0 !important;transform:none !important;box-shadow:none !important;font-family:'Instrument Serif',Georgia,serif !important;font-weight:400 !important;font-style:italic !important;letter-spacing:0 !important}
+
+.fl{position:relative;border-top-color:#d4d4d4 !important}
+.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
+.fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
+.fl .fl-ic{transition:background .5s ease var(--fd,0s),border-color .5s ease var(--fd,0s)}
+.fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
+.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}
+@keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
+.cta{background:#F1D734 !important;color:#141414 !important}.cta .cta-dot{background:#141414 !important;color:#F1D734 !important}
+.cta.pulse{animation:ctaglow 2.4s ease-in-out infinite}
+a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;color:#141414 !important}
+.bk-tog{align-items:center}.bk-tog::before{content:"Zwei Geschichten · wechseln:";width:100%;font-size:13px;font-weight:600;letter-spacing:.04em;color:#5c5c5c}
+.bk-tog a{padding:12px 20px !important;font-size:15px !important;position:relative}
+.bk-tog a[style*="transparent"]{border-color:#141414 !important}
+.bk-tog a[style*="transparent"]::after{content:"";position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.6s ease-out infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(241,215,52,.7)}100%{box-shadow:0 0 0 10px rgba(241,215,52,0)}}
+.story-btn{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1.5px solid #141414;border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;background:#ffffff;transition:background .2s}
+.story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
+.door:hover .story-btn{background:#F1D734}
+#kontenplan .bk .sy-step{min-height:16vh !important}
+@media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
+</style>
+</head>
+<body>
+<template id="tpl">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
+<header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
+<a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../c/fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../c/rechner.html" style="text-decoration: none; font-weight: 600">Wissen</a>
+<a href="../c/ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../c/karriere.html" style="text-decoration: none">Karriere</a>
+</nav>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-aktuelles-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+</div>
+</header><style>.faqw-tab{border:1px solid #c8c8c8;background:#ffffff;color:#141414;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:40px}
+.faqw-tab.on{background:#F1D734;border-color:#F1D734}.faqw-q{display:none}.faqw-q.on{display:flex}
+.faqw-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid #141414;background:#ffffff;font-size:18px;cursor:pointer}.faqw-arrow:hover{background:#F1D734;border-color:#F1D734}
+html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style>
+<section style="max-width: 1180px; margin: 0 auto; padding: 90px 24px var(--sp); display: flex; flex-direction: column; gap: 26px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Wissen · Aktuelles</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.03em; max-width: 980px">Neue Gesetze und Urteile. Und was sie <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">für dich</em> heißen.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 680px">Wir sortieren, was sich im Steuerrecht ändert, und übersetzen es in deinen Alltag als Unternehmer. Allgemeine Information, keine Beratung im Einzelfall.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap"><a href="../c/rechner.html" class="faqw-tab" style="text-decoration: none">Zu den Rechnern</a><span class="faqw-tab" style="background: #F1D734; border-color: #F1D734">Aktuelles</span></div>
+<div style="max-width: 900px"><article class="rv" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0; border-top: 1px solid #141414">
+<span style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><span style="font-size: 13px; font-weight: 700; background: #F1D734; border-radius: 999px; padding: 3px 10px">Gewerbesteuer</span><span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5c5c5c">Gesetz · verkündet am 2. Juli 2026</span><span style="display: inline-block; font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Entwurf, Freigabe Olga</span></span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2">Mindesthebesatz steigt ab 2027 von 200 % auf 280 %</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d"><b style="color: #141414">Was entschieden wurde:</b> Mit dem Neunten Gesetz zur Änderung des Steuerberatungsrechts steigt der Mindesthebesatz der Gewerbesteuer. Die Neuregelung gilt erstmals für den Erhebungszeitraum 2027. Ziel ist, Gemeinden mit sehr niedrigen Hebesätzen unattraktiver zu machen.</p>
+<p style="margin: 0; padding-left: 16px; border-left: 3px solid #F1D734; font-size: 17px; line-height: 1.65"><b>Was das für dich heißt:</b> Sitzt deine Gesellschaft, etwa eine Holding, bewusst in einer Gemeinde mit niedrigem Hebesatz, kann die Gewerbesteuer ab 2027 steigen. Jetzt ist ein guter Zeitpunkt, die Struktur mit Zahlen zu prüfen.</p>
+<span style="display: flex; gap: 18px; flex-wrap: wrap; align-items: center"><a href="../c/rechner-rechtsform.html" class="story-btn" style="text-decoration: none; color: #141414">Hebesatz im Rechtsform-Rechner ausprobieren →</a><span style="font-size: 13px; color: #5c5c5c">Quelle: <a href="https://www.forvismazars.com/de/en/who-we-are/news/press-media/newsletters/newsletter-steuern/newsletter-steuern-3-2026/steuerberatungsaenderungsgesetz" style="color: #5c5c5c">Forvis Mazars, Newsletter Steuern 3/2026</a></span></span>
+</article><article class="rv" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0; border-top: 1px solid #141414">
+<span style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><span style="font-size: 13px; font-weight: 700; background: #F1D734; border-radius: 999px; padding: 3px 10px">Grunderwerbsteuer</span><span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5c5c5c">Gesetz · verkündet am 2. Juli 2026</span><span style="display: inline-block; font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Entwurf, Freigabe Olga</span></span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2">Share Deals: Grunderwerbsteuer schon bei Vertragsunterzeichnung</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d"><b style="color: #141414">Was entschieden wurde:</b> Werden Anteile an einer Gesellschaft mit Grundbesitz übertragen, wird grundsätzlich schon beim Signing besteuert, das Closing ist nachrangig. Die Anzeigefrist im Inland verlängert sich von zwei Wochen auf einen Monat.</p>
+<p style="margin: 0; padding-left: 16px; border-left: 3px solid #F1D734; font-size: 17px; line-height: 1.65"><b>Was das für dich heißt:</b> Hältst du Immobilien in einer GmbH und denkst über einen Verkauf von Anteilen nach, zählt schon der Tag der Unterschrift. Den Zeitpunkt stimmst du deshalb vorher mit deinem Steuerberater ab.</p>
+<span style="display: flex; gap: 18px; flex-wrap: wrap; align-items: center"><a href="../c/rechner-immobilien.html" class="story-btn" style="text-decoration: none; color: #141414">Zum Immobilien-Rechner →</a><span style="font-size: 13px; color: #5c5c5c">Quelle: <a href="https://www.forvismazars.com/de/en/who-we-are/news/press-media/newsletters/newsletter-steuern/newsletter-steuern-3-2026/steuerberatungsaenderungsgesetz" style="color: #5c5c5c">Forvis Mazars, Newsletter Steuern 3/2026</a></span></span>
+</article><article class="rv" style="display: flex; flex-direction: column; gap: 14px; padding: 28px 0; border-top: 1px solid #141414">
+<span style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center"><span style="font-size: 13px; font-weight: 700; background: #F1D734; border-radius: 999px; padding: 3px 10px">Steuerberatungsrecht</span><span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5c5c5c">Gesetz · überwiegend seit 1. September 2026</span><span style="display: inline-block; font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Entwurf, Freigabe Olga</span></span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2">Neu geordnet: Wer in Steuersachen helfen darf</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d"><b style="color: #141414">Was entschieden wurde:</b> Die Regeln zur beschränkten Hilfeleistung in Steuersachen (§§ 4 bis 4e StBerG) wurden neu strukturiert. Die Befugnis richtet sich künftig stärker nach dem jeweiligen Berufs- oder Tätigkeitsbild. Der überwiegende Teil gilt seit 1. September 2026.</p>
+<p style="margin: 0; padding-left: 16px; border-left: 3px solid #F1D734; font-size: 17px; line-height: 1.65"><b>Was das für dich heißt:</b> Für dich bleibt es dabei: Steuererklärungen, Abschluss und die steuerliche Würdigung im Einzelfall übernimmt dein Steuerberater. Wir bereiten vor, rechnen und setzen um.</p>
+<span style="display: flex; gap: 18px; flex-wrap: wrap; align-items: center"><a href="../c/so-arbeiten-wir.html#wer-bewertet" class="story-btn" style="text-decoration: none; color: #141414">Wer bewertet was – und wann? →</a><span style="font-size: 13px; color: #5c5c5c">Quelle: <a href="https://www.forvismazars.com/de/en/who-we-are/news/press-media/newsletters/newsletter-steuern/newsletter-steuern-3-2026/steuerberatungsaenderungsgesetz" style="color: #5c5c5c">Forvis Mazars, Newsletter Steuern 3/2026</a> · <a href="https://blogs.pwc.de/de/steuern-und-recht/article/255130/update-bundesrat-stimmt-aenderungen-ua-im-grunderwerbsteuerrecht-im-zweiten-anlauf-zu/" style="color: #5c5c5c">PwC, Blog Steuern und Recht, Update vom 3. Juli 2026</a></span></span>
+</article></div>
+<span style="font-size: 13px; color: #5c5c5c; max-width: 900px">Stand 17. November 2026. Die Beiträge ersetzen keine steuerliche Beratung. Die Würdigung im Einzelfall übernimmt dein Steuerberater.</span>
+</section>
+<section style="max-width: 1180px; margin: 0 auto; padding: 140px 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Betrifft dich das? <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Lass uns sprechen.</em></h2>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; align-items: center"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=aktuelles-c-ende" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
+<span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>[5,0]</b> bei Google · [X] Bewertungen</span>
+<span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
+</div></div>
+</section>
+<footer style="background: #141414; color: #d4d4d4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+</div>
+</footer>
+</div>
+
+</template>
+<div id="app"></div>
+<script src="../dc-lite.js?v=1794952207"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = {}; }
+  renderVals() { return {}; }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+<script src="../effects.js?v=1794952207"></script>
+<script src="../c-flow.js?v=1794952207"></script>
+<script src="../c-faq.js?v=1794952207"></script>
+</body>
+</html>

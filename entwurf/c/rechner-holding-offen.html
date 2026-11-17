@@ -50,6 +50,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[
 .fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
 html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 .mk{background:linear-gradient(transparent 62%,#F1D734 62%,#F1D734 92%,transparent 92%) !important;border-radius:0 !important;padding:0 .08em !important;margin:0 !important;transform:none !important;box-shadow:none !important;font-family:'Instrument Serif',Georgia,serif !important;font-weight:400 !important;font-style:italic !important;letter-spacing:0 !important}
+
+.fl{position:relative;border-top-color:#d4d4d4 !important}
+.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
+.fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
+.fl .fl-ic{transition:background .5s ease var(--fd,0s),border-color .5s ease var(--fd,0s)}
+.fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
+.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}
+@keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
+.cta{background:#F1D734 !important;color:#141414 !important}.cta .cta-dot{background:#141414 !important;color:#F1D734 !important}
+.cta.pulse{animation:ctaglow 2.4s ease-in-out infinite}
+a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;color:#141414 !important}
+.bk-tog{align-items:center}.bk-tog::before{content:"Zwei Geschichten · wechseln:";width:100%;font-size:13px;font-weight:600;letter-spacing:.04em;color:#5c5c5c}
+.bk-tog a{padding:12px 20px !important;font-size:15px !important;position:relative}
+.bk-tog a[style*="transparent"]{border-color:#141414 !important}
+.bk-tog a[style*="transparent"]::after{content:"";position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.6s ease-out infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(241,215,52,.7)}100%{box-shadow:0 0 0 10px rgba(241,215,52,0)}}
+.story-btn{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1.5px solid #141414;border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;background:#ffffff;transition:background .2s}
+.story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
+.door:hover .story-btn{background:#F1D734}
+#kontenplan .bk .sy-step{min-height:16vh !important}
+@media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
 <body>
@@ -64,7 +85,7 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
 <a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
 <a href="../c/fuer-wen.html" style="text-decoration: none">Für wen</a>
-<a href="../c/rechner.html" style="text-decoration: none; font-weight: 600">Rechner</a>
+<a href="../c/rechner.html" style="text-decoration: none; font-weight: 600">Wissen</a>
 <a href="../c/ueber-uns.html" style="text-decoration: none">Über uns</a>
 <a href="../c/karriere.html" style="text-decoration: none">Karriere</a>
 </nav>
@@ -161,14 +182,14 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 <footer style="background: #141414; color: #d4d4d4">
 <div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 </div>
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794949320"></script>
+<script src="../dc-lite.js?v=1794952207"></script>
 <script>
 
 class Component extends DCLogic {
@@ -229,7 +250,9 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794949320"></script>
-<script src="../lead.js?v=1794949320"></script>
+<script src="../effects.js?v=1794952207"></script>
+<script src="../lead.js?v=1794952207"></script>
+<script src="../c-flow.js?v=1794952207"></script>
+<script src="../c-faq.js?v=1794952207"></script>
 </body>
 </html>
