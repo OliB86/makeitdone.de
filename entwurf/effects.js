@@ -41,8 +41,11 @@
       var hz = sy.classList.contains('hz') && innerWidth > 860;
       if (hz) {
         var wrap = sy.querySelector('.hz-wrap'), pin = sy.querySelector('.hz-pin'), stage = sy.querySelector('.hz-stage');
+        var ph = pin.offsetHeight, tp = Math.max(80, Math.round((vh - ph) / 2 + 36)) + 'px', wh = Math.round(ph + n * vh * 0.6) + 'px';
+        if (pin.style.top !== tp) pin.style.top = tp;
+        if (wrap.style.height !== wh) wrap.style.height = wh;
         var range = Math.max(1, wrap.offsetHeight - pin.offsetHeight);
-        var prog = Math.max(0, Math.min(0.9999, (72 - wrap.getBoundingClientRect().top) / range));
+        var prog = Math.max(0, Math.min(0.9999, (parseFloat(pin.style.top) - wrap.getBoundingClientRect().top) / range));
         cur = Math.floor(prog * n);
         var mh = 0; steps.forEach(function (el) { mh = Math.max(mh, el.offsetHeight); });
         var hs = (mh + 60) + 'px'; if (stage.style.height !== hs) stage.style.height = hs;
@@ -93,7 +96,7 @@
     if (!a || innerWidth <= 860) return;
     var sy = a.closest('.hz'), wrap = sy.querySelector('.hz-wrap'), pin = sy.querySelector('.hz-pin');
     var links = Array.prototype.slice.call(sy.querySelectorAll('.sy-nav a')), i = links.indexOf(a), n = links.length;
-    var range = wrap.offsetHeight - pin.offsetHeight, top = wrap.getBoundingClientRect().top + scrollY - 72;
+    var range = wrap.offsetHeight - pin.offsetHeight, top = wrap.getBoundingClientRect().top + scrollY - (parseFloat(pin.style.top) || 72);
     e.preventDefault();
     scrollTo({ top: top + range * (i + 0.5) / n, behavior: 'smooth' });
   });
