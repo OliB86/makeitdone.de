@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Für wen – make it done (Entwurf)</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button{font-family:inherit}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav a:last-child{order:-1}}
+</style>
+</head>
+<body>
+<template id="tpl">
+
+
+<div style="width: 100%; background: #ffffff; color: #141414; font-family: Inter, system-ui, sans-serif">
+
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center; letter-spacing: 0.02em">Entwurf · nicht verlinkt · Zielgruppe A oder B in Abstimmung mit Heartbeat</div>
+
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #ececec">
+<div style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<a href="index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<nav aria-label="Hauptmenü" style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 15px; align-items: center">
+<a href="leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="warum.html" style="text-decoration: none">Warum make it done</a>
+<a href="fuer-wen.html" style="text-decoration: none; font-weight: 600">Für wen</a>
+<a href="so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="rechner.html" style="text-decoration: none">Rechner</a>
+<a href="ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="karriere.html" style="text-decoration: none">Karriere</a>
+<a href="kontakt.html" style="text-decoration: none">Kontakt</a>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-fuer-wen" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600">Erstgespräch</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Für wen</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 76px); line-height: 1.02; letter-spacing: -0.02em; max-width: 1000px">Für Unternehmer, die wachsen – und es richtig aufstellen wollen.</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 780px">Inhabergeführt, vom Einzelunternehmen auf dem Weg zur GmbH bis zur Holding. Zu groß, um Zahlen und Struktur nebenbei zu machen – zu klein für eine eigene Finanzabteilung.</p>
+</section>
+
+<section style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 28px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Kurzer Selbstcheck</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Was trifft auf dich zu?</h2>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start">
+<div role="group" aria-label="Aussagen wählen" style="flex: 1.4 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{checks}}" as="c" hint-placeholder-count="8">
+<button type="button" onClick="{{c.toggle}}" aria-pressed="{{c.on}}" style="{{c.style}}"><span style="{{c.boxStyle}}">{{c.mark}}</span><span>{{c.text}}</span></button>
+</sc-for>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #141414; color: #ffffff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #b8b8b8">Dein Ergebnis</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.2">{{resTitle}}</span>
+<span style="font-size: 16px; line-height: 1.6; color: #d4d4d4">{{resText}}</span>
+<a href="{{resHref}}" style="align-self: flex-start; background: #ffffff; color: #141414; text-decoration: none; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 15px">{{resCta}}</a>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Drei Lagen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Wo du stehst – und was jetzt zählt.</h2>
+<sc-for list="{{lagen}}" as="l" hint-placeholder-count="3">
+<div id="{{l.id}}" style="border: 1px solid #dddddd; border-radius: 24px; padding: 40px; display: flex; gap: 40px; flex-wrap: wrap">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5c5c5c">Lage {{l.num}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.15">„{{l.title}}“</span>
+<span style="font-size: 17px; line-height: 1.6; color: #3d3d3d">{{l.story}}</span>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was wir gemeinsam angehen</span>
+<span style="font-size: 16px; line-height: 1.65">{{l.tun}}</span>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px">
+<a href="{{l.rechner}}" style="background: #141414; color: #ffffff; text-decoration: none; padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: 14px">{{l.rechnerLabel}}</a>
+<span style="background: #f4f4f4; border-radius: 999px; padding: 12px 16px; font-size: 14px; font-weight: 500">Beispiel: {{l.fall}}</span>
+</div>
+</div>
+</div>
+</sc-for>
+</section>
+
+<section style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Ehrlich gesagt</span>
+<span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px; color: #3d3d3d">Zielgruppe offen – mit Heartbeat</span>
+</div>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Wann wir gut passen – und wann nicht.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<div style="background: #ffffff; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Wir passen gut, wenn …</span>
+<ul style="margin: 0; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #3d3d3d"><li>du dein Unternehmen selbst führst</li><li>Entscheidungen zu Rechtsform, Gehalt, Investitionen anstehen</li><li>du Zahlen willst, mit denen du steuern kannst</li><li>du willst, dass es umgesetzt wird – nicht nur geplant</li></ul>
+</div>
+<div style="background: #ffffff; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Wir passen weniger, wenn …</span>
+<ul style="margin: 0; padding-left: 20px; font-size: 16px; line-height: 1.8; color: #3d3d3d"><li>du nur eine Steuererklärung oder den Jahresabschluss suchst – das macht dein Steuerberater</li><li>du ein schnelles Steuerspar-Modell von der Stange willst</li><li>du bereits eine eigene Finanzabteilung mit CFO hast</li><li>du Entscheidungen lieber allein und ohne Zahlen triffst</li></ul>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; gap: 40px; flex-wrap: wrap">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Typische Kunden</span>
+<span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px; color: #3d3d3d">Werbesegment offen</span>
+</div>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.15">Schnell gewachsen – oft online.</h2>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span style="border: 1px solid #141414; border-radius: 999px; padding: 10px 16px; font-size: 15px; font-weight: 500">Online-Unternehmer</span>
+<span style="border: 1px solid #141414; border-radius: 999px; padding: 10px 16px; font-size: 15px; font-weight: 500">Beratung &amp; Coaching</span>
+<span style="border: 1px solid #141414; border-radius: 999px; padding: 10px 16px; font-size: 15px; font-weight: 500">Agenturen</span>
+<span style="border: 1px solid #141414; border-radius: 999px; padding: 10px 16px; font-size: 15px; font-weight: 500">Dienstleister</span>
+<span style="border: 1px solid #141414; border-radius: 999px; padding: 10px 16px; font-size: 15px; font-weight: 500">Start-ups ab der ersten Finanzierung</span>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Wo</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.15">Aus Erkelenz – digital für ganz Deutschland.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3d3d">Wir arbeiten komplett digital – mit Zahlen-Cockpit, Video-Calls und kurzen Wegen. Deshalb ist es egal, wo dein Unternehmen sitzt.</p>
+</div>
+</section>
+
+<section style="background: #f4f4f4">
+<div style="max-width: 880px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Häufige Fragen</span>
+<h2 style="margin: 0 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">Passt das zu mir?</h2>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
+<div style="background: #ffffff; border-radius: 14px">
+<button type="button" onClick="{{f.toggle}}" aria-expanded="{{f.open}}" style="width: 100%; background: transparent; border: 0; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; cursor: pointer; font-size: 17px; font-weight: 600; color: #141414; min-height: 44px">
+<span>{{f.q}}</span>
+<span aria-hidden="true" style="font-size: 22px; font-weight: 400">{{f.sign}}</span>
+</button>
+<sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; padding: 0 24px 24px; font-size: 16px; line-height: 1.65; color: #3d3d3d">{{f.a}}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; max-width: 820px">Unsicher, ob du gemeint bist? Frag uns.</h2>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center">
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=fuer-wen" style="background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Jetzt Erstberatung sichern →</a>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #e4e4e4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 28px 24px; display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #5c5c5c">
+<span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz · HRB 22388, Amtsgericht Mönchengladbach</span><a href="/impressum.html" style="color: #5c5c5c">Impressum</a><a href="/datenschutz.html" style="color: #5c5c5c">Datenschutz</a>
+</div>
+</footer>
+
+</div>
+
+</template>
+<div id="app"></div>
+<script src="dc-lite.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { on: [], faq: 0 };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var CH = [
+      { t: 'Ich bin selbstständig und mein Gewinn steigt deutlich.', l: 0 },
+      { t: 'Eine GmbH steht im Raum, aber niemand rechnet es durch.', l: 0 },
+      { t: 'Die Steuervorauszahlungen passen nicht zu meinem Gewinn.', l: 0 },
+      { t: 'Ich habe eine GmbH und bin selbst Geschäftsführer.', l: 1 },
+      { t: 'Meine Zahlen kommen Wochen zu spät.', l: 1 },
+      { t: 'Ich will meinem Team mehr Netto vom Brutto geben.', l: 1 },
+      { t: 'Ich denke über eine Holding, Beteiligungen oder Immobilien nach.', l: 2 },
+      { t: 'Ein Verkauf oder die Nachfolge ist in den nächsten Jahren ein Thema.', l: 2 }
+    ];
+    var checks = CH.map(function (d, i) {
+      var isOn = st.on.indexOf(i) >= 0;
+      return { text: d.t, on: isOn, mark: isOn ? '✓' : '',
+        toggle: function () {
+          var next = isOn ? st.on.filter(function (x) { return x !== i; }) : st.on.concat([i]);
+          self.setState({ on: next });
+        },
+        boxStyle: 'width: 24px; height: 24px; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; ' + (isOn ? 'background: #ffffff; color: #141414;' : 'border: 2px solid #141414;'),
+        style: 'display: flex; gap: 14px; align-items: center; text-align: left; padding: 14px 18px; border-radius: 14px; cursor: pointer; min-height: 52px; font-size: 16px; font-weight: 500; transition: background .2s, color .2s; ' + (isOn ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;') };
+    });
+    var LAGEN = [
+      { id: 'lage-1', title: 'Ich wachse als Selbstständige/r', story: 'Das Geschäft läuft, der Gewinn steigt – und jeder Euro wird zum persönlichen Steuersatz versteuert. Die GmbH-Idee steht im Raum, die Buchhaltung hinkt hinterher, die Vorauszahlungen passen nicht.',
+        tun: 'Zahlen auf den aktuellen Stand bringen, Einzelunternehmen, GmbH und Holding durchrechnen, den Wechsel vorbereiten und mit deinem Steuerberater umsetzen. Dazu Verträge und Vergütung, auch für mitarbeitende Familie.',
+        rechner: 'Rechtsform.dc.html', rechnerLabel: 'Rechner: Einzelunternehmen, GmbH oder Holding →', fall: 'Kunde B', r: 'Du stehst am Übergang zur GmbH. Jetzt werden die Weichen gestellt – später umzubauen ist teurer.' },
+      { id: 'lage-2', title: 'Ich habe eine GmbH', story: 'Die GmbH ist da, du bist Geschäftsführer. Aber die Zahlen kommen spät, Entnahmen und Gehalt sind Bauchgefühl, und ob die Struktur noch zu deinen Plänen passt, weiß niemand so genau.',
+        tun: 'Buchhaltung nach deinen Kennzahlen aufbauen, Dashboard einrichten, Geschäftsführergehalt, Benefits und Verträge aufstellen – und die Struktur an dein Zielbild anpassen.',
+        rechner: 'Netto.dc.html', rechnerLabel: 'Rechner: Netto vom Brutto →', fall: 'Kunde A (Vergütung)', r: 'Deine GmbH braucht Zahlen, mit denen du steuern kannst – und eine Struktur, die zu deinen Zielen passt.' },
+      { id: 'lage-3', title: 'Holding oder Nachfolge?', story: 'Beteiligungen, Immobilien, ein möglicher Exit: Die nächste Stufe steht an. Was heute entschieden wird, bestimmt, was später bei dir ankommt.',
+        tun: 'Zielbild für 1, 3 und 10 Jahre, Holding und Töchter planen, Exit und Nachfolge vorbereiten, Immobilien sinnvoll zuordnen – umgesetzt im Netzwerk aus Steuerberatern, Wirtschaftsprüfern und Rechtsanwälten.',
+        rechner: 'Rechner.dc.html', rechnerLabel: 'Rechner: Exit und Beteiligungen →', fall: 'Kunde A', r: 'Du planst die nächste Stufe. Jetzt zählt eine Struktur, die Gewinne, Exits und Vermögen sauber trennt.' }
+    ];
+    var lagen = LAGEN.map(function (d, i) { return { id: d.id, num: '0' + (i + 1), title: d.title, story: d.story, tun: d.tun, rechner: d.rechner, rechnerLabel: d.rechnerLabel, fall: d.fall }; });
+    var score = [0, 0, 0];
+    st.on.forEach(function (i) { score[CH[i].l] += 1; });
+    var res;
+    if (st.on.length === 0) {
+      res = { t: 'Wähl, was zutrifft.', x: 'Wir zeigen dir, welche Lage am besten passt – und was das Gesamtpaket für dich löst.', h: '#lage-1', c: 'Die drei Lagen ↓' };
+    } else {
+      var best = 0;
+      for (var k = 1; k < 3; k++) { if (score[k] > score[best]) { best = k; } }
+      var L = LAGEN[best];
+      res = { t: 'Lage 0' + (best + 1) + ': ' + L.title, x: L.r + (st.on.length >= 3 ? ' Bei so vielen Punkten lohnt sich ein Gespräch.' : ''), h: st.on.length >= 3 ? 'Kontakt.dc.html' : '#' + L.id, c: st.on.length >= 3 ? 'Jetzt Erstberatung sichern →' : 'Mehr zu dieser Lage ↓' };
+    }
+    var FAQ = [
+      { q: 'Bin ich dafür nicht zu klein?', a: 'Gerade auf dem Weg vom Einzelunternehmen zur GmbH werden die Weichen gestellt. Später umzubauen ist aufwendiger und teurer.' },
+      { q: 'Ich habe schon einen Steuerberater – brauche ich euch trotzdem?', a: 'Dein Steuerberater bleibt. Er sieht dein Unternehmen meist im Rückblick, wir sind vorher dabei – und bereiten alles so auf, dass er sicher bewerten kann.' },
+      { q: 'Arbeitet ihr nur in der Region?', a: 'Wir arbeiten komplett digital – per Video, Telefon und Zahlen-Cockpit. Deshalb ist es egal, wo dein Unternehmen sitzt.' },
+      { q: 'Wir sind ein Start-up mit Investoren. Passt das?', a: '[Offen – mit Heartbeat: Start-ups ab der ersten Finanzierung als Zielgruppe ja oder nein.]' }
+    ];
+    var faqs = FAQ.map(function (d, i) {
+      var isOpen = st.faq === i;
+      return { q: d.q, a: d.a, open: isOpen, sign: isOpen ? '−' : '+', toggle: function () { self.setState({ faq: isOpen ? -1 : i }); } };
+    });
+    return { checks: checks, resTitle: res.t, resText: res.x, resHref: res.h, resCta: res.c, lagen: lagen, faqs: faqs };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+</body>
+</html>
