@@ -172,6 +172,10 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
 .door:hover .story-btn{background:#F1D734}
 #kontenplan .bk .sy-step{min-height:16vh !important}
+.phase.fl::after{top:auto;bottom:-1px}
+.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:1.6s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
+.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.7s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:1.4s !important}
+.ck-row.fl .fl-ic{transition:background .5s ease,border-color .5s ease}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
@@ -273,7 +277,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794952207"></script>
+<script src="../dc-lite.js?v=1794953546"></script>
 <script>
 
 class Component extends DCLogic {
@@ -283,8 +287,8 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794952207"></script>
-<script src="../c-flow.js?v=1794952207"></script>
-<script src="../c-faq.js?v=1794952207"></script>
+<script src="../effects.js?v=1794953546"></script>
+<script src="../c-flow.js?v=1794953546"></script>
+<script src="../c-faq.js?v=1794953546"></script>
 </body>
 </html>

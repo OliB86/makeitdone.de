@@ -70,6 +70,10 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
 .door:hover .story-btn{background:#F1D734}
 #kontenplan .bk .sy-step{min-height:16vh !important}
+.phase.fl::after{top:auto;bottom:-1px}
+.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:1.6s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
+.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.7s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:1.4s !important}
+.ck-row.fl .fl-ic{transition:background .5s ease,border-color .5s ease}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
@@ -186,7 +190,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794952207"></script>
+<script src="../dc-lite.js?v=1794953546"></script>
 <script>
 
 class Component extends DCLogic {
@@ -254,7 +258,7 @@ class Component extends DCLogic {
     var sliders = [
       slider('f-gewinn', 'Gewinn vor Geschäftsführergehalt', 'gewinn', 50000, 1500000, 10000, eur(G), 'Jahresgewinn des Unternehmens'),
       slider('f-gehalt', 'Geschäftsführergehalt (GmbH)', 'gehalt', 0, 300000, 5000, eur(S), 'muss angemessen sein und einem Fremdvergleich standhalten'),
-      slider('f-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 200, 900, 5, H + ' %', 'je nach Gemeinde'),
+      slider('f-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 280, 900, 5, H + ' %', 'je nach Gemeinde, ab 2027 mindestens 280 %'),
       slider('f-aus', 'Ausschüttungsanteil', 'aus', 0, 100, 10, st.aus + ' %', 'Anteil des Gewinns nach Steuern, der privat ausgeschüttet wird')
     ];
     var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
@@ -270,9 +274,9 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794952207"></script>
-<script src="../lead.js?v=1794952207"></script>
-<script src="../c-flow.js?v=1794952207"></script>
-<script src="../c-faq.js?v=1794952207"></script>
+<script src="../effects.js?v=1794953546"></script>
+<script src="../lead.js?v=1794953546"></script>
+<script src="../c-flow.js?v=1794953546"></script>
+<script src="../c-faq.js?v=1794953546"></script>
 </body>
 </html>

@@ -172,6 +172,10 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
 .door:hover .story-btn{background:#F1D734}
 #kontenplan .bk .sy-step{min-height:16vh !important}
+.phase.fl::after{top:auto;bottom:-1px}
+.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:1.6s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
+.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.7s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:1.4s !important}
+.ck-row.fl .fl-ic{transition:background .5s ease,border-color .5s ease}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
@@ -199,7 +203,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 @keyframes uutick{to{background:#F1D734;border-color:#F1D734}}@keyframes uushow{to{opacity:1}}
 @media (prefers-reduced-motion: reduce){.uu-ck .uu-box{animation:none;background:#F1D734;border-color:#F1D734}.uu-ck .uu-box svg{animation:none;opacity:1}}
 #glaube .sy-step{opacity:.3 !important;transition:opacity .45s ease}#glaube .sy-step.act{opacity:1 !important}
-#glaube .sy-step{min-height:38vh;justify-content:center}</style>
+#glaube .sy-step{min-height:20vh;justify-content:center;padding:28px 0 !important}</style>
 <section style="max-width: 1180px; margin: 0 auto; padding: 90px 24px var(--sp); display: flex; gap: 56px; flex-wrap: wrap; align-items: center">
 <div style="flex: 1.2 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Über uns</span>
@@ -242,7 +246,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <div class="sy-step" id="glaube-2"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #8a8a8a">03</span>
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 36px); font-weight: 700; line-height: 1.15">Ein Konzept ist erst etwas wert, wenn es umgesetzt ist.</span>
 <span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Gute Ideen gibt es genug. Was fehlt, ist jemand, der sie mit Steuerberater und Anwalt durchzieht, bis Verträge, Konten und Prozesse laufen.</span>
-<span style="font-size: 16px; line-height: 1.55; padding-left: 16px; border-left: 3px solid #F1D734"><b>Was das für dich heißt:</b> Darum heißen wir make it done.</span></div>
+<span style="font-size: 16px; line-height: 1.55; padding-left: 16px; border-left: 3px solid #F1D734"><b>Was das für dich heißt:</b> Darum heißen wir make <span class="mk">it</span> done.</span></div>
 </div>
 </div>
 </section>
@@ -257,20 +261,22 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; align-items: center; gap: 28px">
-<span style="width: 1.5px; height: 64px; background: #141414"></span>
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Die Gründerin</span>
-<div style="width: 100%; max-width: 380px; position: relative">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px">
+<div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px"><span style="width: 48px; height: 2px; background: #F1D734"></span><span style="flex: 1; height: 1px; background: #141414; opacity: .2"></span></div>
+<div style="display: flex; gap: 56px; flex-wrap: wrap; align-items: center">
+<div class="rv" style="flex: 0 1 340px; min-width: 0; position: relative">
 <img src="../img/olga-sw.webp" alt="Olga Bertram, Gründerin der make it done GmbH" style="width: 100%; height: auto; display: block">
 <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #F1D734"></span>
 </div>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700">Olga Bertram</span>
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Die Gründerin</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3vw, 36px); font-weight: 700">Olga Bertram</span>
 <span style="font-size: 16px; color: #3d3d3d">Geschäftsführende Gesellschafterin · Dozentin für Steuern und Rechnungswesen</span>
+<p class="rv" style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Olga kennt beide Seiten des Tisches: die der Berater aus Wirtschaftsprüfung und Steuerberatung und die der Geschäftsführung als CFO/COO. Seit 2010 unterrichtet sie Steuern und Rechnungswesen. Heute bringt sie für ihre Kunden zusammen, was sonst nebeneinander herläuft.</p>
+<div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Prüfung und Beratung</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wirtschaftsprüfung und Steuerberatung, für Gründer, größere Unternehmen und Konzerne.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Hochschule</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Hochschule Niederrhein: wissenschaftliche Mitarbeit, Präsidium, Studiengangsentwicklung.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Lehre</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Seit 2010 Dozentin für Steuern, Rechnungswesen, Jahresabschluss, Finanzmathematik und DATEV.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Unternehmen</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">CFO/COO der Felix Thönnessen GmbH: Holdingstruktur aufgebaut, Investments betreut, Start-ups beraten.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Selbstständig</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Seit 2017, seit 2023 mit eigener GmbH und Holdingstruktur.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">make it done</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Gründerin und Geschäftsführerin, gewachsen über Empfehlungen.</span></div></div>
 </div>
-<p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d; text-align: center; max-width: 720px">Olga kennt beide Seiten des Tisches: die der Berater aus Wirtschaftsprüfung und Steuerberatung und die der Geschäftsführung als CFO/COO. Seit 2010 unterrichtet sie Steuern und Rechnungswesen. Heute bringt sie für ihre Kunden zusammen, was sonst nebeneinander herläuft.</p>
-<div style="width: 100%; max-width: 860px"><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Prüfung und Beratung</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Wirtschaftsprüfung und Steuerberatung, für Gründer, größere Unternehmen und Konzerne.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Hochschule</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Hochschule Niederrhein: wissenschaftliche Mitarbeit, Präsidium, Studiengangsentwicklung.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Lehre</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Seit 2010 Dozentin für Steuern, Rechnungswesen, Jahresabschluss, Finanzmathematik und DATEV.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Unternehmen</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">CFO/COO der Felix Thönnessen GmbH: Holdingstruktur aufgebaut, Investments betreut, Start-ups beraten.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">Selbstständig</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Seit 2017, seit 2023 mit eigener GmbH und Holdingstruktur.</span></div><div class="rv" style="display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid #e4e4e4"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 16px">make it done</b><span style="font-size: 16px; line-height: 1.55; color: #3d3d3d">Gründerin und Geschäftsführerin, gewachsen über Empfehlungen.</span></div></div>
-<span style="width: 1.5px; height: 64px; background: #141414"></span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; margin-top: 40px"><span style="flex: 1; height: 1px; background: #141414; opacity: .2"></span><span style="width: 48px; height: 2px; background: #F1D734"></span></div>
 </section>
 
 <section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
@@ -286,6 +292,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d">Hinter make it done steht ein Team mit kurzen Wegen. Als IHK-Ausbildungsbetrieb bilden wir auch selbst aus.</p>
 <a href="../c/karriere.html" class="story-btn" style="text-decoration: none; color: #141414">Offene Stellen ansehen →</a>
 </section>
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px"><span style="display: block; height: 1px; background: #141414; opacity: .2"></span></div>
 <section style="max-width: 1180px; margin: 0 auto; padding: 140px 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Lern uns <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">kennen</em>.</h2>
 <p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
@@ -304,7 +311,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794952207"></script>
+<script src="../dc-lite.js?v=1794953546"></script>
 <script>
 
 class Component extends DCLogic {
@@ -314,8 +321,8 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794952207"></script>
-<script src="../c-flow.js?v=1794952207"></script>
-<script src="../c-faq.js?v=1794952207"></script>
+<script src="../effects.js?v=1794953546"></script>
+<script src="../c-flow.js?v=1794953546"></script>
+<script src="../c-faq.js?v=1794953546"></script>
 </body>
 </html>

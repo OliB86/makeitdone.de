@@ -172,6 +172,10 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
 .door:hover .story-btn{background:#F1D734}
 #kontenplan .bk .sy-step{min-height:16vh !important}
+.phase.fl::after{top:auto;bottom:-1px}
+.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:1.6s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
+.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.7s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:1.4s !important}
+.ck-row.fl .fl-ic{transition:background .5s ease,border-color .5s ease}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
@@ -375,19 +379,19 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <span class="fl-ic" style="width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; background: #ffffff; border: 2px solid #141414"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span>
 <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
 <span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c"><b style="color: #141414; margin-right: 8px">05</b>Woche 2</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Ziel-Workshop</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make plans done.</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Ziel-Workshop</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make <span class="mk">plans</span> done.</span>
 <span style="font-size: 15px; line-height: 1.6; color: #3d3d3d">Deine persönlichen und beruflichen Ziele: Familie, Vermögen, Investitionen, Exit. Alles Weitere richtet sich danach aus.</span>
 </span></div><div class="rv fl" style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e4e4e4">
 <span class="fl-ic" style="width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; background: #F1D734; border: 2px solid #F1D734"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="6" cy="18" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"></path></svg></span>
 <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
 <span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c"><b style="color: #141414; margin-right: 8px">06</b>bis Tag 14</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Struktur-Fahrplan</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make structure done.</span><span style="align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #F1D734; border-radius: 999px; padding: 3px 9px">Meilenstein</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Struktur-Fahrplan</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make <span class="mk">structure</span> done.</span><span style="align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #F1D734; border-radius: 999px; padding: 3px 9px">Meilenstein</span>
 <span style="font-size: 15px; line-height: 1.6; color: #3d3d3d">Die Struktur, die zu deinem Zielbild passt – mit fertig vorbereiteten Fragen an Steuerberater, Anwalt und Notar.</span>
 </span></div><div class="rv fl" style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e4e4e4">
 <span class="fl-ic" style="width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; background: #ffffff; border: 2px solid #141414"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M3 21h18"></path><path d="M6 17v-4M11 17V9M16 17v-7"></path><path d="M4 9l5-4 4 3 7-5"></path></svg></span>
 <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
 <span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c"><b style="color: #141414; margin-right: 8px">07</b>Tag 30–90</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Zahlen-Cockpit</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make finance done.</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Zahlen-Cockpit</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make <span class="mk">finance</span> done.</span>
 <span style="font-size: 15px; line-height: 1.6; color: #3d3d3d">Individueller Kontenplan, automatisierter Belegfluss, Kennzahlen, Cashflow und Liquidität – dein Cockpit ist live, deine Zahlen kommen just in time.</span>
 </span></div><div class="rv fl" style="display: flex; gap: 18px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e4e4e4">
 <span class="fl-ic" style="width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; background: #F1D734; border: 2px solid #F1D734"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span>
@@ -399,7 +403,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <span class="fl-ic" style="width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; background: #F1D734; border: 2px solid #F1D734"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="2.5"></circle><path d="M12 3v6.5M4.2 16.5l5.6-3.2M19.8 16.5l-5.6-3.2"></path></svg></span>
 <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
 <span style="font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #5c5c5c"><b style="color: #141414; margin-right: 8px">09</b>laufend</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Wir steuern gemeinsam</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make it done.</span><span style="align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #F1D734; border-radius: 999px; padding: 3px 9px">Meilenstein</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Wir steuern gemeinsam</span><span style="font-size: 14px; font-weight: 600; color: #5c5c5c">make <span class="mk">it</span> done.</span><span style="align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #F1D734; border-radius: 999px; padding: 3px 9px">Meilenstein</span>
 <span style="font-size: 15px; line-height: 1.6; color: #3d3d3d">Mindestens einmal im Monat sprechen wir über die Entwicklung deines Unternehmens und alle anstehenden Entscheidungen. Gestaltungsmöglichkeiten fragen wir vorab ab, damit noch gestaltet werden kann.</span>
 </span></div></div>
 </div>
@@ -533,7 +537,7 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section styl
 <span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Ja. Wir stimmen uns mit deinen Beratern ab. Wenn dir für ein Thema jemand fehlt, bringen wir Fachleute aus unserem Netzwerk dazu.</span>
 <a href="../c/leistungen.html#netzwerk" style="font-weight: 600; font-size: 15px; color: #141414">Mehr dazu: Zum Netzwerk →</a></div><div class="faqw-q" data-r="2" data-k="3" style="flex-direction: column; gap: 12px; min-height: 190px">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Beratet ihr steuerlich?</span>
-<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Die steuerliche und rechtliche Würdigung im Einzelfall übernehmen Steuerberater und Rechtsanwälte, die du direkt beauftragst. Wir bereiten den Sachverhalt auf, rechnen Varianten, koordinieren und setzen um.</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Die steuerliche und rechtliche Würdigung im Einzelfall übernehmen Steuerberater und Rechtsanwälte, die du direkt beauftragst. In unserem Know-how stecken Dozenten für Steuerrecht und Rechnungswesen und Erfahrung aus Wirtschaftsprüfung und Steuerberatung. Deshalb bereiten wir auf Seite deines Unternehmens alles vor, was für eine saubere Würdigung nötig ist: Sachverhalt, Varianten, Zahlen.</span>
 <a href="../c/so-arbeiten-wir.html#vergleich" style="font-weight: 600; font-size: 15px; color: #141414">Mehr dazu: Zum Vergleich →</a></div><div class="faqw-q" data-r="2" data-k="4" style="flex-direction: column; gap: 12px; min-height: 190px">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Ich habe schon einen CFO. Brauche ich euch dann?</span>
 <span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Ein CFO sorgt für die Zahlen im Unternehmen. Wir gehen weiter: Rechtsform, Holding, Nachfolge, deine persönlichen Ziele und die Abstimmung mit Steuerberater, Anwalt und Notar. Dein CFO kann die Zahlen gern behalten.</span>
@@ -541,14 +545,14 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section styl
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Und warum nicht eine Strukturberatung?</span>
 <span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Strukturkonzepte brauchen eine aktuelle Zahlenbasis. Fehlt sie, dauern Entscheidungen, und die Umsetzung bleibt hängen. Wir bringen beides zusammen.</span>
 <a href="../c/so-arbeiten-wir.html#vergleich" style="font-weight: 600; font-size: 15px; color: #141414">Mehr dazu: Zum Vergleich →</a></div><div class="faqw-q" data-r="3" data-k="0" style="flex-direction: column; gap: 12px; min-height: 190px">
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Brauche ich das Zahlen-Cockpit?</span>
-<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Nein. Das Zahlen-Cockpit ist ein Baustein, kein Muss. Wer nur Planung und Struktur will, bekommt genau das.</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Muss ich das Zahlen-Cockpit buchen?</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Buchen musst du es nicht. Ob du es brauchst, ist eine andere Frage: Es liefert aktuelle Zahlen und damit die Grundlage für deine Entscheidungen. Ohne Cockpit schauen wir gemeinsam auf langfristige Planung und Struktur.</span>
 <a href="../c/leistungen.html#cockpit" style="font-weight: 600; font-size: 15px; color: #141414">Mehr dazu: Zum Zahlen-Cockpit →</a></div><div class="faqw-q" data-r="3" data-k="1" style="flex-direction: column; gap: 12px; min-height: 190px">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Was ist das Zahlen-Cockpit?</span>
-<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Deine Belege und Konten fließen automatisch zusammen. Daraus entstehen Umsatz, Kosten, Cashflow und Liquidität, aktuell statt Wochen später.</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Deine Belege und Konten fließen automatisch zusammen, gegliedert nach deinen KPIs. Daraus entstehen Umsatz, Kosten, Cashflow und Liquidität, aktuell statt Wochen später. Eine parallele Kosten- und Leistungsrechnung brauchst du nicht: Alles lässt sich direkt aus den Zahlen ermitteln.</span>
 <a href="../c/leistungen.html#cockpit" style="font-weight: 600; font-size: 15px; color: #141414">Mehr dazu: Zum Zahlen-Cockpit →</a></div><div class="faqw-q" data-r="3" data-k="2" style="flex-direction: column; gap: 12px; min-height: 190px">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Was heißt Kontenplan nach deinen KPIs?</span>
-<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Wir gliedern deine Konten im Rahmen des DATEV-Kontenrahmens nach deinem Geschäft. So lesen sich Marge, Deckungsbeitrag und Liquidität direkt ab. Bilanz und GuV bleiben wie vorgeschrieben.</span>
+<span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Wir gliedern deine Konten im Rahmen des DATEV-Kontenrahmens nach deinem Geschäft. So lesen sich Marge, Deckungsbeitrag und Liquidität direkt ab, ohne parallele Kosten- und Leistungsrechnung. Bilanz und GuV bleiben wie gesetzlich vorgeschrieben.</span>
 <a href="../c/leistungen.html#kontenplan" style="font-weight: 600; font-size: 15px; color: #141414">Mehr dazu: Zum Kontenplan →</a></div><div class="faqw-q" data-r="3" data-k="3" style="flex-direction: column; gap: 12px; min-height: 190px">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Wer erledigt die Umsatzsteuer-Voranmeldung?</span>
 <span style="font-size: 17px; line-height: 1.65; color: #3d3d3d">Entweder erstellst und übermittelst du sie selbst, etwa per Knopfdruck aus deinem Buchhaltungsprogramm, oder dein Steuerberater übernimmt sie. [In rechtlicher Prüfung.]</span>
@@ -602,7 +606,7 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section styl
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794952207"></script>
+<script src="../dc-lite.js?v=1794953546"></script>
 <script>
 
 
@@ -939,9 +943,9 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794952207"></script>
-<script src="../c-flow.js?v=1794952207"></script>
-<script src="../c-faq.js?v=1794952207"></script>
-<script src="../c-story.js?v=1794952207"></script>
+<script src="../effects.js?v=1794953546"></script>
+<script src="../c-flow.js?v=1794953546"></script>
+<script src="../c-faq.js?v=1794953546"></script>
+<script src="../c-story.js?v=1794953546"></script>
 </body>
 </html>
