@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Entwurf B – Leistungen – make it done</title>
+<title>Leistungen – make it done</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 @font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
@@ -141,6 +141,15 @@ html:not(.fx) .bk .bn[data-u],html:not(.fx) .bk .bn[data-in]{display:none}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 @media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
+
+:root{color-scheme:light}
+html,body{overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+table,[data-count]{font-variant-numeric:tabular-nums}
+section p{max-width:min(100%,70ch)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #F1D734;outline-offset:3px;border-radius:6px}
+.fx .rv{opacity:1 !important}
+.fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
 </style>
 </head>
 <body>
@@ -310,7 +319,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 </section>
 <section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Lass uns sprechen, <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">bevor</em> du entscheidest.</h2>
-<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">15 Minuten Erstgespräch, unverbindlich. Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
 <div class="rv" style="display: flex; flex-direction: column; gap: 18px; align-items: center"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=leistungen-b-ende" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
 <span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>[5,0]</b> bei Google · [X] Bewertungen</span>
 <span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
@@ -326,7 +335,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 
 </template>
 <div id="app"></div>
-<script src="../dc-lite.js?v=1794937014"></script>
+<script src="../dc-lite.js?v=1794943637"></script>
 <script>
 
 class Component extends DCLogic {
@@ -346,6 +355,6 @@ class Component extends DCLogic {
 
 dcMount(Component, 'tpl', 'app');
 </script>
-<script src="../effects.js?v=1794937014"></script>
+<script src="../effects.js?v=1794943637"></script>
 </body>
 </html>
