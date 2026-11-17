@@ -147,18 +147,38 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 <span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px; color: #3d3d3d">Vorschlag – gemeinsam schärfen</span>
 </div>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Fünf Dinge, die du von uns bekommst.</h2>
-<div role="group" aria-label="Benefit-Bereich wählen" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<sc-for list="{{benefits}}" as="b" hint-placeholder-count="5">
-<button type="button" onClick="{{b.pick}}" aria-pressed="{{b.on}}" style="{{b.style}}">
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">{{b.title}}</span>
-<span style="font-size: 14px; line-height: 1.45; color: {{b.subColor}}">{{b.sub}}</span>
+<div role="group" aria-label="Benefit wählen" style="display: grid; grid-template-columns: repeat(5, minmax(120px, 1fr)); gap: 8px; overflow-x: auto">
+<button type="button" onClick="{{ben0Pick}}" aria-pressed="{{ben0On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben0Line}}; color: #141414">
+<span style="{{ben0Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben0Title}}</span>
 </button>
+<button type="button" onClick="{{ben1Pick}}" aria-pressed="{{ben1On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben1Line}}; color: #141414">
+<span style="{{ben1Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 21V11"></path><path d="M12 11c0-4 3-7 8-7 0 5-3 7-8 7z"></path><path d="M12 14c0-3-2-5-7-5 0 4 2 5 7 5z"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben1Title}}</span>
+</button>
+<button type="button" onClick="{{ben2Pick}}" aria-pressed="{{ben2On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben2Line}}; color: #141414">
+<span style="{{ben2Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben2Title}}</span>
+</button>
+<button type="button" onClick="{{ben3Pick}}" aria-pressed="{{ben3On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben3Line}}; color: #141414">
+<span style="{{ben3Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M15.5 14.2A5 5 0 0 1 21 19"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben3Title}}</span>
+</button>
+<button type="button" onClick="{{ben4Pick}}" aria-pressed="{{ben4On}}" style="display: flex; flex-direction: column; align-items: center; gap: 12px; background: transparent; border: 0; cursor: pointer; padding: 8px 4px 16px; border-bottom: {{ben4Line}}; color: #141414">
+<span style="{{ben4Circle}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><ellipse cx="9" cy="7" rx="6" ry="3"></ellipse><path d="M3 7v4c0 1.7 2.7 3 6 3s6-1.3 6-3V7"></path><path d="M9 14v3c0 1.7 2.7 3 6 3s6-1.3 6-3v-4c0-1.6-2.4-2.9-5.5-3"></path></svg></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; text-align: center; line-height: 1.25">{{ben4Title}}</span>
+</button>
+</div>
+<div class="mid-in" style="display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start; padding-top: 12px">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.08">{{benTitle}}</span>
+<span style="font-size: 18px; color: #3d3d3d">{{benSub}}</span>
+</div>
+<div style="flex: 1.4 1 420px; min-width: 0; display: flex; flex-direction: column">
+<sc-for list="{{benefitItems}}" as="bi" hint-placeholder-count="3">
+<div style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #d4d4d4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg><span style="font-size: 17px; line-height: 1.5">{{bi}}</span></div>
 </sc-for>
 </div>
-<div class="mid-in" style="background: #ffffff; border-radius: 20px; padding: 32px 36px; border: 1px solid #dddddd; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
-<sc-for list="{{benefitItems}}" as="bi" hint-placeholder-count="3">
-<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#141414" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size: 16px; line-height: 1.5">{{bi}}</span></div>
-</sc-for>
 </div>
 </div>
 </section>
@@ -373,10 +393,13 @@ class Component extends DCLogic {
       { t: 'Team & Kultur', s: 'Klein, direkt, ehrlich', i: ['Kurze Wege und direkte Zusammenarbeit mit der Gründerin', 'Ein Team, das sich gegenseitig stark macht', 'Regelmäßige Teamevents'] }
       ,{ t: 'Leistung zahlt sich aus', s: 'Je mehr du bewegst, desto mehr verdienst du', i: ['Leistungsorientierte Vergütung mit Beteiligung am Umsatz', 'Selbstständig und flexibel – auch nebenberuflich starten', 'Bei Anstellung: lohnsteueroptimierte Gehaltsstruktur mit Benefits – wir leben, was wir Kunden empfehlen'] }
     ];
-    var benefits = B.map(function (d, i) {
+    var benVals = {};
+    B.forEach(function (d, i) {
       var on = st.ben === i;
-      return { title: d.t, sub: d.s, on: on, subColor: on ? '#d4d4d4' : '#3d3d3d', pick: function () { self.setState({ ben: i }); },
-        style: 'display: flex; flex-direction: column; gap: 8px; text-align: left; padding: 22px; border-radius: 16px; cursor: pointer; min-height: 110px; transition: background .2s, color .2s; ' + (on ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;') };
+      benVals['ben' + i + 'Title'] = d.t; benVals['ben' + i + 'On'] = on;
+      benVals['ben' + i + 'Pick'] = function () { self.setState({ ben: i }); };
+      benVals['ben' + i + 'Line'] = on ? '3px solid #141414' : '3px solid transparent';
+      benVals['ben' + i + 'Circle'] = 'width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s, transform .2s; ' + (on ? 'background: #141414; color: #ffffff; transform: scale(1.06);' : 'background: #ffffff; color: #141414; border: 1.5px solid #c8c8c8;');
     });
     var NAMES = ['Stelle', 'Arbeitsweise', 'Erfahrung', 'Superkräfte', 'Praxisfrage', 'Video', 'Kontakt', 'Absenden'];
     var total = NAMES.length;
@@ -409,8 +432,8 @@ class Component extends DCLogic {
     var body = summary.map(function (s) { return s.k + ': ' + s.v; }).join('\n');
     var mailHref = 'mailto:karriere@makeitdone.de?subject=' + encodeURIComponent('Bewerbung: ' + roleLabel) + '&body=' + encodeURIComponent(body);
     var stepBtn = 'border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; ';
-    return {
-      filters: filters, jobs: jobs, benefits: benefits, benefitItems: B[st.ben].i,
+    return Object.assign(benVals, {
+      filters: filters, jobs: jobs, benefitItems: B[st.ben].i, benTitle: B[st.ben].t, benSub: B[st.ben].s,
       stepNum: st.step + 1, stepTotal: total, stepName: NAMES[st.step],
       barStyle: 'height: 100%; border-radius: 999px; background: #141414; width: ' + Math.round(((st.step + 1) / total) * 100) + '%',
       s0: st.step === 0, s1: st.step === 1, s2: st.step === 2, s3: st.step === 3, s4: st.step === 4, s5: st.step === 5, s6: st.step === 6, s7: st.step === 7,
@@ -431,7 +454,7 @@ class Component extends DCLogic {
       fwd: function () { self.setState({ step: Math.min(total - 1, st.step + 1) }); },
       backStyle: stepBtn + 'background: #ffffff; color: #141414; border: 1px solid #141414; visibility: ' + (st.step === 0 ? 'hidden' : 'visible'),
       fwdStyle: stepBtn + 'background: #141414; color: #ffffff; border: 1px solid #141414;'
-    };
+    });
   }
 }
 

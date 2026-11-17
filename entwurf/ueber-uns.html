@@ -17,6 +17,7 @@
 body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
 a{color:#141414}a:hover{color:#555555}
 button{font-family:inherit}
+@keyframes mid-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.mid-in{animation:mid-in .35s ease-out both}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 @media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav a:last-child{order:-1}}
@@ -53,25 +54,58 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 780px">make it done ist aus einer einfachen Beobachtung entstanden: Unternehmer haben gute Berater – und trotzdem bleibt das Wichtigste liegen. Weil niemand Zahlen, Struktur und Umsetzung zusammenbringt. Genau das machen wir.</p>
 </section>
 
-<section style="background: #f4f4f4">
-<div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="background: #141414; color: #f2f2f2">
+<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 22px">
 <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap">
-<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Wofür wir stehen</span>
-<span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px; color: #3d3d3d">Firmenphilosophie – Entwurf, noch festzulegen</span>
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #b8b8b8">Warum es uns gibt</span>
+<span style="font-size: 12px; font-weight: 600; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 4px 10px; color: #d4d4d4">Firmenphilosophie – Entwurf, mit Olga schärfen</span>
 </div>
-<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Vier Grundsätze, an denen du uns messen kannst.</h2>
-<div role="group" aria-label="Grundsatz wählen" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<sc-for list="{{values}}" as="v" hint-placeholder-count="4">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4.4vw, 56px); font-weight: 700; line-height: 1.12; max-width: 1000px">Unternehmer haben gute Berater – und entscheiden trotzdem allein. Wir sitzen mit am Tisch, bevor entschieden wird.</p>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 32px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Woran wir glauben</span>
+<div style="display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start">
+<div role="group" aria-label="Überzeugung wählen" style="flex: 1.2 1 460px; min-width: 0; display: flex; flex-direction: column">
+<sc-for list="{{beliefs}}" as="v" hint-placeholder-count="3">
 <button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.style}}">
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; line-height: 1">{{v.num}}</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">{{v.title}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: {{v.numColor}}; width: 32px; flex-shrink: 0">{{v.num}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 2.6vw, 32px); font-weight: 700; line-height: 1.2">{{v.title}}</span>
 </button>
 </sc-for>
 </div>
-<div style="background: #ffffff; border-radius: 20px; padding: 32px 36px; border: 1px solid #dddddd; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 18px; line-height: 1.65; max-width: 860px">{{valueText}}</span>
-<span style="font-size: 15px; color: #5c5c5c">Im Alltag heißt das: {{valueDaily}}</span>
+<div class="mid-in" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px; border-left: 3px solid #141414; padding-left: 28px; position: sticky; top: 110px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Was das für dich heißt</span>
+<span style="font-size: 20px; line-height: 1.6">{{beliefText}}</span>
+<span style="font-size: 16px; line-height: 1.6; color: #5c5c5c">{{beliefDaily}}</span>
 </div>
+</div>
+</section>
+
+<section style="background: #f4f4f4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 36px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Was wir dir versprechen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 900px">Wir sind die Vertrauten deines Unternehmens.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 8px 56px">
+<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Dauerhaft an deiner Seite</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wir sind keine Projektberatung, die nach dem Abschlussbericht geht. Wir bleiben im Unternehmen – wie jemand aus dem eigenen Team.</span></span></div>
+<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M3 11l4-4 4 2 3-2 4 1 3 3"></path><path d="M7 7v6l5 5 2-2M14 9l4 4-4 4"></path></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Auf Augenhöhe mit allen</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wir sprechen die Sprache von Steuerberatern, Wirtschaftsprüfern und Anwälten – und sorgen dafür, dass alle am selben Ziel arbeiten: deinem.</span></span></div>
+<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Ehrlich, auch wenn es unbequem ist</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Wenn sich etwas nicht lohnt, sagen wir es. Zahlen statt Bauchgefühl, Klartext statt Verkaufsversprechen.</span></span></div>
+<div style="display: flex; gap: 22px; align-items: flex-start; padding: 24px 0; border-top: 1px solid #d4d4d4"><span style="width: 60px; height: 60px; border-radius: 50%; background: #141414; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 6px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Nur dir verpflichtet</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Keine Provisionen von deinen Beratern, keine eigenen Produkte im Hintergrund. Wir argumentieren in deinem Interesse.</span></span></div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 96px 24px; display: flex; gap: 48px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5c5c">Was wir nicht tun</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1">Genauso wichtig: wofür wir nicht stehen.</h2>
+</div>
+<div style="flex: 1.4 1 460px; min-width: 0; display: flex; flex-direction: column">
+<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Keine Stunden schreiben.</b> Wir verkaufen Ergebnisse zum Festpreis.</span></div>
+<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Keine Konzepte für die Schublade.</b> Wir setzen um, bis es läuft.</span></div>
+<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Keine Steuerversprechen.</b> Was niemand seriös versprechen kann, versprechen wir auch nicht.</span></div>
+<div style="display: flex; gap: 18px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e4e4e4"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 19px; line-height: 1.45"><b>Kein Fachchinesisch.</b> Du sollst jede Entscheidung verstehen.</span></div>
 </div>
 </section>
 
@@ -154,18 +188,17 @@ class Component extends DCLogic {
   renderVals() {
     var self = this;
     var st = this.state;
-    var V = [
-      { t: 'Vor der Handlung', x: 'Gestaltet wird, bevor etwas unterschrieben, gegründet oder investiert ist. Danach kann man nur noch bestätigen oder reparieren.', d: 'Wir sind dabei, wenn du entscheidest – nicht erst im Jahresabschluss.' },
-      { t: 'Auf deiner Seite', x: 'Wir sind nur unseren Kunden verpflichtet. Keine Provisionen, keine eigenen Produkte im Hintergrund.', d: 'Wir argumentieren mit Fachwissen in deinem Interesse – auch gegenüber deinen Beratern.' },
-      { t: 'Klartext', x: 'Zahlen statt Bauchgefühl, ehrliche Einschätzungen statt Verkaufsversprechen. Auch wenn die Antwort einmal „lohnt sich nicht“ lautet.', d: 'Du bekommst Varianten mit Zahlen – und eine klare Meinung dazu.' },
-      { t: 'done', x: 'Ein Konzept ist erst etwas wert, wenn es umgesetzt ist. Darum hört unsere Arbeit nicht bei der Präsentation auf.', d: 'Wir bleiben dran, bis Verträge, Konten und Prozesse laufen.' }
+    var BEL = [
+      { t: 'Steuern sind kein Schicksal. Sie sind die Folge von Entscheidungen.', x: 'Wie viel von deinem Gewinn bei dir ankommt, entscheidet sich nicht im Jahresabschluss, sondern bei Rechtsform, Verträgen und Investitionen.', d: 'Darum schauen wir auf deine Entscheidungen – nicht nur auf deine Belege.' },
+      { t: 'Wer vorher entscheidet, zahlt nicht hinterher.', x: 'Gestaltet wird, bevor etwas unterschrieben, gegründet oder investiert ist. Danach lässt sich nur noch bestätigen oder reparieren.', d: 'Darum sind wir dabei, wenn du entscheidest – mit Zahlen just in time.' },
+      { t: 'Ein Konzept ist erst etwas wert, wenn es umgesetzt ist.', x: 'Gute Ideen gibt es genug. Was fehlt, ist jemand, der sie mit Steuerberater und Anwalt durchzieht – bis Verträge, Konten und Prozesse laufen.', d: 'Darum heißen wir make it done.' }
     ];
-    var values = V.map(function (d, i) {
+    var beliefs = BEL.map(function (d, i) {
       var isOn = st.v === i;
-      return { num: '0' + (i + 1), title: d.t, on: isOn, pick: function () { self.setState({ v: i }); },
-        style: 'display: flex; flex-direction: column; gap: 14px; text-align: left; padding: 24px; border-radius: 16px; cursor: pointer; min-height: 150px; transition: background .25s, color .25s; ' + (isOn ? 'background: #141414; color: #ffffff; border: 1px solid #141414;' : 'background: #ffffff; color: #141414; border: 1px solid #dddddd;') };
+      return { num: '0' + (i + 1), title: d.t, on: isOn, numColor: isOn ? '#141414' : '#b8b8b8', pick: function () { self.setState({ v: i }); },
+        style: 'display: flex; gap: 16px; align-items: baseline; text-align: left; background: transparent; border: 0; border-bottom: 1px solid #e4e4e4; padding: 26px 0; cursor: pointer; transition: color .2s, padding .2s; ' + (isOn ? 'color: #141414; padding-left: 12px;' : 'color: #9a9a9a;') };
     });
-    var cv = V[st.v];
+    var cv = BEL[st.v];
     var stations = [
       { k: 'Prüfung & Beratung', v: 'Wirtschaftsprüfung und Steuerberatung – für Gründer, größere Unternehmen und Konzerne.' },
       { k: 'Hochschule', v: 'Hochschule Niederrhein: wissenschaftliche Mitarbeit, Präsidium, Studiengangsentwicklung.' },
@@ -174,7 +207,7 @@ class Component extends DCLogic {
       { k: 'Selbstständig', v: 'Seit 2017 – seit 2023 mit eigener GmbH und Holdingstruktur.' },
       { k: 'make it done', v: 'Gründerin und Geschäftsführerin – gewachsen über Empfehlungen.' }
     ];
-    return { values: values, valueText: cv.x, valueDaily: cv.d, stations: stations };
+    return { beliefs: beliefs, beliefText: cv.x, beliefDaily: cv.d, stations: stations };
   }
 }
 
