@@ -35,6 +35,22 @@
       var ws = p.querySelectorAll('.w'), k = Math.round(Math.max(0, Math.min(1, prog)) * ws.length);
       ws.forEach(function (w, i) { var on = i < k; if (w.classList.contains('on') !== on) w.classList.toggle('on', on); });
     });
+    document.querySelectorAll('.sy').forEach(function (sy) {
+      var steps = sy.querySelectorAll('.sy-step'), cur = 0, n = steps.length;
+      steps.forEach(function (el, i) {
+        var t = el.getBoundingClientRect().top;
+        if (t < vh * 0.55) cur = i;
+        if (t < vh * 0.9 && !el.classList.contains('seen')) el.classList.add('seen');
+      });
+      steps.forEach(function (el, i) { var a = i === cur; if (el.classList.contains('act') !== a) el.classList.toggle('act', a); });
+      sy.querySelectorAll('.sy-nav a').forEach(function (a, i) {
+        if (a.classList.contains('act') !== (i === cur)) a.classList.toggle('act', i === cur);
+        if (a.classList.contains('done') !== (i < cur)) a.classList.toggle('done', i < cur);
+      });
+      var w = (n > 1 ? cur / (n - 1) : 1) * 100 + '%';
+      sy.querySelectorAll('.sy-bar i').forEach(function (b) { if (b.style.width !== w) b.style.width = w; });
+      sy.querySelectorAll('.sy-cur').forEach(function (c) { var t = String(cur + 1); if (c.textContent !== t) c.textContent = t; });
+    });
     var phs = document.querySelectorAll('.phase'), best = -1;
     phs.forEach(function (el, i) { if (el.getBoundingClientRect().top < vh * 0.62) best = i; });
     phs.forEach(function (el, i) { var a = i === best; if (el.classList.contains('act') !== a) el.classList.toggle('act', a); });
@@ -54,5 +70,6 @@
       t.style.transform = 'rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg) translateY(-4px)';
     });
   }
+  window.dcAfter = function () { scan(); onScroll(); };
   scan(); onScroll();
 })();

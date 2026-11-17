@@ -89,6 +89,7 @@
         var scope = comp.renderVals();
         tpl.childNodes.forEach(function (c) { build(c, scope, out); });
         morph(root, out);
+        if (window.dcAfter) window.dcAfter();
       });
     };
     var out = [], scope = comp.renderVals();
