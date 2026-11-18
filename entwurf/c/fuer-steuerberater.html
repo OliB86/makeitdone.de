@@ -158,7 +158,7 @@ html.show-b #story-a,html:not(.show-b) #story-b{display:none}
 .fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
 .fl .fl-ic{transition:background .4s ease var(--fd,0s),border-color .4s ease var(--fd,0s)}
 .fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
-.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}
+.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}.logo-dot{display:inline-block;width:.26em;height:.26em;border-radius:50%;background:#F1D734;margin-left:.07em;animation:dotglow 3.4s ease-in-out infinite}@keyframes dotglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 5px rgba(241,215,52,.45)}}
 @keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
 .cta{background:#F1D734 !important;color:#141414 !important}.cta .cta-dot{background:#141414 !important;color:#F1D734 !important}
 .cta.pulse{animation:ctaglow 2.4s ease-in-out infinite}
@@ -178,7 +178,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .ck-row.fl .fl-ic{transition:background .4s ease,border-color .4s ease}
 .mbar{display:none}
 @media (max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e4e4e4;backdrop-filter:blur(8px)}.mbar a{flex:1;text-align:center;background:#F1D734;color:#141414;font-weight:700;font-size:16px;padding:14px 18px;border-radius:999px;text-decoration:none}body.has-mbar{padding-bottom:78px}}
-@media (prefers-reduced-motion: reduce){.hdr-cta,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
+@media (prefers-reduced-motion: reduce){.hdr-cta,.logo-dot,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
 </head>
 <body class="has-mbar">
@@ -189,7 +189,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
 <div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
-<a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
+<a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done<span class="logo-dot" aria-hidden="true"></span></a>
 <nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
 <a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
@@ -271,7 +271,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </section>
 <footer style="background: #141414; color: #d4d4d4">
 <div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
-<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done<span aria-hidden="true" style="display: inline-block; width: .26em; height: .26em; border-radius: 50%; background: #F1D734; margin-left: .07em"></span></b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
 <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
