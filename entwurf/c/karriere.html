@@ -33,7 +33,7 @@ button,input,textarea{font-family:inherit}
 @keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
 @media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
 @media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
-:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+:root{--sp:96px;--cap:9999px}@media (max-width: 760px){:root{--sp:45px;--cap:45px}}
 @media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -86,7 +86,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
-<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
 <nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
@@ -100,7 +100,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </header>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Karriere</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 80px); line-height: 1.0; letter-spacing: -0.02em; max-width: 1000px">Karriere braucht keinen Lebenslauf. <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">You make it done.</em></h1>
 <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 780px">Kein Anschreiben, keine Zeugnisse. Wir sind kein klassisches Unternehmen – also stellen wir auch nicht klassisch ein. Uns interessiert, was du kannst und wie du tickst, nicht wie dein Lebenslauf aussieht. Bewirb dich in zehn Minuten: ein paar Klicks und ein kurzes Video.</p>
@@ -111,28 +111,28 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </section>
 
 <section>
-<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum wir anders einstellen</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 880px">Wir fördern Stärken. Darum fragen wir nach ihnen.</h2>
 <div class="flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
-<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Stärken statt Lücken</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Niemand kann alles. Wir bauen Aufgaben um das, was du richtig gut kannst.</span></div>
-<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Mut statt Papier</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Zeugnisse sagen wenig. Ein Video, in dem du zeigst, wer du bist, sagt viel.</span></div>
-<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Machen statt reden</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Wir heißen make it done. Wer gern Dinge fertig macht, ist bei uns richtig.</span></div>
-<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Schnell statt Warteschleife</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Kurzer Prozess, klare Rückmeldung – versprochen.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Stärken statt Lücken</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Niemand kann alles. Wir bauen Aufgaben um das, was du richtig gut kannst.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Mut statt Papier</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Zeugnisse sagen wenig. Ein Video, in dem du zeigst, wer du bist, sagt viel.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Machen statt reden</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Wir heißen make it done. Wer gern Dinge fertig macht, ist bei uns richtig.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 20px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Schnell statt Warteschleife</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Kurzer Prozess, klare Rückmeldung – versprochen.</span></div>
 </div>
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Was wir von dir erwarten</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Wir geben viel Freiheit. Dafür erwarten wir einiges.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Klar und direkt</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du sagst, was du denkst – freundlich, ehrlich und ohne Umwege. Und du hörst genauso gut zu.</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Fehler offen ansprechen</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Fehler passieren. Wir reden darüber, lernen daraus und machen weiter. Verstecken ist das Einzige, was nicht geht.</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Selbstständig arbeiten</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du übernimmst Verantwortung für deine Themen und wartest nicht auf die nächste Anweisung.</span></div>
-<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Dinge bewegen wollen</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du bringst Ideen ein, packst an und bleibst dran, bis es läuft. Lösungen statt Ausreden.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Klar und direkt</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du sagst, was du denkst – freundlich, ehrlich und ohne Umwege. Und du hörst genauso gut zu.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Fehler offen ansprechen</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Fehler passieren. Wir reden darüber, lernen daraus und machen weiter. Verstecken ist das Einzige, was nicht geht.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Selbstständig arbeiten</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du übernimmst Verantwortung für deine Themen und wartest nicht auf die nächste Anweisung.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Dinge bewegen wollen</span><span style="font-size: 15px; line-height: 1.5; color: #3d3d3d">Du bringst Ideen ein, packst an und bleibst dran, bis es läuft. Lösungen statt Ausreden.</span></div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #141414; padding: 22px 0 0">
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #141414; padding: 22px 0 0 0">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">Ehrlich gesagt: Wir passen nicht zu dir, wenn …</span>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px 24px">
 <span style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5"><span aria-hidden="true" style="font-weight: 700">✕</span>du acht Stunden am Tag einfach absitzen willst</span>
@@ -145,7 +145,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 
-<section id="stellen" style="max-width: 1180px; margin: 0 auto; padding: 0 24px 88px; display: flex; flex-direction: column; gap: 24px">
+<section id="stellen" style="max-width: 1180px; margin: 0 auto; padding: 0 24px min(88px, var(--cap)) 24px; display: flex; flex-direction: column; gap: 24px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Offene Stellen</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1">Wen wir suchen.</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Alle Stellen: remote oder in unserem Headquarter in Erkelenz – wie es für dich am besten passt.</p>
@@ -169,7 +169,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <span aria-hidden="true" style="font-size: 26px; font-weight: 400">{{j.sign}}</span>
 </button>
 <sc-if value="{{j.open}}" hint-placeholder-val="{{ false }}">
-<div style="padding: 0 0 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="padding: 0 0 32px 0; display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-size: 17px; line-height: 1.6; max-width: 860px; color: #3d3d3d">{{j.intro}}</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 8px">
@@ -190,7 +190,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </section>
 
 <section>
-<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Warum du bei uns arbeiten solltest</span>
 <span style="font-size: 12px; font-weight: 600; border: 1px dashed #5c5c5c; border-radius: 999px; padding: 4px 10px; color: #3d3d3d">Vorschlag – gemeinsam schärfen</span>
@@ -225,26 +225,26 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 <div style="flex: 1.4 1 420px; min-width: 0; display: flex; flex-direction: column">
 <sc-for list="{{benefitItems}}" as="bi" hint-placeholder-count="3">
-<div style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #d4d4d4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg><span style="font-size: 17px; line-height: 1.5">{{bi}}</span></div>
+<div style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0 16px 0; border-bottom: 1px solid #d4d4d4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l3 3 5-6"></path></svg><span style="font-size: 17px; line-height: 1.5">{{bi}}</span></div>
 </sc-for>
 </div>
 </div>
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>So läuft es</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; max-width: 860px">Vier Schritte. Keine Warteschleife.</h2>
 <div class="flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
-<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">1</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Klick-Bewerbung + Video</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Ein paar Fragen anklicken, Video-Link schicken. Rund zehn Minuten – Rückmeldung innerhalb von 48 Stunden.</span></div>
-<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">2</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Videocall</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Wir lernen uns kennen – locker, ehrlich, rund 20 Minuten.</span></div>
-<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">3</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Probetag</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Remote oder im Headquarter: Du arbeitest einen Tag mit – beide Seiten schauen, ob es passt.</span></div>
-<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">4</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Entscheidung</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Spätestens 48 Stunden nach dem Probetag weißt du, woran du bist.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">1</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Klick-Bewerbung + Video</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Ein paar Fragen anklicken, Video-Link schicken. Rund zehn Minuten – Rückmeldung innerhalb von 48 Stunden.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">2</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Videocall</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Wir lernen uns kennen – locker, ehrlich, rund 20 Minuten.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">3</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Probetag</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Remote oder im Headquarter: Du arbeitest einen Tag mit – beide Seiten schauen, ob es passt.</span></div>
+<div class="fl" style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #141414; padding: 22px 0 0 0"><span class="fl-ic" style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1.5px solid #141414; color: #141414; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">4</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Entscheidung</span><span style="font-size: 15px; line-height: 1.55; color: #3d3d3d">Spätestens 48 Stunden nach dem Probetag weißt du, woran du bist.</span></div>
 </div>
 </section>
 
 <section id="check" style="background: #f4f4f4">
-<div style="max-width: 880px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 24px">
+<div style="max-width: 880px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 24px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Deine Bewerbung</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">In zehn Minuten bei uns auf dem Tisch.</h2>
 <div style="display: flex; flex-direction: column; gap: 8px">
@@ -252,7 +252,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <div style="height: 8px; border-radius: 999px; background: #dcdcdc; overflow: hidden"><div class="mid-bar" style="{{barStyle}}"></div></div>
 </div>
 
-<div class="mid-in" style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid #141414; padding: 22px 0 0">
+<div class="mid-in" style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid #141414; padding: 22px 0 0 0">
 
 <sc-if value="{{s0}}" hint-placeholder-val="{{ true }}">
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Für welche Stelle brennst du?</span>
@@ -351,7 +351,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Fast geschafft. Passt alles?</span>
 <div style="display: flex; flex-direction: column">
 <sc-for list="{{summary}}" as="sm" hint-placeholder-count="6">
-<div style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid #e4e4e4; flex-wrap: wrap"><span style="font-weight: 600; width: 160px; flex-shrink: 0">{{sm.k}}</span><span style="font-size: 15px; color: #3d3d3d; min-width: 0; overflow-wrap: anywhere">{{sm.v}}</span></div>
+<div style="display: flex; gap: 16px; padding: 12px 0 12px 0; border-bottom: 1px solid #e4e4e4; flex-wrap: wrap"><span style="font-weight: 600; width: 160px; flex-shrink: 0">{{sm.k}}</span><span style="font-size: 15px; color: #3d3d3d; min-width: 0; overflow-wrap: anywhere">{{sm.v}}</span></div>
 </sc-for>
 </div>
 <a href="{{mailHref}}" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 16px">Bewerbung absenden →</a>
@@ -369,9 +369,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </section>
 
 <footer style="background: #141414; color: #d4d4d4">
-<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 

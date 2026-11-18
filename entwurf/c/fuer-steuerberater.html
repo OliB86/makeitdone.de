@@ -101,7 +101,7 @@ input[type=range]{width:100%;accent-color:#141414}
 .hz-m .sy-step svg{max-width:300px !important}
 .hz .sy-step{padding:12px 0 !important}
 }
-:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+:root{--sp:96px;--cap:9999px}@media (max-width: 760px){:root{--sp:45px;--cap:45px}}
 .portrait{-webkit-mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);mask-composite:intersect}
 @media (max-width: 760px){.portrait{height:380px !important}}
 @media (min-width: 761px){.ck-row::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:1.5px;background:#141414;opacity:.25}}
@@ -186,9 +186,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 
 <div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
-<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
-<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
 <nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
@@ -201,19 +201,19 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-steuerberater-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
 </div>
 </header>
-<section style="max-width: 1180px; margin: 0 auto; padding: 90px 24px var(--sp); display: flex; flex-direction: column; gap: 26px">
+<section style="max-width: 1180px; margin: 0 auto; padding: min(90px, var(--cap)) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 26px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Für Steuerberaterinnen und Steuerberater</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.03em; max-width: 1000px">Mandanten, die <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">vorbereitet</em> zu Ihnen kommen.</h1>
 <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 700px">make it done begleitet Unternehmer betriebswirtschaftlich, laufend und im Unternehmen. Für Sie heißt das: weniger Nacharbeit, mehr Beratungs- und Gestaltungsgeschäft.</p>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Kennen Sie das?</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Der Mandant erzählt. Sie bewerten. <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Im Nachhinein.</em></h2>
 <ul style="list-style: none; margin: 0; padding: 0; max-width: 860px"><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 18px; line-height: 1.5">Belege kommen spät oder unvollständig, gerade vor dem Abschluss.</span></li><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 18px; line-height: 1.5">Von Entscheidungen erfahren Sie erst, wenn sie gefallen sind.</span></li><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 18px; line-height: 1.5">Sachverhalte werden unklar geschildert. Es folgen Rückfragen und Schleifen.</span></li><li class="rv" style="display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-top: 1px solid #e4e4e4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><span style="font-size: 18px; line-height: 1.5">Für Gestaltung bleibt keine Zeit, weil das Tagesgeschäft drängt.</span></li></ul>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Was sich mit uns ändert</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Keine Konkurrenz. <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Mehr Geschäft</em> für Sie.</h2>
 <p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d">Mindestens einmal im Monat sprechen wir mit dem Mandanten über die Entwicklung und alles, was ansteht. Gestaltungsmöglichkeiten fragen wir vorab ab, damit Sie gestalten können und nicht nur nachbereiten.</p>
@@ -238,7 +238,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div></div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Klare Rollen</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">Wir bereiten vor. <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Sie würdigen.</em></h2>
 <div style="overflow-x: auto"><table style="width: 100%; min-width: 560px; border-collapse: collapse">
@@ -250,7 +250,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <p class="rv" style="margin: 0; padding-left: 20px; border-left: 3px solid #F1D734; font-size: 17px; line-height: 1.6; color: #3d3d3d">Ihr Mandant bleibt Ihr Mandant und beauftragt Sie direkt. Wir leisten keine Steuerberatung und erhalten keine Provision.</p>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Zusammenarbeit</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">So arbeiten wir <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">zusammen</em>.</h2>
 <div class="flow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px"><div class="rv fl" style="display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid #141414">
@@ -264,15 +264,15 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px">Abschluss</b><span style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Mit vollständigen Unterlagen und ohne Belegjagd.</span></div></div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start">
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">Lassen Sie uns <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">sprechen</em>.</h2>
 <p class="rv" style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d">Olga Bertram, Geschäftsführende Gesellschafterin · hallo@makeitdone.de · 0151 23136397</p>
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=steuerberater-c" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Termin vereinbaren</a>
 </section>
 <footer style="background: #141414; color: #d4d4d4">
-<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 </div>

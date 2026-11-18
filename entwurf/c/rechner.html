@@ -19,7 +19,7 @@ body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-
 a{color:#141414}a:hover{color:#555555}
 button,input,select{font-family:inherit}
 input[type=range]{width:100%;accent-color:#141414}
-.wcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
+.wcard:hover{transform:translateY(-3px)}.wcard:hover>span:last-child{text-decoration:underline;text-decoration-color:#F1D734;text-decoration-thickness:3px;text-underline-offset:4px}
 .mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
 .flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
 .mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
@@ -31,7 +31,7 @@ input[type=range]{width:100%;accent-color:#141414}
 @keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
 @media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
 @media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
-:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+:root{--sp:96px;--cap:9999px}@media (max-width: 760px){:root{--sp:45px;--cap:45px}}@media (max-width: 760px){.wgrid{grid-template-columns:minmax(0,1fr) !important;gap:32px !important}}
 @media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
 
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -82,7 +82,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 <div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
-<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
 <nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
@@ -96,13 +96,14 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </header>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 60px); line-height: 1.05; max-width: 900px">Erst rechnen. Dann <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">entscheiden.</em></h1>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 760px">Welche Frage steht bei dir gerade an? Wähl deine Situation – jeder Rechner zeigt in wenigen Sekunden, was in welcher Struktur bleibt. Das Ergebnis siehst du sofort, die ausführliche Auswertung bekommst du per E-Mail.</p>
+<nav aria-label="Bereich Wissen" style="display: flex; gap: 10px; flex-wrap: wrap"><span aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; background: #F1D734; border: 1px solid #F1D734; color: #141414">Rechner</span><a href="../c/aktuelles.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; background: #ffffff; border: 1px solid #c8c8c8; color: #141414">Aktuelles</a></nav>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+<section class="wgrid" style="max-width: 1180px; margin: 0 auto; padding: 0 24px 56px 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px">
 <sc-for list="{{cards}}" as="c" hint-placeholder-count="4">
 <a href="{{c.href}}" class="wcard" style="{{c.style}}">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: .65">{{c.situation}}</span>
@@ -114,9 +115,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </sc-for>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px var(--sp)"><a href="../c/aktuelles.html" style="display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 1px solid #141414; text-decoration: none; color: #141414; max-width: 860px"><span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5c5c5c">Wissen · Aktuelles</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Neue Gesetze und Urteile. Und was sie für dich heißen.</span><span style="font-size: 16px; color: #3d3d3d">Zum Beispiel: Gewerbesteuer-Mindesthebesatz steigt ab 2027 auf 280 %.</span><span class="story-btn">Zu Aktuelles →</span></a></section>
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px var(--sp) 24px"><a href="../c/aktuelles.html" style="display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 1px solid #141414; text-decoration: none; color: #141414; max-width: 860px"><span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5c5c5c">Wissen · Aktuelles</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Neue Gesetze und Urteile. Und was sie für dich heißen.</span><span style="font-size: 16px; color: #3d3d3d">Zum Beispiel: Gewerbesteuer-Mindesthebesatz steigt ab 2027 auf 280 %.</span><span class="story-btn">Zu Aktuelles →</span></a></section>
 <section>
-<div style="max-width: 1180px; margin: 0 auto; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 18px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 56px 24px min(72px, var(--cap)) 24px; display: flex; flex-direction: column; gap: 18px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Bald: Artikel</span>
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15; max-width: 820px">Unternehmen, Familie und Vermögen zusammen denken.</h2>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3d3d3d; max-width: 760px">Zu diesen Themen folgen Artikel – jeweils mit Praxisbeispiel und dem passenden Rechner.</p>
@@ -129,9 +130,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 <footer style="background: #141414; color: #d4d4d4">
-<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 </div>
@@ -152,8 +153,8 @@ class Component extends DCLogic {
       { situation: 'Ich will investieren', title: 'Immobilien privat oder GmbH?', text: 'Vermieten und halten oder Projekte – wo Mieten und Verkauf am wenigsten kosten.', praxis: 'Mit Spekulationsfrist und erweiterter Kürzung', href: '../c/rechner-immobilien.html' }
     ];
     var cards = C.map(function (c) {
-      var base = 'display: flex; flex-direction: column; gap: 12px; min-height: 260px; padding: 28px; border-radius: 24px; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; ';
-      var look = c.soon ? 'background: #ffffff; color: #8a8a8a; border: 1px dashed #c8c8c8; pointer-events: none;' : c.dark ? 'background: #141414; color: #ffffff;' : 'background: #f4f4f4; color: #141414;';
+      var base = 'display: flex; flex-direction: column; gap: 12px; padding-top: 22px; border-top: 1px solid #141414; text-decoration: none; transition: transform .2s ease; ';
+      var look = c.soon ? 'color: #8a8a8a; border-top-style: dashed; pointer-events: none;' : 'color: #141414;';
       return { situation: c.situation, title: c.title, text: c.text, praxis: c.praxis, href: c.href || '#', cta: c.soon ? 'Bald verfügbar' : 'Jetzt rechnen →', style: base + look };
     });
     var topics = ['Rechtsform & Holding', 'Familienplanung & Elternzeit', 'Familie im Unternehmen', 'Vermögensplanung', 'Investmentplanung', 'Immobilien & Vermögensverwaltung', 'Exit & Unternehmensverkauf', 'Nachfolge', 'Vergütung & Benefits', 'Liquidität & Steuerrücklagen'];

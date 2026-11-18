@@ -30,7 +30,7 @@ input[type=range]{width:100%;accent-color:#141414}
 @keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
 @media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
 @media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
-:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+:root{--sp:96px;--cap:9999px}@media (max-width: 760px){:root{--sp:45px;--cap:45px}}
 @media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 html.gate:not(.unlocked) .gated{filter:blur(7px);opacity:.5;pointer-events:none;user-select:none;max-height:360px;overflow:hidden}
@@ -85,7 +85,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 <div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
-<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
 <nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
@@ -99,15 +99,15 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </header>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
 <a href="../c/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Immobilien</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Immobilien privat oder in der GmbH? Rechne selbst.</h1>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Privat ist der Verkauf nach zehn Jahren steuerfrei – dafür kosten die Mieten deinen persönlichen Steuersatz. In der GmbH ist es umgekehrt. Welche Seite gewinnt, hängt von Haltedauer, Mieten und Plänen ab.</p>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 48px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
-<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0">
+<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 48px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
 <sc-for list="{{groups}}" as="g" hint-placeholder-count="2">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 15px; font-weight: 600">{{g.label}}</span>
@@ -140,7 +140,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </sc-for>
 </div>
-<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
+<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
 <span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b><span style="font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Anbindung an Close – mit Berkant klären</span></span>
 <span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
 <span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
@@ -177,14 +177,14 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 72px; display: flex; flex-direction: column; gap: 18px">
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px min(72px, var(--cap)) 24px; display: flex; flex-direction: column; gap: 18px">
 <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung für Deutschland, Stand 2026: privat persönlicher Steuersatz und Spekulationsfrist von zehn Jahren (§ 23 Abs. 1 S. 1 Nr. 1 EStG); GmbH mit Körperschaftsteuer 15 % plus Soli und erweiterter Kürzung bei reiner Vermietung (§ 9 Nr. 1 S. 2 GewStG); Projekte mit Gewerbesteuer, privat als gewerblicher Grundstückshandel mit Anrechnung nach § 35 EStG; Holding nach § 8b KStG. Ohne Grunderwerbsteuer, Finanzierung, Kirchensteuer und Freibeträge, Mieten ohne Steigerung. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-immobilien" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Deine Immobilienstrategie besprechen →</a>
 </section>
 <footer style="background: #141414; color: #d4d4d4">
-<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 </div>

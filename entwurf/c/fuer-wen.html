@@ -101,7 +101,7 @@ input[type=range]{width:100%;accent-color:#141414}
 .hz-m .sy-step svg{max-width:300px !important}
 .hz .sy-step{padding:12px 0 !important}
 }
-:root{--sp:96px}@media (max-width: 760px){:root{--sp:60px}}
+:root{--sp:96px;--cap:9999px}@media (max-width: 760px){:root{--sp:45px;--cap:45px}}
 .portrait{-webkit-mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 16%,#000 84%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 78%,transparent);mask-composite:intersect}
 @media (max-width: 760px){.portrait{height:380px !important}}
 @media (min-width: 761px){.ck-row::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:1.5px;background:#141414;opacity:.25}}
@@ -186,9 +186,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 
 <div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
-<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
+<div style="background: #141414; color: #f2f2f2; font-size: 13px; padding: 10px 24px 10px 24px; text-align: center">Entwurf C · neue Reihenfolge, ruhiger · Farbe Gelb nur zum Testen · nicht verlinkt</div>
 <header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
-<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
 <a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done</a>
 <nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
 <a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
@@ -201,7 +201,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-fuer-wen-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
 </div>
 </header>
-<section style="max-width: 1180px; margin: 0 auto; padding: 90px 24px var(--sp); display: flex; flex-direction: column; gap: 26px">
+<section style="max-width: 1180px; margin: 0 auto; padding: min(90px, var(--cap)) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 26px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Für wen</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.03em; max-width: 1000px">Für Unternehmer, die mit Wissen, Reichweite oder <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Vertrauen</em> verdienen.</h1>
 <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #3d3d3d; max-width: 680px">Du arbeitest hart für dein Unternehmen. Dann soll am Ende auch das Beste für dich daraus werden, beruflich und privat.</p>
@@ -212,7 +212,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div></div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 36px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 36px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Erst das Leben, dann die Struktur</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Eine GmbH ist kein Ziel. Sie folgt <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">deinem Plan</em>.</h2>
 <p class="rv" style="margin: 0; font-size: 18px; line-height: 1.65; color: #3d3d3d">Viele landen in der GmbH, weil der Gewinn gestiegen ist. Wir fangen anders an: Im Onboarding planen wir mit dir, was beruflich und privat ansteht. Darauf baut die Struktur auf.</p>
@@ -232,7 +232,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div></div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 36px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 36px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Wen wir begleiten</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Fünf Arten, <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Geld zu verdienen</em>. Eine Begleitung.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px 36px"><div class="rv" style="display: flex; flex-direction: column; gap: 12px; padding-top: 22px; border-top: 1px solid #141414">
@@ -266,7 +266,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Vorher und nachher</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Was sich <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">anfühlt</em>, nicht nur, was sich rechnet.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px">
@@ -275,7 +275,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 32px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Ehrlich gesagt</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">Wann wir gut passen. Und wann <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">nicht</em>.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px">
@@ -284,7 +284,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </section>
 
-<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 28px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Kundengeschichten</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">So sah das bei <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">anderen</em> aus.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px">
@@ -296,7 +296,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <style>.faqw-tab{border:1px solid #c8c8c8;background:#ffffff;color:#141414;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:40px}
 .faqw-tab.on{background:#F1D734;border-color:#F1D734}.faqw-q{display:none}.faqw-q.on{display:flex}
 .faqw-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid #141414;background:#ffffff;font-size:18px;cursor:pointer}.faqw-arrow:hover{background:#F1D734;border-color:#F1D734}
-html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px; display: flex; flex-direction: column; gap: 24px">
+html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 24px">
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Häufige Fragen</span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em">Was Unternehmer uns <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">vorher</em> fragen.</h2>
 <div class="faqw" id="faq-f" data-start="0" style="display: flex; flex-direction: column; gap: 22px">
@@ -386,7 +386,8 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section styl
 <div style="display: flex; gap: 14px; align-items: center"><button type="button" class="faqw-arrow" data-dir="-1" aria-label="Vorherige Frage">←</button><span class="faqw-count" style="font-size: 15px; font-weight: 600; min-width: 48px; text-align: center">1 / 1</span><button type="button" class="faqw-arrow" data-dir="1" aria-label="Nächste Frage">→</button><a href="../c/haeufige-fragen.html" style="margin-left: 12px; font-weight: 600; font-size: 15px; color: #141414">Alle Fragen auf einen Blick →</a></div>
 </div>
 </section>
-<section style="max-width: 1180px; margin: 0 auto; padding: 140px 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
+<section style="max-width: 1180px; margin: 0 auto; padding: min(140px, var(--cap)) 24px min(140px, var(--cap)) 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
+<span class="end-line" aria-hidden="true" style="display: block; width: 80px; height: 3px; border-radius: 3px; background: #F1D734"></span>
 <h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; letter-spacing: -0.02em; max-width: 900px">Unsicher, ob du gemeint bist? <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">Frag uns.</em></h2>
 <p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px">Wir arbeiten bewusst nur mit einer begrenzten Zahl an Unternehmen gleichzeitig.</p>
 <div class="rv" style="display: flex; flex-direction: column; gap: 18px; align-items: center"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=fuer-wen-c-ende" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Jetzt Erstberatung sichern</a><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
@@ -395,9 +396,9 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section styl
 </div></div>
 </section>
 <footer style="background: #141414; color: #d4d4d4">
-<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
 <div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done</b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
-<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
 </div>
 </footer>
 </div>
