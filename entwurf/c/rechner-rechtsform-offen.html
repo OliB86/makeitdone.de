@@ -109,7 +109,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 48px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
-<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="3">
+<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="5">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
@@ -170,7 +170,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
 <span><b>Einzelunternehmen:</b> Der ganze Gewinn wird persönlich versteuert – egal, ob du ihn entnimmst oder im Unternehmen lässt. Die Gewerbesteuer wird bei 400 % Hebesatz weitgehend angerechnet.</span>
-<span><b>GmbH:</b> Dein Geschäftsführergehalt mindert den Gewinn. Was in der GmbH bleibt, kostet rund 30 % – liegt aber im Risiko des operativen Geschäfts.</span>
+<span><b>GmbH:</b> Dein Geschäftsführergehalt mindert den Gewinn. Was in der GmbH bleibt, kostet bis 2027 rund 30 %, ab 2032 rund 25 % – liegt aber im Risiko des operativen Geschäfts.</span>
 <span><b>GmbH + Holding:</b> Gewinne fließen für rund 1,5 % in die Holding (§ 8b KStG) und sind dort vom operativen Risiko getrennt – bereit für Immobilien, Beteiligungen oder Rücklagen.</span>
 <span><b>Ins Private:</b> Erst wenn Gewinne an dich persönlich fließen, kommt Abgeltungsteuer dazu. Der Vorteil gilt deshalb vor allem, solange Gewinne in der GmbH bleiben. Stell den Ausschüttungsanteil auf 100 %, dann siehst du, wie er schrumpft.</span>
 </div>
@@ -179,7 +179,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </section>
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 48px 24px min(72px, var(--cap)) 24px; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung für Deutschland, Stand 2026: Einkommensteuertarif nach § 32a EStG, Solidaritätszuschlag mit Freigrenze, Gewerbesteuer mit Freibetrag 24.500 € (§ 11 GewStG) und Anrechnung nach § 35 EStG, Körperschaftsteuer 15 % (§ 23 KStG), Holding mit mindestens 15 % Beteiligung (§ 8b KStG, § 9 Nr. 2a GewStG), Abgeltungsteuer 25 % (§ 32d EStG). Ohne Kirchensteuer, Sozialversicherung, Vorsorgeaufwendungen und Sonderausgaben; Geschäftsführergehalt mit Arbeitnehmer-Pauschbetrag. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung für Deutschland, Stand 2026: Einkommensteuertarif nach § 32a EStG, Solidaritätszuschlag mit Freigrenze, Gewerbesteuer mit Freibetrag 24.500 € (§ 11 GewStG) und Anrechnung nach § 35 EStG, Körperschaftsteuer 15 % bis 2027, danach jährlich 1 Prozentpunkt weniger bis 10 % ab 2032 (§ 23 KStG); Einkommensteuertarif 2026 für alle Jahre, Holding mit mindestens 15 % Beteiligung (§ 8b KStG, § 9 Nr. 2a GewStG), Abgeltungsteuer 25 % (§ 32d EStG). Ohne Kirchensteuer, Sozialversicherung, Vorsorgeaufwendungen und Sonderausgaben; Geschäftsführergehalt mit Arbeitnehmer-Pauschbetrag. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-rechtsform" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Deine Struktur besprechen →</a>
 </section>
 <footer style="background: #141414; color: #d4d4d4">
@@ -200,11 +200,13 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { gewinn: 400000, gehalt: 120000, hebe: 400, split: true, aus: 0 };
+    this.state = { gewinn: 400000, gehalt: 120000, hebe: 400, split: true, aus: 0, jahr: 2026 };
   }
   renderVals() {
     var self = this;
     var st = this.state;
+    function kstR(y) { return y <= 2027 ? 0.15 : Math.max(0.10, 0.15 - 0.01 * (y - 2027)); }
+    function pc(x) { return Math.round(x * 100) + ' %'; }
     function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
     function pct(n) { return (n * 100).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %'; }
     function est(x) {
@@ -222,10 +224,11 @@ class Component extends DCLogic {
     var gewEU = mb * H / 100;
     var eEU = estV(G), anr = Math.min(4 * mb, gewEU, eEU), eEUn = eEU - anr, sEU = soli(eEUn);
     var euTax = gewEU + eEUn + sEU;
-    var P = G - S, kst = P * 0.15 * 1.055, gew = P * 0.035 * H / 100;
+    var KR = kstR(st.jahr);
+    var P = G - S, kst = P * KR * 1.055, gew = P * 0.035 * H / 100;
     var eS = estV(Math.max(0, S - 1230)), sS = soli(eS);
     var keep = P - kst - gew, abg = keep * 0.25 * 1.055;
-    var hr = 0.05 * (0.15 * 1.055 + 0.035 * H / 100);
+    var hr = 0.05 * (KR * 1.055 + 0.035 * H / 100);
     var toHold = keep * hr, inHold = keep - toHold;
     var aq = st.aus / 100, out = aq >= 1;
     var abgK = abg * aq, abgH = inHold * aq * 0.25 * 1.055;
@@ -260,6 +263,7 @@ class Component extends DCLogic {
         change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
     }
     var sliders = [
+      slider('f-jahr', 'Jahr', 'jahr', 2026, 2032, 1, st.jahr + ' · Körperschaftsteuer ' + pc(KR), 'Körperschaftsteuer sinkt ab 2028 jedes Jahr um einen Prozentpunkt bis 10 % ab 2032'),
       slider('f-gewinn', 'Gewinn vor Geschäftsführergehalt', 'gewinn', 50000, 1500000, 10000, eur(G), 'Jahresgewinn des Unternehmens'),
       slider('f-gehalt', 'Geschäftsführergehalt (GmbH)', 'gehalt', 0, 300000, 5000, eur(S), 'muss angemessen sein und einem Fremdvergleich standhalten'),
       slider('f-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 280, 900, 5, H + ' %', 'je nach Gemeinde, ab 2027 mindestens 280 %'),

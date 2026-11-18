@@ -109,7 +109,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 64px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
-<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="5">
+<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="6">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
 <input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
@@ -121,14 +121,6 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <div role="group" aria-label="Beteiligungsquote" style="display: flex; gap: 6px; flex-wrap: wrap">
 <sc-for list="{{quoten}}" as="q" hint-placeholder-count="3">
 <button type="button" onClick="{{q.pick}}" aria-pressed="{{q.on}}" style="{{q.style}}">{{q.label}}</button>
-</sc-for>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 15px; font-weight: 600">Körperschaftsteuer (Jahr)</span>
-<div role="group" aria-label="Jahr" style="display: flex; gap: 6px; flex-wrap: wrap">
-<sc-for list="{{jahre}}" as="j" hint-placeholder-count="4">
-<button type="button" onClick="{{j.pick}}" aria-pressed="{{j.on}}" style="{{j.style}}">{{j.label}}</button>
 </sc-for>
 </div>
 </div>
@@ -181,7 +173,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <span><b>Ins Private:</b> Sobald Geld an dich persönlich ausgeschüttet wird, fällt Abgeltungsteuer an. Der Vorteil liegt im Reinvestieren innerhalb der Struktur.</span>
 </div>
 </div>
-<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c">Vereinfachte Beispielrechnung für Deutschland: Körperschaftsteuer und Solidaritätszuschlag, Gewerbesteuer nach Hebesatz, § 8b KStG, § 9 Nr. 2a GewStG, Abgeltungsteuer, § 17 EStG mit Teileinkünfteverfahren; ohne Kirchensteuer, Freibeträge und Sperrfristen. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c">Vereinfachte Beispielrechnung für Deutschland: Körperschaftsteuer 15 % bis 2027, danach jährlich 1 Prozentpunkt weniger bis 10 % ab 2032 (§ 23 KStG), und Solidaritätszuschlag, Gewerbesteuer nach Hebesatz, § 8b KStG, § 9 Nr. 2a GewStG, Abgeltungsteuer, § 17 EStG mit Teileinkünfteverfahren; ohne Kirchensteuer, Freibeträge und Sperrfristen. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
 <a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-holding" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Deine Struktur besprechen →</a>
 </div>
 </section>
@@ -210,8 +202,10 @@ class Component extends DCLogic {
     var st = this.state;
     function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
     function pct(n) { return (n * 100).toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' %'; }
-    var KST = { 2026: 0.15, 2028: 0.14, 2030: 0.12, 2032: 0.10 };
-    var corp = KST[st.year] * 1.055, gew = 0.035 * st.hebe / 100;
+    function kstR(y) { return y <= 2027 ? 0.15 : Math.max(0.10, 0.15 - 0.01 * (y - 2027)); }
+    function pc(x) { return Math.round(x * 100) + ' %'; }
+    var KR = kstR(st.year);
+    var corp = KR * 1.055, gew = 0.035 * st.hebe / 100;
     var exitRate = 0.05 * (corp + gew);
     var divRate = st.quote === 'q15' ? 0.05 * (corp + gew) : st.quote === 'q10' ? 0.05 * corp + gew : corp + gew;
     var privDiv = 0.25 * 1.055, privExit = 0.6 * (st.rate / 100) * 1.055;
@@ -242,6 +236,7 @@ class Component extends DCLogic {
         change: function (e) { var o = {}; o[key] = Number(e.target.value); self.setState(o); } };
     }
     var sliders = [
+      slider('r-jahr', 'Jahr', 'year', 2026, 2032, 1, st.year + ' · Körperschaftsteuer ' + pc(KR), 'Körperschaftsteuer sinkt ab 2028 jedes Jahr um einen Prozentpunkt bis 10 % ab 2032'),
       slider('r-div', 'Ausschüttung aus einer Beteiligung', 'div', 0, 2000000, 10000, eur(st.div), 'Gewinn einer Tochter, der nach oben fließt'),
       slider('r-exit', 'Exit-Gewinn einer Beteiligung', 'exit', 0, 10000000, 50000, eur(st.exit), 'Verkaufspreis minus Anschaffungskosten'),
       slider('r-sale', 'Verkauf der operativen GmbH (Gewinn)', 'sale', 0, 10000000, 50000, eur(st.sale), 'Verkaufspreis minus Anschaffungskosten'),
@@ -251,8 +246,7 @@ class Component extends DCLogic {
     var QU = [['q15', 'ab 15 %'], ['q10', '10 bis unter 15 %'], ['q0', 'unter 10 %']];
     var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600;' : 'background: #ffffff; color: #141414; font-weight: 500;'); };
     var quoten = QU.map(function (q) { var on = st.quote === q[0]; return { label: q[1], on: on, style: btn(on), pick: function () { self.setState({ quote: q[0] }); } }; });
-    var jahre = [2026, 2028, 2030, 2032].map(function (y) { var on = st.year === y; return { label: y + ' · ' + Math.round(KST[y] * 100) + ' %', on: on, style: btn(on), pick: function () { self.setState({ year: y }); } }; });
-    return { sliders: sliders, quoten: quoten, jahre: jahre, rows: rows, bars: bars };
+    return { sliders: sliders, quoten: quoten, rows: rows, bars: bars };
   }
 }
 
