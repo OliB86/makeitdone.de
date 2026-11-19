@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Rechner Netto vom Brutto – make it done</title>
+<title>Steuerfreie Mitarbeiter-Benefits: Rechner | make it done</title>
+<meta name="description" content="Benefits statt Gehaltserhöhung: Rechne selbst, wie viel mehr Netto bei Team und Geschäftsführung ankommt. Sachbezug, Kita-Zuschuss, Gesundheit, Jobticket.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 @font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
@@ -78,6 +79,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 @media (max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e4e4e4;backdrop-filter:blur(8px)}.mbar a{flex:1;text-align:center;background:#F1D734;color:#141414;font-weight:700;font-size:16px;padding:14px 18px;border-radius:999px;text-decoration:none}body.has-mbar{padding-bottom:78px}}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.logo-dot,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist ein steuerfreier Sachbezug?", "acceptedAnswer": {"@type": "Answer", "text": "Sachleistungen wie Gutscheine oder Guthabenkarten bleiben derzeit bis 50 € im Monat steuer- und sozialversicherungsfrei (§ 8 Abs. 2 Satz 11 EStG). Geld statt Ware zählt nicht."}}, {"@type": "Question", "name": "Welche Benefits sind noch steuerfrei oder begünstigt?", "acceptedAnswer": {"@type": "Answer", "text": "Zum Beispiel Kita-Zuschuss für nicht schulpflichtige Kinder, Jobticket, Gesundheitsförderung, Dienstrad oder Essenszuschuss, jeweils mit eigenen Voraussetzungen und Grenzen. Wichtig: Sie müssen zusätzlich zum geschuldeten Lohn gezahlt werden."}}, {"@type": "Question", "name": "Muss ich als Gesellschafter-Geschäftsführer Sozialversicherung zahlen?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt davon ab, ob du abhängig beschäftigt bist. Entscheidend sind vor allem Anteile und Stimmrechte: Mit mindestens 50 % oder einer echten Sperrminorität bist du in der Regel nicht versicherungspflichtig. Verbindlich klärt das ein Statusfeststellungsverfahren."}}]}</script>
 </head>
 <body class="has-mbar">
 <template id="tpl">
@@ -102,7 +104,8 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
 <a href="../c/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Netto vom Brutto</span>
-<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 940px">Mehr Netto für Team und Geschäftsführung – bei gleichem Budget.</h1>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 940px">Welche Mitarbeiter-Benefits sind steuerfrei?</h1>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(19px, 2.2vw, 24px); font-weight: 500; line-height: 1.3; color: #141414; max-width: 900px">Mehr Netto für Team und Geschäftsführung – bei gleichem Budget. Rechne selbst.</p>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 800px">Wähl, welche Leistung wer bekommt. Der Rechner vergleicht mit einer Gehaltserhöhung, die das Unternehmen genauso viel kostet – inklusive Pauschalsteuer und Sozialabgaben.</p>
 </section>
 
@@ -211,6 +214,24 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <span style="font-size: 14px; line-height: 1.55; color: #3d3d3d">{{e.text}}</span>
 </div>
 </sc-for>
+</div>
+</section>
+
+<style>.faqw-tab{border:1px solid #c8c8c8;background:#ffffff;color:#141414;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:40px}
+.faqw-tab.on{background:#F1D734;border-color:#F1D734}.faqw-q{display:none}.faqw-q.on{display:flex}
+.faqw-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid #141414;background:#ffffff;font-size:18px;cursor:pointer}.faqw-arrow:hover{background:#F1D734;border-color:#F1D734}
+html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="fragen" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Häufige Fragen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">Häufige Fragen</h2>
+<div class="faqw" id="faq-rechner-netto" data-start="0" style="display: flex; flex-direction: column; gap: 22px">
+<div style="border-top: 1px solid #141414; padding-top: 24px; max-width: 860px"><div class="faqw-q" data-r="0" data-k="0" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Was ist ein steuerfreier Sachbezug?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Sachleistungen wie Gutscheine oder Guthabenkarten bleiben derzeit bis 50 € im Monat steuer- und sozialversicherungsfrei (§ 8 Abs. 2 Satz 11 EStG). Geld statt Ware zählt nicht.</p></div><div class="faqw-q" data-r="0" data-k="1" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Welche Benefits sind noch steuerfrei oder begünstigt?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Zum Beispiel Kita-Zuschuss für nicht schulpflichtige Kinder, Jobticket, Gesundheitsförderung, Dienstrad oder Essenszuschuss, jeweils mit eigenen Voraussetzungen und Grenzen. Wichtig: Sie müssen zusätzlich zum geschuldeten Lohn gezahlt werden.</p></div><div class="faqw-q" data-r="0" data-k="2" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Muss ich als Gesellschafter-Geschäftsführer Sozialversicherung zahlen?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Das hängt davon ab, ob du abhängig beschäftigt bist. Entscheidend sind vor allem Anteile und Stimmrechte: Mit mindestens 50 % oder einer echten Sperrminorität bist du in der Regel nicht versicherungspflichtig. Verbindlich klärt das ein Statusfeststellungsverfahren.</p></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><button type="button" class="faqw-arrow" data-dir="-1" aria-label="Vorherige Frage">←</button><span class="faqw-count" style="font-size: 15px; font-weight: 600; min-width: 48px; text-align: center">1 / 3</span><button type="button" class="faqw-arrow" data-dir="1" aria-label="Nächste Frage">→</button><a href="../c/haeufige-fragen.html" style="margin-left: 12px; font-weight: 600; font-size: 15px; color: #141414">Alle Fragen auf einen Blick →</a></div>
 </div>
 </section>
 
