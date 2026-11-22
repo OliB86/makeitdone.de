@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Offen · Steuernachzahlung berechnen: Rechner | make it done</title>
+<meta name="description" content="Wie hoch wird deine Steuernachzahlung? Rechne aus Gewinn und Vorauszahlungen, was nachkommt und wie viel du monatlich zurücklegen solltest. Vereinfachte Beispielrechnung.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Space Grotesk";src:url(/fonts/space-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+
+body{margin:0;background:#ffffff;color:#141414;font-family:Inter,system-ui,sans-serif}
+a{color:#141414}a:hover{color:#555555}
+button,input,select{font-family:inherit}
+input[type=range]{width:100%;accent-color:#141414}
+.mk{display:inline-block;background:#F1D734;color:#141414;border-radius:.24em;padding:0 .2em .04em;margin:0 .06em;line-height:1.15;transform:rotate(-2deg);box-shadow:0 .08em 0 #141414}
+.flapwrap{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,5vw,76px);line-height:1.05;letter-spacing:-0.03em;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-start;gap:.08em}
+.mk-flap{height:1.2em;overflow:hidden;text-align:left;margin-left:-.1em}
+.flap-track{display:flex;flex-direction:column}.flap-track>span{height:1.2em;line-height:1.2em}
+.fx .flap-track,.flap-track{animation:flap 10s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes flap{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.2em)}50%,70%{transform:translateY(-2.4em)}75%,95%{transform:translateY(-3.6em)}100%{transform:translateY(-4.8em)}}
+.flap-sub{height:1.5em;overflow:hidden;font-size:20px;color:#3d3d3d}.flap-sub .flap-track>span{height:1.5em;line-height:1.5em}
+.flap-sub .flap-track{animation-name:flapsub}
+@keyframes flapsub{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-1.5em)}50%,70%{transform:translateY(-3em)}75%,95%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion: reduce){.flap-track{animation:none !important}}
+@media (max-width: 760px){.flapwrap{font-size:clamp(34px,11.5vw,56px)}}
+:root{--sp:96px;--cap:9999px}@media (max-width: 760px){:root{--sp:45px;--cap:45px}}
+@media (max-width: 860px){.hdr{display:grid !important;grid-template-columns:1fr auto;row-gap:10px !important;padding:12px 18px !important}.hdr-nav{grid-column:1 / -1;grid-row:2;margin-left:0 !important;overflow-x:auto;white-space:nowrap;padding-bottom:4px;-webkit-overflow-scrolling:touch;gap:18px !important}.hdr-cta{grid-column:2;grid-row:1;padding:8px 16px !important;font-size:14px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+html.gate:not(.unlocked) .gated{filter:blur(7px);opacity:.5;pointer-events:none;user-select:none;max-height:360px;overflow:hidden}
+.lead-thanks,.lead-gate-txt{display:none}html.gate .lead-gate-txt{display:block}html.gate .lead-open-txt{display:none}
+html.unlocked .lead-thanks{display:block}html.unlocked .lead-form,html.unlocked .lead-gate-txt,html.unlocked .lead-open-txt{display:none !important}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+@media (max-width:760px){header nav{flex-wrap:nowrap !important;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}header nav a{white-space:nowrap}header nav:not(.hdr-nav) a:last-child{order:-1}}
+
+:root{color-scheme:light}
+html,body{overflow-x:clip}
+h1,h2,h3{text-wrap:balance}
+table,[data-count]{font-variant-numeric:tabular-nums}
+section p{max-width:min(100%,70ch)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #F1D734;outline-offset:3px;border-radius:6px}
+.fx .rv{opacity:1 !important}
+.fx .sy:not(.hz) .sy-step:not(.seen):not(.act){opacity:.45 !important;transform:none !important}
+html.show-b #story-a,html:not(.show-b) #story-b{display:none}
+.mk{background:linear-gradient(transparent 62%,#F1D734 62%,#F1D734 92%,transparent 92%) !important;border-radius:0 !important;padding:0 .08em !important;margin:0 !important;transform:none !important;box-shadow:none !important;font-family:'Instrument Serif',Georgia,serif !important;font-weight:400 !important;font-style:italic !important;letter-spacing:0 !important}
+
+.fl{position:relative;border-top-color:#d4d4d4 !important}
+.fl::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:#F1D734;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1) var(--fd,0s)}
+.fl.on::after,.flow-static .fl::after{transform:scaleX(1)}
+.fl .fl-ic{transition:background .4s ease var(--fd,0s),border-color .4s ease var(--fd,0s)}
+.fl.on .fl-ic{background:#F1D734 !important;border-color:#F1D734 !important}
+.hdr-cta{background:#F1D734 !important;color:#141414 !important;animation:ctaglow 3.4s ease-in-out infinite}.logo-dot{display:inline-block;width:.26em;height:.26em;border-radius:50%;background:#F1D734;margin-left:.07em;animation:dotglow 3.4s ease-in-out infinite}@keyframes dotglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 5px rgba(241,215,52,.45)}}
+@keyframes ctaglow{0%,60%,100%{box-shadow:0 0 0 0 rgba(241,215,52,0)}75%{box-shadow:0 0 0 8px rgba(241,215,52,.35)}}
+.cta{background:#F1D734 !important;color:#141414 !important}.cta .cta-dot{background:#141414 !important;color:#F1D734 !important}
+.cta.pulse{animation:ctaglow 2.4s ease-in-out infinite}
+a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;color:#141414 !important}
+.bk-tog{align-items:center}.bk-tog::before{content:"Zwei Geschichten · wechseln:";width:100%;font-size:13px;font-weight:600;letter-spacing:.04em;color:#5c5c5c}
+.bk-tog a{padding:12px 20px !important;font-size:15px !important;position:relative}
+.bk-tog a[style*="transparent"]{border-color:#141414 !important}
+.bk-tog a[style*="transparent"]::after{content:"";position:absolute;top:-5px;right:-5px;width:12px;height:12px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.6s ease-out infinite}
+@keyframes dotpulse{0%{box-shadow:0 0 0 0 rgba(241,215,52,.7)}100%{box-shadow:0 0 0 10px rgba(241,215,52,0)}}
+.story-btn{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1.5px solid #141414;border-radius:999px;padding:9px 18px;font-weight:600;font-size:15px;background:#ffffff;transition:background .2s}
+.story-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#F1D734;box-shadow:0 0 0 0 rgba(241,215,52,.7);animation:dotpulse 1.8s ease-out infinite}
+.door:hover .story-btn{background:#F1D734}
+#kontenplan .bk .sy-step{min-height:16vh !important}
+.phase.fl::after{top:auto;bottom:-1px}
+.ck-row.fl{border-top:0 !important}.ck-row.fl::after{left:28px;right:28px;top:28px;height:2px;z-index:0;transition-duration:.4s}@media (max-width: 760px){.ck-row.fl::after{display:none}}
+.ck-row .ck-step:nth-child(2) .fl-ic{transition-delay:.2s !important}.ck-row .ck-step:nth-child(3) .fl-ic{transition-delay:.4s !important}
+.ck-row.fl .fl-ic{transition:background .4s ease,border-color .4s ease}
+.mbar{display:none}
+@media (max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e4e4e4;backdrop-filter:blur(8px)}.mbar a{flex:1;text-align:center;background:#F1D734;color:#141414;font-weight:700;font-size:16px;padding:14px 18px;border-radius:999px;text-decoration:none}body.has-mbar{padding-bottom:78px}}
+@media (prefers-reduced-motion: reduce){.hdr-cta,.logo-dot,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie funktioniert die Einkommensteuer-Vorauszahlung?", "acceptedAnswer": {"@type": "Answer", "text": "Das Finanzamt setzt sie nach deinem letzten Steuerbescheid fest. Du zahlst vierteljährlich am 10. März, 10. Juni, 10. September und 10. Dezember (§ 37 EStG). Steigt dein Gewinn, sind die Vorauszahlungen zu niedrig, und die Differenz kommt später als Nachzahlung."}}, {"@type": "Question", "name": "Was passiert nach einer hohen Nachzahlung?", "acceptedAnswer": {"@type": "Answer", "text": "Mit dem Bescheid passt das Finanzamt meist auch die Vorauszahlungen fürs laufende Jahr an. Dann kommen Nachzahlung und höhere Raten auf einmal. Sinkt dein Gewinn, kannst du umgekehrt beantragen, die Vorauszahlungen herabzusetzen."}}, {"@type": "Question", "name": "Wie viel Prozent vom Gewinn sollte ich zurücklegen?", "acceptedAnswer": {"@type": "Answer", "text": "Eine feste Quote gibt es nicht, weil der Steuersatz mit dem Gewinn steigt. Ledig und ohne Abzüge sind es bei 60.000 € Gewinn rund 24 %, bei 150.000 € rund 36 %. Der Rechner zeigt dir den Wert für deine Zahlen."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Steuernachzahlung berechnen", "description": "Deine Nachzahlung ist die Differenz zwischen der Steuer auf deinen tatsächlichen Gewinn und den Vorauszahlungen, die du schon geleistet hast. Bei 150.000 € Gewinn (ledig, ohne Abzüge) fallen rund 55.000 € Einkommensteuer und Soli an. Lagen die Vorauszahlungen auf einem niedrigeren Vorjahr, kommt die Differenz mit dem Bescheid, oft zusammen mit höheren Vorauszahlungen fürs laufende Jahr.", "inLanguage": "de", "dateModified": "2026-11-22", "author": {"@type": "Person", "name": "Olga Bertram", "jobTitle": "Geschäftsführerin", "worksFor": {"@type": "Organization", "name": "make it done GmbH", "url": "https://makeitdone.de"}}, "publisher": {"@type": "Organization", "name": "make it done GmbH", "url": "https://makeitdone.de"}}</script>
+</head>
+<body class="has-mbar">
+<template id="tpl">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+<header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done<span class="logo-dot" aria-hidden="true"></span></a>
+<nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
+<a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../c/fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../c/rechner.html" style="text-decoration: none; font-weight: 600">Wissen</a>
+<a href="../c/ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../c/karriere.html" style="text-decoration: none">Karriere</a>
+</nav>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=nav-steuerruecklage-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+</div>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
+<a href="../c/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Steuer-Rücklage</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Wie hoch wird deine Steuernachzahlung?</h1>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(19px, 2.2vw, 24px); font-weight: 500; line-height: 1.3; color: #141414; max-width: 900px">Und wie viel du für die Einkommensteuer-Vorauszahlung zurücklegen solltest. Rechne selbst.</p>
+<p class="kurzantwort" style="margin: 0; font-size: 18px; line-height: 1.6; color: #141414; max-width: 820px; border-left: 3px solid #F1D734; padding: 4px 0 4px 18px"><b>Kurz gesagt:</b> Deine Nachzahlung ist die Differenz zwischen der Steuer auf deinen tatsächlichen Gewinn und den Vorauszahlungen, die du schon geleistet hast. Bei 150.000 € Gewinn (ledig, ohne Abzüge) fallen rund 55.000 € Einkommensteuer und Soli an. Lagen die Vorauszahlungen auf einem niedrigeren Vorjahr, kommt die Differenz mit dem Bescheid, oft zusammen mit höheren Vorauszahlungen fürs laufende Jahr.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Wer wächst, zahlt Vorauszahlungen auf Basis eines kleineren Vorjahres – und wird vom Bescheid überrascht. Trag deinen erwarteten Gewinn und deine bisherigen Vorauszahlungen ein und sieh, was nachkommt.</p>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 48px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
+<sc-for list="{{sliders}}" as="sl" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
+<input id="{{sl.id}}" type="range" min="{{sl.min}}" max="{{sl.max}}" step="{{sl.step}}" value="{{sl.value}}" onInput="{{sl.change}}">
+<span style="font-size: 12px; color: #5c5c5c">{{sl.hint}}</span>
+</div>
+</sc-for>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Tätigkeit</span>
+<div role="group" aria-label="Tätigkeit" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{arten}}" as="v" hint-placeholder-count="2">
+<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.style}}">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Veranlagung</span>
+<div role="group" aria-label="Veranlagung" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{veranl}}" as="v" hint-placeholder-count="2">
+<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="{{v.style}}">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="flex: 1.5 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">{{headLabel}}</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; line-height: 1">{{headValue}}</span>
+<span style="font-size: 15px; color: #3d3d3d">{{headHint}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">{{b.label}}</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="{{b.style}}"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: {{b.textColor}}">{{b.value}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
+<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b><span style="font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Anbindung an Close – mit Berkant klären</span></span>
+<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
+<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
+<form class="lead-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
+<label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
+<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
+</form>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Der Versand per E-Mail startet, sobald Close angebunden ist.</span>
+</div>
+<div class="gated" style="display: flex; flex-direction: column; gap: 20px">
+<div style="display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<sc-for list="{{rows}}" as="rw" hint-placeholder-count="8">
+<span style="{{rw.ls}}">{{rw.label}}</span>
+<span style="{{rw.cs}}">{{rw.v}}</span>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
+<span><b>Nachzahlung:</b> kommt mit dem Bescheid, meist ein bis zwei Jahre nach dem Gewinnjahr.</span>
+<span><b>Doppelter Schlag:</b> Mit dem Bescheid steigen meist auch die Vorauszahlungen fürs laufende Jahr. Plan beides ein.</span>
+<span><b>Zurücklegen:</b> Am einfachsten ist ein eigenes Steuerkonto, auf das jeden Monat der angezeigte Betrag geht.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="auf-einen-blick" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">So viel Steuer fällt auf deinen Gewinn an</h2>
+<div style="overflow-x: auto"><table style="min-width: 520px; width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.45; border: 1px solid #dddddd"><thead><tr><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Gewinn im Jahr</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Einkommensteuer und Soli</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Anteil am Gewinn</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">monatlich zurücklegen</th></tr></thead><tbody><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">60.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 14.200 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 24 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 1.190 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">100.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 32.100 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 32 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 2.680 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">150.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 54.700 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 36 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 4.560 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">250.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 99.000 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 40 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 8.250 €</td></tr></tbody></table></div>
+<p style="margin: 0; font-size: 12px; color: #5c5c5c">Ledig, Tarif 2026, ohne Abzüge und ohne Kirchensteuer, Freiberufler; mit Gewerbe bei 400 % Hebesatz ähnlich. Rechtsgrundlagen: § 32a EStG, § 37 EStG, § 35 EStG.</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5c5c5c">Von <a href="../c/ueber-uns.html">Olga Bertram</a>, Gründerin der make it done GmbH und seit 2010 Dozentin für Steuerrecht und Rechnungswesen · Stand: November 2026 · Vereinfachte Darstellung, keine Beratung im Einzelfall.</p>
+</section>
+
+<style>.faqw-tab{border:1px solid #c8c8c8;background:#ffffff;color:#141414;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:40px}
+.faqw-tab.on{background:#F1D734;border-color:#F1D734}.faqw-q{display:none}.faqw-q.on{display:flex}
+.faqw-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid #141414;background:#ffffff;font-size:18px;cursor:pointer}.faqw-arrow:hover{background:#F1D734;border-color:#F1D734}
+html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="fragen" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Häufige Fragen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">Häufige Fragen</h2>
+<div class="faqw" id="faq-rechner-steuerruecklage" data-start="0" style="display: flex; flex-direction: column; gap: 22px">
+<div style="border-top: 1px solid #141414; padding-top: 24px; max-width: 860px"><div class="faqw-q" data-r="0" data-k="0" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Wie funktioniert die Einkommensteuer-Vorauszahlung?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Das Finanzamt setzt sie nach deinem letzten Steuerbescheid fest. Du zahlst vierteljährlich am 10. März, 10. Juni, 10. September und 10. Dezember (§ 37 EStG). Steigt dein Gewinn, sind die Vorauszahlungen zu niedrig, und die Differenz kommt später als Nachzahlung.</p></div><div class="faqw-q" data-r="0" data-k="1" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Was passiert nach einer hohen Nachzahlung?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Mit dem Bescheid passt das Finanzamt meist auch die Vorauszahlungen fürs laufende Jahr an. Dann kommen Nachzahlung und höhere Raten auf einmal. Sinkt dein Gewinn, kannst du umgekehrt beantragen, die Vorauszahlungen herabzusetzen.</p></div><div class="faqw-q" data-r="0" data-k="2" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Wie viel Prozent vom Gewinn sollte ich zurücklegen?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Eine feste Quote gibt es nicht, weil der Steuersatz mit dem Gewinn steigt. Ledig und ohne Abzüge sind es bei 60.000 € Gewinn rund 24 %, bei 150.000 € rund 36 %. Der Rechner zeigt dir den Wert für deine Zahlen.</p></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><button type="button" class="faqw-arrow" data-dir="-1" aria-label="Vorherige Frage">←</button><span class="faqw-count" style="font-size: 15px; font-weight: 600; min-width: 48px; text-align: center">1 / 3</span><button type="button" class="faqw-arrow" data-dir="1" aria-label="Nächste Frage">→</button><a href="../c/haeufige-fragen.html" style="margin-left: 12px; font-weight: 600; font-size: 15px; color: #141414">Alle Fragen auf einen Blick →</a></div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 48px 24px min(72px, var(--cap)) 24px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c; max-width: 900px">Vereinfachte Beispielrechnung für Deutschland, Stand 2026: Einkommensteuertarif 2026 nach § 32a EStG auf den Gewinn ohne Sonderausgaben und andere Abzüge, Solidaritätszuschlag mit Freigrenze, bei Gewerbe Gewerbesteuer mit Freibetrag 24.500 € (§ 11 GewStG) und Anrechnung nach § 35 EStG; Vorauszahlungen nach § 37 EStG. Ohne Kirchensteuer, ohne weitere Einkünfte. Keine Beratung im Einzelfall.</p>
+<a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=rechner-steuerruecklage" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Deine Struktur besprechen →</a>
+</section>
+<footer style="background: #141414; color: #d4d4d4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done<span aria-hidden="true" style="display: inline-block; width: .26em; height: .26em; border-radius: 50%; background: #F1D734; margin-left: .07em"></span></b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a></div>
+</div>
+</footer>
+</div>
+
+</template>
+<div id="app"></div>
+<div class="mbar"><a href="https://calendly.com/makeitdone/kennenlernen-15-min?utm_source=website&amp;utm_campaign=mobilbar-c">Erstgespräch vereinbaren</a></div>
+
+<script src="../dc-lite.js?v=1794953993"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { gewinn: 150000, vz: 7500, hebe: 400, art: 'gew', split: false };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    function eur(n) { return Math.round(n).toLocaleString('de-DE') + ' €'; }
+    function pct(n) { return (n * 100).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' %'; }
+    function est(x) {
+      x = Math.floor(x);
+      if (x <= 12348) return 0;
+      if (x <= 17799) { var y = (x - 12348) / 1e4; return Math.floor((914.51 * y + 1400) * y); }
+      if (x <= 69878) { var z = (x - 17799) / 1e4; return Math.floor((173.10 * z + 2397) * z + 1034.87); }
+      if (x <= 277825) return Math.floor(0.42 * x - 11135.63);
+      return Math.floor(0.45 * x - 19470.38);
+    }
+    function estV(x) { return st.split ? 2 * est(x / 2) : est(x); }
+    function soli(e) { var fg = st.split ? 40700 : 20350; return e <= fg ? 0 : Math.min(0.055 * e, 0.119 * (e - fg)); }
+    var G = st.gewinn, gew = st.art === 'gew', H = st.hebe;
+    var mb = gew ? Math.max(0, Math.floor((G - 24500) / 100) * 100) * 0.035 : 0;
+    var gst = mb * H / 100;
+    var e = estV(G), anr = Math.min(4 * mb, gst, e), en = e - anr, so = soli(en);
+    var total = en + so + gst, paid = 4 * st.vz, diff = total - paid;
+    var newRate = total / 4, extra = Math.max(0, newRate - st.vz) * 4;
+    var monthly = Math.max(0, diff) / 12;
+    var cellBase = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
+    function row(label, v, bold) { return { label: label, v: v, ls: cellBase + ' font-weight: 600;', cs: cellBase + (bold ? ' font-weight: 700;' : '') }; }
+    var rows = [
+      row('Einkommensteuer', eur(e)),
+      gew ? row('Gewerbesteuer', eur(gst) + ' · ' + eur(anr) + ' auf die ESt angerechnet') : row('Gewerbesteuer', 'keine (Freiberufler)'),
+      row('Solidaritätszuschlag', eur(so)),
+      row('Steuer fürs Jahr gesamt', eur(total) + ' · ' + pct(total / G) + ' vom Gewinn', true),
+      row('Schon vorausbezahlt', eur(paid)),
+      row(diff >= 0 ? 'Nachzahlung mit dem Bescheid' : 'Erstattung mit dem Bescheid', eur(Math.abs(diff)), true),
+      row('Passende Vorauszahlung je Quartal', eur(newRate)),
+      row('Höhere Vorauszahlungen im Bescheidjahr', extra > 0 ? 'bis zu ' + eur(extra) + ' zusätzlich' : 'keine', true)
+    ];
+    var max = Math.max(total, paid, Math.abs(diff), 1);
+    var bars = [['Steuer fürs Jahr', total, '#141414'], ['Schon vorausbezahlt', paid, '#8a8a8a'], [diff >= 0 ? 'Nachzahlung' : 'Erstattung', Math.abs(diff), '#F1D734']].map(function (b, i) {
+      return { label: b[0], value: eur(b[1]), textColor: i === 0 ? '#ffffff' : '#141414',
+        style: 'position: absolute; left: 0; top: 0; bottom: 0; width: ' + Math.max(4, b[1] / max * 100).toFixed(1) + '%; border-radius: 999px; transition: width .4s ease; background: ' + b[2] };
+    });
+    function slider(id, label, key, min, max, step, shown, hint) {
+      return { id: id, label: label, min: min, max: max, step: step, value: st[key], shown: shown, hint: hint,
+        change: function (ev) { var o = {}; o[key] = Number(ev.target.value); self.setState(o); } };
+    }
+    var sliders = [
+      slider('f-gewinn', 'Erwarteter Gewinn im Jahr', 'gewinn', 20000, 500000, 5000, eur(G), 'Gewinn vor Steuern, nach Betriebsausgaben'),
+      slider('f-vz', 'Bisherige Vorauszahlung je Quartal', 'vz', 0, 50000, 250, eur(st.vz), 'Einkommen- und Gewerbesteuer zusammen, laut letztem Bescheid')
+    ];
+    if (gew) sliders.push(slider('f-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 280, 900, 5, H + ' %', 'je nach Gemeinde, ab 2027 mindestens 280 %'));
+    var btn = function (on) { return 'border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; ' + (on ? 'background: #141414; color: #ffffff; font-weight: 600' : 'background: #ffffff; color: #141414'); };
+    var arten = [['gew', 'Gewerbe'], ['frei', 'Freiberufler']].map(function (a) {
+      var on = st.art === a[0]; return { label: a[1], on: on, style: btn(on), pick: function () { self.setState({ art: a[0] }); } };
+    });
+    var veranl = [[false, 'Einzelveranlagung'], [true, 'Zusammenveranlagung']].map(function (v) {
+      var on = st.split === v[0]; return { label: v[1], on: on, style: btn(on), pick: function () { self.setState({ split: v[0] }); } };
+    });
+    return { sliders: sliders, arten: arten, veranl: veranl, rows: rows, bars: bars,
+      headLabel: diff >= 0 ? 'Voraussichtliche Nachzahlung' : 'Voraussichtliche Erstattung',
+      headValue: eur(Math.abs(diff)),
+      headHint: diff > 0 ? 'Leg dafür ' + eur(monthly) + ' im Monat zusätzlich zurück.' : 'Deine Vorauszahlungen reichen für diesen Gewinn.' };
+  }
+}
+
+dcMount(Component, 'tpl', 'app');
+</script>
+<script src="../effects.js?v=1794953993"></script>
+<script src="../lead.js?v=1794953993"></script>
+<script src="../c-flow.js?v=1794953993"></script>
+<script src="../c-faq.js?v=1794953993"></script>
+</body>
+</html>
