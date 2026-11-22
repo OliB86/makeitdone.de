@@ -219,6 +219,7 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style>
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.15">Wir hören zu</span>
 <span style="font-size: 17px; line-height: 1.6; color: #3d3d3d">Wo stehst du, wo willst du hin, beruflich und privat? Am Ende weißt du, ob und wie wir dir helfen können.</span></div></div>
 </section>
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px var(--sp) 24px"><div style="background: #141414; color: #ffffff; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px; max-width: 820px"><span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #222222; color: #e8e8e8; border: 1px solid #3a3a3a"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Wichtig</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; line-height: 1.2">Dein Termin ist fest für dich reserviert.</span><span style="font-size: 17px; line-height: 1.6; color: #d4d4d4">Wir arbeiten bewusst nur mit wenigen Unternehmen zusammen, deshalb sind unsere Termine knapp. Sei so fair: Wenn dir etwas dazwischenkommt, verschieb deinen Termin bitte mindestens 24 Stunden vorher. So nimmst du niemandem den Platz weg und bekommst direkt einen neuen.</span><a href="#verschieben" data-resched style="align-self: flex-start; display: inline-flex; align-items: center; background: #F1D734; color: #141414; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; margin-top: 6px">Termin verschieben →</a><span data-resched-hint style="display: none; font-size: 15px; color: #d4d4d4">Den Link zum Verschieben findest du in deiner Bestätigungsmail von Calendly.</span></div></section>
 <section style="max-width: 1180px; margin: 0 auto; padding: 0 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #5c5c5c">Bis dahin</span>
 <div style="display: flex; gap: 14px; flex-wrap: wrap"><a href="../c/rechner.html" class="story-btn" style="text-decoration: none; color: #141414">Rechner ausprobieren →</a><a href="../c/aktuelles.html" class="story-btn" style="text-decoration: none; color: #141414">Aktuelles lesen →</a><a href="../c/haeufige-fragen.html" class="story-btn" style="text-decoration: none; color: #141414">Häufige Fragen →</a></div>
@@ -248,5 +249,15 @@ dcMount(Component, 'tpl', 'app');
 <script src="../c-flow.js?v=1794953993"></script>
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=3"></script>
+<script>
+/* Termin verschieben: Calendly gibt bei der Weiterleitung invitee_uuid mit, daraus wird der Verschiebe-Link. */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("[data-resched]"); if (!a) return;
+  e.preventDefault();
+  var id = new URLSearchParams(location.search).get("invitee_uuid");
+  if (id && /^[A-Za-z0-9-]+$/.test(id)) { location.href = "https://calendly.com/reschedulings/" + id; return; }
+  var h = document.querySelector("[data-resched-hint]"); if (h) h.style.display = "block";
+});
+</script>
 </body>
 </html>
