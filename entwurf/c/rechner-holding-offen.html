@@ -227,7 +227,217 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 </div>
 
 </template>
-<div id="app"></div>
+<!--prerender-->
+<div id="app">
+
+
+<div style="width: 100%; background: #fafafa; color: #141414; font-family: Inter, system-ui, sans-serif">
+<header style="position: sticky; top: 0; z-index: 50; background: #fafafa; border-bottom: 1px solid #ececec">
+<div class="hdr" style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../c/index.html" class="hdr-logo" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; text-decoration: none">make it done<span class="logo-dot" aria-hidden="true"></span></a>
+<nav aria-label="Hauptmenü" class="hdr-nav" style="display: flex; gap: 22px; font-size: 15px; align-items: center; margin-left: auto">
+<a href="../c/leistungen.html" style="text-decoration: none">Leistungen</a>
+<a href="../c/so-arbeiten-wir.html" style="text-decoration: none">So arbeiten wir</a>
+<a href="../c/fuer-wen.html" style="text-decoration: none">Für wen</a>
+<a href="../c/rechner.html" style="text-decoration: none; font-weight: 600">Wissen</a>
+<a href="../c/ueber-uns.html" style="text-decoration: none">Über uns</a>
+<a href="../c/karriere.html" style="text-decoration: none">Karriere</a>
+</nav>
+<a href="https://calendly.com/makeitdone/erstgesprach?a1=Website&amp;utm_source=website&amp;utm_campaign=nav-rechner-c" class="hdr-cta" style="text-decoration: none; background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 999px; font-weight: 600; white-space: nowrap">Erstgespräch</a>
+</div>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 18px">
+<a href="../c/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Exit und Beteiligungen</span>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.05; max-width: 900px">Wie viel Steuer zahlst du beim Verkauf deiner GmbH-Anteile?</h1>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(19px, 2.2vw, 24px); font-weight: 500; line-height: 1.3; color: #141414; max-width: 900px">Privat, GmbH oder Holding – rechne selbst, was von Ausschüttungen und Verkaufserlösen bleibt.</p>
+<p class="kurzantwort" style="margin: 0; font-size: 18px; line-height: 1.6; color: #141414; max-width: 820px; border-left: 3px solid #F1D734; padding: 4px 0 4px 18px"><b>Kurz gesagt:</b> Verkaufst du GmbH-Anteile aus dem Privatvermögen (ab 1 % Beteiligung), sind 60 % des Gewinns mit deinem persönlichen Steuersatz zu versteuern, effektiv bis rund 28,5 %. Hält eine Holding-GmbH die Anteile, sind 95 % steuerfrei, die Steuer liegt bei rund 1,5 %. Die Holding muss dafür rechtzeitig vor dem Verkauf stehen.</p>
+<p style="margin: 0; font-size: 15px; color: #3d3d3d">Aus der Praxis: So hat es <a href="../c/so-arbeiten-wir.html#kunde-a-0">Kunde A</a> umgesetzt.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3d3d3d; max-width: 780px">Wie viel von einer Ausschüttung oder einem Exit zum Reinvestieren übrig bleibt, hängt davon ab, wo die Anteile liegen. Verschieb die Werte – die drei Varianten rechnen sich live.</p>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 16px 24px 64px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="r-jahr" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Jahr</span><span style="font-family: 'Space Grotesk', sans-serif">2026 · Körperschaftsteuer 15 %</span></label>
+<input id="r-jahr" type="range" min="2026" max="2032" step="1" value="2026">
+<span style="font-size: 12px; color: #5c5c5c">Körperschaftsteuer sinkt ab 2028 jedes Jahr um einen Prozentpunkt bis 10 % ab 2032</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="r-div" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Ausschüttung aus einer Beteiligung</span><span style="font-family: 'Space Grotesk', sans-serif">300.000 €</span></label>
+<input id="r-div" type="range" min="0" max="2000000" step="10000" value="300000">
+<span style="font-size: 12px; color: #5c5c5c">Gewinn einer Tochter, der nach oben fließt</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="r-exit" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Exit-Gewinn einer Beteiligung</span><span style="font-family: 'Space Grotesk', sans-serif">2.000.000 €</span></label>
+<input id="r-exit" type="range" min="0" max="10000000" step="50000" value="2000000">
+<span style="font-size: 12px; color: #5c5c5c">Verkaufspreis minus Anschaffungskosten</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="r-sale" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Verkauf der operativen GmbH (Gewinn)</span><span style="font-family: 'Space Grotesk', sans-serif">2.000.000 €</span></label>
+<input id="r-sale" type="range" min="0" max="10000000" step="50000" value="2000000">
+<span style="font-size: 12px; color: #5c5c5c">Verkaufspreis minus Anschaffungskosten</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="r-hebe" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Gewerbesteuer-Hebesatz</span><span style="font-family: 'Space Grotesk', sans-serif">400 %</span></label>
+<input id="r-hebe" type="range" min="280" max="900" step="5" value="400">
+<span style="font-size: 12px; color: #5c5c5c">je nach Gemeinde, ab 2027 mindestens 280 %</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="r-rate" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Dein persönlicher Steuersatz</span><span style="font-family: 'Space Grotesk', sans-serif">45 %</span></label>
+<input id="r-rate" type="range" min="14" max="45" step="1" value="45">
+<span style="font-size: 12px; color: #5c5c5c">Grenzsteuersatz, Soli eingerechnet</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Beteiligungsquote der Holding / GmbH</span>
+<div role="group" aria-label="Beteiligungsquote" style="display: flex; gap: 6px; flex-wrap: wrap">
+
+<button type="button" aria-pressed="true" style="border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; background: #141414; color: #ffffff; font-weight: 600;">ab 15 %</button>
+
+<button type="button" aria-pressed="false" style="border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; background: #ffffff; color: #141414; font-weight: 500;">10 bis unter 15 %</button>
+
+<button type="button" aria-pressed="false" style="border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; background: #ffffff; color: #141414; font-weight: 500;">unter 10 %</button>
+
+</div>
+</div>
+</div>
+
+<div style="flex: 1.5 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Verfügbar zum Reinvestieren</span>
+
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">Privat</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="position: absolute; left: 0; top: 0; bottom: 0; width: 72.7%; border-radius: 999px; transition: width .4s ease; background: #c8c8c8"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: #141414">3.081.475 €</span>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">GmbH selbst</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="position: absolute; left: 0; top: 0; bottom: 0; width: 87.3%; border-radius: 999px; transition: width .4s ease; background: #8a8a8a"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: #141414">3.696.001 €</span>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 12px; align-items: center">
+<span style="font-size: 14px; font-weight: 600">Holding</span>
+<div style="background: #f4f4f4; border-radius: 999px; height: 34px; position: relative; overflow: hidden">
+<div style="position: absolute; left: 0; top: 0; bottom: 0; width: 100.0%; border-radius: 999px; transition: width .4s ease; background: #141414"></div>
+<span style="position: absolute; left: 14px; top: 8px; font-size: 13px; font-weight: 600; color: #ffffff">4.235.876 €</span>
+</div>
+</div>
+
+</div>
+<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
+<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b></span>
+<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
+<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
+<form class="lead-form" data-calc="rechner" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
+<label for="lead-name-rechner" class="sr">Vorname</label><input id="lead-name-rechner" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-mail-rechner" class="sr">E-Mail-Adresse</label><input id="lead-mail-rechner" name="email" type="email" required="" autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
+<label for="lead-ok-rechner" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-rechner" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-nl-rechner" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-rechner" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
+<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
+</form>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Deine persönliche Auswertung schicken wir dir zusätzlich per E-Mail.</span>
+</div>
+<div class="gated" style="display: flex; flex-direction: column; gap: 20px">
+<div style="overflow-x: auto">
+<div style="min-width: 560px; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
+<span style="padding: 16px; font-size: 13px; font-weight: 600; color: #5c5c5c; background: #f4f4f4"></span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">Privat</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #f4f4f4">GmbH selbst</span>
+<span style="padding: 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: #141414; color: #ffffff">Holding</span>
+
+<span style="padding: 14px 16px; font-size: 14px; font-weight: 600; border-top: 1px solid #e4e4e4">Ausschüttung aus einer Beteiligung</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>79.125 €</b><span style="font-size: 12px; color: #5c5c5c">26,38 % · 220.875 € bleiben</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>4.474 €</b><span style="font-size: 12px; color: #5c5c5c">1,49 % · 295.526 € bleiben</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; flex-direction: column; gap: 2px"><b>4.474 €</b><span style="font-size: 12px; color: #5c5c5c">1,49 % · 295.526 € bleiben</span></span>
+
+<span style="padding: 14px 16px; font-size: 14px; font-weight: 600; border-top: 1px solid #e4e4e4">Exit einer Beteiligung</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>569.700 €</b><span style="font-size: 12px; color: #5c5c5c">28,49 % · 1.430.300 € bleiben</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>29.825 €</b><span style="font-size: 12px; color: #5c5c5c">1,49 % · 1.970.175 € bleiben</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; flex-direction: column; gap: 2px"><b>29.825 €</b><span style="font-size: 12px; color: #5c5c5c">1,49 % · 1.970.175 € bleiben</span></span>
+
+<span style="padding: 14px 16px; font-size: 14px; font-weight: 600; border-top: 1px solid #e4e4e4">Verkauf der operativen GmbH</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>569.700 €</b><span style="font-size: 12px; color: #5c5c5c">28,49 % · 1.430.300 € bleiben</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>569.700 €</b><span style="font-size: 12px; color: #5c5c5c">Verkauf durch dich privat</span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; flex-direction: column; gap: 2px"><b>29.825 €</b><span style="font-size: 12px; color: #5c5c5c">1,49 % · 1.970.175 € bleiben</span></span>
+
+<span style="padding: 14px 16px; font-size: 14px; font-weight: 600; border-top: 1px solid #e4e4e4">Steuern gesamt</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>1.218.525 €</b><span style="font-size: 12px; color: #5c5c5c"></span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; display: flex; flex-direction: column; gap: 2px"><b>603.999 €</b><span style="font-size: 12px; color: #5c5c5c"></span></span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; background: #f7f7f7; display: flex; flex-direction: column; gap: 2px"><b>64.124 €</b><span style="font-size: 12px; color: #5c5c5c"></span></span>
+
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
+<span><b>GmbH selbst:</b> gleiche Steuer wie die Holding, aber Gewinne und Exit-Erlöse liegen im Risiko des operativen Geschäfts – und die GmbH kann sich nicht selbst verkaufen.</span>
+<span><b>Holding:</b> zusätzlich lassen sich mit einer Organschaft Verluste einer Tochter mit Gewinnen einer anderen verrechnen.</span>
+<span><b>Ins Private:</b> Sobald Geld an dich persönlich ausgeschüttet wird, fällt Abgeltungsteuer an. Der Vorteil liegt im Reinvestieren innerhalb der Struktur.</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.6; color: #5c5c5c">Vereinfachte Beispielrechnung für Deutschland: Körperschaftsteuer 15 % bis 2027, danach jährlich 1 Prozentpunkt weniger bis 10 % ab 2032 (§ 23 KStG), und Solidaritätszuschlag, Gewerbesteuer nach Hebesatz, § 8b KStG, § 9 Nr. 2a GewStG, Abgeltungsteuer, § 17 EStG mit Teileinkünfteverfahren; ohne Kirchensteuer, Freibeträge und Sperrfristen. Sie ersetzt keine steuerliche Beratung im Einzelfall – die übernimmt dein Steuerberater.</p>
+<a href="https://calendly.com/makeitdone/erstgesprach?a1=Website&amp;utm_source=website&amp;utm_campaign=rechner-holding" style="align-self: flex-start; background: #141414; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px">Ergebnis mit Olga besprechen →</a><span class="cta-note" style="align-self: flex-start; font-size: 14px; line-height: 1.5; opacity: .75">30 Minuten · kostenlos · Danach weißt du, was deine Zahlen für dich bedeuten.</span>
+</div>
+</section>
+<section id="auf-einen-blick" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">Anteile privat oder über die Holding verkaufen</h2>
+<div style="overflow-x: auto"><table style="min-width: 500px; width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.45; border: 1px solid #dddddd"><thead><tr><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4"></th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Privat (ab 1 %)</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Über eine Holding-GmbH</th></tr></thead><tbody><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">Steuerpflichtiger Teil des Gewinns</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">60 % (Teileinkünfteverfahren)</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">5 % (95 % steuerfrei)</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">Steuersatz darauf</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">persönlich, bis 45 % plus Soli</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">Körperschaft- und Gewerbesteuer, rund 30 %</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">Steuer effektiv</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">bis rund 28,5 % des Gewinns</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 1,5 % des Gewinns</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">Wo das Geld danach liegt</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">privat, frei verfügbar</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">in der Holding, für neue Investitionen; Ausschüttung an dich kostet 25 % plus Soli</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">Worauf achten</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">Haltedauer egal, Freibetrag ab 55 gilt hier nicht</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">Holding rechtzeitig gründen; bei Einbringung Sperrfrist bis 7 Jahre</td></tr></tbody></table></div>
+<p style="margin: 0; font-size: 12px; color: #5c5c5c">Rechtsgrundlagen: § 17 EStG, § 3 Nr. 40 EStG, § 8b KStG, § 22 UmwStG. Sätze gerundet, ohne Kirchensteuer.</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5c5c5c">Von <a href="../c/ueber-uns.html">Olga Bertram</a>, Gründerin der make it done GmbH und seit 2010 Dozentin für Steuerrecht und Rechnungswesen · Stand: November 2026 · Vereinfachte Darstellung, keine Beratung im Einzelfall.</p>
+</section>
+
+<style>.faqw-tab{border:1px solid #c8c8c8;background:#ffffff;color:#141414;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;min-height:40px}
+.faqw-tab.on{background:#F1D734;border-color:#F1D734}.faqw-q{display:none}.faqw-q.on{display:flex}
+.faqw-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid #141414;background:#ffffff;font-size:18px;cursor:pointer}.faqw-arrow:hover{background:#F1D734;border-color:#F1D734}
+html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="fragen" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Häufige Fragen</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">Häufige Fragen</h2>
+<div class="faqw" id="faq-rechner-holding" data-start="0" style="display: flex; flex-direction: column; gap: 22px">
+<div style="border-top: 1px solid #141414; padding-top: 24px; max-width: 860px"><div class="faqw-q" data-r="0" data-k="0" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Wie werden GmbH-Anteile beim Verkauf besteuert?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Hältst du die Anteile privat und mit mindestens 1 %, gilt das Teileinkünfteverfahren: 60 % des Gewinns sind steuerpflichtig. Liegen die Anteile in einer Holding-GmbH, sind 95 % des Gewinns steuerfrei.</p></div><div class="faqw-q" data-r="0" data-k="1" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Kann ich GmbH-Anteile steuerfrei verkaufen?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Ganz steuerfrei nicht, über eine Holding aber nah dran: Dort wird effektiv nur ein kleiner Teil des Gewinns besteuert. Die Holding muss dafür rechtzeitig stehen. Wer kurz vor dem Verkauf umstrukturiert, kann Sperrfristen von bis zu sieben Jahren auslösen.</p></div><div class="faqw-q" data-r="0" data-k="2" style="flex-direction: column; gap: 12px; min-height: 190px">
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.25">Was gilt beim Unternehmensverkauf ab 55?</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3d3d3d">Wer 55 ist, kann einmal im Leben einen Freibetrag und einen ermäßigten Steuersatz für den Verkauf eines Betriebs oder Mitunternehmeranteils beantragen (§ 16 Abs. 4 und § 34 Abs. 3 EStG). Für privat gehaltene GmbH-Anteile gilt das nicht, dort greift das Teileinkünfteverfahren.</p></div></div>
+<div style="display: flex; gap: 14px; align-items: center"><button type="button" class="faqw-arrow" data-dir="-1" aria-label="Vorherige Frage">←</button><span class="faqw-count" style="font-size: 15px; font-weight: 600; min-width: 48px; text-align: center">1 / 3</span><button type="button" class="faqw-arrow" data-dir="1" aria-label="Nächste Frage">→</button><a href="../c/haeufige-fragen.html" style="margin-left: 12px; font-weight: 600; font-size: 15px; color: #141414">Alle Fragen auf einen Blick →</a></div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: var(--sp) 24px var(--sp) 24px; display: flex; flex-direction: column; gap: 30px; align-items: center; text-align: center">
+<span class="end-line" aria-hidden="true" style="display: block; width: 80px; height: 3px; border-radius: 3px; background: #F1D734"></span>
+<h2 class="rv" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em; max-width: 900px">Lass uns sprechen, <em style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-style: italic; letter-spacing: 0; background: linear-gradient(transparent 62%, #F1D734 62%, #F1D734 92%, transparent 92%); padding: 0 .08em">bevor</em> du entscheidest.</h2>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; max-width: 620px"><b>Wir arbeiten nicht mit jedem. Mit Absicht.</b> Neue Kunden starten bei uns mit einem persönlichen Aufbau ihrer Strukturen. Das geht nur mit voller Aufmerksamkeit, deshalb sind unsere Plätze begrenzt. Ob wir zusammenpassen, klären wir im Erstgespräch.</p>
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; align-items: center"><a href="https://calendly.com/makeitdone/erstgesprach?a1=Website&amp;utm_source=website&amp;utm_campaign=rechner-holding-offen-ende" class="cta" style="display: inline-flex; align-items: center; gap: 14px; background: #141414; color: #ffffff; text-decoration: none; padding: 8px 26px 8px 8px; border-radius: 999px; font-weight: 600; font-size: 16px"><span class="cta-dot" style="width: 44px; height: 44px; border-radius: 50%; background: #F1D734; color: #141414; display: inline-flex; align-items: center; justify-content: center; font-size: 20px">→</span>Erstgespräch vereinbaren</a><span class="cta-note" style="font-size: 14px; line-height: 1.5; opacity: .75">30 Minuten · kostenlos · Wir prüfen gemeinsam, ob wir dir wirklich weiterhelfen können.</span><div style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px; color: #3d3d3d">
+<span style="display: inline-flex; gap: 8px; align-items: center"><span style="color: #141414; letter-spacing: 2px">★★★★★</span><b>5,0</b> bei Google</span>
+<span style="display: inline-flex; gap: 8px; align-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><b>Ergebnisgarantie</b><span style="font-size: 11px; border: 1px dashed #8a8a8a; border-radius: 999px; padding: 2px 8px">in Abstimmung</span></span>
+</div></div>
+</section>
+
+<footer style="background: #141414; color: #d4d4d4">
+<div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 48px 24px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #ffffff">make it done<span aria-hidden="true" style="display: inline-block; width: .26em; height: .26em; border-radius: 50%; background: #F1D734; margin-left: .07em"></span></b><span>make it done GmbH · Krefelder Straße 10 · 41812 Erkelenz</span><span>HRB 22388, Amtsgericht Mönchengladbach</span><span style="max-width: 560px; font-size: 13px; line-height: 1.55; color: #a8a8a8; margin-top: 8px">make it done berät betriebswirtschaftlich. Steuer-, Rechts- und Notartätigkeiten übernehmen ausschließlich zugelassene Berufsträger, die du direkt beauftragst. Wir erhalten keine Provision.</span></div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start"><a href="../c/kontakt.html" style="color: #ffffff">Kontakt</a><a href="../c/karriere.html" style="color: #ffffff">Karriere</a><a href="../c/haeufige-fragen.html" style="color: #ffffff">Häufige Fragen</a><a href="../c/aktuelles.html" style="color: #ffffff">Aktuelles</a><a href="/impressum.html" style="color: #ffffff">Impressum</a><a href="/datenschutz.html" style="color: #ffffff">Datenschutz</a><a href="#cookies" data-cookie-settings="" style="color: #ffffff">Cookie-Einstellungen</a></div>
+</div>
+</footer>
+</div>
+
+</div>
+<!--/prerender-->
 <div class="mbar"><a href="https://calendly.com/makeitdone/erstgesprach?a1=Website&amp;utm_source=website&amp;utm_campaign=mobilbar-c">Erstgespräch vereinbaren</a></div>
 
 <script src="../dc-lite.js?v=1794953993"></script>
