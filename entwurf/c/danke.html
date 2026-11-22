@@ -250,11 +250,15 @@ dcMount(Component, 'tpl', 'app');
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=3"></script>
 <script>
-/* Termin verschieben: Calendly gibt bei der Weiterleitung invitee_uuid mit, daraus wird der Verschiebe-Link. */
+/* Termin verschieben: Calendly gibt bei der Weiterleitung invitee_uuid mit, daraus wird der Verschiebe-Link.
+   Calendly hängt auch Name und E-Mail an die Adresse. Wir merken uns nur die Kennung und entfernen den Rest sofort aus der Adresszeile. */
+(function () { try { var q = new URLSearchParams(location.search), id = q.get("invitee_uuid");
+  if (id) sessionStorage.setItem("mid-invitee", id);
+  if (location.search) history.replaceState(null, "", location.pathname); } catch (e) {} })();
 document.addEventListener("click", function (e) {
   var a = e.target.closest && e.target.closest("[data-resched]"); if (!a) return;
   e.preventDefault();
-  var id = new URLSearchParams(location.search).get("invitee_uuid");
+  var id = ""; try { id = sessionStorage.getItem("mid-invitee") || ""; } catch (e) {}
   if (id && /^[A-Za-z0-9-]+$/.test(id)) { location.href = "https://calendly.com/reschedulings/" + id; return; }
   var h = document.querySelector("[data-resched-hint]"); if (h) h.style.display = "block";
 });
