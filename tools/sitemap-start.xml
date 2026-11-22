@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap für den Livegang: beim Start nach /sitemap.xml kopieren (Adressen gelten, wenn die Seiten aus /entwurf/c/ in den Hauptordner ziehen). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://makeitdone.de/</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/leistungen.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/so-arbeiten-wir.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/fuer-wen.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/ueber-uns.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/rechner.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/rechner-rechtsform.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/rechner-holding.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/rechner-netto.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/rechner-immobilien.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/rechner-steuerruecklage.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/haeufige-fragen.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/aktuelles.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/karriere.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/kontakt.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/impressum.html</loc><lastmod>2026-12-06</lastmod></url>
+  <url><loc>https://makeitdone.de/datenschutz.html</loc><lastmod>2026-12-06</lastmod></url>
+</urlset>
