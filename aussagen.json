@@ -1,0 +1,185 @@
+{
+  "hinweis": "Aussagen-Band der Website. Neue Aussage einfach als weiteren Eintrag ergänzen. Mit \"anzeigen\": false ausblenden. Die Danach-Sätze sind Zielbilder, keine Kundenzitate.",
+  "aussagen": [
+    {
+      "thema": "Steuern & Struktur",
+      "aussage": "Ich zahle gefühlt die Hälfte an Steuern. Alle sagen GmbH oder Holding – keiner sagt, ob das für mich passt.",
+      "einwand": "Das kann mir doch mein Steuerberater sagen.",
+      "antwort": "Dein Steuerberater bewertet, was du ihm vorlegst. Wir fangen früher an: bei deinen beruflichen und privaten Zielen. Daraus leiten wir ab, welche Struktur passt – und lassen sie mit deinem Steuerberater oder unserem Netzwerk umsetzen.",
+      "danach": "Zum ersten Mal weiß ich, warum meine Struktur so ist, wie sie ist – und nicht nur, dass man das so macht.",
+      "link": "/entwurf/c/rechner-rechtsform.html",
+      "linktext": "Rechner: Einzelunternehmen, GmbH oder Holding"
+    },
+    {
+      "thema": "Steuern & Struktur",
+      "aussage": "Ich habe die GmbH gegründet, weil man das so macht. Ob sie noch passt, weiß ich nicht.",
+      "einwand": "Umstrukturieren ist bestimmt teuer und kompliziert.",
+      "antwort": "Nicht jede Struktur muss sofort umgebaut werden. Wir zeigen dir zuerst, ob und wann sich eine Änderung lohnt – mit Zahlen, nicht mit Bauchgefühl. Erst dann entscheidest du.",
+      "danach": "Ich habe jetzt einen Fahrplan, statt mich über eine Entscheidung von damals zu ärgern.",
+      "link": "/entwurf/c/rechner-rechtsform.html",
+      "linktext": "Rechner: Einzelunternehmen, GmbH oder Holding"
+    },
+    {
+      "thema": "Steuern & Struktur",
+      "aussage": "Die Nachzahlung hat mich kalt erwischt.",
+      "einwand": "Das passiert eben, das ist normal.",
+      "antwort": "Überraschungen sind kein Naturgesetz. Mit Liquiditätsplanung und Steuerrücklage siehst du laufend, was auf dich zukommt, und legst das Geld vorher zur Seite.",
+      "danach": "Post vom Finanzamt macht mich nicht mehr nervös – das Geld liegt schon bereit.",
+      "link": "/entwurf/c/leistungen.html#cockpit",
+      "linktext": "Zahlen-Cockpit"
+    },
+    {
+      "thema": "Steuern & Struktur",
+      "aussage": "Ich verdiene gut, aber bei mir bleibt wenig hängen.",
+      "einwand": "Das liegt halt an den Steuern, da kann man nichts machen.",
+      "antwort": "Oft liegt es an der Verteilung: Gehalt, Ausschüttung, Benefits, Investitionen. Wir machen sichtbar, wo dein Geld hingeht und welche Stellschrauben es gibt.",
+      "danach": "Ich weiß jetzt, wo mein Geld bleibt – und kann es steuern.",
+      "link": "/entwurf/c/rechner-netto.html",
+      "linktext": "Rechner: Netto vom Brutto"
+    },
+    {
+      "thema": "Zahlen & Steuerung",
+      "aussage": "Die BWA kommt zu spät und sagt mir nichts.",
+      "einwand": "Noch ein Tool, noch mehr Aufwand für mich.",
+      "antwort": "Das Zahlen-Cockpit entsteht im Hintergrund aus deinen vorhandenen Daten, automatisiert und mit KPIs, die zu deinem Geschäft passen. Du schaust drauf, wir halten es aktuell.",
+      "danach": "Ich sehe meine Zahlen, wenn ich sie brauche – nicht erst zwei Monate später.",
+      "link": "/entwurf/c/leistungen.html#cockpit",
+      "linktext": "Zahlen-Cockpit"
+    },
+    {
+      "thema": "Zahlen & Steuerung",
+      "aussage": "Ich entscheide aus dem Bauch heraus.",
+      "einwand": "Bisher hat es doch auch funktioniert.",
+      "antwort": "Dein Bauchgefühl hat dich bis hierhin gebracht. Mit wachsender Größe werden Fehlentscheidungen aber teurer. Wir geben deinem Gefühl eine Zahlengrundlage – entscheiden tust weiter du.",
+      "danach": "Ich entscheide immer noch selbst, aber jetzt mit gutem Gefühl und guten Zahlen.",
+      "link": "/entwurf/c/leistungen.html#cockpit",
+      "linktext": "Zahlen-Cockpit"
+    },
+    {
+      "thema": "Zahlen & Steuerung",
+      "aussage": "Ich weiß nie, wie viel ich mir rausnehmen kann.",
+      "einwand": "Ich habe keine Zeit für Planungen.",
+      "antwort": "Die Planung bauen wir für dich auf und halten sie aktuell. Du bekommst eine klare Zahl: so viel ist sicher drin.",
+      "danach": "Ich nehme mir raus, was drin ist – ohne schlechtes Gewissen.",
+      "link": "/entwurf/c/leistungen.html#cockpit",
+      "linktext": "Zahlen-Cockpit"
+    },
+    {
+      "thema": "Zahlen & Steuerung",
+      "aussage": "Mein Steuerberater macht die Erklärungen, aber niemand schaut mit mir nach vorn.",
+      "einwand": "Dann zahle ich ja doppelt.",
+      "antwort": "Wir machen nicht dasselbe wie dein Steuerberater, sondern das, was davor fehlt: Planung, Sparring, Vorbereitung. Er bekommt sauber aufbereitete Sachverhalte und hat weniger Kleinkram.",
+      "danach": "Ich habe endlich jemanden, der mit mir nach vorn schaut – und mein Steuerberater freut sich über die aufbereiteten Unterlagen.",
+      "link": "/entwurf/c/so-arbeiten-wir.html",
+      "linktext": "So arbeiten wir"
+    },
+    {
+      "thema": "Steuerberater",
+      "aussage": "Ich erfahre erst im Jahresabschluss, was ich anders hätte machen sollen.",
+      "einwand": "Hinterher ist man immer schlauer.",
+      "antwort": "Genau deshalb sprechen wir mindestens einmal im Monat über anstehende Entscheidungen – bevor du handelst. Vor der Handlung ist der Spielraum am größten.",
+      "danach": "Ich bespreche Entscheidungen jetzt vorher, nicht hinterher.",
+      "link": "/entwurf/c/so-arbeiten-wir.html",
+      "linktext": "So arbeiten wir"
+    },
+    {
+      "thema": "Steuerberater",
+      "aussage": "Ich habe keine Zeit, meinem Steuerberater alles aufzubereiten.",
+      "einwand": "Dann muss ich mich ja noch mit einer weiteren Stelle abstimmen.",
+      "antwort": "Im Gegenteil: Wir übernehmen die Abstimmung. Wir sortieren Sachverhalte rechtzeitig und sind die Schnittstelle zu deinem Steuerberater oder unserem Netzwerk.",
+      "danach": "Ich muss nicht mehr zwischen allen hin- und herlaufen.",
+      "link": "/entwurf/c/leistungen.html#netzwerk",
+      "linktext": "Unser Netzwerk"
+    },
+    {
+      "thema": "Vermögen & Investieren",
+      "aussage": "Das Geld liegt auf dem Firmenkonto – privat oder über die Firma anlegen?",
+      "einwand": "Ihr wollt mir doch nur Produkte verkaufen.",
+      "antwort": "Wir verkaufen keine Anlageprodukte. Wir planen die Struktur. Konkrete Anlagen laufen über unabhängige Kooperationspartner.",
+      "danach": "Ich weiß jetzt, in welcher Struktur ich investiere und warum.",
+      "link": "/entwurf/c/leistungen.html",
+      "linktext": "Leistungen"
+    },
+    {
+      "thema": "Vermögen & Investieren",
+      "aussage": "Ich will Immobilien kaufen, aber nicht einfach privat drauflos.",
+      "einwand": "Eine Immobilien-GmbH lohnt sich erst ab vielen Objekten.",
+      "antwort": "Das kommt auf deine Pläne an: vermieten oder Projekte, kurz oder langfristig. Wir rechnen Varianten durch, bevor du kaufst – nicht danach.",
+      "danach": "Ich habe die Struktur gewählt, bevor der Notartermin kam.",
+      "link": "/entwurf/c/rechner-immobilien.html",
+      "linktext": "Rechner: Immobilien privat oder GmbH"
+    },
+    {
+      "thema": "Vermögen & Investieren",
+      "aussage": "Ich will Vermögen aufbauen, nicht nur Umsatz machen.",
+      "einwand": "Dafür bin ich noch zu klein.",
+      "antwort": "Struktur ist am günstigsten, wenn man früh anfängt. Wir verbinden deine Firmen- und Privatplanung zu einem Plan, der mitwächst.",
+      "danach": "Meine Firma arbeitet jetzt auch für mein Privatvermögen.",
+      "link": "/entwurf/c/leistungen.html",
+      "linktext": "Leistungen"
+    },
+    {
+      "thema": "Vergütung & Exit",
+      "aussage": "Jede Gehaltserhöhung frisst sich durch Steuern und Abgaben auf.",
+      "einwand": "Benefits sind kompliziert und machen Verwaltungsaufwand.",
+      "antwort": "Wir zeigen dir, welche Benefits zu deinem Team passen und was netto wirklich ankommt. Die Umsetzung planen wir so, dass sie im Alltag einfach läuft.",
+      "danach": "Ich weiß jetzt, was bei meinem Team netto wirklich ankommt.",
+      "link": "/entwurf/c/rechner-netto.html",
+      "linktext": "Rechner: Netto vom Brutto"
+    },
+    {
+      "thema": "Vergütung & Exit",
+      "aussage": "Mein Geschäftsführergehalt wurde nie geprüft.",
+      "einwand": "Das läuft doch, warum anfassen?",
+      "antwort": "Weil es dein größter Hebel sein kann. Gehalt, Ausschüttung und Sozialversicherung hängen zusammen. Wir schauen es uns einmal gründlich an und rechnen nach.",
+      "danach": "Meine Vergütung passt jetzt zu meiner Planung.",
+      "link": "/entwurf/c/rechner-netto.html",
+      "linktext": "Rechner: Netto vom Brutto"
+    },
+    {
+      "thema": "Vergütung & Exit",
+      "aussage": "Ich will in ein paar Jahren verkaufen und weiß nicht, was ich vorbereiten muss.",
+      "einwand": "Das ist doch noch lange hin.",
+      "antwort": "Ein guter Exit wird Jahre vorher vorbereitet: Struktur, Zahlen, Abhängigkeiten. Wer früh anfängt, hat mehr Möglichkeiten.",
+      "danach": "Ich weiß, was ich bis zum Verkauf noch erledigen muss – und es ist ein Plan, kein Bauchweh.",
+      "link": "/entwurf/c/rechner-holding.html",
+      "linktext": "Rechner: Exit und Beteiligungen"
+    },
+    {
+      "thema": "Vergütung & Exit",
+      "aussage": "Ein Käufer hat angefragt, aber meine Zahlen sind nicht aufbereitet.",
+      "einwand": "Das macht dann der Käufer bzw. sein Berater.",
+      "antwort": "Dann bestimmt der Käufer, wie deine Zahlen gelesen werden. Wir bereiten sie so auf, dass du gut verhandeln kannst.",
+      "danach": "Ich bin vorbereitet in die Gespräche gegangen.",
+      "link": "/entwurf/c/rechner-holding.html",
+      "linktext": "Rechner: Exit und Beteiligungen"
+    },
+    {
+      "thema": "Entlastung & Wachstum",
+      "aussage": "Alles hängt an mir.",
+      "einwand": "Abgeben kann ich nicht, das erklärt mehr Arbeit als es spart.",
+      "antwort": "Du bekommst eine feste Ansprechperson, die dein Unternehmen kennt. Am Anfang kostet es ein paar Gespräche, danach nimmt es dir dauerhaft Last ab.",
+      "danach": "Ich habe wieder Zeit für die Themen, die nur ich machen kann.",
+      "link": "/entwurf/c/so-arbeiten-wir.html",
+      "linktext": "So arbeiten wir"
+    },
+    {
+      "thema": "Entlastung & Wachstum",
+      "aussage": "Ich bräuchte jemanden wie einen CFO, aber Vollzeit lohnt sich nicht.",
+      "einwand": "Externe kennen mein Unternehmen nicht so gut wie Interne.",
+      "antwort": "Deshalb starten wir mit einem gründlichen Onboarding und bleiben mit regelmäßigen Gesprächen dran. Du bekommst Know-how auf CFO-Niveau, ohne Vollzeitstelle.",
+      "danach": "Ich habe einen Sparringspartner auf Augenhöhe, ohne eine Vollzeitstelle zu finanzieren.",
+      "link": "/entwurf/c/leistungen.html",
+      "linktext": "Leistungen"
+    },
+    {
+      "thema": "Entlastung & Wachstum",
+      "aussage": "Wir wachsen schnell, aber die Prozesse sind noch vom Anfang.",
+      "einwand": "Digitalisierung ist ein Riesenprojekt, dafür haben wir keine Kapazität.",
+      "antwort": "Wir starten mit den Prozessen, die dich am meisten Zeit kosten, und digitalisieren Schritt für Schritt – ohne dein Tagesgeschäft lahmzulegen.",
+      "danach": "Vieles läuft jetzt automatisch, was früher über meinen Kopf lief.",
+      "link": "/entwurf/c/leistungen.html",
+      "linktext": "Leistungen"
+    }
+  ]
+}
