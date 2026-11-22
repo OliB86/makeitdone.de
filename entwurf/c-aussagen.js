@@ -14,10 +14,10 @@
       '.aq{display:flex;width:max-content;animation:aqm var(--aqd,120s) linear infinite}' +
       '.aq:hover,.aq.hold{animation-play-state:paused}' +
       '@media (prefers-reduced-motion: reduce){.aq{animation:none}.aq-wrap{overflow-x:auto !important}}' +
-      '.aq-i{flex:0 0 380px;box-sizing:border-box;padding:6px 36px 6px 28px;border-left:1px solid rgba(20,20,20,.18);display:flex;flex-direction:column;gap:16px}' +
-      '.aq-a{font-family:"Space Grotesk",sans-serif;font-size:22px;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden;margin:0}' +
-      '.aq-d{font-family:"Instrument Serif",Georgia,serif;font-size:20px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;margin:0}' +
-      '.aq-b{margin-top:auto;padding-top:10px !important;align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:15px;font-weight:600;color:#141414;text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:32px}' +
+      '.aq-i{flex:0 0 380px;box-sizing:border-box;padding:12px 36px 12px 28px;border-left:1px solid rgba(20,20,20,.18);display:flex;flex-direction:column;gap:22px}' +
+      '.aq-a{font-family:"Space Grotesk",sans-serif;font-size:22px;font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden;margin:0}' +
+      '.aq-d{font-family:"Instrument Serif",Georgia,serif;font-size:20px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;margin:0}' +
+      '.aq-b{margin-top:auto;padding-top:18px !important;align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:15px;font-weight:600;color:#141414;text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:32px}' +
       '.aq-i.sel .aq-b{text-decoration-color:#F1D734;text-decoration-thickness:3px}' +
       '.aq-tab{border:1px solid #c8c8c8;background:transparent;color:#141414;border-radius:999px;padding:9px 16px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;min-height:44px}' +
       '.aq-tab.on{background:#141414;border-color:#141414;color:#fff}' +
