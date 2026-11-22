@@ -86,6 +86,45 @@
     document.body.appendChild(d);
   }
 
+  /* ---------- 3. Newsletter-Anmeldung im Fußbereich ---------- */
+  var NL_HOOK = 'https://hook.eu1.make.com/pnl3jns21hw48wkqlng9tzfdm5qpbyl8';
+  function nlBox() {
+    var f = document.querySelector('footer');
+    if (!f || f.querySelector('#mid-nl') || /newsletter-bestaetigt/.test(location.pathname)) return;
+    var d = document.createElement('div');
+    d.id = 'mid-nl';
+    d.style.cssText = 'max-width:1180px;margin:0 auto;padding:40px 24px 0 24px';
+    d.innerHTML =
+      '<div style="border:1px solid #333333;border-radius:20px;padding:24px;display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between">' +
+      '<div style="flex:1 1 280px"><b style="font-family:\'Space Grotesk\',sans-serif;font-size:20px;color:#ffffff">Praxiswissen per E-Mail</b>' +
+      '<p style="margin:6px 0 0 0;color:#d4d4d4;font-size:15px;line-height:1.55">Gelegentlich, ohne Werbeflut: Finanzen, Struktur und Steuern aus der Praxis. Jederzeit abbestellbar.</p></div>' +
+      '<form style="flex:1 1 420px;display:flex;flex-direction:column;gap:10px" novalidate>' +
+      '<span style="display:flex;gap:10px;flex-wrap:wrap">' +
+      '<input name="name" type="text" autocomplete="given-name" placeholder="Vorname" aria-label="Vorname" style="flex:1 1 140px;min-height:44px;border-radius:999px;border:1px solid #555555;background:#1e1e1e;color:#ffffff;padding:0 16px;font:inherit">' +
+      '<input name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" aria-label="E-Mail-Adresse" style="flex:2 1 200px;min-height:44px;border-radius:999px;border:1px solid #555555;background:#1e1e1e;color:#ffffff;padding:0 16px;font:inherit">' +
+      '<button type="submit" style="flex:0 0 auto;min-height:44px;border:0;border-radius:999px;background:#F1D734;color:#141414;padding:0 22px;font:inherit;font-weight:600;cursor:pointer">Anmelden</button></span>' +
+      '<label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.5;color:#a8a8a8"><input name="ok" type="checkbox" required style="margin-top:3px">' +
+      '<span>Ich möchte den Newsletter von make it done erhalten. Meine Daten werden nur dafür genutzt, Abmeldung jederzeit über den Link in jeder E-Mail. Details in der <a href="/datenschutz.html" style="color:#ffffff">Datenschutzerklärung</a>. <span style="font-size:12px;border:1px dashed #8a8a8a;border-radius:999px;padding:1px 8px">Text mit der Anwältin abstimmen</span></span></label>' +
+      '<span data-msg style="font-size:14px;color:#F1D734" aria-live="polite"></span></form></div>';
+    var form = d.querySelector('form'), msg = d.querySelector('[data-msg]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = form.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Bitte gib eine gültige E-Mail-Adresse ein.'; return; }
+      if (!form.ok.checked) { msg.textContent = 'Bitte setze den Haken, damit wir dir den Newsletter schicken dürfen.'; return; }
+      var p = new URLSearchParams();
+      p.set('name', form.name.value.trim()); p.set('email', email); p.set('quelle', 'Website-Fußbereich');
+      p.set('seite', location.pathname);
+      KEYS.forEach(function (k) { p.set(k, get(k)); });
+      form.querySelector('button').disabled = true;
+      fetch(NL_HOOK, { method: 'POST', mode: 'no-cors', body: p }).catch(function () {});
+      form.innerHTML = '<p style="margin:0;color:#ffffff;font-size:15px;line-height:1.55"><b>Fast geschafft.</b> Wir haben dir gerade eine E-Mail geschickt. Bitte bestätige deine Anmeldung über den Link darin.</p>';
+    });
+    f.insertBefore(d, f.firstChild);
+  }
+  new MutationObserver(nlBox).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', nlBox); else nlBox();
+
   window.midConsent = { open: banner, state: choice };
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('[data-cookie-settings]');
