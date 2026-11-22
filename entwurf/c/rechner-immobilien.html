@@ -146,7 +146,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </sc-for>
 </div>
 <div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
-<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b><span style="font-size: 12px; font-weight: 600; border: 1px dashed #b8b8b8; border-radius: 999px; padding: 2px 10px; color: #5c5c5c">Anbindung an Close – mit Berkant klären</span></span>
+<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b></span>
 <span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
 <span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
 <form class="lead-form" data-calc="immobilien" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
@@ -154,9 +154,10 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <label for="lead-mail-immobilien" class="sr">E-Mail-Adresse</label><input id="lead-mail-immobilien" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
 <label for="lead-ok-immobilien" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-immobilien" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-nl-immobilien" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-immobilien" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
-<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Der Versand per E-Mail startet, sobald Close angebunden ist.</span>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Deine persönliche Auswertung schicken wir dir zusätzlich per E-Mail.</span>
 </div>
 <div class="gated" style="display: flex; flex-direction: column; gap: 20px">
 <div style="overflow-x: auto">
@@ -321,7 +322,7 @@ class Component extends DCLogic {
 dcMount(Component, 'tpl', 'app');
 </script>
 <script src="../effects.js?v=1794953993"></script>
-<script src="../lead.js?v=1794953993"></script>
+<script src="../lead.js?v=1795370000"></script>
 <script src="../c-flow.js?v=1794953993"></script>
 <script src="../c-faq.js?v=1794953993"></script>
 </body>
