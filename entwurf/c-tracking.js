@@ -88,15 +88,20 @@
 
   /* ---------- 3. Newsletter-Anmeldung (Fußbereich oder eigener Block mit data-nl-inline) ---------- */
   var NL_HOOK = 'https://hook.eu1.make.com/pnl3jns21hw48wkqlng9tzfdm5qpbyl8';
-  function nlForm(light, quelle, title, intro) {
+  function nlForm(light, quelle, title, intro, plain) {
     var bg = light ? '#ffffff' : '#1e1e1e', fg = light ? '#141414' : '#ffffff', sub = light ? '#3d3d3d' : '#d4d4d4',
         small = light ? '#5c5c5c' : '#a8a8a8', line = light ? '#c8c8c8' : '#555555', box = light ? 'background:#F7F7F5;border:1px solid #e4e4e0' : 'border:1px solid #333333';
     var d = document.createElement('div');
     d.innerHTML =
-      '<div style="' + box + ';border-radius:20px;padding:24px;display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between">' +
-      '<div style="flex:1 1 280px"><b style="font-family:\'Space Grotesk\',sans-serif;font-size:20px;color:' + fg + '">' + title + '</b>' +
-      '<p style="margin:6px 0 0 0;color:' + sub + ';font-size:15px;line-height:1.55">' + intro + '</p></div>' +
-      '<form style="flex:1 1 420px;display:flex;flex-direction:column;gap:10px" novalidate>' +
+      (plain
+        ? '<div style="display:flex;flex-direction:column;gap:18px">' +
+          '<div><b style="font-family:\'Space Grotesk\',sans-serif;font-size:22px;color:#ffffff">' + title + '</b>' +
+          '<p style="margin:8px 0 0 0;color:' + sub + ';font-size:15px;line-height:1.55;max-width:460px">' + intro + '</p></div>' +
+          '<form style="display:flex;flex-direction:column;gap:12px" novalidate>'
+        : '<div style="' + box + ';border-radius:20px;padding:24px;display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between">' +
+          '<div style="flex:1 1 280px"><b style="font-family:\'Space Grotesk\',sans-serif;font-size:20px;color:' + fg + '">' + title + '</b>' +
+          '<p style="margin:6px 0 0 0;color:' + sub + ';font-size:15px;line-height:1.55">' + intro + '</p></div>' +
+          '<form style="flex:1 1 420px;display:flex;flex-direction:column;gap:10px" novalidate>') +
       '<span style="display:flex;gap:10px;flex-wrap:wrap">' +
       '<input name="name" type="text" autocomplete="given-name" placeholder="Vorname" aria-label="Vorname" style="flex:1 1 140px;min-height:44px;border-radius:999px;border:1px solid ' + line + ';background:' + bg + ';color:' + fg + ';padding:0 16px;font:inherit">' +
       '<input name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" aria-label="E-Mail-Adresse" style="flex:2 1 200px;min-height:44px;border-radius:999px;border:1px solid ' + line + ';background:' + bg + ';color:' + fg + ';padding:0 16px;font:inherit">' +
@@ -128,10 +133,23 @@
     });
     var f = document.querySelector('footer');
     if (!f || f.querySelector('#mid-nl') || document.querySelector('[data-nl-inline]') || /newsletter-bestaetigt/.test(location.pathname)) return;
-    var d = nlForm(false, 'Website-Fußbereich', 'Praxiswissen per E-Mail', 'Gelegentlich, ohne Werbeflut: Finanzen, Struktur und Steuern aus der Praxis. Jederzeit abbestellbar.');
+    var d = nlForm(false, 'Website-Fußbereich', 'Praxiswissen per E-Mail', 'Gelegentlich, ohne Werbeflut: Finanzen, Struktur und Steuern aus der Praxis. Jederzeit abbestellbar.', true);
     d.id = 'mid-nl';
-    d.style.cssText = 'max-width:1180px;margin:0 auto;padding:40px 24px 0 24px';
-    f.insertBefore(d, f.firstChild);
+    var c = f.firstElementChild;
+    if (c && c.children.length >= 2) {
+      if (!document.getElementById('mid-ft-css')) {
+        var s = document.createElement('style'); s.id = 'mid-ft-css';
+        s.textContent = 'html.mid-ftnl footer>div:first-child{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 72px!important;align-items:start}' +
+          'html.mid-ftnl footer>div:first-child>div:last-child{grid-column:1/-1;border-top:1px solid #2e2e2e;padding-top:24px}' +
+          '@media (max-width:820px){html.mid-ftnl footer>div:first-child{grid-template-columns:minmax(0,1fr)}}';
+        document.head.appendChild(s);
+      }
+      document.documentElement.classList.add('mid-ftnl');
+      c.insertBefore(d, c.lastElementChild);
+    } else {
+      d.style.cssText = 'max-width:1180px;margin:0 auto;padding:40px 24px 0 24px';
+      f.insertBefore(d, f.firstChild);
+    }
   }
   new MutationObserver(nlBox).observe(document.documentElement, { childList: true, subtree: true });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', nlBox); else nlBox();
