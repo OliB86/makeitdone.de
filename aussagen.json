@@ -7,7 +7,7 @@
       "einwand": "Das kann mir doch mein Steuerberater sagen.",
       "antwort": "Dein Steuerberater bewertet, was du ihm vorlegst. Wir fangen früher an: bei deinen beruflichen und privaten Zielen. Daraus leiten wir ab, welche Struktur passt – und lassen sie mit deinem Steuerberater oder unserem Netzwerk umsetzen.",
       "danach": "Zum ersten Mal weiß ich, warum meine Struktur so ist, wie sie ist – und nicht nur, dass man das so macht.",
-      "link": "/entwurf/c/rechner-rechtsform.html",
+      "link": "/entwurf/c/rechner-gmbh.html",
       "linktext": "Rechner: Einzelunternehmen, GmbH oder Holding"
     },
     {
@@ -16,7 +16,7 @@
       "einwand": "Umstrukturieren ist bestimmt teuer und kompliziert.",
       "antwort": "Nicht jede Struktur muss sofort umgebaut werden. Wir zeigen dir zuerst, ob und wann sich eine Änderung lohnt – mit Zahlen, nicht mit Bauchgefühl. Erst dann entscheidest du.",
       "danach": "Ich habe jetzt einen Fahrplan, statt mich über eine Entscheidung von damals zu ärgern.",
-      "link": "/entwurf/c/rechner-rechtsform.html",
+      "link": "/entwurf/c/rechner-gmbh.html",
       "linktext": "Rechner: Einzelunternehmen, GmbH oder Holding"
     },
     {
@@ -34,7 +34,7 @@
       "einwand": "Das liegt halt an den Steuern, da kann man nichts machen.",
       "antwort": "Oft liegt es an der Verteilung: Gehalt, Ausschüttung, Benefits, Investitionen. Wir machen sichtbar, wo dein Geld hingeht und welche Stellschrauben es gibt.",
       "danach": "Ich weiß jetzt, wo mein Geld bleibt – und kann es steuern.",
-      "link": "/entwurf/c/rechner-netto.html",
+      "link": "/entwurf/c/rechner-mitarbeiter-benefits.html",
       "linktext": "Rechner: Netto vom Brutto"
     },
     {
@@ -124,7 +124,7 @@
       "einwand": "Benefits sind kompliziert und machen Verwaltungsaufwand.",
       "antwort": "Wir zeigen dir, welche Benefits zu deinem Team passen und was netto wirklich ankommt. Die Umsetzung planen wir so, dass sie im Alltag einfach läuft.",
       "danach": "Ich weiß jetzt, was bei meinem Team netto wirklich ankommt.",
-      "link": "/entwurf/c/rechner-netto.html",
+      "link": "/entwurf/c/rechner-mitarbeiter-benefits.html",
       "linktext": "Rechner: Netto vom Brutto"
     },
     {
@@ -133,7 +133,7 @@
       "einwand": "Das läuft doch, warum anfassen?",
       "antwort": "Weil es dein größter Hebel sein kann. Gehalt, Ausschüttung und Sozialversicherung hängen zusammen. Wir schauen es uns einmal gründlich an und rechnen nach.",
       "danach": "Meine Vergütung passt jetzt zu meiner Planung.",
-      "link": "/entwurf/c/rechner-netto.html",
+      "link": "/entwurf/c/rechner-mitarbeiter-benefits.html",
       "linktext": "Rechner: Netto vom Brutto"
     },
     {
@@ -142,7 +142,7 @@
       "einwand": "Das ist doch noch lange hin.",
       "antwort": "Ein guter Exit wird Jahre vorher vorbereitet: Struktur, Zahlen, Abhängigkeiten. Wer früh anfängt, hat mehr Möglichkeiten.",
       "danach": "Ich weiß, was ich bis zum Verkauf noch erledigen muss – und es ist ein Plan, kein Bauchweh.",
-      "link": "/entwurf/c/rechner-holding.html",
+      "link": "/entwurf/c/rechner-anteilsverkauf.html",
       "linktext": "Rechner: Exit und Beteiligungen"
     },
     {
@@ -151,7 +151,7 @@
       "einwand": "Das macht dann der Käufer bzw. sein Berater.",
       "antwort": "Dann bestimmt der Käufer, wie deine Zahlen gelesen werden. Wir bereiten sie so auf, dass du gut verhandeln kannst.",
       "danach": "Ich bin vorbereitet in die Gespräche gegangen.",
-      "link": "/entwurf/c/rechner-holding.html",
+      "link": "/entwurf/c/rechner-anteilsverkauf.html",
       "linktext": "Rechner: Exit und Beteiligungen"
     },
     {
