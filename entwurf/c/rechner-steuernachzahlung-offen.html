@@ -161,12 +161,20 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <a href="../c/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Steuernachzahlung</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 4.8vw, 58px); line-height: 1.04">Wie hoch wird deine <span class="mk">Steuernachzahlung</span>?</h1>
-<p style="margin: 0; max-width: 760px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.45; color: #3d3d3d">Wer wächst, zahlt zu wenig voraus. Dann trifft der Bescheid doppelt: Nachzahlung <b style="color:#141414">und</b> höhere Vorauszahlungen. Schieb die Regler und sieh in 30 Sekunden, was auf dich zukommt.</p>
+<p style="margin: 0; max-width: 760px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.45; color: #3d3d3d">Wer wächst, zahlt zu wenig voraus. Dann trifft der Bescheid mehrfach: Nachzahlung <b style="color:#141414">und</b> höhere Vorauszahlungen, oft für mehrere Jahre auf einmal. Schieb die Regler und sieh in 30 Sekunden, was auf dich zukommt.</p>
 <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #5c5c5c; margin-top: 10px">↓ Deine Zahlen eintragen</span>
 </section>
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 8px 24px 48px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Für welches Jahr steht die Steuererklärung an?</span>
+<div role="group" aria-label="Jahr der Steuererklärung" style="display: flex; gap: 6px; flex-wrap: wrap">
+<sc-for list="{{jahre}}" as="j" hint-placeholder-count="3">
+<button type="button" onClick="{{j.pick}}" aria-pressed="{{j.on}}" style="{{j.style}}">{{j.label}}</button>
+</sc-for>
+</div>
+</div>
 <sc-for list="{{sliders}}" as="sl" hint-placeholder-count="4">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="{{sl.id}}" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>{{sl.label}}</span><span style="font-family: 'Space Grotesk', sans-serif">{{sl.shown}}</span></label>
@@ -210,9 +218,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </sc-for>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
-<span><b>Nachzahlung:</b> kommt mit dem Bescheid, meist ein bis zwei Jahre nach dem Gewinnjahr.</span>
-<span><b>Doppelter Schlag:</b> Mit dem Bescheid steigen meist auch die Vorauszahlungen fürs laufende Jahr. Plan beides ein.</span>
-<span><b>Zurücklegen:</b> Am einfachsten ist ein eigenes Steuerkonto, auf das jeden Monat der angezeigte Betrag geht.</span>
+<span><b>Mehrfacher Schlag:</b> {{noteJahre}}</span>
+<span><b>Annahme:</b> gleicher Gewinn und gleiche Vorauszahlungen in den Folgejahren, gerechnet bis heute.</span>
+<span><b>Der richtige Zeitpunkt:</b> Ob du jetzt etwas tun solltest oder besser abwartest, hängt davon ab, wie sich dein Gewinn entwickelt. Der falsche Zeitpunkt kann dich auf einen Schlag mehr Liquidität kosten. Welcher Weg bei dir passt, klären wir im Erstgespräch.</span>
 </div>
 </div>
 </div>
@@ -221,7 +229,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <div class="leadbox wb-box">
 <div class="wb-grid">
 <div class="wb-book" aria-hidden="true"><div class="wb-shadow"></div><div class="wb-spine"></div><div class="wb-leaf"><div class="wb-pg front cover"><img src="../img/workbook-steuernachzahlung.webp" alt="" width="150" height="212" loading="lazy"></div><div class="wb-pg back"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div></div><div class="wb-leaf"><div class="wb-pg front"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div><div class="wb-pg back"><i class="h"></i><i class="y"></i><i class="w9"></i><i class="w9"></i><i class="w7"></i><i class="t"></i></div></div><div class="wb-leaf"><div class="wb-pg front"><i class="h"></i><i class="y"></i><i class="w9"></i><i class="w9"></i><i class="w7"></i><i class="t"></i></div><div class="wb-pg back"><i class="h"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i><i class="w7"></i></div></div><div class="wb-leaf"><div class="wb-pg front"><i class="h"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i><i class="w7"></i></div><div class="wb-pg back"><i class="h"></i><i class="w9"></i><i class="w7"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i></div></div><div class="wb-leaf"><div class="wb-pg front"><i class="h"></i><i class="w9"></i><i class="w7"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i></div><div class="wb-pg back"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div></div><div class="wb-leaf"><div class="wb-pg front dark"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div><div class="wb-pg back"><i class="h"></i><i class="y"></i><i class="w9"></i><i class="w9"></i><i class="w7"></i><i class="t"></i></div></div></div>
-<div class="wb-copy"><span class="wb-kick"><span class="wb-dot"></span>Workbook · kostenlos</span><h2 class="wb-h">Dein Steuernachzahlungs-Plan als PDF</h2><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</span></li></ul></div>
+<div class="wb-copy"><span class="wb-kick"><span class="wb-dot"></span>Workbook · kostenlos</span><h2 class="wb-h">Dein Steuernachzahlungs-Plan als PDF</h2><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deinen Rücklagen-Plan:</b> was bis heute aufgelaufen ist und wie viel du ab jetzt im Monat zurücklegst</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</span></li></ul></div>
 </div>
 <div class="wb-formwrap"><div class="wb-me"><img src="../img/olga-sw-hell.webp" alt="Olga Bertram" width="96" height="120" loading="lazy"><div><span class="wb-me-k">Kommt persönlich von</span><b>Olga Bertram</b><span class="wb-me-r">Gründerin, make it done GmbH</span></div></div><span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung oben wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span><span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
 <form class="lead-form wb-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
@@ -326,15 +334,27 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 <a href="../c/rechner.html" style="align-self: flex-start; font-size: 14px; font-weight: 500; text-decoration: none; color: #3d3d3d">← Alle Rechner</a>
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #ffffff; color: #3d3d3d; box-shadow: 0 2px 10px rgba(0,0,0,.08)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1D734"></span>Rechner · Steuernachzahlung</span>
 <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 4.8vw, 58px); line-height: 1.04">Wie hoch wird deine <span class="mk">Steuernachzahlung</span>?</h1>
-<p style="margin: 0; max-width: 760px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.45; color: #3d3d3d">Wer wächst, zahlt zu wenig voraus. Dann trifft der Bescheid doppelt: Nachzahlung <b style="color:#141414">und</b> höhere Vorauszahlungen. Schieb die Regler und sieh in 30 Sekunden, was auf dich zukommt.</p>
+<p style="margin: 0; max-width: 760px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.45; color: #3d3d3d">Wer wächst, zahlt zu wenig voraus. Dann trifft der Bescheid mehrfach: Nachzahlung <b style="color:#141414">und</b> höhere Vorauszahlungen, oft für mehrere Jahre auf einmal. Schieb die Regler und sieh in 30 Sekunden, was auf dich zukommt.</p>
 <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #5c5c5c; margin-top: 10px">↓ Deine Zahlen eintragen</span>
 </section>
 
 <section style="max-width: 1180px; margin: 0 auto; padding: 8px 24px 48px 24px; display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start">
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; border-top: 1px solid #141414; padding: 22px 0 0 0">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 15px; font-weight: 600">Für welches Jahr steht die Steuererklärung an?</span>
+<div role="group" aria-label="Jahr der Steuererklärung" style="display: flex; gap: 6px; flex-wrap: wrap">
+
+<button type="button" aria-pressed="false" style="border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; background: #ffffff; color: #141414">2024</button>
+
+<button type="button" aria-pressed="true" style="border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; background: #141414; color: #ffffff; font-weight: 600">2025</button>
+
+<button type="button" aria-pressed="false" style="border: 1px solid #141414; border-radius: 999px; padding: 10px 14px; font-size: 13px; cursor: pointer; min-height: 40px; background: #ffffff; color: #141414">2026</button>
+
+</div>
+</div>
 
 <div style="display: flex; flex-direction: column; gap: 8px">
-<label for="f-gewinn" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Erwarteter Gewinn im Jahr</span><span style="font-family: 'Space Grotesk', sans-serif">150.000 €</span></label>
+<label for="f-gewinn" style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600"><span>Gewinn 2025</span><span style="font-family: 'Space Grotesk', sans-serif">150.000 €</span></label>
 <input id="f-gewinn" type="range" min="20000" max="500000" step="5000" value="150000">
 <span style="font-size: 12px; color: #5c5c5c">Gewinn vor Steuern, nach Betriebsausgaben</span>
 </div>
@@ -366,9 +386,9 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 
 <div style="flex: 1.5 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Voraussichtliche Nachzahlung</span>
-<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; line-height: 1">23.523 €</span>
-<span style="font-size: 15px; color: #3d3d3d">Leg dafür 1.960 € im Monat zusätzlich zurück.</span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5c5c">Mit dem Bescheid fällig, bis zu</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; line-height: 1">47.047 €</span>
+<span style="font-size: 15px; color: #3d3d3d">Davon Nachzahlung 2025: 23.523 €. Ab jetzt 1.960 € im Monat zurücklegen, damit die Lücke nicht weiter wächst.</span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px">
 
@@ -421,20 +441,26 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Schon vorausbezahlt</span>
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">30.000 €</span>
 
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Nachzahlung mit dem Bescheid</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Nachzahlung 2025</span>
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 700;">23.523 €</span>
+
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Vorauszahlungen 2026, angehoben</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">23.523 €</span>
+
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Fällig mit dem Bescheid, bis zu</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 700;">47.047 €</span>
 
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Passende Vorauszahlung je Quartal</span>
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">13.381 €</span>
 
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Höhere Vorauszahlungen im Bescheidjahr</span>
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 700;">bis zu 23.523 € zusätzlich</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Ab jetzt monatlich zurücklegen</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 700;">1.960 €</span>
 
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #3d3d3d; border-left: 3px solid #F1D734; padding: 4px 0 4px 20px">
-<span><b>Nachzahlung:</b> kommt mit dem Bescheid, meist ein bis zwei Jahre nach dem Gewinnjahr.</span>
-<span><b>Doppelter Schlag:</b> Mit dem Bescheid steigen meist auch die Vorauszahlungen fürs laufende Jahr. Plan beides ein.</span>
-<span><b>Zurücklegen:</b> Am einfachsten ist ein eigenes Steuerkonto, auf das jeden Monat der angezeigte Betrag geht.</span>
+<span><b>Mehrfacher Schlag:</b> Mit dem Bescheid für 2025 hebt das Finanzamt auch die Vorauszahlungen für 2026 an, rückwirkend und mit kurzer Frist.</span>
+<span><b>Annahme:</b> gleicher Gewinn und gleiche Vorauszahlungen in den Folgejahren, gerechnet bis heute.</span>
+<span><b>Der richtige Zeitpunkt:</b> Ob du jetzt etwas tun solltest oder besser abwartest, hängt davon ab, wie sich dein Gewinn entwickelt. Der falsche Zeitpunkt kann dich auf einen Schlag mehr Liquidität kosten. Welcher Weg bei dir passt, klären wir im Erstgespräch.</span>
 </div>
 </div>
 </div>
@@ -443,7 +469,7 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 <div class="leadbox wb-box">
 <div class="wb-grid">
 <div class="wb-book" aria-hidden="true" style="--o: 0.000;"><div class="wb-shadow"></div><div class="wb-spine"></div><div class="wb-leaf" style="--r: 0.0deg; z-index: 16;"><div class="wb-pg front cover"><img src="../img/workbook-steuernachzahlung.webp" alt="" width="150" height="212" loading="lazy"></div><div class="wb-pg back"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div></div><div class="wb-leaf" style="--r: 0.0deg; z-index: 15;"><div class="wb-pg front"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div><div class="wb-pg back"><i class="h"></i><i class="y"></i><i class="w9"></i><i class="w9"></i><i class="w7"></i><i class="t"></i></div></div><div class="wb-leaf" style="--r: 0.0deg; z-index: 14;"><div class="wb-pg front"><i class="h"></i><i class="y"></i><i class="w9"></i><i class="w9"></i><i class="w7"></i><i class="t"></i></div><div class="wb-pg back"><i class="h"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i><i class="w7"></i></div></div><div class="wb-leaf" style="--r: 0.0deg; z-index: 13;"><div class="wb-pg front"><i class="h"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i><i class="w7"></i></div><div class="wb-pg back"><i class="h"></i><i class="w9"></i><i class="w7"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i></div></div><div class="wb-leaf" style="--r: 0.0deg; z-index: 12;"><div class="wb-pg front"><i class="h"></i><i class="w9"></i><i class="w7"></i><i class="t"></i><i class="w9"></i><i class="w5"></i><i class="y"></i></div><div class="wb-pg back"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div></div><div class="wb-leaf" style="--r: 0.0deg; z-index: 11;"><div class="wb-pg front dark"><i class="h"></i><i class="w7"></i><i class="t"></i><i class="t"></i><i class="w5"></i></div><div class="wb-pg back"><i class="h"></i><i class="y"></i><i class="w9"></i><i class="w9"></i><i class="w7"></i><i class="t"></i></div></div></div>
-<div class="wb-copy"><span class="wb-kick"><span class="wb-dot"></span>Workbook · kostenlos</span><h2 class="wb-h">Dein Steuernachzahlungs-Plan als PDF</h2><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</span></li></ul></div>
+<div class="wb-copy"><span class="wb-kick"><span class="wb-dot"></span>Workbook · kostenlos</span><h2 class="wb-h">Dein Steuernachzahlungs-Plan als PDF</h2><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deinen Rücklagen-Plan:</b> was bis heute aufgelaufen ist und wie viel du ab jetzt im Monat zurücklegst</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</span></li></ul></div>
 </div>
 <div class="wb-formwrap"><div class="wb-me"><img src="../img/olga-sw-hell.webp" alt="Olga Bertram" width="96" height="120" loading="lazy"><div><span class="wb-me-k">Kommt persönlich von</span><b>Olga Bertram</b><span class="wb-me-r">Gründerin, make it done GmbH</span></div></div><span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung oben wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span><span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
 <form class="lead-form wb-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
@@ -533,7 +559,8 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { gewinn: 150000, vz: 7500, hebe: 400, art: 'gew', split: false };
+    var Y = new Date().getFullYear();
+    this.state = { gewinn: 150000, vz: 7500, hebe: 400, art: 'gew', split: false, jahr: Y - 1 };
   }
   renderVals() {
     var self = this, st = this.state;
@@ -556,12 +583,19 @@ class Component extends DCLogic {
     var total = en + so + gst, paid = 4 * st.vz, diff = total - paid;
     var newRate = total / 4, extra = Math.max(0, newRate - st.vz) * 4;
     var monthly = Math.max(0, diff) / 12;
+    /* Stand heute: Gewinnjahr J, laufendes Jahr Y. Mit dem Bescheid kommen Nachzahlung J,
+       rückwirkend angehobene Vorauszahlungen für die Jahre dazwischen (§ 37 Abs. 3 EStG) und fürs laufende Jahr. */
+    var now = new Date(), Y = now.getFullYear(), J = st.jahr, gap = Math.max(0, diff);
+    var mid = [], k; for (k = J + 1; k < Y; k++) mid.push(k);
+    var zm = 0; if (J <= Y - 2) { var zs = new Date(J + 2, 3, 1); zm = Math.max(0, (now.getFullYear() - zs.getFullYear()) * 12 + now.getMonth() - zs.getMonth()); }
+    var zins = gap * 0.0015 * zm;
+    var summe = gap + gap * mid.length + (J < Y ? gap : 0) + zins;
     var _r = function (n) { return Math.round(n).toLocaleString('de-DE') + ' €'; };
     window.midWB = { gewinn: _r(G), art: gew ? 'Gewerbe' : 'Freiberufler', gew: gew, hebe: String(H), vz: _r(st.vz), split: !!st.split,
       est_tarif: _r(e), anrechnung: _r(anr), est: _r(en), soli: _r(so), gewst: _r(gst), total: _r(total), quote: pct(total / G),
       paid: _r(paid), diff: _r(Math.abs(diff)), diff_label: diff > 0 ? "voraussichtliche Nachzahlung" : "voraussichtliche Erstattung", diff_rund: _r(Math.round(Math.abs(diff) / 500) * 500), nachzahlung: diff > 0,
-      doppelt: _r(Math.max(0, diff) + extra), rate_neu: _r(newRate), rate_est: _r((en + so) / 4), rate_gewst: _r(gst / 4),
-      extra: _r(extra), monatlich: _r(monthly), zins: _r(Math.max(0, diff) * 0.0015) };
+      doppelt: _r(summe), summe: _r(summe), jahr: String(J), jahr1: String(J + 1), jahr2: String(J + 2), jahr_akt: String(Y), mitte: mid.length > 0, akt: J < Y, zins_on: zm > 0, zins_monate: String(zm), zins_ab: 'April ' + (J + 2), rate_neu: _r(newRate), rate_est: _r((en + so) / 4), rate_gewst: _r(gst / 4),
+      extra: _r(extra), monatlich: _r(monthly), zins: _r(zins), zins_monat: _r(gap * 0.0015) };
     var cellBase = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
     function row(label, v, bold) { return { label: label, v: v, ls: cellBase + ' font-weight: 600;', cs: cellBase + (bold ? ' font-weight: 700;' : '') }; }
     var rows = [
@@ -577,9 +611,13 @@ class Component extends DCLogic {
     ]).concat([
       row('Steuer fürs Jahr gesamt', eur(total) + ' · ' + pct(total / G) + ' vom Gewinn', true),
       row('Schon vorausbezahlt', eur(paid)),
-      row(diff >= 0 ? 'Nachzahlung mit dem Bescheid' : 'Erstattung mit dem Bescheid', eur(Math.abs(diff)), true),
+      row(diff >= 0 ? 'Nachzahlung ' + J : 'Erstattung ' + J, eur(Math.abs(diff)), true)
+    ]).concat(gap > 0 ? mid.map(function (y) { return row('Vorauszahlungen ' + y + ', rückwirkend angehoben', eur(gap)); }).concat(
+      J < Y ? [row('Vorauszahlungen ' + Y + ', angehoben', eur(gap))] : [],
+      zm > 0 ? [row('Zinsen seit April ' + (J + 2) + ' (§ 233a AO)', eur(zins))] : [],
+      [row('Fällig mit dem Bescheid, bis zu', eur(summe), true)]) : []).concat([
       row('Passende Vorauszahlung je Quartal', eur(newRate)),
-      row('Höhere Vorauszahlungen im Bescheidjahr', extra > 0 ? 'bis zu ' + eur(extra) + ' zusätzlich' : 'keine', true)
+      row('Ab jetzt monatlich zurücklegen', gap > 0 ? eur(monthly) : 'nicht nötig', true)
 
     ]);
     var max = Math.max(total, paid, Math.abs(diff), 1);
@@ -592,7 +630,7 @@ class Component extends DCLogic {
         change: function (ev) { var o = {}; o[key] = Number(ev.target.value); self.setState(o); } };
     }
     var sliders = [
-      slider('f-gewinn', 'Erwarteter Gewinn im Jahr', 'gewinn', 20000, 500000, 5000, eur(G), 'Gewinn vor Steuern, nach Betriebsausgaben'),
+      slider('f-gewinn', 'Gewinn ' + J, 'gewinn', 20000, 500000, 5000, eur(G), 'Gewinn vor Steuern, nach Betriebsausgaben'),
       slider('f-vz', 'Bisherige Vorauszahlung je Quartal', 'vz', 0, 50000, 250, eur(st.vz), 'Einkommen- und Gewerbesteuer zusammen, laut letztem Bescheid')
     ];
     if (gew) sliders.push(slider('f-hebe', 'Gewerbesteuer-Hebesatz', 'hebe', 280, 900, 5, H + ' %', 'je nach Gemeinde, ab 2027 mindestens 280 %'));
@@ -600,10 +638,15 @@ class Component extends DCLogic {
     var arten = [['gew', 'Gewerbe'], ['frei', 'Freiberufler']].map(function (a) {
       var on = st.art === a[0]; return { label: a[1], on: on, style: btn(on), pick: function () { self.setState({ art: a[0] }); } };
     });
-    return { sliders: sliders, arten: arten, rows: rows, bars: bars,
-      headLabel: diff >= 0 ? 'Voraussichtliche Nachzahlung' : 'Voraussichtliche Erstattung',
-      headValue: eur(Math.abs(diff)),
-      headHint: diff > 0 ? 'Leg dafür ' + eur(monthly) + ' im Monat zusätzlich zurück.' : 'Deine Vorauszahlungen reichen für diesen Gewinn.' };
+    var jahre = [Y - 2, Y - 1, Y].map(function (y) {
+      var on = J === y; return { label: String(y), on: on, style: btn(on), pick: function () { self.setState({ jahr: y }); } };
+    });
+    var ys = mid.concat(J < Y ? [Y] : []);
+    var noteJahre = gap > 0 ? (ys.length ? 'Mit dem Bescheid für ' + J + ' hebt das Finanzamt auch die Vorauszahlungen für ' + ys.join(' und ') + ' an, rückwirkend und mit kurzer Frist.' + (zm > 0 ? ' Dazu laufen seit April ' + (J + 2) + ' Zinsen.' : '') : 'Die Nachzahlung für ' + J + ' kommt mit dem Bescheid, und mit ihm steigen die Vorauszahlungen für die Folgejahre.') : 'Deine Vorauszahlungen reichen für diesen Gewinn.';
+    return { sliders: sliders, arten: arten, jahre: jahre, rows: rows, bars: bars, noteJahre: noteJahre,
+      headLabel: diff >= 0 ? (summe > gap ? 'Mit dem Bescheid fällig, bis zu' : 'Voraussichtliche Nachzahlung ' + J) : 'Voraussichtliche Erstattung ' + J,
+      headValue: eur(diff >= 0 ? summe : Math.abs(diff)),
+      headHint: diff > 0 ? (summe > gap ? 'Davon Nachzahlung ' + J + ': ' + eur(gap) + '. ' : '') + 'Ab jetzt ' + eur(monthly) + ' im Monat zurücklegen, damit die Lücke nicht weiter wächst.' : 'Deine Vorauszahlungen reichen für diesen Gewinn.' };
   }
 }
 
