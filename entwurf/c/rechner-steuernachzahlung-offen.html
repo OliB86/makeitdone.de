@@ -78,20 +78,46 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .mbar{display:none}
 @media (max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e4e4e4;backdrop-filter:blur(8px)}.mbar a{flex:1;text-align:center;background:#F1D734;color:#141414;font-weight:700;font-size:16px;padding:14px 18px;border-radius:999px;text-decoration:none}body.has-mbar{padding-bottom:78px}}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.logo-dot,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
-.wb-promo{display:flex;gap:22px;align-items:flex-start}
-.wb-cover{flex:0 0 132px;width:132px;height:auto;border-radius:6px;transform:rotate(-4deg);box-shadow:8px 8px 0 #F1D734,0 10px 24px rgba(0,0,0,.18);margin:6px 6px 10px 4px}
-.wb-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
-.wb-sub{font-size:16px;color:#3d3d3d}
-.wb-in{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5c5c5c;margin-top:8px}
-.wb-list{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-.wb-list li{position:relative;padding-left:36px;font-size:15px;line-height:1.5;color:#3d3d3d}
+.wb-box{background:#ffffff;border:1px solid #141414;border-radius:28px;padding:44px 48px;display:flex;flex-direction:column;gap:32px}
+.wb-grid{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center}
+.wb-stack{position:relative;height:300px;--p:0;--k:.72}
+.wb-pg{position:absolute;left:60px;top:40px;width:150px;height:212px;background:#ffffff;border:1px solid #d8d8d8;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.10);padding:16px 14px;display:flex;flex-direction:column;gap:8px;transform-origin:20% 110%;transition:transform .12s linear;overflow:hidden}
+.wb-pg i{display:block;border-radius:3px;background:#e6e6e6}
+.wb-pg .h{height:10px;width:45%;background:#141414;margin-bottom:6px}
+.wb-pg .l{height:6px}.wb-pg .w9{width:92%}.wb-pg .w8{width:80%}.wb-pg .w7{width:70%}.wb-pg .w6{width:60%}.wb-pg .w5{width:50%}
+.wb-pg .t{height:38px;background:repeating-linear-gradient(#ffffff 0 8px,#ececec 8px 9px);border:1px solid #ececec}
+.wb-pg .r{height:9px;background:linear-gradient(90deg,#d0d0d0 0 12px,transparent 12px 18px,#ececec 18px)}
+.wb-pg .c{height:16px;background:linear-gradient(90deg,#F1D734 0 16px,transparent 16px 22px,#ececec 22px 80%,transparent 80%)}
+.wb-pg .y{height:22px;width:70%;background:#F1D734}.wb-pg .y.wide{width:100%;height:40px;margin-top:auto}
+.wb-pg.dark{background:#141414;border-color:#141414}.wb-pg.dark i{background:#3a3a3a}.wb-pg.dark .h{background:#ffffff}.wb-pg.dark .y{background:#F1D734}
+.wb-pg.cover{padding:0;border:0;box-shadow:10px 10px 0 #F1D734,0 14px 30px rgba(0,0,0,.22)}
+.wb-pg.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.wb-pg:nth-child(1){transform:translate(calc(var(--p)*var(--k)*150px),calc(var(--p)*var(--k)*-18px)) rotate(calc(var(--p)*16deg))}
+.wb-pg:nth-child(2){transform:translate(calc(var(--p)*var(--k)*118px),calc(var(--p)*var(--k)*-12px)) rotate(calc(var(--p)*12deg))}
+.wb-pg:nth-child(3){transform:translate(calc(var(--p)*var(--k)*86px),calc(var(--p)*var(--k)*-7px)) rotate(calc(var(--p)*8deg))}
+.wb-pg:nth-child(4){transform:translate(calc(var(--p)*var(--k)*56px),calc(var(--p)*var(--k)*-3px)) rotate(calc(var(--p)*4deg))}
+.wb-pg:nth-child(5){transform:translate(calc(var(--p)*var(--k)*26px),0) rotate(calc(var(--p)*0deg))}
+.wb-pg:nth-child(6){transform:translate(calc(var(--p)*var(--k)*-30px),calc(var(--p)*var(--k)*6px)) rotate(calc(-3deg - var(--p)*5deg))}
+.wb-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
+.wb-kick{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:#f4f4f4;color:#3d3d3d}
+.wb-dot{width:8px;height:8px;border-radius:50%;background:#F1D734}
+.wb-h{margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,40px);line-height:1.08;letter-spacing:-.01em}
+.wb-sub{font-size:18px;color:#3d3d3d}
+.wb-in{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5c5c5c;margin-top:10px}
+.wb-list{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+.wb-list li{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.5;color:#3d3d3d}
 .wb-list li b{color:#141414}
-.wb-list li::before{content:"✓";position:absolute;left:0;top:-1px;width:24px;height:24px;border-radius:50%;background:#F1D734;color:#141414;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
-.wb-anim .wb-list li{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
-.wb-anim .wb-list li::before{transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1) .15s}
-.wb-anim .wb-list li.on{opacity:1;transform:none}.wb-anim .wb-list li.on::before{transform:scale(1)}
-@media (max-width:560px){.wb-promo{flex-direction:column}.wb-cover{width:110px;flex-basis:auto}}
-@media (prefers-reduced-motion: reduce){.wb-anim .wb-list li,.wb-anim .wb-list li::before{opacity:1 !important;transform:none !important;transition:none !important}}
+.wb-ic{position:relative;flex:0 0 30px;width:30px;height:30px;margin-top:-2px}
+.wb-ic b{position:absolute;inset:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;transition:transform .45s cubic-bezier(.3,1.5,.5,1),opacity .3s ease}
+.wb-ic .x{background:#D64545;color:#ffffff}
+.wb-ic .v{background:#F1D734;color:#141414;opacity:0;transform:rotate(-90deg) scale(.4)}
+.wb-list li.on .x{opacity:0;transform:rotate(90deg) scale(.4)}
+.wb-list li.on .v{opacity:1;transform:none}
+.wb-formwrap{display:flex;flex-direction:column;gap:14px;border-top:1px solid #e4e4e4;padding-top:28px}
+.wb-formwrap .lead-gate-txt,.wb-formwrap .lead-open-txt{font-size:16px;line-height:1.6;color:#3d3d3d}
+.wb-form button[type=submit]{background:#F1D734 !important;color:#141414 !important;font-weight:700 !important;padding:0 30px !important}
+@media (max-width:900px){.wb-box{padding:32px 22px;border-radius:22px}.wb-grid{grid-template-columns:1fr;gap:20px}.wb-stack{height:250px;max-width:300px;margin:0 auto;width:100%;--k:.35;transform:scale(.85);transform-origin:center top}.wb-pg{left:calc(50% - 125px);top:20px}}
+@media (prefers-reduced-motion: reduce){.wb-pg,.wb-ic b{transition:none !important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie funktioniert die Einkommensteuer-Vorauszahlung?", "acceptedAnswer": {"@type": "Answer", "text": "Das Finanzamt setzt sie nach deinem letzten Steuerbescheid fest. Du zahlst vierteljährlich am 10. März, 10. Juni, 10. September und 10. Dezember (§ 37 EStG). Steigt dein Gewinn, sind die Vorauszahlungen zu niedrig, und die Differenz kommt später als Nachzahlung."}}, {"@type": "Question", "name": "Was passiert nach einer hohen Nachzahlung?", "acceptedAnswer": {"@type": "Answer", "text": "Mit dem Bescheid passt das Finanzamt meist auch die Vorauszahlungen fürs laufende Jahr an. Dann kommen Nachzahlung und höhere Raten auf einmal. Sinkt dein Gewinn, kannst du umgekehrt beantragen, die Vorauszahlungen herabzusetzen."}}, {"@type": "Question", "name": "Wie viel Prozent vom Gewinn sollte ich zurücklegen?", "acceptedAnswer": {"@type": "Answer", "text": "Eine feste Quote gibt es nicht, weil der Steuersatz mit dem Gewinn steigt. Ledig und ohne Abzüge sind es bei 60.000 € Gewinn rund 24 %, bei 150.000 € rund 36 %. Der Rechner zeigt dir den Wert für deine Zahlen."}}, {"@type": "Question", "name": "Kann ich meine Steuervorauszahlungen anpassen lassen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Ein Antrag beim Finanzamt mit einer aktuellen Gewinnschätzung reicht. Erhöhst du die Vorauszahlungen bei steigendem Gewinn freiwillig, kommt später keine hohe Nachzahlung auf einen Schlag. Senken lassen kannst du sie, wenn dein Gewinn zurückgeht."}}, {"@type": "Question", "name": "Was ist der Investitionsabzugsbetrag?", "acceptedAnswer": {"@type": "Answer", "text": "Ein Abzug von bis zu 50 % der Kosten einer geplanten Anschaffung, schon bevor du kaufst (§ 7g EStG). Er senkt die Steuer im laufenden Jahr, wenn dein Gewinn höchstens 200.000 € beträgt. Die Investition muss innerhalb von drei Jahren folgen."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Steuernachzahlung berechnen", "description": "Deine Nachzahlung ist die Differenz zwischen der Steuer auf deinen tatsächlichen Gewinn und den Vorauszahlungen, die du schon geleistet hast. Bei 150.000 € Gewinn (ledig, ohne Abzüge) fallen rund 55.000 € Einkommensteuer und Soli an. Lagen die Vorauszahlungen auf einem niedrigeren Vorjahr, kommt die Differenz mit dem Bescheid, oft zusammen mit höheren Vorauszahlungen fürs laufende Jahr.", "inLanguage": "de", "dateModified": "2026-11-22", "author": {"@type": "Person", "name": "Olga Bertram", "jobTitle": "Geschäftsführerin", "worksFor": {"@type": "Organization", "name": "make it done GmbH", "url": "https://makeitdone.de"}}, "publisher": {"@type": "Organization", "name": "make it done GmbH", "url": "https://makeitdone.de"}}</script>
@@ -162,20 +188,6 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </sc-for>
 </div>
-<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
-<div class="wb-promo"><img class="wb-cover" src="../img/workbook-steuernachzahlung.webp" alt="Deckblatt des Workbooks Steuernachzahlung im Griff" width="132" height="187" loading="lazy"><div class="wb-copy"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; line-height: 1.2">Dein Steuernachzahlungs-Plan als PDF</b><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</li><li><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</li><li><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</li></ul></div></div>
-<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung hier wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span>
-<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
-<form class="lead-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
-<label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
-<label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
-<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Plan zuschicken</button>
-<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
-<label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
-<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
-</form>
-<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Aufschlüsselung ist freigeschaltet. Dein Plan ist auf dem Weg in dein Postfach.</span>
-</div>
 <div class="gated" style="display: flex; flex-direction: column; gap: 20px">
 <div style="display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
 <sc-for list="{{rows}}" as="rw" hint-placeholder-count="11">
@@ -191,6 +203,25 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </div>
 </div>
 </section>
+<section id="workbook" class="wb-sec" style="max-width: 1180px; margin: 0 auto; padding: 8px 24px 56px 24px">
+<div class="leadbox wb-box">
+<div class="wb-grid">
+<div class="wb-stack" aria-hidden="true"><div class="wb-pg dark"><i class="h"></i><i class="l w8"></i><i class="l w6"></i><i class="y wide"></i></div><div class="wb-pg"><i class="h"></i><i class="c"></i><i class="c"></i><i class="c"></i><i class="c"></i><i class="y"></i><i class="l w7"></i></div><div class="wb-pg"><i class="h"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="l w6"></i><i class="l w8"></i></div><div class="wb-pg"><i class="h"></i><i class="l w9"></i><i class="l w7"></i><i class="t"></i><i class="l w8"></i><i class="l w5"></i><i class="y"></i></div><div class="wb-pg"><i class="h"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="l w6"></i><i class="l w8"></i></div><div class="wb-pg cover"><img src="../img/workbook-steuernachzahlung.webp" alt="" width="150" height="212" loading="lazy"></div></div>
+<div class="wb-copy"><span class="wb-kick"><span class="wb-dot"></span>Workbook · kostenlos</span><h2 class="wb-h">Dein Steuernachzahlungs-Plan als PDF</h2><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</span></li></ul></div>
+</div>
+<div class="wb-formwrap"><span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung oben wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span><span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
+<form class="lead-form wb-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
+<label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer" class="wb-btn">Plan zuschicken</button>
+<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
+<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
+</form>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Aufschlüsselung ist freigeschaltet. Dein Plan ist auf dem Weg in dein Postfach.</span></div>
+</div>
+</section>
+
 
 <section id="auf-einen-blick" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">So viel Steuer fällt auf deinen Gewinn an</h2>
@@ -350,20 +381,6 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 </div>
 
 </div>
-<div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
-<div class="wb-promo"><img class="wb-cover" src="../img/workbook-steuernachzahlung.webp" alt="Deckblatt des Workbooks Steuernachzahlung im Griff" width="132" height="187" loading="lazy"><div class="wb-copy"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; line-height: 1.2">Dein Steuernachzahlungs-Plan als PDF</b><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list" data-wb="1"><li><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</li><li><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</li><li><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</li></ul></div></div>
-<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung hier wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span>
-<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
-<form class="lead-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
-<label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
-<label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required="" autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
-<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Plan zuschicken</button>
-<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
-<label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
-<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
-</form>
-<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Aufschlüsselung ist freigeschaltet. Dein Plan ist auf dem Weg in dein Postfach.</span>
-</div>
 <div class="gated" style="display: flex; flex-direction: column; gap: 20px">
 <div style="display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
 
@@ -406,6 +423,25 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 </div>
 </div>
 </section>
+<section id="workbook" class="wb-sec" style="max-width: 1180px; margin: 0 auto; padding: 8px 24px 56px 24px">
+<div class="leadbox wb-box">
+<div class="wb-grid">
+<div class="wb-stack" aria-hidden="true" style="--p: 0.000;"><div class="wb-pg dark"><i class="h"></i><i class="l w8"></i><i class="l w6"></i><i class="y wide"></i></div><div class="wb-pg"><i class="h"></i><i class="c"></i><i class="c"></i><i class="c"></i><i class="c"></i><i class="y"></i><i class="l w7"></i></div><div class="wb-pg"><i class="h"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="l w6"></i><i class="l w8"></i></div><div class="wb-pg"><i class="h"></i><i class="l w9"></i><i class="l w7"></i><i class="t"></i><i class="l w8"></i><i class="l w5"></i><i class="y"></i></div><div class="wb-pg"><i class="h"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="l w6"></i><i class="l w8"></i></div><div class="wb-pg cover"><img src="../img/workbook-steuernachzahlung.webp" alt="" width="150" height="212" loading="lazy"></div></div>
+<div class="wb-copy"><span class="wb-kick"><span class="wb-dot"></span>Workbook · kostenlos</span><h2 class="wb-h">Dein Steuernachzahlungs-Plan als PDF</h2><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</span></li><li><span class="wb-ic"><b class="x">✕</b><b class="v">✓</b></span><span><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</span></li></ul></div>
+</div>
+<div class="wb-formwrap"><span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung oben wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span><span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
+<form class="lead-form wb-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
+<label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required="" autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer" class="wb-btn">Plan zuschicken</button>
+<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
+<span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
+</form>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Aufschlüsselung ist freigeschaltet. Dein Plan ist auf dem Weg in dein Postfach.</span></div>
+</div>
+</section>
+
 
 <section id="auf-einen-blick" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">So viel Steuer fällt auf deinen Gewinn an</h2>
@@ -554,11 +590,14 @@ dcMount(Component, 'tpl', 'app');
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=4"></script>
 <script>
-(function(){if(!('IntersectionObserver' in window))return;document.documentElement.classList.add('wb-anim');
-function arm(){document.querySelectorAll('.wb-list').forEach(function(ul){if(ul.dataset.wb)return;ul.dataset.wb=1;
-var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;io.disconnect();
-[].forEach.call(ul.children,function(li,i){setTimeout(function(){li.classList.add('on')},250+i*550)})})},{threshold:.6});io.observe(ul)})}
-arm();new MutationObserver(arm).observe(document.body,{childList:true,subtree:true})})();
+(function(){var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,tick=false;
+function upd(){tick=false;var st=document.querySelector('#app .wb-stack'),ul=document.querySelector('#app .wb-list');if(!st)return;
+var r=st.getBoundingClientRect(),vh=window.innerHeight||800,p=rm?1:Math.max(0,Math.min(1,(vh-r.top-60)/(vh*0.55)));
+st.style.setProperty('--p',p.toFixed(3));
+if(ul)[].forEach.call(ul.children,function(li,i){li.classList.toggle('on',rm||p>0.45+i*0.18)})}
+function req(){if(!tick){tick=true;requestAnimationFrame(upd)}}
+window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);
+new MutationObserver(req).observe(document.body,{childList:true,subtree:true});req()})();
 </script>
 </body>
 </html>
