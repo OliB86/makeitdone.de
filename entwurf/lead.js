@@ -52,6 +52,8 @@
     UTM.forEach(function (k) { data.set(k, utm(k)); });
     data.set('eingaben', eingaben());
     data.set('ergebnis', clean(gated ? gated.innerText : ''));
+    /* Workbook: fertig formatierte Zahlen für die PDF-Vorlage (nur Rechner, die window.midWB setzen) */
+    if (window.midWB) data.set('wb', JSON.stringify(window.midWB));
     try { fetch(HOOK, { method: 'POST', body: data, mode: 'no-cors', keepalive: true }); } catch (e3) {}
 
     root.classList.add('unlocked');
