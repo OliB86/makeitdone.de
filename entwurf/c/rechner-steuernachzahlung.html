@@ -557,7 +557,7 @@ class Component extends DCLogic {
     var _r = function (n) { return Math.round(n).toLocaleString('de-DE') + ' €'; };
     window.midWB = { gewinn: _r(G), art: gew ? 'Gewerbe' : 'Freiberufler', gew: gew, hebe: String(H), vz: _r(st.vz), split: !!st.split,
       est_tarif: _r(e), anrechnung: _r(anr), est: _r(en), soli: _r(so), gewst: _r(gst), total: _r(total), quote: pct(total / G),
-      paid: _r(paid), diff: _r(Math.abs(diff)), diff_rund: _r(Math.round(Math.abs(diff) / 500) * 500), nachzahlung: diff > 0,
+      paid: _r(paid), diff: _r(Math.abs(diff)), diff_label: diff > 0 ? "voraussichtliche Nachzahlung" : "voraussichtliche Erstattung", diff_rund: _r(Math.round(Math.abs(diff) / 500) * 500), nachzahlung: diff > 0,
       doppelt: _r(Math.max(0, diff) + extra), rate_neu: _r(newRate), rate_est: _r((en + so) / 4), rate_gewst: _r(gst / 4),
       extra: _r(extra), monatlich: _r(monthly), zins: _r(Math.max(0, diff) * 0.0015) };
     var cellBase = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
