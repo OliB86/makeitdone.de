@@ -28,14 +28,25 @@
     return out.join('\n');
   }
 
+  /* Telefonnummer einheitlich als +49… an Close geben */
+  function telNorm(v) {
+    v = (v || '').replace(/[^\d+]/g, '');
+    if (v.indexOf('00') === 0) v = '+' + v.slice(2);
+    else if (v.charAt(0) === '0') v = '+49' + v.slice(1);
+    else if (v && v.charAt(0) !== '+') v = '+49' + v;
+    return v;
+  }
+
   document.addEventListener('submit', function (e) {
     var f = e.target;
     if (!f.classList || !f.classList.contains('lead-form')) return;
     e.preventDefault();
     var mail = f.querySelector('input[type="email"]'), ok = f.querySelector('input[name="ok"]'),
-        nl = f.querySelector('input[name="nl"]'), name = f.querySelector('input[name="name"]'), err = f.querySelector('.lead-err');
+        nl = f.querySelector('input[name="nl"]'), name = f.querySelector('input[name="name"]'), err = f.querySelector('.lead-err'),
+        tel = f.querySelector('input[name="phone"]');
     var msg = '';
     if (!mail.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value)) msg = 'Bitte gib eine gültige E-Mail-Adresse ein.';
+    else if (tel && telNorm(tel.value).replace(/\D/g, '').length < 7) msg = 'Bitte gib deine Telefonnummer ein.';
     else if (ok && !ok.checked) msg = 'Bitte bestätige noch das Einverständnis.';
     if (err) err.textContent = msg;
     if (msg) return;
@@ -47,6 +58,7 @@
     data.set('rechner', clean(h1 ? h1.innerText : document.title).split('\n')[0]);
     data.set('name', name ? name.value.trim() : '');
     data.set('email', mail.value.trim());
+    data.set('phone', tel ? telNorm(tel.value) : '');
     data.set('nl', nl && nl.checked ? '1' : '0');
     data.set('seite', location.pathname);
     UTM.forEach(function (k) { data.set(k, utm(k)); });
