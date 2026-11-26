@@ -127,8 +127,8 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .wb-me img{position:absolute;inset:0;width:100% !important;height:100% !important;object-fit:cover;object-position:center 8%;opacity:.85;border:0 !important;border-radius:0 !important;box-shadow:none !important}
 .wb-me::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,0) 45%,rgba(255,255,255,.9) 70%,#ffffff 82%)}
 .wb-me>div{position:relative;z-index:1}
-.wb-form{display:grid !important;grid-template-columns:1fr 1fr 1fr;gap:10px !important;align-items:center}
-.wb-form input[type=text],.wb-form input[type=email],.wb-form button[type=submit]{width:100%;min-width:0;box-sizing:border-box;flex:none !important;min-height:48px}
+.wb-form{display:grid !important;grid-template-columns:1fr 1fr;gap:10px !important;align-items:center}
+.wb-form input[type=text],.wb-form input[type=email],.wb-form input[type=tel],.wb-form button[type=submit]{width:100%;min-width:0;box-sizing:border-box;flex:none !important;min-height:48px}
 .wb-form button[type=submit]{padding:0 16px !important}
 .wb-form>label:not(.sr),.wb-form>.lead-err{grid-column:1 / -1}
 @media (max-width:900px){.wb-form{grid-template-columns:1fr}.wb-me{min-height:240px}}
@@ -227,8 +227,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <form class="lead-form wb-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
 <label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-tel-steuerruecklage" class="sr">Telefonnummer</label><input id="lead-tel-steuerruecklage" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="Telefonnummer" style="flex: 1 1 180px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer" class="wb-btn">Plan zuschicken</button>
-<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail und Telefon zu meiner Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
 <label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
@@ -448,8 +449,9 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 <form class="lead-form wb-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
 <label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required="" autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-tel-steuerruecklage" class="sr">Telefonnummer</label><input id="lead-tel-steuerruecklage" name="phone" type="tel" required="" autocomplete="tel" inputmode="tel" placeholder="Telefonnummer" style="flex: 1 1 180px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer" class="wb-btn">Plan zuschicken</button>
-<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail und Telefon zu meiner Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
 <label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
@@ -608,7 +610,7 @@ class Component extends DCLogic {
 dcMount(Component, 'tpl', 'app');
 </script>
 <script src="../effects.js?v=1794953993"></script>
-<script src="../lead.js?v=1795700000"></script>
+<script src="../lead.js?v=1795710000"></script>
 <script src="../c-flow.js?v=1794953993"></script>
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=4"></script>

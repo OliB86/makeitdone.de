@@ -195,8 +195,9 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <form class="lead-form" data-calc="netto" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
 <label for="lead-name-netto" class="sr">Vorname</label><input id="lead-name-netto" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <label for="lead-mail-netto" class="sr">E-Mail-Adresse</label><input id="lead-mail-netto" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-tel-netto" class="sr">Telefonnummer</label><input id="lead-tel-netto" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="Telefonnummer" style="flex: 1 1 180px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
-<label for="lead-ok-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-netto" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-ok-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-netto" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail und Telefon zu meiner Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
 <label for="lead-nl-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-netto" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
@@ -522,8 +523,9 @@ GF 8.112 €</span>
 <form class="lead-form" data-calc="netto" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
 <label for="lead-name-netto" class="sr">Vorname</label><input id="lead-name-netto" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <label for="lead-mail-netto" class="sr">E-Mail-Adresse</label><input id="lead-mail-netto" name="email" type="email" required="" autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
+<label for="lead-tel-netto" class="sr">Telefonnummer</label><input id="lead-tel-netto" name="phone" type="tel" required="" autocomplete="tel" inputmode="tel" placeholder="Telefonnummer" style="flex: 1 1 180px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
-<label for="lead-ok-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-netto" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
+<label for="lead-ok-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-netto" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail und Telefon zu meiner Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
 <label for="lead-nl-netto" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-netto" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
@@ -755,7 +757,7 @@ class Component extends DCLogic {
 dcMount(Component, 'tpl', 'app');
 </script>
 <script src="../effects.js?v=1794953993"></script>
-<script src="../lead.js?v=1795370000"></script>
+<script src="../lead.js?v=1795710000"></script>
 <script src="../c-flow.js?v=1794953993"></script>
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=4"></script>
