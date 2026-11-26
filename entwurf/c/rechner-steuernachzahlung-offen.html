@@ -554,6 +554,12 @@ class Component extends DCLogic {
     var total = en + so + gst, paid = 4 * st.vz, diff = total - paid;
     var newRate = total / 4, extra = Math.max(0, newRate - st.vz) * 4;
     var monthly = Math.max(0, diff) / 12;
+    var _r = function (n) { return Math.round(n).toLocaleString('de-DE') + ' €'; };
+    window.midWB = { gewinn: _r(G), art: gew ? 'Gewerbe' : 'Freiberufler', gew: gew, hebe: String(H), vz: _r(st.vz), split: !!st.split,
+      est_tarif: _r(e), anrechnung: _r(anr), est: _r(en), soli: _r(so), gewst: _r(gst), total: _r(total), quote: pct(total / G),
+      paid: _r(paid), diff: _r(Math.abs(diff)), diff_rund: _r(Math.round(Math.abs(diff) / 500) * 500), nachzahlung: diff > 0,
+      doppelt: _r(Math.max(0, diff) + extra), rate_neu: _r(newRate), rate_est: _r((en + so) / 4), rate_gewst: _r(gst / 4),
+      extra: _r(extra), monatlich: _r(monthly), zins: _r(Math.max(0, diff) * 0.0015) };
     var cellBase = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
     function row(label, v, bold) { return { label: label, v: v, ls: cellBase + ' font-weight: 600;', cs: cellBase + (bold ? ' font-weight: 700;' : '') }; }
     var rows = [
@@ -602,7 +608,7 @@ class Component extends DCLogic {
 dcMount(Component, 'tpl', 'app');
 </script>
 <script src="../effects.js?v=1794953993"></script>
-<script src="../lead.js?v=1795370000"></script>
+<script src="../lead.js?v=1795700000"></script>
 <script src="../c-flow.js?v=1794953993"></script>
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=4"></script>
