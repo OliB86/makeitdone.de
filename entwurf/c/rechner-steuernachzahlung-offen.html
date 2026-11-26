@@ -78,6 +78,20 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 .mbar{display:none}
 @media (max-width:760px){.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #e4e4e4;backdrop-filter:blur(8px)}.mbar a{flex:1;text-align:center;background:#F1D734;color:#141414;font-weight:700;font-size:16px;padding:14px 18px;border-radius:999px;text-decoration:none}body.has-mbar{padding-bottom:78px}}
 @media (prefers-reduced-motion: reduce){.hdr-cta,.logo-dot,.cta.pulse,.story-btn::before,.bk-tog a::after{animation:none !important}}
+.wb-promo{display:flex;gap:22px;align-items:flex-start}
+.wb-cover{flex:0 0 132px;width:132px;height:auto;border-radius:6px;transform:rotate(-4deg);box-shadow:8px 8px 0 #F1D734,0 10px 24px rgba(0,0,0,.18);margin:6px 6px 10px 4px}
+.wb-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.wb-sub{font-size:16px;color:#3d3d3d}
+.wb-in{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5c5c5c;margin-top:8px}
+.wb-list{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.wb-list li{position:relative;padding-left:36px;font-size:15px;line-height:1.5;color:#3d3d3d}
+.wb-list li b{color:#141414}
+.wb-list li::before{content:"✓";position:absolute;left:0;top:-1px;width:24px;height:24px;border-radius:50%;background:#F1D734;color:#141414;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.wb-anim .wb-list li{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.wb-anim .wb-list li::before{transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1) .15s}
+.wb-anim .wb-list li.on{opacity:1;transform:none}.wb-anim .wb-list li.on::before{transform:scale(1)}
+@media (max-width:560px){.wb-promo{flex-direction:column}.wb-cover{width:110px;flex-basis:auto}}
+@media (prefers-reduced-motion: reduce){.wb-anim .wb-list li,.wb-anim .wb-list li::before{opacity:1 !important;transform:none !important;transition:none !important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie funktioniert die Einkommensteuer-Vorauszahlung?", "acceptedAnswer": {"@type": "Answer", "text": "Das Finanzamt setzt sie nach deinem letzten Steuerbescheid fest. Du zahlst vierteljährlich am 10. März, 10. Juni, 10. September und 10. Dezember (§ 37 EStG). Steigt dein Gewinn, sind die Vorauszahlungen zu niedrig, und die Differenz kommt später als Nachzahlung."}}, {"@type": "Question", "name": "Was passiert nach einer hohen Nachzahlung?", "acceptedAnswer": {"@type": "Answer", "text": "Mit dem Bescheid passt das Finanzamt meist auch die Vorauszahlungen fürs laufende Jahr an. Dann kommen Nachzahlung und höhere Raten auf einmal. Sinkt dein Gewinn, kannst du umgekehrt beantragen, die Vorauszahlungen herabzusetzen."}}, {"@type": "Question", "name": "Wie viel Prozent vom Gewinn sollte ich zurücklegen?", "acceptedAnswer": {"@type": "Answer", "text": "Eine feste Quote gibt es nicht, weil der Steuersatz mit dem Gewinn steigt. Ledig und ohne Abzüge sind es bei 60.000 € Gewinn rund 24 %, bei 150.000 € rund 36 %. Der Rechner zeigt dir den Wert für deine Zahlen."}}, {"@type": "Question", "name": "Kann ich meine Steuervorauszahlungen anpassen lassen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Ein Antrag beim Finanzamt mit einer aktuellen Gewinnschätzung reicht. Erhöhst du die Vorauszahlungen bei steigendem Gewinn freiwillig, kommt später keine hohe Nachzahlung auf einen Schlag. Senken lassen kannst du sie, wenn dein Gewinn zurückgeht."}}, {"@type": "Question", "name": "Was ist der Investitionsabzugsbetrag?", "acceptedAnswer": {"@type": "Answer", "text": "Ein Abzug von bis zu 50 % der Kosten einer geplanten Anschaffung, schon bevor du kaufst (§ 7g EStG). Er senkt die Steuer im laufenden Jahr, wenn dein Gewinn höchstens 200.000 € beträgt. Die Investition muss innerhalb von drei Jahren folgen."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Steuernachzahlung berechnen", "description": "Deine Nachzahlung ist die Differenz zwischen der Steuer auf deinen tatsächlichen Gewinn und den Vorauszahlungen, die du schon geleistet hast. Bei 150.000 € Gewinn (ledig, ohne Abzüge) fallen rund 55.000 € Einkommensteuer und Soli an. Lagen die Vorauszahlungen auf einem niedrigeren Vorjahr, kommt die Differenz mit dem Bescheid, oft zusammen mit höheren Vorauszahlungen fürs laufende Jahr.", "inLanguage": "de", "dateModified": "2026-11-22", "author": {"@type": "Person", "name": "Olga Bertram", "jobTitle": "Geschäftsführerin", "worksFor": {"@type": "Organization", "name": "make it done GmbH", "url": "https://makeitdone.de"}}, "publisher": {"@type": "Organization", "name": "make it done GmbH", "url": "https://makeitdone.de"}}</script>
@@ -149,22 +163,22 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 </sc-for>
 </div>
 <div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
-<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b></span>
-<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
-<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
+<div class="wb-promo"><img class="wb-cover" src="../img/workbook-steuernachzahlung.webp" alt="Deckblatt des Workbooks Steuernachzahlung im Griff" width="132" height="187" loading="lazy"><div class="wb-copy"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; line-height: 1.2">Dein Steuernachzahlungs-Plan als PDF</b><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list"><li><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</li><li><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</li><li><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</li></ul></div></div>
+<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung hier wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span>
+<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
 <form class="lead-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
 <label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
-<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Plan zuschicken</button>
 <label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
 <label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
-<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Deine persönliche Auswertung schicken wir dir zusätzlich per E-Mail.</span>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Aufschlüsselung ist freigeschaltet. Dein Plan ist auf dem Weg in dein Postfach.</span>
 </div>
 <div class="gated" style="display: flex; flex-direction: column; gap: 20px">
 <div style="display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
-<sc-for list="{{rows}}" as="rw" hint-placeholder-count="8">
+<sc-for list="{{rows}}" as="rw" hint-placeholder-count="11">
 <span style="{{rw.ls}}">{{rw.label}}</span>
 <span style="{{rw.cs}}">{{rw.v}}</span>
 </sc-for>
@@ -181,7 +195,7 @@ a[href*="calendly"][style*="background: #141414"]{background:#F1D734 !important;
 <section id="auf-einen-blick" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">So viel Steuer fällt auf deinen Gewinn an</h2>
 <div style="overflow-x: auto"><table style="min-width: 520px; width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.45; border: 1px solid #dddddd"><thead><tr><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Gewinn im Jahr</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Einkommensteuer und Soli</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Anteil am Gewinn</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">monatlich zurücklegen</th></tr></thead><tbody><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">60.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 14.200 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 24 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 1.190 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">100.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 32.100 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 32 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 2.680 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">150.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 54.700 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 36 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 4.560 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">250.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 99.000 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 40 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 8.250 €</td></tr></tbody></table></div>
-<p style="margin: 0; font-size: 12px; color: #5c5c5c">Ledig, Tarif 2026, ohne Abzüge und ohne Kirchensteuer, Freiberufler; mit Gewerbe bei 400 % Hebesatz ähnlich. Rechtsgrundlagen: § 32a EStG, § 37 EStG, § 35 EStG.</p>
+<p style="margin: 0; font-size: 12px; color: #5c5c5c">Ledig, Tarif 2026, ohne Abzüge und ohne Kirchensteuer, für Freiberufler (ohne Gewerbesteuer). Mit Gewerbe bei 400 % Hebesatz liegt die Gesamtlast etwas darunter, weil die Gewerbesteuer weitgehend angerechnet wird. Rechtsgrundlagen: § 32a EStG, § 37 EStG, § 35 EStG.</p>
 <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5c5c5c">Von <a href="../c/ueber-uns.html">Olga Bertram</a>, Gründerin der make it done GmbH und seit 2010 Dozentin für Steuerrecht und Rechnungswesen · Stand: November 2026 · Vereinfachte Darstellung, keine Beratung im Einzelfall.</p>
 </section>
 
@@ -337,30 +351,36 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 
 </div>
 <div class="leadbox" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0 24px 0; border-top: 1px solid #141414; border-bottom: 1px solid #141414">
-<span style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 22px">Detaillierte Auswertung per E-Mail</b></span>
-<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen bekommst du als PDF per E-Mail. Trag deine Adresse ein, dann wird sie hier sofort freigeschaltet.</span>
-<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Auf Wunsch schicken wir dir die vollständige Aufschlüsselung mit allen Steuerarten und Annahmen als PDF.</span>
+<div class="wb-promo"><img class="wb-cover" src="../img/workbook-steuernachzahlung.webp" alt="Deckblatt des Workbooks Steuernachzahlung im Griff" width="132" height="187" loading="lazy"><div class="wb-copy"><b style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; line-height: 1.2">Dein Steuernachzahlungs-Plan als PDF</b><span class="wb-sub">Kostenlos, in 2 Minuten im Postfach.</span><span class="wb-in">Darin bekommst du:</span><ul class="wb-list" data-wb="1"><li><b>Deine Zahlen mit Paragraphen:</b> was du zahlst, warum, und wie viel nachkommt</li><li><b>Deinen Rücklagen-Plan:</b> die passende Vorauszahlung je Quartal und wie viel du im Monat zurücklegst</li><li><b>Die Stellschrauben, die deine Steuerlast senken können:</b> und was du vor dem Jahreswechsel klären musst</li></ul></div></div>
+<span class="lead-gate-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein: Die Aufschlüsselung hier wird sofort freigeschaltet, dein Plan kommt per E-Mail.</span>
+<span class="lead-open-txt" style="font-size: 16px; line-height: 1.6; color: #3d3d3d">Trag deine Adresse ein, dann schicken wir dir deinen Plan mit deinen Zahlen.</span>
 <form class="lead-form" data-calc="steuerruecklage" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start">
 <label for="lead-name-steuerruecklage" class="sr">Vorname</label><input id="lead-name-steuerruecklage" name="name" type="text" autocomplete="given-name" placeholder="Vorname" style="flex: 1 1 160px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
 <label for="lead-mail-steuerruecklage" class="sr">E-Mail-Adresse</label><input id="lead-mail-steuerruecklage" name="email" type="email" required="" autocomplete="email" placeholder="E-Mail-Adresse" style="flex: 2 1 240px; min-height: 48px; padding: 0 16px; border: 1px solid #bdbdbd; border-radius: 999px; font: inherit; background: #ffffff">
-<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Auswertung anfordern</button>
+<button type="submit" style="min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #141414; color: #ffffff; font: inherit; font-weight: 600; cursor: pointer">Plan zuschicken</button>
 <label for="lead-ok-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-ok-steuerruecklage" name="ok" type="checkbox" required="" style="margin-top: 3px">Ich bin einverstanden, dass make it done mich per E-Mail zur Auswertung kontaktiert. Abmeldung jederzeit möglich. [Text mit der Anwältin abstimmen]</label>
 <label for="lead-nl-steuerruecklage" style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #5c5c5c"><input id="lead-nl-steuerruecklage" name="nl" type="checkbox" style="margin-top: 3px">Ich möchte gelegentlich Praxiswissen und Updates von make it done per E-Mail erhalten (Newsletter, jederzeit abbestellbar). [Text mit der Anwältin abstimmen]</label>
 <span class="lead-err" role="alert" style="font-size: 14px; color: #b3261e"></span>
 </form>
-<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Auswertung ist freigeschaltet. Deine persönliche Auswertung schicken wir dir zusätzlich per E-Mail.</span>
+<span class="lead-thanks" role="status" style="font-size: 16px; font-weight: 600">Danke! Die Aufschlüsselung ist freigeschaltet. Dein Plan ist auf dem Weg in dein Postfach.</span>
 </div>
 <div class="gated" style="display: flex; flex-direction: column; gap: 20px">
 <div style="display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid #dddddd; border-radius: 20px; overflow: hidden">
 
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Einkommensteuer</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Einkommensteuer nach Tarif (§ 32a EStG)</span>
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">51.864 €</span>
 
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Gewerbesteuer</span>
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">17.570 € · 17.570 € auf die ESt angerechnet</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">abzüglich Anrechnung Gewerbesteuer (§ 35 EStG)</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">− 17.570 €</span>
 
-<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Solidaritätszuschlag</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">= Einkommensteuer</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">34.294 €</span>
+
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Solidaritätszuschlag (§§ 3, 4 SolZG)</span>
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">1.659 €</span>
+
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Gewerbesteuer, Hebesatz 400 % (§§ 11, 16 GewStG)</span>
+<span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;">17.570 €</span>
 
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 600;">Steuer fürs Jahr gesamt</span>
 <span style="padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4; font-weight: 700;">53.523 € · 35,7 % vom Gewinn</span>
@@ -390,7 +410,7 @@ html:not(.fx) .faqw-q[data-k="0"][data-r="0"]{display:flex}</style><section id="
 <section id="auf-einen-blick" style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 24px 24px; display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.15">So viel Steuer fällt auf deinen Gewinn an</h2>
 <div style="overflow-x: auto"><table style="min-width: 520px; width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.45; border: 1px solid #dddddd"><thead><tr><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Gewinn im Jahr</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Einkommensteuer und Soli</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">Anteil am Gewinn</th><th scope="col" style="text-align: left; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif; background: #f4f4f4">monatlich zurücklegen</th></tr></thead><tbody><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">60.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 14.200 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 24 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 1.190 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">100.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 32.100 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 32 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 2.680 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">150.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 54.700 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 36 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 4.560 €</td></tr><tr><th scope="row" style="text-align: left; padding: 12px 14px; border-top: 1px solid #e4e4e4; font-weight: 600">250.000 €</th><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 99.000 €</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 40 %</td><td style="padding: 12px 14px; border-top: 1px solid #e4e4e4">rund 8.250 €</td></tr></tbody></table></div>
-<p style="margin: 0; font-size: 12px; color: #5c5c5c">Ledig, Tarif 2026, ohne Abzüge und ohne Kirchensteuer, Freiberufler; mit Gewerbe bei 400 % Hebesatz ähnlich. Rechtsgrundlagen: § 32a EStG, § 37 EStG, § 35 EStG.</p>
+<p style="margin: 0; font-size: 12px; color: #5c5c5c">Ledig, Tarif 2026, ohne Abzüge und ohne Kirchensteuer, für Freiberufler (ohne Gewerbesteuer). Mit Gewerbe bei 400 % Hebesatz liegt die Gesamtlast etwas darunter, weil die Gewerbesteuer weitgehend angerechnet wird. Rechtsgrundlagen: § 32a EStG, § 37 EStG, § 35 EStG.</p>
 <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5c5c5c">Von <a href="../c/ueber-uns.html">Olga Bertram</a>, Gründerin der make it done GmbH und seit 2010 Dozentin für Steuerrecht und Rechnungswesen · Stand: November 2026 · Vereinfachte Darstellung, keine Beratung im Einzelfall.</p>
 </section>
 
@@ -484,15 +504,23 @@ class Component extends DCLogic {
     var cellBase = 'padding: 14px 16px; font-size: 14px; border-top: 1px solid #e4e4e4;';
     function row(label, v, bold) { return { label: label, v: v, ls: cellBase + ' font-weight: 600;', cs: cellBase + (bold ? ' font-weight: 700;' : '') }; }
     var rows = [
-      row('Einkommensteuer', eur(e)),
-      gew ? row('Gewerbesteuer', eur(gst) + ' · ' + eur(anr) + ' auf die ESt angerechnet') : row('Gewerbesteuer', 'keine (Freiberufler)'),
-      row('Solidaritätszuschlag', eur(so)),
+      row('Einkommensteuer nach Tarif (§ 32a EStG)', eur(e))
+    ].concat(gew ? [
+      row('abzüglich Anrechnung Gewerbesteuer (§ 35 EStG)', '− ' + eur(anr)),
+      row('= Einkommensteuer', eur(en)),
+      row('Solidaritätszuschlag (§§ 3, 4 SolZG)', eur(so)),
+      row('Gewerbesteuer, Hebesatz ' + H + ' % (§§ 11, 16 GewStG)', eur(gst))
+    ] : [
+      row('Solidaritätszuschlag (§§ 3, 4 SolZG)', eur(so)),
+      row('Gewerbesteuer', 'keine (Freiberufler)')
+    ]).concat([
       row('Steuer fürs Jahr gesamt', eur(total) + ' · ' + pct(total / G) + ' vom Gewinn', true),
       row('Schon vorausbezahlt', eur(paid)),
       row(diff >= 0 ? 'Nachzahlung mit dem Bescheid' : 'Erstattung mit dem Bescheid', eur(Math.abs(diff)), true),
       row('Passende Vorauszahlung je Quartal', eur(newRate)),
       row('Höhere Vorauszahlungen im Bescheidjahr', extra > 0 ? 'bis zu ' + eur(extra) + ' zusätzlich' : 'keine', true)
-    ];
+
+    ]);
     var max = Math.max(total, paid, Math.abs(diff), 1);
     var bars = [['Steuer fürs Jahr', total, '#141414'], ['Schon vorausbezahlt', paid, '#8a8a8a'], [diff >= 0 ? 'Nachzahlung' : 'Erstattung', Math.abs(diff), '#F1D734']].map(function (b, i) {
       return { label: b[0], value: eur(b[1]), textColor: i === 0 ? '#ffffff' : '#141414',
@@ -525,5 +553,12 @@ dcMount(Component, 'tpl', 'app');
 <script src="../c-flow.js?v=1794953993"></script>
 <script src="../c-faq.js?v=1794953993"></script>
 <script src="../c-tracking.js?v=4"></script>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;document.documentElement.classList.add('wb-anim');
+function arm(){document.querySelectorAll('.wb-list').forEach(function(ul){if(ul.dataset.wb)return;ul.dataset.wb=1;
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;io.disconnect();
+[].forEach.call(ul.children,function(li,i){setTimeout(function(){li.classList.add('on')},250+i*550)})})},{threshold:.6});io.observe(ul)})}
+arm();new MutationObserver(arm).observe(document.body,{childList:true,subtree:true})})();
+</script>
 </body>
 </html>
